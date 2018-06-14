@@ -10,7 +10,7 @@ class Packet extends soupply.util.Packet
     {
         Buffer buffer = new Buffer();
         buffer.writeVaruint(this.getId());
-        buffer.writeBytes(new byte[2);
+        buffer.writeBytes(new byte[2]);
         this.encodeBody(buffer);
     }
 

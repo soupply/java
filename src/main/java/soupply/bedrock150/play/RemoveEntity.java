@@ -1,0 +1,20 @@
+package soupply.bedrock150.play;
+
+import java.util.*;
+import soupply.util.*;
+
+class RemoveEntity extends soupply.bedrock150.Packet
+{
+
+    public long entityId;
+
+    public RemoveEntity()
+    {
+    }
+
+    public RemoveEntity(long entityId)
+    {
+        this.entityId = entityId;
+    }
+
+}

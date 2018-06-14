@@ -1,0 +1,20 @@
+package soupply.java338.clientbound;
+
+import java.util.*;
+import soupply.util.*;
+
+class SpawnPosition extends soupply.java338.Packet
+{
+
+    public long position;
+
+    public SpawnPosition()
+    {
+    }
+
+    public SpawnPosition(long position)
+    {
+        this.position = position;
+    }
+
+}

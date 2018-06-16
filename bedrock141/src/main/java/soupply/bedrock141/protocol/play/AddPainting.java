@@ -16,6 +16,7 @@ class AddPainting extends soupply.bedrock141.Packet
 
     public AddPainting()
     {
+        this.position = new soupply.bedrock141.type.BlockPosition();
     }
 
     public AddPainting(long entityId, long runtimeId, soupply.bedrock141.type.BlockPosition position, int direction, String title)

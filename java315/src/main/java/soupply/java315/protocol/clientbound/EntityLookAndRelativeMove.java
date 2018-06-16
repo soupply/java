@@ -16,6 +16,7 @@ class EntityLookAndRelativeMove extends soupply.java315.Packet
 
     public EntityLookAndRelativeMove()
     {
+        this.delta = new Tuples.ShortXYZ();
     }
 
     public EntityLookAndRelativeMove(int entityId, Tuples.ShortXYZ delta, byte yaw, byte pitch, boolean onGround)

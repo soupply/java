@@ -13,6 +13,7 @@ class SetEntityData extends soupply.bedrock150.Packet
 
     public SetEntityData()
     {
+        this.metadata = new soupply.bedrock150.Metadata();
     }
 
     public SetEntityData(long entityId, soupply.bedrock150.Metadata metadata)

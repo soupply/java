@@ -19,6 +19,7 @@ class PlayerBlockPlacement extends soupply.java335.Packet
 
     public PlayerBlockPlacement()
     {
+        this.cursorPosition = new Tuples.FloatXYZ();
     }
 
     public PlayerBlockPlacement(long position, int face, int hand, Tuples.FloatXYZ cursorPosition)

@@ -15,6 +15,9 @@ class Explosion extends soupply.java338.Packet
 
     public Explosion()
     {
+        this.position = new Tuples.FloatXYZ();
+        this.records = new Tuples.ByteXYZ[]();
+        this.motion = new Tuples.FloatXYZ();
     }
 
     public Explosion(Tuples.FloatXYZ position, float radius, Tuples.ByteXYZ[] records, Tuples.FloatXYZ motion)

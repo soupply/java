@@ -10,6 +10,7 @@ class Overload extends Type
 
     public Overload()
     {
+        this.parameters = new soupply.bedrock201.type.Parameter[]();
     }
 
     public Overload(soupply.bedrock201.type.Parameter[] parameters)

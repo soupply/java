@@ -14,6 +14,7 @@ class SetSlot extends soupply.java335.Packet
 
     public SetSlot()
     {
+        this.item = new soupply.java335.type.Slot();
     }
 
     public SetSlot(byte window, short slot, soupply.java335.type.Slot item)

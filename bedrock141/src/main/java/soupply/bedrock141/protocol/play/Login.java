@@ -13,6 +13,7 @@ class Login extends soupply.bedrock141.Packet
 
     public Login()
     {
+        this.body = new soupply.bedrock141.type.LoginBody();
     }
 
     public Login(int protocol, soupply.bedrock141.type.LoginBody body)

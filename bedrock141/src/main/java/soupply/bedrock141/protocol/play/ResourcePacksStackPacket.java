@@ -14,6 +14,8 @@ class ResourcePacksStackPacket extends soupply.bedrock141.Packet
 
     public ResourcePacksStackPacket()
     {
+        this.behaviourPacks = new soupply.bedrock141.type.Pack[]();
+        this.resourcePacks = new soupply.bedrock141.type.Pack[]();
     }
 
     public ResourcePacksStackPacket(boolean mustAccept, soupply.bedrock141.type.Pack[] behaviourPacks, soupply.bedrock141.type.Pack[] resourcePacks)

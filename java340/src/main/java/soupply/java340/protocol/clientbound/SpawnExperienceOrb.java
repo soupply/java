@@ -14,6 +14,7 @@ class SpawnExperienceOrb extends soupply.java340.Packet
 
     public SpawnExperienceOrb()
     {
+        this.position = new Tuples.DoubleXYZ();
     }
 
     public SpawnExperienceOrb(int entityId, Tuples.DoubleXYZ position, short count)

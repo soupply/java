@@ -14,6 +14,8 @@ class PlayerList extends Type
 
     public PlayerList()
     {
+        this.uuid = new soupply.bedrock.type.McpeUuid();
+        this.skin = new soupply.bedrock.type.Skin();
     }
 
     public PlayerList(soupply.bedrock.type.McpeUuid uuid, long entityId, String displayName, soupply.bedrock.type.Skin skin, String unknown4)

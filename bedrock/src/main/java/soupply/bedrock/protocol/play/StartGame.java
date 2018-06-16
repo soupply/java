@@ -71,6 +71,9 @@ class StartGame extends soupply.bedrock.Packet
 
     public StartGame()
     {
+        this.position = new Tuples.FloatXYZ();
+        this.spawnPosition = new Tuples.IntXYZ();
+        this.gameRules = new soupply.bedrock.type.Rule[]();
     }
 
     public StartGame(long entityId, long runtimeId, int gamemode, Tuples.FloatXYZ position, float yaw, float pitch, int seed, int dimension, int generator, int worldGamemode, int difficulty, Tuples.IntXYZ spawnPosition, boolean loadedInCreative, int time, byte version, float rainLevel, float lightningLevel, boolean multiplayerGame, boolean broadcastToLan, boolean broadcastToXbl, boolean commandsEnabled, boolean textureRequired, soupply.bedrock.type.Rule[] gameRules, boolean bonusChestEnabled, boolean startWithMapEnabled, boolean trustPlayersEnabled, int defaultPermissionLevel, int xboxLiveBroadcastMode, int serverChunkTickRadius, String levelId, String worldName, String premiumWorldTemplate, boolean unknown32, long worldTicks, int enchantmentSeed)

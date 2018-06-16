@@ -13,6 +13,7 @@ class EntityVelocity extends soupply.java210.Packet
 
     public EntityVelocity()
     {
+        this.velocity = new Tuples.ShortXYZ();
     }
 
     public EntityVelocity(int entityId, Tuples.ShortXYZ velocity)

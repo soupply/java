@@ -17,6 +17,7 @@ class ClickWindow extends soupply.java338.Packet
 
     public ClickWindow()
     {
+        this.clickedItem = new soupply.java338.type.Slot();
     }
 
     public ClickWindow(byte window, short slot, byte button, short action, int mode, soupply.java338.type.Slot clickedItem)

@@ -17,6 +17,7 @@ class SpawnGlobalEntity extends soupply.java338.Packet
 
     public SpawnGlobalEntity()
     {
+        this.position = new Tuples.DoubleXYZ();
     }
 
     public SpawnGlobalEntity(int entityId, byte type, Tuples.DoubleXYZ position)

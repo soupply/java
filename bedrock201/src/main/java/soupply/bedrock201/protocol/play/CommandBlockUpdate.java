@@ -21,6 +21,7 @@ class CommandBlockUpdate extends soupply.bedrock201.Packet
 
     public CommandBlockUpdate()
     {
+        this.position = new soupply.bedrock201.type.BlockPosition();
     }
 
     public CommandBlockUpdate(boolean updateBlock, soupply.bedrock201.type.BlockPosition position, int mode, boolean redstoneMode, boolean conditional, long minecart, String command, String lastOutput, String hover, boolean trackOutput)

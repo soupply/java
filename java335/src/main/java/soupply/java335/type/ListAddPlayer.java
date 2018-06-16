@@ -22,6 +22,7 @@ class ListAddPlayer extends Type
 
     public ListAddPlayer()
     {
+        this.properties = new soupply.java335.type.Property[]();
     }
 
     public ListAddPlayer(UUID uuid, String name, soupply.java335.type.Property[] properties, int gamemode, int latency, boolean hasDisplayName, String displayName)

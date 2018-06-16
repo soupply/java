@@ -14,6 +14,7 @@ class BlockPickRequest extends soupply.bedrock.Packet
 
     public BlockPickRequest()
     {
+        this.position = new Tuples.IntXYZ();
     }
 
     public BlockPickRequest(Tuples.IntXYZ position, boolean unknown1, byte slot)

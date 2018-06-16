@@ -16,6 +16,7 @@ class EntityTeleport extends soupply.java335.Packet
 
     public EntityTeleport()
     {
+        this.position = new Tuples.DoubleXYZ();
     }
 
     public EntityTeleport(int entityId, Tuples.DoubleXYZ position, byte yaw, byte pitch, boolean onGround)

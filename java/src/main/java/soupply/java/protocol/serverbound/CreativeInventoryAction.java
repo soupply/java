@@ -13,6 +13,7 @@ class CreativeInventoryAction extends soupply.java.Packet
 
     public CreativeInventoryAction()
     {
+        this.clickedItem = new soupply.java.type.Slot();
     }
 
     public CreativeInventoryAction(short slot, soupply.java.type.Slot clickedItem)

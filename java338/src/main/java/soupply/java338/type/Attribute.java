@@ -12,6 +12,7 @@ class Attribute extends Type
 
     public Attribute()
     {
+        this.modifiers = new soupply.java338.type.Modifier[]();
     }
 
     public Attribute(String key, double value, soupply.java338.type.Modifier[] modifiers)

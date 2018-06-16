@@ -16,6 +16,7 @@ class NamedSoundEffect extends soupply.java316.Packet
 
     public NamedSoundEffect()
     {
+        this.position = new Tuples.IntXYZ();
     }
 
     public NamedSoundEffect(String name, int category, Tuples.IntXYZ position, float volume, float pitch)

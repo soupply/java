@@ -23,6 +23,7 @@ class Icon extends Type
 
     public Icon()
     {
+        this.position = new Tuples.ByteXZ();
     }
 
     public Icon(byte directionAndType, Tuples.ByteXZ position)

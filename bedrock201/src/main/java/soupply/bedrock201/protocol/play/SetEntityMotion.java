@@ -13,6 +13,7 @@ class SetEntityMotion extends soupply.bedrock201.Packet
 
     public SetEntityMotion()
     {
+        this.motion = new Tuples.FloatXYZ();
     }
 
     public SetEntityMotion(long entityId, Tuples.FloatXYZ motion)

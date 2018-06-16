@@ -13,6 +13,8 @@ class FullChunkData extends soupply.bedrock160.Packet
 
     public FullChunkData()
     {
+        this.position = new Tuples.IntXZ();
+        this.data = new soupply.bedrock160.type.ChunkData();
     }
 
     public FullChunkData(Tuples.IntXZ position, soupply.bedrock160.type.ChunkData data)

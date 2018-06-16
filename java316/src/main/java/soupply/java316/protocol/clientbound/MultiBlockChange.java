@@ -13,6 +13,8 @@ class MultiBlockChange extends soupply.java316.Packet
 
     public MultiBlockChange()
     {
+        this.chunk = new Tuples.IntXZ();
+        this.changes = new soupply.java316.type.BlockChange[]();
     }
 
     public MultiBlockChange(Tuples.IntXZ chunk, soupply.java316.type.BlockChange[] changes)

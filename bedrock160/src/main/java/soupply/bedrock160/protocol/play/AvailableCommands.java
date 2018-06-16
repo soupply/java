@@ -15,6 +15,8 @@ class AvailableCommands extends soupply.bedrock160.Packet
 
     public AvailableCommands()
     {
+        this.enums = new soupply.bedrock160.type.Enum[]();
+        this.commands = new soupply.bedrock160.type.Command[]();
     }
 
     public AvailableCommands(String[] enumValues, String[] unknown1, soupply.bedrock160.type.Enum[] enums, soupply.bedrock160.type.Command[] commands)

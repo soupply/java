@@ -12,6 +12,8 @@ class Section extends Type
 
     public Section()
     {
+        this.blockIds = new byte[4096];
+        this.blockMetas = new byte[2048];
     }
 
     public Section(byte storageVersion, byte[] blockIds, byte[] blockMetas)

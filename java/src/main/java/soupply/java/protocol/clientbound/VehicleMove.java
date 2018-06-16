@@ -14,6 +14,7 @@ class VehicleMove extends soupply.java.Packet
 
     public VehicleMove()
     {
+        this.position = new Tuples.DoubleXYZ();
     }
 
     public VehicleMove(Tuples.DoubleXYZ position, float yaw, float pitch)

@@ -20,6 +20,8 @@ class InventoryAction extends Type
 
     public InventoryAction()
     {
+        this.oldItem = new soupply.bedrock.type.Slot();
+        this.newItem = new soupply.bedrock.type.Slot();
     }
 
     public InventoryAction(int source, int container, int unknown2, int slot, soupply.bedrock.type.Slot oldItem, soupply.bedrock.type.Slot newItem)

@@ -17,6 +17,8 @@ class SpawnPlayer extends soupply.java.Packet
 
     public SpawnPlayer()
     {
+        this.position = new Tuples.DoubleXYZ();
+        this.metadata = new soupply.java.Metadata();
     }
 
     public SpawnPlayer(int entityId, UUID uuid, Tuples.DoubleXYZ position, byte yaw, byte pitch, soupply.java.Metadata metadata)

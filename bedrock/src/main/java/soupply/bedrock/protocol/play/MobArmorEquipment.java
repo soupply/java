@@ -13,6 +13,7 @@ class MobArmorEquipment extends soupply.bedrock.Packet
 
     public MobArmorEquipment()
     {
+        this.armor = new soupply.bedrock.type.Slot[4];
     }
 
     public MobArmorEquipment(long entityId, soupply.bedrock.type.Slot[] armor)

@@ -13,6 +13,8 @@ class BlockEvent extends soupply.bedrock137.Packet
 
     public BlockEvent()
     {
+        this.position = new soupply.bedrock137.type.BlockPosition();
+        this.data = new int[2];
     }
 
     public BlockEvent(soupply.bedrock137.type.BlockPosition position, int[] data)

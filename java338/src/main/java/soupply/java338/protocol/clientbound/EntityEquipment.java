@@ -14,6 +14,7 @@ class EntityEquipment extends soupply.java338.Packet
 
     public EntityEquipment()
     {
+        this.item = new soupply.java338.type.Slot();
     }
 
     public EntityEquipment(int entityId, int slot, soupply.java338.type.Slot item)

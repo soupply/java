@@ -35,6 +35,7 @@ class PlayerAction extends soupply.bedrock201.Packet
 
     public PlayerAction()
     {
+        this.position = new soupply.bedrock201.type.BlockPosition();
     }
 
     public PlayerAction(long entityId, int action, soupply.bedrock201.type.BlockPosition position, int face)

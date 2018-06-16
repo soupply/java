@@ -23,6 +23,7 @@ class PlayerPositionAndLook extends soupply.java340.Packet
 
     public PlayerPositionAndLook()
     {
+        this.position = new Tuples.DoubleXYZ();
     }
 
     public PlayerPositionAndLook(Tuples.DoubleXYZ position, float yaw, float pitch, byte flags, int teleportId)

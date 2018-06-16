@@ -13,6 +13,7 @@ class UpdateAttributes extends soupply.bedrock201.Packet
 
     public UpdateAttributes()
     {
+        this.attributes = new soupply.bedrock201.type.Attribute[]();
     }
 
     public UpdateAttributes(long entityId, soupply.bedrock201.type.Attribute[] attributes)

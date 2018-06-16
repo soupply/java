@@ -16,6 +16,7 @@ class MobEquipment extends soupply.bedrock201.Packet
 
     public MobEquipment()
     {
+        this.item = new soupply.bedrock201.type.Slot();
     }
 
     public MobEquipment(long entityId, soupply.bedrock201.type.Slot item, byte inventorySlot, byte hotbarSlot, byte unknown4)

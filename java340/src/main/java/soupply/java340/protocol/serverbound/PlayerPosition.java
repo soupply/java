@@ -13,6 +13,7 @@ class PlayerPosition extends soupply.java340.Packet
 
     public PlayerPosition()
     {
+        this.position = new Tuples.DoubleXYZ();
     }
 
     public PlayerPosition(Tuples.DoubleXYZ position, boolean onGround)

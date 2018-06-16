@@ -16,6 +16,7 @@ class SoundEffect extends soupply.java315.Packet
 
     public SoundEffect()
     {
+        this.position = new Tuples.IntXYZ();
     }
 
     public SoundEffect(int soundId, int category, Tuples.IntXYZ position, float volume, float pitch)

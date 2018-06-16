@@ -15,6 +15,7 @@ class AddHangingEntity extends soupply.bedrock137.Packet
 
     public AddHangingEntity()
     {
+        this.position = new soupply.bedrock137.type.BlockPosition();
     }
 
     public AddHangingEntity(long entityId, long runtimeId, soupply.bedrock137.type.BlockPosition position, int unknown3)

@@ -13,6 +13,7 @@ class EntityProperties extends soupply.java335.Packet
 
     public EntityProperties()
     {
+        this.attributes = new soupply.java335.type.Attribute[]();
     }
 
     public EntityProperties(int entityId, soupply.java335.type.Attribute[] attributes)

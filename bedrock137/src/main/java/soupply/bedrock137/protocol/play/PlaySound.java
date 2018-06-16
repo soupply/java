@@ -15,6 +15,7 @@ class PlaySound extends soupply.bedrock137.Packet
 
     public PlaySound()
     {
+        this.position = new soupply.bedrock137.type.BlockPosition();
     }
 
     public PlaySound(String name, soupply.bedrock137.type.BlockPosition position, float volume, float pitch)

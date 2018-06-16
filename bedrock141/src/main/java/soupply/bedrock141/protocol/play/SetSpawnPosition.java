@@ -18,6 +18,7 @@ class SetSpawnPosition extends soupply.bedrock141.Packet
 
     public SetSpawnPosition()
     {
+        this.position = new soupply.bedrock141.type.BlockPosition();
     }
 
     public SetSpawnPosition(int type, soupply.bedrock141.type.BlockPosition position, boolean forced)

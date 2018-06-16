@@ -13,6 +13,8 @@ class ItemFrameDropItem extends soupply.bedrock.Packet
 
     public ItemFrameDropItem()
     {
+        this.position = new soupply.bedrock.type.BlockPosition();
+        this.item = new soupply.bedrock.type.Slot();
     }
 
     public ItemFrameDropItem(soupply.bedrock.type.BlockPosition position, soupply.bedrock.type.Slot item)

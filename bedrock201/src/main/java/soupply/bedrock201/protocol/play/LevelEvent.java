@@ -69,6 +69,7 @@ class LevelEvent extends soupply.bedrock201.Packet
 
     public LevelEvent()
     {
+        this.position = new Tuples.FloatXYZ();
     }
 
     public LevelEvent(int eventId, Tuples.FloatXYZ position, int data)

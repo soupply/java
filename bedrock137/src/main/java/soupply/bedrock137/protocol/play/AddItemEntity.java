@@ -17,6 +17,10 @@ class AddItemEntity extends soupply.bedrock137.Packet
 
     public AddItemEntity()
     {
+        this.item = new soupply.bedrock137.type.Slot();
+        this.position = new Tuples.FloatXYZ();
+        this.motion = new Tuples.FloatXYZ();
+        this.metadata = new soupply.bedrock137.Metadata();
     }
 
     public AddItemEntity(long entityId, long runtimeId, soupply.bedrock137.type.Slot item, Tuples.FloatXYZ position, Tuples.FloatXYZ motion, soupply.bedrock137.Metadata metadata)

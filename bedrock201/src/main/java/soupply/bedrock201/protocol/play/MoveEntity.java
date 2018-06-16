@@ -18,6 +18,7 @@ class MoveEntity extends soupply.bedrock201.Packet
 
     public MoveEntity()
     {
+        this.position = new Tuples.FloatXYZ();
     }
 
     public MoveEntity(long entityId, Tuples.FloatXYZ position, byte pitch, byte headYaw, byte yaw, boolean onGround, boolean teleported)

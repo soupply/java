@@ -17,6 +17,7 @@ class ChunkData extends soupply.java210.Packet
 
     public ChunkData()
     {
+        this.position = new Tuples.IntXZ();
     }
 
     public ChunkData(Tuples.IntXZ position, boolean full, int sections, byte[] data, int tilesCount, byte[] tiles)

@@ -180,6 +180,7 @@ class LevelSoundEvent extends soupply.bedrock137.Packet
 
     public LevelSoundEvent()
     {
+        this.position = new Tuples.FloatXYZ();
     }
 
     public LevelSoundEvent(byte sound, Tuples.FloatXYZ position, int volume, int pitch, boolean unknown4, boolean disableRelativeVolume)

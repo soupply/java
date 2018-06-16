@@ -15,6 +15,7 @@ class ContainerOpen extends soupply.bedrock141.Packet
 
     public ContainerOpen()
     {
+        this.position = new soupply.bedrock141.type.BlockPosition();
     }
 
     public ContainerOpen(byte window, byte type, soupply.bedrock141.type.BlockPosition position, long entityId)

@@ -20,6 +20,7 @@ class UpdateBlock extends soupply.bedrock137.Packet
 
     public UpdateBlock()
     {
+        this.position = new soupply.bedrock137.type.BlockPosition();
     }
 
     public UpdateBlock(soupply.bedrock137.type.BlockPosition position, int block, int flagsAndMeta)

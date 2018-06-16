@@ -19,6 +19,7 @@ class ChangeDimension extends soupply.bedrock141.Packet
 
     public ChangeDimension()
     {
+        this.position = new Tuples.FloatXYZ();
     }
 
     public ChangeDimension(int dimension, Tuples.FloatXYZ position, boolean unknown2)

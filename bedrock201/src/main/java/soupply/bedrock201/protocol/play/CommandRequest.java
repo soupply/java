@@ -23,6 +23,7 @@ class CommandRequest extends soupply.bedrock201.Packet
 
     public CommandRequest()
     {
+        this.uuid = new soupply.bedrock201.type.McpeUuid();
     }
 
     public CommandRequest(String command, int type, soupply.bedrock201.type.McpeUuid uuid, String requestId, int playerId, boolean internal)

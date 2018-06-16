@@ -27,6 +27,7 @@ class MovePlayer extends soupply.bedrock.Packet
 
     public MovePlayer()
     {
+        this.position = new Tuples.FloatXYZ();
     }
 
     public MovePlayer(long entityId, Tuples.FloatXYZ position, float pitch, float headYaw, float yaw, byte animation, boolean onGround, long unknown7, int unknown8, int unknown9)

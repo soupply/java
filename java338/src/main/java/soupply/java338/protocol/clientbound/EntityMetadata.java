@@ -13,6 +13,7 @@ class EntityMetadata extends soupply.java338.Packet
 
     public EntityMetadata()
     {
+        this.metadata = new soupply.java338.Metadata();
     }
 
     public EntityMetadata(int entityId, soupply.java338.Metadata metadata)

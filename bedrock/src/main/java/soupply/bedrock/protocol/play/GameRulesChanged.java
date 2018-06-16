@@ -12,6 +12,7 @@ class GameRulesChanged extends soupply.bedrock.Packet
 
     public GameRulesChanged()
     {
+        this.rules = new soupply.bedrock.type.Rule[]();
     }
 
     public GameRulesChanged(soupply.bedrock.type.Rule[] rules)

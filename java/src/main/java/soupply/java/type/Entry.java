@@ -12,6 +12,7 @@ class Entry extends Type
 
     public Entry()
     {
+        this.item = new soupply.java.type.Slot();
     }
 
     public Entry(soupply.java.type.Slot item, byte craftingSlot, byte playerSlot)

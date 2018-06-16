@@ -19,6 +19,7 @@ class PlayerSkin extends soupply.bedrock150.Packet
 
     public PlayerSkin()
     {
+        this.uuid = new soupply.bedrock150.type.McpeUuid();
     }
 
     public PlayerSkin(soupply.bedrock150.type.McpeUuid uuid, String skinId, String skinName, String unknown3, byte[] skinData, byte[] capeData, String geometryModel, byte[] geometryData)

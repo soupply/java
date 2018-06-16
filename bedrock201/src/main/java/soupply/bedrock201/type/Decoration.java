@@ -13,6 +13,7 @@ class Decoration extends Type
 
     public Decoration()
     {
+        this.position = new Tuples.ByteXZ();
     }
 
     public Decoration(int rotationAndIcon, Tuples.ByteXZ position, String label, int color)

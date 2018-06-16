@@ -19,6 +19,8 @@ class SpawnObject extends soupply.java315.Packet
 
     public SpawnObject()
     {
+        this.position = new Tuples.DoubleXYZ();
+        this.velocity = new Tuples.ShortXYZ();
     }
 
     public SpawnObject(int entityId, UUID uuid, byte type, Tuples.DoubleXYZ position, byte pitch, byte yaw, int data, Tuples.ShortXYZ velocity)

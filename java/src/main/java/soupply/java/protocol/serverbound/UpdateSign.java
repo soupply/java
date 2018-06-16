@@ -13,6 +13,7 @@ class UpdateSign extends soupply.java.Packet
 
     public UpdateSign()
     {
+        this.lines = new String[4];
     }
 
     public UpdateSign(long position, String[] lines)

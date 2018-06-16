@@ -14,6 +14,8 @@ class ResourcePacksInfo extends soupply.bedrock201.Packet
 
     public ResourcePacksInfo()
     {
+        this.behaviourPacks = new soupply.bedrock201.type.PackWithSize[]();
+        this.resourcePacks = new soupply.bedrock201.type.PackWithSize[]();
     }
 
     public ResourcePacksInfo(boolean mustAccept, soupply.bedrock201.type.PackWithSize[] behaviourPacks, soupply.bedrock201.type.PackWithSize[] resourcePacks)

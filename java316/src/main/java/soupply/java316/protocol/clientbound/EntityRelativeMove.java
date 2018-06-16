@@ -14,6 +14,7 @@ class EntityRelativeMove extends soupply.java316.Packet
 
     public EntityRelativeMove()
     {
+        this.delta = new Tuples.ShortXYZ();
     }
 
     public EntityRelativeMove(int entityId, Tuples.ShortXYZ delta, boolean onGround)

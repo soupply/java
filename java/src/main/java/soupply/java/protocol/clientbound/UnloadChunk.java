@@ -12,6 +12,7 @@ class UnloadChunk extends soupply.java.Packet
 
     public UnloadChunk()
     {
+        this.position = new Tuples.IntXZ();
     }
 
     public UnloadChunk(Tuples.IntXZ position)

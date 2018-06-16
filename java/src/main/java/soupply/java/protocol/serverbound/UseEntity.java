@@ -24,6 +24,7 @@ class UseEntity extends soupply.java.Packet
 
     public UseEntity()
     {
+        this.targetPosition = new Tuples.FloatXYZ();
     }
 
     public UseEntity(int target, int type, Tuples.FloatXYZ targetPosition, int hand)

@@ -13,6 +13,7 @@ class BlockEntityData extends soupply.bedrock201.Packet
 
     public BlockEntityData()
     {
+        this.position = new soupply.bedrock201.type.BlockPosition();
     }
 
     public BlockEntityData(soupply.bedrock201.type.BlockPosition position, byte[] nbt)

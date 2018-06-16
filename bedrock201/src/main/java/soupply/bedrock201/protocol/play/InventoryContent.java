@@ -13,6 +13,7 @@ class InventoryContent extends soupply.bedrock201.Packet
 
     public InventoryContent()
     {
+        this.slots = new soupply.bedrock201.type.Slot[]();
     }
 
     public InventoryContent(int window, soupply.bedrock201.type.Slot[] slots)

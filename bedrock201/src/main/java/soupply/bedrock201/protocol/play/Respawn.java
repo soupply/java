@@ -12,6 +12,7 @@ class Respawn extends soupply.bedrock201.Packet
 
     public Respawn()
     {
+        this.position = new Tuples.FloatXYZ();
     }
 
     public Respawn(Tuples.FloatXYZ position)

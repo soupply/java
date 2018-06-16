@@ -1,4 +1,4 @@
-package soupply.util.ByteXZ;
+package soupply.util;
 
 class ByteXZ
 {

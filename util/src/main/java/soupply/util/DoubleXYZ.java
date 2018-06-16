@@ -1,4 +1,4 @@
-package soupply.util.DoubleXYZ;
+package soupply.util;
 
 class DoubleXYZ
 {

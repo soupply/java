@@ -1,4 +1,4 @@
-package soupply.util.ShortXYZ;
+package soupply.util;
 
 class ShortXYZ
 {

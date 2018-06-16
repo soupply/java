@@ -1,4 +1,4 @@
-package soupply.util.IntXZ;
+package soupply.util;
 
 class IntXZ
 {

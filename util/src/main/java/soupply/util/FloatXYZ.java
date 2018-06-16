@@ -1,4 +1,4 @@
-package soupply.util.FloatXYZ;
+package soupply.util;
 
 class FloatXYZ
 {

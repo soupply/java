@@ -16,19 +16,19 @@ class ClientboundMapItemData extends soupply.bedrock150.Packet
     public long mapId;
     public int update;
     public byte scale;
-    public Tuples.IntXZ size;
-    public Tuples.IntXZ offset;
+    public IntXZ size;
+    public IntXZ offset;
     public byte[] data;
     public soupply.bedrock150.type.Decoration[] decorations;
 
     public ClientboundMapItemData()
     {
-        this.size = new Tuples.IntXZ();
-        this.offset = new Tuples.IntXZ();
+        this.size = new IntXZ();
+        this.offset = new IntXZ();
         this.decorations = new soupply.bedrock150.type.Decoration[]();
     }
 
-    public ClientboundMapItemData(long mapId, int update, byte scale, Tuples.IntXZ size, Tuples.IntXZ offset, byte[] data, soupply.bedrock150.type.Decoration[] decorations)
+    public ClientboundMapItemData(long mapId, int update, byte scale, IntXZ size, IntXZ offset, byte[] data, soupply.bedrock150.type.Decoration[] decorations)
     {
         this.mapId = mapId;
         this.update = update;

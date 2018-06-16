@@ -19,14 +19,14 @@ class Icon extends Type
     public static final byte TEMPLE = 9;
 
     public byte directionAndType;
-    public Tuples.ByteXZ position;
+    public ByteXZ position;
 
     public Icon()
     {
-        this.position = new Tuples.ByteXZ();
+        this.position = new ByteXZ();
     }
 
-    public Icon(byte directionAndType, Tuples.ByteXZ position)
+    public Icon(byte directionAndType, ByteXZ position)
     {
         this.directionAndType = directionAndType;
         this.position = position;

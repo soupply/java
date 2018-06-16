@@ -64,15 +64,15 @@ class LevelEvent extends soupply.bedrock137.Packet
     public static final int PARTICLE_SPAWN = 2004;
 
     public int eventId;
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public int data;
 
     public LevelEvent()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public LevelEvent(int eventId, Tuples.FloatXYZ position, int data)
+    public LevelEvent(int eventId, FloatXYZ position, int data)
     {
         this.eventId = eventId;
         this.position = position;

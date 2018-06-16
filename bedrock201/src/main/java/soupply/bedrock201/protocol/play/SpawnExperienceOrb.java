@@ -8,15 +8,15 @@ class SpawnExperienceOrb extends soupply.bedrock201.Packet
 
     public static final int ID = 66;
 
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public int count;
 
     public SpawnExperienceOrb()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public SpawnExperienceOrb(Tuples.FloatXYZ position, int count)
+    public SpawnExperienceOrb(FloatXYZ position, int count)
     {
         this.position = position;
         this.count = count;

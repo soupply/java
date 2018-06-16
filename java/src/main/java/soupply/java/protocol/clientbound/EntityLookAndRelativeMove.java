@@ -9,17 +9,17 @@ class EntityLookAndRelativeMove extends soupply.java.Packet
     public static final int ID = 39;
 
     public int entityId;
-    public Tuples.ShortXYZ delta;
+    public ShortXYZ delta;
     public byte yaw;
     public byte pitch;
     public boolean onGround;
 
     public EntityLookAndRelativeMove()
     {
-        this.delta = new Tuples.ShortXYZ();
+        this.delta = new ShortXYZ();
     }
 
-    public EntityLookAndRelativeMove(int entityId, Tuples.ShortXYZ delta, byte yaw, byte pitch, boolean onGround)
+    public EntityLookAndRelativeMove(int entityId, ShortXYZ delta, byte yaw, byte pitch, boolean onGround)
     {
         this.entityId = entityId;
         this.delta = delta;

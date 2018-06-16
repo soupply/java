@@ -8,17 +8,17 @@ class Explode extends soupply.bedrock150.Packet
 
     public static final int ID = 23;
 
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public float radius;
     public soupply.bedrock150.type.BlockPosition[] destroyedBlocks;
 
     public Explode()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
         this.destroyedBlocks = new soupply.bedrock150.type.BlockPosition[]();
     }
 
-    public Explode(Tuples.FloatXYZ position, float radius, soupply.bedrock150.type.BlockPosition[] destroyedBlocks)
+    public Explode(FloatXYZ position, float radius, soupply.bedrock150.type.BlockPosition[] destroyedBlocks)
     {
         this.position = position;
         this.radius = radius;

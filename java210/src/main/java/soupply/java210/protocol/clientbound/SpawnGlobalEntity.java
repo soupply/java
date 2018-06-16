@@ -13,14 +13,14 @@ class SpawnGlobalEntity extends soupply.java210.Packet
 
     public int entityId;
     public byte type;
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
 
     public SpawnGlobalEntity()
     {
-        this.position = new Tuples.DoubleXYZ();
+        this.position = new DoubleXYZ();
     }
 
-    public SpawnGlobalEntity(int entityId, byte type, Tuples.DoubleXYZ position)
+    public SpawnGlobalEntity(int entityId, byte type, DoubleXYZ position)
     {
         this.entityId = entityId;
         this.type = type;

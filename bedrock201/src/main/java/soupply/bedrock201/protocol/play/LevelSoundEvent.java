@@ -177,7 +177,7 @@ class LevelSoundEvent extends soupply.bedrock201.Packet
     public static final byte UNDEFINED = 167;
 
     public byte sound;
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public int volume;
     public int pitch;
     public boolean unknown4;
@@ -185,10 +185,10 @@ class LevelSoundEvent extends soupply.bedrock201.Packet
 
     public LevelSoundEvent()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public LevelSoundEvent(byte sound, Tuples.FloatXYZ position, int volume, int pitch, boolean unknown4, boolean disableRelativeVolume)
+    public LevelSoundEvent(byte sound, FloatXYZ position, int volume, int pitch, boolean unknown4, boolean disableRelativeVolume)
     {
         this.sound = sound;
         this.position = position;

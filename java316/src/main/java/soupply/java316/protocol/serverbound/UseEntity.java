@@ -19,15 +19,15 @@ class UseEntity extends soupply.java316.Packet
 
     public int target;
     public int type;
-    public Tuples.FloatXYZ targetPosition;
+    public FloatXYZ targetPosition;
     public int hand;
 
     public UseEntity()
     {
-        this.targetPosition = new Tuples.FloatXYZ();
+        this.targetPosition = new FloatXYZ();
     }
 
-    public UseEntity(int target, int type, Tuples.FloatXYZ targetPosition, int hand)
+    public UseEntity(int target, int type, FloatXYZ targetPosition, int hand)
     {
         this.target = target;
         this.type = type;

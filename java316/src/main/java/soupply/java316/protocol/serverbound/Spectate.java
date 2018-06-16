@@ -12,6 +12,7 @@ class Spectate extends soupply.java316.Packet
 
     public Spectate()
     {
+        this.player = new UUID();
     }
 
     public Spectate(UUID player)

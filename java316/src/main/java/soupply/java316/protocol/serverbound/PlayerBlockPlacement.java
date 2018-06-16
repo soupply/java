@@ -15,14 +15,14 @@ class PlayerBlockPlacement extends soupply.java316.Packet
     public long position;
     public int face;
     public int hand;
-    public Tuples.FloatXYZ cursorPosition;
+    public FloatXYZ cursorPosition;
 
     public PlayerBlockPlacement()
     {
-        this.cursorPosition = new Tuples.FloatXYZ();
+        this.cursorPosition = new FloatXYZ();
     }
 
-    public PlayerBlockPlacement(long position, int face, int hand, Tuples.FloatXYZ cursorPosition)
+    public PlayerBlockPlacement(long position, int face, int hand, FloatXYZ cursorPosition)
     {
         this.position = position;
         this.face = face;

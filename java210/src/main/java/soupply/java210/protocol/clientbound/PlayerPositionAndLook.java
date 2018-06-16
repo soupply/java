@@ -15,7 +15,7 @@ class PlayerPositionAndLook extends soupply.java210.Packet
     public static final byte Y_ROTATION = 8;
     public static final byte X_ROTATION = 16;
 
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
     public float yaw;
     public float pitch;
     public byte flags;
@@ -23,10 +23,10 @@ class PlayerPositionAndLook extends soupply.java210.Packet
 
     public PlayerPositionAndLook()
     {
-        this.position = new Tuples.DoubleXYZ();
+        this.position = new DoubleXYZ();
     }
 
-    public PlayerPositionAndLook(Tuples.DoubleXYZ position, float yaw, float pitch, byte flags, int teleportId)
+    public PlayerPositionAndLook(DoubleXYZ position, float yaw, float pitch, byte flags, int teleportId)
     {
         this.position = position;
         this.yaw = yaw;

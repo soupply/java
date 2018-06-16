@@ -36,7 +36,7 @@ class StartGame extends soupply.bedrock160.Packet
     public long entityId;
     public long runtimeId;
     public int gamemode;
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public float yaw;
     public float pitch;
     public int seed;
@@ -44,7 +44,7 @@ class StartGame extends soupply.bedrock160.Packet
     public int generator = 1;
     public int worldGamemode;
     public int difficulty;
-    public Tuples.IntXYZ spawnPosition;
+    public IntXYZ spawnPosition;
     public boolean loadedInCreative;
     public int time;
     public byte version;
@@ -70,12 +70,12 @@ class StartGame extends soupply.bedrock160.Packet
 
     public StartGame()
     {
-        this.position = new Tuples.FloatXYZ();
-        this.spawnPosition = new Tuples.IntXYZ();
+        this.position = new FloatXYZ();
+        this.spawnPosition = new IntXYZ();
         this.gameRules = new soupply.bedrock160.type.Rule[]();
     }
 
-    public StartGame(long entityId, long runtimeId, int gamemode, Tuples.FloatXYZ position, float yaw, float pitch, int seed, int dimension, int generator, int worldGamemode, int difficulty, Tuples.IntXYZ spawnPosition, boolean loadedInCreative, int time, byte version, float rainLevel, float lightningLevel, boolean multiplayerGame, boolean broadcastToLan, boolean broadcastToXbl, boolean commandsEnabled, boolean textureRequired, soupply.bedrock160.type.Rule[] gameRules, boolean bonusChestEnabled, boolean startWithMapEnabled, boolean trustPlayersEnabled, int permissionLevel, int unknown27, String levelId, String worldName, String premiumWorldTemplate, boolean unknown31, long worldTicks, int unknown33)
+    public StartGame(long entityId, long runtimeId, int gamemode, FloatXYZ position, float yaw, float pitch, int seed, int dimension, int generator, int worldGamemode, int difficulty, IntXYZ spawnPosition, boolean loadedInCreative, int time, byte version, float rainLevel, float lightningLevel, boolean multiplayerGame, boolean broadcastToLan, boolean broadcastToXbl, boolean commandsEnabled, boolean textureRequired, soupply.bedrock160.type.Rule[] gameRules, boolean bonusChestEnabled, boolean startWithMapEnabled, boolean trustPlayersEnabled, int permissionLevel, int unknown27, String levelId, String worldName, String premiumWorldTemplate, boolean unknown31, long worldTicks, int unknown33)
     {
         this.entityId = entityId;
         this.runtimeId = runtimeId;

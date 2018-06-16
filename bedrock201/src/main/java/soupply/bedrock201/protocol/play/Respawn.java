@@ -8,14 +8,14 @@ class Respawn extends soupply.bedrock201.Packet
 
     public static final int ID = 45;
 
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
 
     public Respawn()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public Respawn(Tuples.FloatXYZ position)
+    public Respawn(FloatXYZ position)
     {
         this.position = position;
     }

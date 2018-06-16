@@ -8,17 +8,17 @@ class PlayerPositionAndLook extends soupply.java340.Packet
 
     public static final int ID = 14;
 
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
     public float yaw;
     public float pitch;
     public boolean onGround;
 
     public PlayerPositionAndLook()
     {
-        this.position = new Tuples.DoubleXYZ();
+        this.position = new DoubleXYZ();
     }
 
-    public PlayerPositionAndLook(Tuples.DoubleXYZ position, float yaw, float pitch, boolean onGround)
+    public PlayerPositionAndLook(DoubleXYZ position, float yaw, float pitch, boolean onGround)
     {
         this.position = position;
         this.yaw = yaw;

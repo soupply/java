@@ -8,15 +8,15 @@ class PlayerPosition extends soupply.java315.Packet
 
     public static final int ID = 12;
 
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
     public boolean onGround;
 
     public PlayerPosition()
     {
-        this.position = new Tuples.DoubleXYZ();
+        this.position = new DoubleXYZ();
     }
 
-    public PlayerPosition(Tuples.DoubleXYZ position, boolean onGround)
+    public PlayerPosition(DoubleXYZ position, boolean onGround)
     {
         this.position = position;
         this.onGround = onGround;

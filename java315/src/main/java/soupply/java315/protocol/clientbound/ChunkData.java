@@ -8,7 +8,7 @@ class ChunkData extends soupply.java315.Packet
 
     public static final int ID = 32;
 
-    public Tuples.IntXZ position;
+    public IntXZ position;
     public boolean full;
     public int sections;
     public byte[] data;
@@ -17,10 +17,10 @@ class ChunkData extends soupply.java315.Packet
 
     public ChunkData()
     {
-        this.position = new Tuples.IntXZ();
+        this.position = new IntXZ();
     }
 
-    public ChunkData(Tuples.IntXZ position, boolean full, int sections, byte[] data, int tilesCount, byte[] tiles)
+    public ChunkData(IntXZ position, boolean full, int sections, byte[] data, int tilesCount, byte[] tiles)
     {
         this.position = position;
         this.full = full;

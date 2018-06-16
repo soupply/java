@@ -9,7 +9,7 @@ class MoveEntity extends soupply.bedrock141.Packet
     public static final int ID = 18;
 
     public long entityId;
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public byte pitch;
     public byte headYaw;
     public byte yaw;
@@ -18,10 +18,10 @@ class MoveEntity extends soupply.bedrock141.Packet
 
     public MoveEntity()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public MoveEntity(long entityId, Tuples.FloatXYZ position, byte pitch, byte headYaw, byte yaw, boolean onGround, boolean teleported)
+    public MoveEntity(long entityId, FloatXYZ position, byte pitch, byte headYaw, byte yaw, boolean onGround, boolean teleported)
     {
         this.entityId = entityId;
         this.position = position;

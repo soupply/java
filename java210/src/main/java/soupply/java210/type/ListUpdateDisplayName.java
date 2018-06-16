@@ -12,6 +12,7 @@ class ListUpdateDisplayName extends Type
 
     public ListUpdateDisplayName()
     {
+        this.uuid = new UUID();
     }
 
     public ListUpdateDisplayName(UUID uuid, boolean hasDisplayName, String displayName)

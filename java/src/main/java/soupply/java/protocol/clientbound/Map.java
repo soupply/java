@@ -14,16 +14,16 @@ class Map extends soupply.java.Packet
     public soupply.java.type.Icon[] icons;
     public byte colums;
     public byte rows;
-    public Tuples.ByteXZ offset;
+    public ByteXZ offset;
     public byte[] data;
 
     public Map()
     {
         this.icons = new soupply.java.type.Icon[]();
-        this.offset = new Tuples.ByteXZ();
+        this.offset = new ByteXZ();
     }
 
-    public Map(int mapId, byte scale, boolean showIcons, soupply.java.type.Icon[] icons, byte colums, byte rows, Tuples.ByteXZ offset, byte[] data)
+    public Map(int mapId, byte scale, boolean showIcons, soupply.java.type.Icon[] icons, byte colums, byte rows, ByteXZ offset, byte[] data)
     {
         this.mapId = mapId;
         this.scale = scale;

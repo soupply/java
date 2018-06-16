@@ -13,6 +13,7 @@ class BossBar extends soupply.java338.Packet
 
     public BossBar()
     {
+        this.uuid = new UUID();
     }
 
     public BossBar(UUID uuid, int action)

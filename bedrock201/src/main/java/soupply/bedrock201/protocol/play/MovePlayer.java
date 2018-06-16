@@ -15,7 +15,7 @@ class MovePlayer extends soupply.bedrock201.Packet
     public static final byte PITCH = 3;
 
     public long entityId;
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public float pitch;
     public float headYaw;
     public float yaw;
@@ -27,10 +27,10 @@ class MovePlayer extends soupply.bedrock201.Packet
 
     public MovePlayer()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public MovePlayer(long entityId, Tuples.FloatXYZ position, float pitch, float headYaw, float yaw, byte animation, boolean onGround, long unknown7, int unknown8, int unknown9)
+    public MovePlayer(long entityId, FloatXYZ position, float pitch, float headYaw, float yaw, byte animation, boolean onGround, long unknown7, int unknown8, int unknown9)
     {
         this.entityId = entityId;
         this.position = position;

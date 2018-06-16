@@ -9,15 +9,15 @@ class EntityRelativeMove extends soupply.java.Packet
     public static final int ID = 38;
 
     public int entityId;
-    public Tuples.ShortXYZ delta;
+    public ShortXYZ delta;
     public boolean onGround;
 
     public EntityRelativeMove()
     {
-        this.delta = new Tuples.ShortXYZ();
+        this.delta = new ShortXYZ();
     }
 
-    public EntityRelativeMove(int entityId, Tuples.ShortXYZ delta, boolean onGround)
+    public EntityRelativeMove(int entityId, ShortXYZ delta, boolean onGround)
     {
         this.entityId = entityId;
         this.delta = delta;

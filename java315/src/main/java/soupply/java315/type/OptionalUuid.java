@@ -11,6 +11,7 @@ class OptionalUuid extends Type
 
     public OptionalUuid()
     {
+        this.uuid = new UUID();
     }
 
     public OptionalUuid(boolean hasUuid, UUID uuid)

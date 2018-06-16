@@ -9,15 +9,15 @@ class SpawnExperienceOrb extends soupply.java338.Packet
     public static final int ID = 1;
 
     public int entityId;
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
     public short count;
 
     public SpawnExperienceOrb()
     {
-        this.position = new Tuples.DoubleXYZ();
+        this.position = new DoubleXYZ();
     }
 
-    public SpawnExperienceOrb(int entityId, Tuples.DoubleXYZ position, short count)
+    public SpawnExperienceOrb(int entityId, DoubleXYZ position, short count)
     {
         this.entityId = entityId;
         this.position = position;

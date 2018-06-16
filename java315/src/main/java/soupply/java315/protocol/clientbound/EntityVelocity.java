@@ -9,14 +9,14 @@ class EntityVelocity extends soupply.java315.Packet
     public static final int ID = 59;
 
     public int entityId;
-    public Tuples.ShortXYZ velocity;
+    public ShortXYZ velocity;
 
     public EntityVelocity()
     {
-        this.velocity = new Tuples.ShortXYZ();
+        this.velocity = new ShortXYZ();
     }
 
-    public EntityVelocity(int entityId, Tuples.ShortXYZ velocity)
+    public EntityVelocity(int entityId, ShortXYZ velocity)
     {
         this.entityId = entityId;
         this.velocity = velocity;

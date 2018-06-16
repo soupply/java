@@ -8,16 +8,16 @@ class BlockPickRequest extends soupply.bedrock150.Packet
 
     public static final int ID = 34;
 
-    public Tuples.IntXYZ position;
+    public IntXYZ position;
     public boolean unknown1;
     public byte slot;
 
     public BlockPickRequest()
     {
-        this.position = new Tuples.IntXYZ();
+        this.position = new IntXYZ();
     }
 
-    public BlockPickRequest(Tuples.IntXYZ position, boolean unknown1, byte slot)
+    public BlockPickRequest(IntXYZ position, boolean unknown1, byte slot)
     {
         this.position = position;
         this.unknown1 = unknown1;

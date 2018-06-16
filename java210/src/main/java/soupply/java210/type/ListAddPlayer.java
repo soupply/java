@@ -22,6 +22,7 @@ class ListAddPlayer extends Type
 
     public ListAddPlayer()
     {
+        this.uuid = new UUID();
         this.properties = new soupply.java210.type.Property[]();
     }
 

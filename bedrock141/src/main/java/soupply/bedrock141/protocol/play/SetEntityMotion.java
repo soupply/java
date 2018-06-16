@@ -9,14 +9,14 @@ class SetEntityMotion extends soupply.bedrock141.Packet
     public static final int ID = 40;
 
     public long entityId;
-    public Tuples.FloatXYZ motion;
+    public FloatXYZ motion;
 
     public SetEntityMotion()
     {
-        this.motion = new Tuples.FloatXYZ();
+        this.motion = new FloatXYZ();
     }
 
-    public SetEntityMotion(long entityId, Tuples.FloatXYZ motion)
+    public SetEntityMotion(long entityId, FloatXYZ motion)
     {
         this.entityId = entityId;
         this.motion = motion;

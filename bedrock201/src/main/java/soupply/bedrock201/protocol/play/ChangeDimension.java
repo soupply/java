@@ -14,15 +14,15 @@ class ChangeDimension extends soupply.bedrock201.Packet
     public static final int END = 2;
 
     public int dimension;
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public boolean unknown2;
 
     public ChangeDimension()
     {
-        this.position = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
     }
 
-    public ChangeDimension(int dimension, Tuples.FloatXYZ position, boolean unknown2)
+    public ChangeDimension(int dimension, FloatXYZ position, boolean unknown2)
     {
         this.dimension = dimension;
         this.position = position;

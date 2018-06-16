@@ -8,19 +8,19 @@ class Explosion extends soupply.java338.Packet
 
     public static final int ID = 28;
 
-    public Tuples.FloatXYZ position;
+    public FloatXYZ position;
     public float radius;
-    public Tuples.ByteXYZ[] records;
-    public Tuples.FloatXYZ motion;
+    public ByteXYZ[] records;
+    public FloatXYZ motion;
 
     public Explosion()
     {
-        this.position = new Tuples.FloatXYZ();
-        this.records = new Tuples.ByteXYZ[]();
-        this.motion = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
+        this.records = new ByteXYZ[]();
+        this.motion = new FloatXYZ();
     }
 
-    public Explosion(Tuples.FloatXYZ position, float radius, Tuples.ByteXYZ[] records, Tuples.FloatXYZ motion)
+    public Explosion(FloatXYZ position, float radius, ByteXYZ[] records, FloatXYZ motion)
     {
         this.position = position;
         this.radius = radius;

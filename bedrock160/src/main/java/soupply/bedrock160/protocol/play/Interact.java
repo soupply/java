@@ -15,14 +15,14 @@ class Interact extends soupply.bedrock160.Packet
 
     public byte action;
     public long target;
-    public Tuples.FloatXYZ targetPosition;
+    public FloatXYZ targetPosition;
 
     public Interact()
     {
-        this.targetPosition = new Tuples.FloatXYZ();
+        this.targetPosition = new FloatXYZ();
     }
 
-    public Interact(byte action, long target, Tuples.FloatXYZ targetPosition)
+    public Interact(byte action, long target, FloatXYZ targetPosition)
     {
         this.action = action;
         this.target = target;

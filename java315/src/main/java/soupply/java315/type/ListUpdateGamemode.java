@@ -17,6 +17,7 @@ class ListUpdateGamemode extends Type
 
     public ListUpdateGamemode()
     {
+        this.uuid = new UUID();
     }
 
     public ListUpdateGamemode(UUID uuid, int gamemode)

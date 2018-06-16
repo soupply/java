@@ -8,16 +8,16 @@ class VehicleMove extends soupply.java.Packet
 
     public static final int ID = 16;
 
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
     public float yaw;
     public float pitch;
 
     public VehicleMove()
     {
-        this.position = new Tuples.DoubleXYZ();
+        this.position = new DoubleXYZ();
     }
 
-    public VehicleMove(Tuples.DoubleXYZ position, float yaw, float pitch)
+    public VehicleMove(DoubleXYZ position, float yaw, float pitch)
     {
         this.position = position;
         this.yaw = yaw;

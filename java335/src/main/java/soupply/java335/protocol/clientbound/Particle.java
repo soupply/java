@@ -59,20 +59,20 @@ class Particle extends soupply.java335.Packet
 
     public int particleId;
     public boolean longDistance;
-    public Tuples.FloatXYZ position;
-    public Tuples.FloatXYZ offset;
+    public FloatXYZ position;
+    public FloatXYZ offset;
     public float data;
     public int count;
     public int[] additionalData;
 
     public Particle()
     {
-        this.position = new Tuples.FloatXYZ();
-        this.offset = new Tuples.FloatXYZ();
+        this.position = new FloatXYZ();
+        this.offset = new FloatXYZ();
         this.additionalData = new int[2];
     }
 
-    public Particle(int particleId, boolean longDistance, Tuples.FloatXYZ position, Tuples.FloatXYZ offset, float data, int count, int[] additionalData)
+    public Particle(int particleId, boolean longDistance, FloatXYZ position, FloatXYZ offset, float data, int count, int[] additionalData)
     {
         this.particleId = particleId;
         this.longDistance = longDistance;

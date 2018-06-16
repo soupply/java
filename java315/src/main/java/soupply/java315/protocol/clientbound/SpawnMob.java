@@ -11,21 +11,22 @@ class SpawnMob extends soupply.java315.Packet
     public int entityId;
     public UUID uuid;
     public int type;
-    public Tuples.DoubleXYZ position;
+    public DoubleXYZ position;
     public byte yaw;
     public byte pitch;
     public byte headPitch;
-    public Tuples.ShortXYZ velocity;
+    public ShortXYZ velocity;
     public soupply.java315.Metadata metadata;
 
     public SpawnMob()
     {
-        this.position = new Tuples.DoubleXYZ();
-        this.velocity = new Tuples.ShortXYZ();
+        this.uuid = new UUID();
+        this.position = new DoubleXYZ();
+        this.velocity = new ShortXYZ();
         this.metadata = new soupply.java315.Metadata();
     }
 
-    public SpawnMob(int entityId, UUID uuid, int type, Tuples.DoubleXYZ position, byte yaw, byte pitch, byte headPitch, Tuples.ShortXYZ velocity, soupply.java315.Metadata metadata)
+    public SpawnMob(int entityId, UUID uuid, int type, DoubleXYZ position, byte yaw, byte pitch, byte headPitch, ShortXYZ velocity, soupply.java315.Metadata metadata)
     {
         this.entityId = entityId;
         this.uuid = uuid;

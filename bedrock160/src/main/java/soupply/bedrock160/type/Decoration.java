@@ -7,16 +7,16 @@ class Decoration extends Type
 {
 
     public int rotationAndIcon;
-    public Tuples.ByteXZ position;
+    public ByteXZ position;
     public String label;
     public int color;
 
     public Decoration()
     {
-        this.position = new Tuples.ByteXZ();
+        this.position = new ByteXZ();
     }
 
-    public Decoration(int rotationAndIcon, Tuples.ByteXZ position, String label, int color)
+    public Decoration(int rotationAndIcon, ByteXZ position, String label, int color)
     {
         this.rotationAndIcon = rotationAndIcon;
         this.position = position;

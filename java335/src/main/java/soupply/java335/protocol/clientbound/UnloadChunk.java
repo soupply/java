@@ -8,14 +8,14 @@ class UnloadChunk extends soupply.java335.Packet
 
     public static final int ID = 29;
 
-    public Tuples.IntXZ position;
+    public IntXZ position;
 
     public UnloadChunk()
     {
-        this.position = new Tuples.IntXZ();
+        this.position = new IntXZ();
     }
 
-    public UnloadChunk(Tuples.IntXZ position)
+    public UnloadChunk(IntXZ position)
     {
         this.position = position;
     }

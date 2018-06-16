@@ -11,6 +11,7 @@ class ListUpdateLatency extends Type
 
     public ListUpdateLatency()
     {
+        this.uuid = new UUID();
     }
 
     public ListUpdateLatency(UUID uuid, int latency)

@@ -9,7 +9,7 @@ public class SpawnGlobalEntity extends soupply.java316.Packet
     public static final int ID = 2;
 
     // type
-    public static final byte THUNDERBOLT = 1;
+    public static final byte THUNDERBOLT = (byte)1;
 
     public int entityId;
     public byte type;

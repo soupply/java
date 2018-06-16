@@ -9,8 +9,8 @@ public class SetEntityLink extends soupply.bedrock141.Packet
     public static final int ID = 41;
 
     // action
-    public static final byte REMOVE = 0;
-    public static final byte ADD = 1;
+    public static final byte REMOVE = (byte)0;
+    public static final byte ADD = (byte)1;
 
     public long vehicle;
     public long passenger;

@@ -9,8 +9,8 @@ public class Animate extends soupply.bedrock.Packet
     public static final int ID = 44;
 
     // action
-    public static final int BREAKING = 1;
-    public static final int WAKE_UP = 3;
+    public static final int BREAKING = (int)1;
+    public static final int WAKE_UP = (int)3;
 
     public int action;
     public long entityId;

@@ -9,9 +9,9 @@ public class ClientboundMapItemData extends soupply.bedrock137.Packet
     public static final int ID = 67;
 
     // update
-    public static final int TEXTURE = 2;
-    public static final int DECORATIONS = 4;
-    public static final int ENTITIES = 8;
+    public static final int TEXTURE = (int)2;
+    public static final int DECORATIONS = (int)4;
+    public static final int ENTITIES = (int)8;
 
     public long mapId;
     public int update;

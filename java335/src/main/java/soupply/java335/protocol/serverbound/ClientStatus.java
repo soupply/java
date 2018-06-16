@@ -9,8 +9,8 @@ public class ClientStatus extends soupply.java335.Packet
     public static final int ID = 4;
 
     // action
-    public static final int RESPAWN = 0;
-    public static final int REQUEST_STATS = 1;
+    public static final int RESPAWN = (int)0;
+    public static final int REQUEST_STATS = (int)1;
 
     public int action;
 

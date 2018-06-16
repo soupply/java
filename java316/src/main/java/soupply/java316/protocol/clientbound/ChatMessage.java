@@ -9,9 +9,9 @@ public class ChatMessage extends soupply.java316.Packet
     public static final int ID = 15;
 
     // position
-    public static final byte CHAT = 0;
-    public static final byte SYSTEM_MESSAGE = 1;
-    public static final byte ABOVE_HOTBAR = 2;
+    public static final byte CHAT = (byte)0;
+    public static final byte SYSTEM_MESSAGE = (byte)1;
+    public static final byte ABOVE_HOTBAR = (byte)2;
 
     public String message;
     public byte position;

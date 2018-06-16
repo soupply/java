@@ -7,9 +7,9 @@ public class Modifier extends Type
 {
 
     // operation
-    public static final byte ADD_SUBSTRACT_AMOUNT = 0;
-    public static final byte ADD_SUBSTRACT_AMOUNT_PERCENTAGE = 1;
-    public static final byte MULTIPLY_AMOUNT_PERCENTAGE = 2;
+    public static final byte ADD_SUBSTRACT_AMOUNT = (byte)0;
+    public static final byte ADD_SUBSTRACT_AMOUNT_PERCENTAGE = (byte)1;
+    public static final byte MULTIPLY_AMOUNT_PERCENTAGE = (byte)2;
 
     public UUID uuid;
     public double amount;

@@ -9,9 +9,9 @@ public class UnlockRecipes extends soupply.java340.Packet
     public static final int ID = 49;
 
     // action
-    public static final int ADD = 1;
-    public static final int REMOVE = 2;
-    public static final int ADD_WITHOUT_NOTIFICATION = 3;
+    public static final int ADD = (int)1;
+    public static final int REMOVE = (int)2;
+    public static final int ADD_WITHOUT_NOTIFICATION = (int)3;
 
     public int action;
     public boolean openBook;

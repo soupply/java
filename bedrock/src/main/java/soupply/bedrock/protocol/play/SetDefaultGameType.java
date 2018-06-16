@@ -9,9 +9,9 @@ public class SetDefaultGameType extends soupply.bedrock.Packet
     public static final int ID = 105;
 
     // game type
-    public static final int SURVIVAL = 0;
-    public static final int CREATIVE = 1;
-    public static final int ADVENTURE = 2;
+    public static final int SURVIVAL = (int)0;
+    public static final int CREATIVE = (int)1;
+    public static final int ADVENTURE = (int)2;
 
     public int gameType;
 

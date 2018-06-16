@@ -9,8 +9,8 @@ public class ShowCredits extends soupply.bedrock150.Packet
     public static final int ID = 75;
 
     // status
-    public static final int START = 0;
-    public static final int END = 1;
+    public static final int START = (int)0;
+    public static final int END = (int)1;
 
     public long entityId;
     public int status;

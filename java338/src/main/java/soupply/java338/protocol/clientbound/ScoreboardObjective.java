@@ -9,9 +9,9 @@ public class ScoreboardObjective extends soupply.java338.Packet
     public static final int ID = 66;
 
     // mode
-    public static final byte CREATE = 0;
-    public static final byte REMOVE = 1;
-    public static final byte UPDATE = 2;
+    public static final byte CREATE = (byte)0;
+    public static final byte REMOVE = (byte)1;
+    public static final byte UPDATE = (byte)2;
 
     // type
     public static final String NUMERIC = "integer";

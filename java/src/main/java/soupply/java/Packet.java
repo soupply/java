@@ -1,5 +1,7 @@
 package soupply.java;
 
+import soupply.util.Buffer;
+
 public abstract class Packet extends soupply.util.Packet
 {
 

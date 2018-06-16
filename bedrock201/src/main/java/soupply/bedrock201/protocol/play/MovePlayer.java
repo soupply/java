@@ -9,10 +9,10 @@ public class MovePlayer extends soupply.bedrock201.Packet
     public static final int ID = 19;
 
     // animation
-    public static final byte FULL = 0;
-    public static final byte NONE = 1;
-    public static final byte TELEPORT = 2;
-    public static final byte PITCH = 3;
+    public static final byte FULL = (byte)0;
+    public static final byte NONE = (byte)1;
+    public static final byte TELEPORT = (byte)2;
+    public static final byte PITCH = (byte)3;
 
     public long entityId;
     public FloatXYZ position;

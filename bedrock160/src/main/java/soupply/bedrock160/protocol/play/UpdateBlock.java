@@ -9,10 +9,10 @@ public class UpdateBlock extends soupply.bedrock160.Packet
     public static final int ID = 21;
 
     // flags and meta
-    public static final int NEIGHBORS = 1;
-    public static final int NETWORK = 2;
-    public static final int NO_GRAPHIC = 4;
-    public static final int PRIORITY = 8;
+    public static final int NEIGHBORS = (int)1;
+    public static final int NETWORK = (int)2;
+    public static final int NO_GRAPHIC = (int)4;
+    public static final int PRIORITY = (int)8;
 
     public soupply.bedrock160.type.BlockPosition position;
     public int block;

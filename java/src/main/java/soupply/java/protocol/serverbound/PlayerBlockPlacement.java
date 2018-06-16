@@ -9,8 +9,8 @@ public class PlayerBlockPlacement extends soupply.java.Packet
     public static final int ID = 31;
 
     // hand
-    public static final int MAIN_HAND = 0;
-    public static final int OFF_HAND = 1;
+    public static final int MAIN_HAND = (int)0;
+    public static final int OFF_HAND = (int)1;
 
     public long position;
     public int face;

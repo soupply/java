@@ -1,5 +1,7 @@
 package soupply.bedrock137;
 
+import soupply.util.Buffer;
+
 public abstract class Packet extends soupply.util.Packet
 {
 

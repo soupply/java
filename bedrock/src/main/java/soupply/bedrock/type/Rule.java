@@ -24,9 +24,9 @@ public class Rule extends Type
     public static final String SEND_COMMAND_FEEDBACK = "sendcommandfeedback";
 
     // type
-    public static final byte BOOLEAN = 1;
-    public static final byte INTEGER = 2;
-    public static final byte FLOATING = 3;
+    public static final byte BOOLEAN = (byte)1;
+    public static final byte INTEGER = (byte)2;
+    public static final byte FLOATING = (byte)3;
 
     public String name;
     public byte type;

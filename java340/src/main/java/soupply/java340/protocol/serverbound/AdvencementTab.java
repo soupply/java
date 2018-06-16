@@ -9,8 +9,8 @@ public class AdvencementTab extends soupply.java340.Packet
     public static final int ID = 25;
 
     // action
-    public static final int OPEN_TAB = 0;
-    public static final int CLOSE_SCREEN = 1;
+    public static final int OPEN_TAB = (int)0;
+    public static final int CLOSE_SCREEN = (int)1;
 
     public int action;
     public String tab;

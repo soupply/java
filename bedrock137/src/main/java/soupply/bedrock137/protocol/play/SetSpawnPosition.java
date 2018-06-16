@@ -9,8 +9,8 @@ public class SetSpawnPosition extends soupply.bedrock137.Packet
     public static final int ID = 43;
 
     // type
-    public static final int PLAYER_SPAWN = 0;
-    public static final int WORLD_SPAWN = 1;
+    public static final int PLAYER_SPAWN = (int)0;
+    public static final int WORLD_SPAWN = (int)1;
 
     public int type;
     public soupply.bedrock137.type.BlockPosition position;

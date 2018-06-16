@@ -9,9 +9,9 @@ public class ChangeDimension extends soupply.bedrock150.Packet
     public static final int ID = 61;
 
     // dimension
-    public static final int OVERWORLD = 0;
-    public static final int NETHER = 1;
-    public static final int END = 2;
+    public static final int OVERWORLD = (int)0;
+    public static final int NETHER = (int)1;
+    public static final int END = (int)2;
 
     public int dimension;
     public FloatXYZ position;

@@ -9,8 +9,8 @@ public class Handshake extends soupply.java340.Packet
     public static final int ID = 0;
 
     // next
-    public static final int STATUS = 1;
-    public static final int LOGIN = 2;
+    public static final int STATUS = (int)1;
+    public static final int LOGIN = (int)2;
 
     public int protocol = 340;
     public String serverAddress;

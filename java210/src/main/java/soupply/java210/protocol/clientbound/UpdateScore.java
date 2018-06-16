@@ -9,8 +9,8 @@ public class UpdateScore extends soupply.java210.Packet
     public static final int ID = 66;
 
     // action
-    public static final byte UPDATE = 0;
-    public static final byte REMOVE = 1;
+    public static final byte UPDATE = (byte)0;
+    public static final byte REMOVE = (byte)1;
 
     public String scoreName;
     public byte action;

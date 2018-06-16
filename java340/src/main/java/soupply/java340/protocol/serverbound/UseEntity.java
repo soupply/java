@@ -9,13 +9,13 @@ public class UseEntity extends soupply.java340.Packet
     public static final int ID = 10;
 
     // type
-    public static final int INTERACT = 0;
-    public static final int ATTACK = 1;
-    public static final int INTERACT_AT = 2;
+    public static final int INTERACT = (int)0;
+    public static final int ATTACK = (int)1;
+    public static final int INTERACT_AT = (int)2;
 
     // hand
-    public static final int MAIN_HAND = 0;
-    public static final int OFF_HAND = 1;
+    public static final int MAIN_HAND = (int)0;
+    public static final int OFF_HAND = (int)1;
 
     public int target;
     public int type;

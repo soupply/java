@@ -7,9 +7,9 @@ public class InventoryAction extends Type
 {
 
     // source
-    public static final int CONTAINER = 0;
-    public static final int WORLD = 2;
-    public static final int CREATIVE = 3;
+    public static final int CONTAINER = (int)0;
+    public static final int WORLD = (int)2;
+    public static final int CREATIVE = (int)3;
 
     public int source;
     public int container = -1;

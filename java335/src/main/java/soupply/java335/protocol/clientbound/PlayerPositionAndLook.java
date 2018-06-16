@@ -9,11 +9,11 @@ public class PlayerPositionAndLook extends soupply.java335.Packet
     public static final int ID = 46;
 
     // flags
-    public static final byte X = 1;
-    public static final byte Y = 2;
-    public static final byte Z = 4;
-    public static final byte Y_ROTATION = 8;
-    public static final byte X_ROTATION = 16;
+    public static final byte X = (byte)1;
+    public static final byte Y = (byte)2;
+    public static final byte Z = (byte)4;
+    public static final byte Y_ROTATION = (byte)8;
+    public static final byte X_ROTATION = (byte)16;
 
     public DoubleXYZ position;
     public float yaw;

@@ -3,7 +3,7 @@ package soupply.bedrock201.type;
 import java.util.*;
 import soupply.util.*;
 
-class Command extends Type
+public class Command extends Type
 {
 
     public String name;

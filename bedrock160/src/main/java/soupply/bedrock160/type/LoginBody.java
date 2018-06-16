@@ -3,7 +3,7 @@ package soupply.bedrock160.type;
 import java.util.*;
 import soupply.util.*;
 
-class LoginBody extends Type
+public class LoginBody extends Type
 {
 
     public byte[] chain;

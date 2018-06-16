@@ -3,7 +3,7 @@ package soupply.bedrock.type;
 import java.util.*;
 import soupply.util.*;
 
-class Slot extends Type
+public class Slot extends Type
 {
 
     public int id;

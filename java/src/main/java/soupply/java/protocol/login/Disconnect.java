@@ -3,7 +3,7 @@ package soupply.java.protocol.login;
 import java.util.*;
 import soupply.util.*;
 
-class Disconnect extends soupply.java.Packet
+public class Disconnect extends soupply.java.Packet
 {
 
     public static final int ID = 0;

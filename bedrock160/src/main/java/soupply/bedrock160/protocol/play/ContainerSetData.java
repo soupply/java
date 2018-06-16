@@ -3,7 +3,7 @@ package soupply.bedrock160.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class ContainerSetData extends soupply.bedrock160.Packet
+public class ContainerSetData extends soupply.bedrock160.Packet
 {
 
     public static final int ID = 51;

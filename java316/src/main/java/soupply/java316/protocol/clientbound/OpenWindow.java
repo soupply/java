@@ -3,7 +3,7 @@ package soupply.java316.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class OpenWindow extends soupply.java316.Packet
+public class OpenWindow extends soupply.java316.Packet
 {
 
     public static final int ID = 19;

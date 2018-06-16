@@ -3,7 +3,7 @@ package soupply.bedrock201.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class SetEntityLink extends soupply.bedrock201.Packet
+public class SetEntityLink extends soupply.bedrock201.Packet
 {
 
     public static final int ID = 41;

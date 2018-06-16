@@ -3,7 +3,7 @@ package soupply.bedrock141.type;
 import java.util.*;
 import soupply.util.*;
 
-class Section extends Type
+public class Section extends Type
 {
 
     public byte storageVersion = 0;

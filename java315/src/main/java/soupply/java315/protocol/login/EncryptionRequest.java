@@ -3,7 +3,7 @@ package soupply.java315.protocol.login;
 import java.util.*;
 import soupply.util.*;
 
-class EncryptionRequest extends soupply.java315.Packet
+public class EncryptionRequest extends soupply.java315.Packet
 {
 
     public static final int ID = 1;

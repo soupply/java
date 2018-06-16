@@ -3,7 +3,7 @@ package soupply.bedrock.type;
 import java.util.*;
 import soupply.util.*;
 
-class Recipe extends Type
+public class Recipe extends Type
 {
 
     // type

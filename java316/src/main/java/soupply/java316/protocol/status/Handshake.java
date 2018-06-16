@@ -3,7 +3,7 @@ package soupply.java316.protocol.status;
 import java.util.*;
 import soupply.util.*;
 
-class Handshake extends soupply.java316.Packet
+public class Handshake extends soupply.java316.Packet
 {
 
     public static final int ID = 0;

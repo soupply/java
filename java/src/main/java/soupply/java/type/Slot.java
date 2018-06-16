@@ -3,7 +3,7 @@ package soupply.java.type;
 import java.util.*;
 import soupply.util.*;
 
-class Slot extends Type
+public class Slot extends Type
 {
 
     public short id;

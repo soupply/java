@@ -1,6 +1,6 @@
 package soupply.util;
 
-class ShortXYZ
+public class ShortXYZ
 {
 
     public short x;

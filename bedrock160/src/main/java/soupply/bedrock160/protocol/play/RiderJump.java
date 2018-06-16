@@ -3,7 +3,7 @@ package soupply.bedrock160.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class RiderJump extends soupply.bedrock160.Packet
+public class RiderJump extends soupply.bedrock160.Packet
 {
 
     public static final int ID = 20;

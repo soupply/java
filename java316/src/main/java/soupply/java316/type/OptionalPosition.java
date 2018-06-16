@@ -3,7 +3,7 @@ package soupply.java316.type;
 import java.util.*;
 import soupply.util.*;
 
-class OptionalPosition extends Type
+public class OptionalPosition extends Type
 {
 
     public boolean hasPosition;

@@ -3,7 +3,7 @@ package soupply.java338.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class BlockBreakAnimation extends soupply.java338.Packet
+public class BlockBreakAnimation extends soupply.java338.Packet
 {
 
     public static final int ID = 8;

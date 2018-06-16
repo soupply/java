@@ -3,7 +3,7 @@ package soupply.bedrock141.type;
 import java.util.*;
 import soupply.util.*;
 
-class ChunkData extends Type
+public class ChunkData extends Type
 {
 
     public soupply.bedrock141.type.Section[] sections;

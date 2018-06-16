@@ -3,7 +3,7 @@ package soupply.java340.type;
 import java.util.*;
 import soupply.util.*;
 
-class Icon extends Type
+public class Icon extends Type
 {
 
     // direction and type

@@ -3,7 +3,7 @@ package soupply.java.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class EnchantItem extends soupply.java.Packet
+public class EnchantItem extends soupply.java.Packet
 {
 
     public static final int ID = 6;

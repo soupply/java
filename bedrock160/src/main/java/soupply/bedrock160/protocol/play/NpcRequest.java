@@ -3,7 +3,7 @@ package soupply.bedrock160.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class NpcRequest extends soupply.bedrock160.Packet
+public class NpcRequest extends soupply.bedrock160.Packet
 {
 
     public static final int ID = 98;

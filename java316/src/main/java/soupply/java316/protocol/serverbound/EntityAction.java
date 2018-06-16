@@ -3,7 +3,7 @@ package soupply.java316.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class EntityAction extends soupply.java316.Packet
+public class EntityAction extends soupply.java316.Packet
 {
 
     public static final int ID = 20;

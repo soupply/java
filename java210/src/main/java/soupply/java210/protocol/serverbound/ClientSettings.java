@@ -3,7 +3,7 @@ package soupply.java210.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class ClientSettings extends soupply.java210.Packet
+public class ClientSettings extends soupply.java210.Packet
 {
 
     public static final int ID = 4;

@@ -3,7 +3,7 @@ package soupply.java315.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class ChatMessage extends soupply.java315.Packet
+public class ChatMessage extends soupply.java315.Packet
 {
 
     public static final int ID = 2;

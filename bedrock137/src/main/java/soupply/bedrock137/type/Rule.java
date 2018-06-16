@@ -3,7 +3,7 @@ package soupply.bedrock137.type;
 import java.util.*;
 import soupply.util.*;
 
-class Rule extends Type
+public class Rule extends Type
 {
 
     // name

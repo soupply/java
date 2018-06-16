@@ -1,6 +1,6 @@
 package soupply.util;
 
-class DoubleXYZ
+public class DoubleXYZ
 {
 
     public double x;

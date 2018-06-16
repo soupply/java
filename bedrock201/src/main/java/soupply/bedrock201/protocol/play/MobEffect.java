@@ -3,7 +3,7 @@ package soupply.bedrock201.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class MobEffect extends soupply.bedrock201.Packet
+public class MobEffect extends soupply.bedrock201.Packet
 {
 
     public static final int ID = 28;

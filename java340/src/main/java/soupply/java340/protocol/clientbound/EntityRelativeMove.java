@@ -3,7 +3,7 @@ package soupply.java340.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class EntityRelativeMove extends soupply.java340.Packet
+public class EntityRelativeMove extends soupply.java340.Packet
 {
 
     public static final int ID = 38;

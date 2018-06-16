@@ -3,7 +3,7 @@ package soupply.java.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class ClickWindow extends soupply.java.Packet
+public class ClickWindow extends soupply.java.Packet
 {
 
     public static final int ID = 7;

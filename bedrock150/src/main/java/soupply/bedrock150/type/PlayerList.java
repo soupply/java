@@ -3,7 +3,7 @@ package soupply.bedrock150.type;
 import java.util.*;
 import soupply.util.*;
 
-class PlayerList extends Type
+public class PlayerList extends Type
 {
 
     public soupply.bedrock150.type.McpeUuid uuid;

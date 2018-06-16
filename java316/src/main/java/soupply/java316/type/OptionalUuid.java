@@ -3,7 +3,7 @@ package soupply.java316.type;
 import java.util.*;
 import soupply.util.*;
 
-class OptionalUuid extends Type
+public class OptionalUuid extends Type
 {
 
     public boolean hasUuid;

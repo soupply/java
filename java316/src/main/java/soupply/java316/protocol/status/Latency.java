@@ -3,7 +3,7 @@ package soupply.java316.protocol.status;
 import java.util.*;
 import soupply.util.*;
 
-class Latency extends soupply.java316.Packet
+public class Latency extends soupply.java316.Packet
 {
 
     public static final int ID = 1;

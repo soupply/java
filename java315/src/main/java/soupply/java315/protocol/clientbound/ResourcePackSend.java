@@ -3,7 +3,7 @@ package soupply.java315.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class ResourcePackSend extends soupply.java315.Packet
+public class ResourcePackSend extends soupply.java315.Packet
 {
 
     public static final int ID = 50;

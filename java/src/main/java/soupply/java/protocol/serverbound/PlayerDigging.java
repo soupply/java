@@ -3,7 +3,7 @@ package soupply.java.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class PlayerDigging extends soupply.java.Packet
+public class PlayerDigging extends soupply.java.Packet
 {
 
     public static final int ID = 20;

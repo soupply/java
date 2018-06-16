@@ -3,7 +3,7 @@ package soupply.bedrock160.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class ItemFrameDropItem extends soupply.bedrock160.Packet
+public class ItemFrameDropItem extends soupply.bedrock160.Packet
 {
 
     public static final int ID = 71;

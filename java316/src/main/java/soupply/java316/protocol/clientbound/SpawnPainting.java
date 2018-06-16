@@ -3,7 +3,7 @@ package soupply.java316.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class SpawnPainting extends soupply.java316.Packet
+public class SpawnPainting extends soupply.java316.Packet
 {
 
     public static final int ID = 4;

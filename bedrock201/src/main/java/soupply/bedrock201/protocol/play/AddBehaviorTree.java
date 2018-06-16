@@ -3,7 +3,7 @@ package soupply.bedrock201.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class AddBehaviorTree extends soupply.bedrock201.Packet
+public class AddBehaviorTree extends soupply.bedrock201.Packet
 {
 
     public static final int ID = 89;

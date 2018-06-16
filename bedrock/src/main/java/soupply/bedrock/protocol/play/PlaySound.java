@@ -3,7 +3,7 @@ package soupply.bedrock.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class PlaySound extends soupply.bedrock.Packet
+public class PlaySound extends soupply.bedrock.Packet
 {
 
     public static final int ID = 86;

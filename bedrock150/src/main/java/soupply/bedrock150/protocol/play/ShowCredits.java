@@ -3,7 +3,7 @@ package soupply.bedrock150.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class ShowCredits extends soupply.bedrock150.Packet
+public class ShowCredits extends soupply.bedrock150.Packet
 {
 
     public static final int ID = 75;

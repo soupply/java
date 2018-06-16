@@ -3,7 +3,7 @@ package soupply.bedrock201.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class Interact extends soupply.bedrock201.Packet
+public class Interact extends soupply.bedrock201.Packet
 {
 
     public static final int ID = 33;

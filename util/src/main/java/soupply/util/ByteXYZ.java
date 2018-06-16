@@ -1,6 +1,6 @@
 package soupply.util;
 
-class ByteXYZ
+public class ByteXYZ
 {
 
     public byte x;

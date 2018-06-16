@@ -3,7 +3,7 @@ package soupply.java.type;
 import java.util.*;
 import soupply.util.*;
 
-class Statistic extends Type
+public class Statistic extends Type
 {
 
     public String name;

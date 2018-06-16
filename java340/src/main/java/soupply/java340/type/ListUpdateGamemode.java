@@ -3,7 +3,7 @@ package soupply.java340.type;
 import java.util.*;
 import soupply.util.*;
 
-class ListUpdateGamemode extends Type
+public class ListUpdateGamemode extends Type
 {
 
     // gamemode

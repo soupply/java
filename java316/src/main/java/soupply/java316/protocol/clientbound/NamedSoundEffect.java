@@ -3,7 +3,7 @@ package soupply.java316.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class NamedSoundEffect extends soupply.java316.Packet
+public class NamedSoundEffect extends soupply.java316.Packet
 {
 
     public static final int ID = 25;

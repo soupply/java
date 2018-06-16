@@ -3,7 +3,7 @@ package soupply.java340.type;
 import java.util.*;
 import soupply.util.*;
 
-class BlockChange extends Type
+public class BlockChange extends Type
 {
 
     public byte xz;

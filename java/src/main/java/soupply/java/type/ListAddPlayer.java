@@ -3,7 +3,7 @@ package soupply.java.type;
 import java.util.*;
 import soupply.util.*;
 
-class ListAddPlayer extends Type
+public class ListAddPlayer extends Type
 {
 
     // gamemode

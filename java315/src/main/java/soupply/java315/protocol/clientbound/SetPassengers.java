@@ -3,7 +3,7 @@ package soupply.java315.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class SetPassengers extends soupply.java315.Packet
+public class SetPassengers extends soupply.java315.Packet
 {
 
     public static final int ID = 64;

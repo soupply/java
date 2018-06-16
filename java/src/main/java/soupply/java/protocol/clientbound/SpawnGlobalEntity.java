@@ -3,7 +3,7 @@ package soupply.java.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class SpawnGlobalEntity extends soupply.java.Packet
+public class SpawnGlobalEntity extends soupply.java.Packet
 {
 
     public static final int ID = 2;

@@ -3,7 +3,7 @@ package soupply.java315.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class OpenSignEditor extends soupply.java315.Packet
+public class OpenSignEditor extends soupply.java315.Packet
 {
 
     public static final int ID = 42;

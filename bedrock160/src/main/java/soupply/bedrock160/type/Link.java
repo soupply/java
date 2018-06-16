@@ -3,7 +3,7 @@ package soupply.bedrock160.type;
 import java.util.*;
 import soupply.util.*;
 
-class Link extends Type
+public class Link extends Type
 {
 
     // action

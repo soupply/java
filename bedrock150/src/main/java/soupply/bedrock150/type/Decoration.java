@@ -3,7 +3,7 @@ package soupply.bedrock150.type;
 import java.util.*;
 import soupply.util.*;
 
-class Decoration extends Type
+public class Decoration extends Type
 {
 
     public int rotationAndIcon;

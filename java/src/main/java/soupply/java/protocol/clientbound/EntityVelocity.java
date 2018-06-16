@@ -3,7 +3,7 @@ package soupply.java.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class EntityVelocity extends soupply.java.Packet
+public class EntityVelocity extends soupply.java.Packet
 {
 
     public static final int ID = 62;

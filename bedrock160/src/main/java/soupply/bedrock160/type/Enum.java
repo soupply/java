@@ -3,7 +3,7 @@ package soupply.bedrock160.type;
 import java.util.*;
 import soupply.util.*;
 
-class Enum extends Type
+public class Enum extends Type
 {
 
     public String name;

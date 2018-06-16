@@ -3,7 +3,7 @@ package soupply.bedrock141.type;
 import java.util.*;
 import soupply.util.*;
 
-class Skin extends Type
+public class Skin extends Type
 {
 
     public String name;

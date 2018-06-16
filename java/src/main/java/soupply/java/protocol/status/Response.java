@@ -3,7 +3,7 @@ package soupply.java.protocol.status;
 import java.util.*;
 import soupply.util.*;
 
-class Response extends soupply.java.Packet
+public class Response extends soupply.java.Packet
 {
 
     public static final int ID = 0;

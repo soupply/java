@@ -3,7 +3,7 @@ package soupply.java338.protocol.login;
 import java.util.*;
 import soupply.util.*;
 
-class EncryptionResponse extends soupply.java338.Packet
+public class EncryptionResponse extends soupply.java338.Packet
 {
 
     public static final int ID = 1;

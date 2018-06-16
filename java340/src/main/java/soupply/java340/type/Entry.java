@@ -3,7 +3,7 @@ package soupply.java340.type;
 import java.util.*;
 import soupply.util.*;
 
-class Entry extends Type
+public class Entry extends Type
 {
 
     public soupply.java340.type.Slot item;

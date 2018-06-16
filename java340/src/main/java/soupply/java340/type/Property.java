@@ -3,7 +3,7 @@ package soupply.java340.type;
 import java.util.*;
 import soupply.util.*;
 
-class Property extends Type
+public class Property extends Type
 {
 
     public String name;

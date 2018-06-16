@@ -3,7 +3,7 @@ package soupply.bedrock201.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class SetDefaultGameType extends soupply.bedrock201.Packet
+public class SetDefaultGameType extends soupply.bedrock201.Packet
 {
 
     public static final int ID = 105;

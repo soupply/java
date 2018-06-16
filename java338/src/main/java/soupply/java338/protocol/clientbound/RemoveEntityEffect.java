@@ -3,7 +3,7 @@ package soupply.java338.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class RemoveEntityEffect extends soupply.java338.Packet
+public class RemoveEntityEffect extends soupply.java338.Packet
 {
 
     public static final int ID = 51;

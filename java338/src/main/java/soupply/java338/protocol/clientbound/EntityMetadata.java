@@ -3,7 +3,7 @@ package soupply.java338.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class EntityMetadata extends soupply.java338.Packet
+public class EntityMetadata extends soupply.java338.Packet
 {
 
     public static final int ID = 60;

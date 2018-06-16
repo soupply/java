@@ -3,7 +3,7 @@ package soupply.java335.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class EntityProperties extends soupply.java335.Packet
+public class EntityProperties extends soupply.java335.Packet
 {
 
     public static final int ID = 77;

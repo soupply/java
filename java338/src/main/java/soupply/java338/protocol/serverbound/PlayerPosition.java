@@ -3,7 +3,7 @@ package soupply.java338.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class PlayerPosition extends soupply.java338.Packet
+public class PlayerPosition extends soupply.java338.Packet
 {
 
     public static final int ID = 13;

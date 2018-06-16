@@ -3,7 +3,7 @@ package soupply.java316.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class BossBar extends soupply.java316.Packet
+public class BossBar extends soupply.java316.Packet
 {
 
     public static final int ID = 12;

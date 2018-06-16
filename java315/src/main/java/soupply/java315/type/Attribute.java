@@ -3,7 +3,7 @@ package soupply.java315.type;
 import java.util.*;
 import soupply.util.*;
 
-class Attribute extends Type
+public class Attribute extends Type
 {
 
     public String key;

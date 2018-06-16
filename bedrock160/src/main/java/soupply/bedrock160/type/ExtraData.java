@@ -3,7 +3,7 @@ package soupply.bedrock160.type;
 import java.util.*;
 import soupply.util.*;
 
-class ExtraData extends Type
+public class ExtraData extends Type
 {
 
     public int key;

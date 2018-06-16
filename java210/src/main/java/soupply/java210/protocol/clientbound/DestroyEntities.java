@@ -3,7 +3,7 @@ package soupply.java210.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class DestroyEntities extends soupply.java210.Packet
+public class DestroyEntities extends soupply.java210.Packet
 {
 
     public static final int ID = 48;

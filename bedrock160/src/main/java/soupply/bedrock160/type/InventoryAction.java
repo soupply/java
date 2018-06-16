@@ -3,7 +3,7 @@ package soupply.bedrock160.type;
 import java.util.*;
 import soupply.util.*;
 
-class InventoryAction extends Type
+public class InventoryAction extends Type
 {
 
     // source

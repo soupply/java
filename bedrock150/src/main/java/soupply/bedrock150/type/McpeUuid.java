@@ -3,7 +3,7 @@ package soupply.bedrock150.type;
 import java.util.*;
 import soupply.util.*;
 
-class McpeUuid extends Type
+public class McpeUuid extends Type
 {
 
     public long mostSignificantBits;

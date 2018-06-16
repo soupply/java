@@ -3,7 +3,7 @@ package soupply.java.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class ConfirmTransaction extends soupply.java.Packet
+public class ConfirmTransaction extends soupply.java.Packet
 {
 
     public static final int ID = 5;

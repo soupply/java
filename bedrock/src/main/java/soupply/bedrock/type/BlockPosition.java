@@ -3,7 +3,7 @@ package soupply.bedrock.type;
 import java.util.*;
 import soupply.util.*;
 
-class BlockPosition extends Type
+public class BlockPosition extends Type
 {
 
     public int x;

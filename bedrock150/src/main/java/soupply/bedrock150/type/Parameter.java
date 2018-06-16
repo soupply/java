@@ -3,7 +3,7 @@ package soupply.bedrock150.type;
 import java.util.*;
 import soupply.util.*;
 
-class Parameter extends Type
+public class Parameter extends Type
 {
 
     // type

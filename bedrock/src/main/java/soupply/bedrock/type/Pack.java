@@ -3,7 +3,7 @@ package soupply.bedrock.type;
 import java.util.*;
 import soupply.util.*;
 
-class Pack extends Type
+public class Pack extends Type
 {
 
     public String id;

@@ -3,7 +3,7 @@ package soupply.java210.type;
 import java.util.*;
 import soupply.util.*;
 
-class Modifier extends Type
+public class Modifier extends Type
 {
 
     // operation

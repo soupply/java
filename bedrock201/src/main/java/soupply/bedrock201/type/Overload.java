@@ -3,7 +3,7 @@ package soupply.bedrock201.type;
 import java.util.*;
 import soupply.util.*;
 
-class Overload extends Type
+public class Overload extends Type
 {
 
     public soupply.bedrock201.type.Parameter[] parameters;

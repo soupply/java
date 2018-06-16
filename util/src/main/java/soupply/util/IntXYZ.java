@@ -1,6 +1,6 @@
 package soupply.util;
 
-class IntXYZ
+public class IntXYZ
 {
 
     public int x;

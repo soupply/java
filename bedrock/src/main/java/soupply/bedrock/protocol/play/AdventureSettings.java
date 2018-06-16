@@ -3,7 +3,7 @@ package soupply.bedrock.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class AdventureSettings extends soupply.bedrock.Packet
+public class AdventureSettings extends soupply.bedrock.Packet
 {
 
     public static final int ID = 55;

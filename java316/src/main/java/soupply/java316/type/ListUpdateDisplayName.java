@@ -3,7 +3,7 @@ package soupply.java316.type;
 import java.util.*;
 import soupply.util.*;
 
-class ListUpdateDisplayName extends Type
+public class ListUpdateDisplayName extends Type
 {
 
     public UUID uuid;

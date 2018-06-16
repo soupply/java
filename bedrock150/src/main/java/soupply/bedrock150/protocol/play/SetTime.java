@@ -3,7 +3,7 @@ package soupply.bedrock150.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class SetTime extends soupply.bedrock150.Packet
+public class SetTime extends soupply.bedrock150.Packet
 {
 
     public static final int ID = 10;

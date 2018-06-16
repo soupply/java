@@ -3,7 +3,7 @@ package soupply.java335.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class Teams extends soupply.java335.Packet
+public class Teams extends soupply.java335.Packet
 {
 
     public static final int ID = 67;

@@ -3,7 +3,7 @@ package soupply.java340.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class TeleportConfirm extends soupply.java340.Packet
+public class TeleportConfirm extends soupply.java340.Packet
 {
 
     public static final int ID = 0;

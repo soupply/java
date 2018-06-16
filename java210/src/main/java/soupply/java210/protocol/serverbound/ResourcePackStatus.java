@@ -3,7 +3,7 @@ package soupply.java210.protocol.serverbound;
 import java.util.*;
 import soupply.util.*;
 
-class ResourcePackStatus extends soupply.java210.Packet
+public class ResourcePackStatus extends soupply.java210.Packet
 {
 
     public static final int ID = 22;

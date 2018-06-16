@@ -3,7 +3,7 @@ package soupply.java338.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class SetSlot extends soupply.java338.Packet
+public class SetSlot extends soupply.java338.Packet
 {
 
     public static final int ID = 22;

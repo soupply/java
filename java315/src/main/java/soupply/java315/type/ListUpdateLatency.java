@@ -3,7 +3,7 @@ package soupply.java315.type;
 import java.util.*;
 import soupply.util.*;
 
-class ListUpdateLatency extends Type
+public class ListUpdateLatency extends Type
 {
 
     public UUID uuid;

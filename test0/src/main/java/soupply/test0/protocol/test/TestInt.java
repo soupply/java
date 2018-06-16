@@ -3,7 +3,7 @@ package soupply.test0.protocol.test;
 import java.util.*;
 import soupply.util.*;
 
-class TestInt extends soupply.test0.Packet
+public class TestInt extends soupply.test0.Packet
 {
 
     public static final byte ID = 0;

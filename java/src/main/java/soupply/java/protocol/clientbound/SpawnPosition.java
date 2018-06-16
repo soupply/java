@@ -3,7 +3,7 @@ package soupply.java.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class SpawnPosition extends soupply.java.Packet
+public class SpawnPosition extends soupply.java.Packet
 {
 
     public static final int ID = 70;

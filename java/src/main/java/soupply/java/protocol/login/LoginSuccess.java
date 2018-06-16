@@ -3,7 +3,7 @@ package soupply.java.protocol.login;
 import java.util.*;
 import soupply.util.*;
 
-class LoginSuccess extends soupply.java.Packet
+public class LoginSuccess extends soupply.java.Packet
 {
 
     public static final int ID = 2;

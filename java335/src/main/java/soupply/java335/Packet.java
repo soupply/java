@@ -1,6 +1,6 @@
 package soupply.java335;
 
-class Packet extends soupply.util.Packet
+public abstract class Packet extends soupply.util.Packet
 {
 
     public abstract int getId();

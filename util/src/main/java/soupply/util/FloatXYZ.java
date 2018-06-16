@@ -1,6 +1,6 @@
 package soupply.util;
 
-class FloatXYZ
+public class FloatXYZ
 {
 
     public float x;

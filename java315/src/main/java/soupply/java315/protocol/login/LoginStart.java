@@ -3,7 +3,7 @@ package soupply.java315.protocol.login;
 import java.util.*;
 import soupply.util.*;
 
-class LoginStart extends soupply.java315.Packet
+public class LoginStart extends soupply.java315.Packet
 {
 
     public static final int ID = 0;

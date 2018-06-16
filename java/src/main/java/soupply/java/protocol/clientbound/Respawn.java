@@ -3,7 +3,7 @@ package soupply.java.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class Respawn extends soupply.java.Packet
+public class Respawn extends soupply.java.Packet
 {
 
     public static final int ID = 53;

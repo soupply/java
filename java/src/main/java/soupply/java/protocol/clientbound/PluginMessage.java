@@ -3,7 +3,7 @@ package soupply.java.protocol.clientbound;
 import java.util.*;
 import soupply.util.*;
 
-class PluginMessage extends soupply.java.Packet
+public class PluginMessage extends soupply.java.Packet
 {
 
     public static final int ID = 24;

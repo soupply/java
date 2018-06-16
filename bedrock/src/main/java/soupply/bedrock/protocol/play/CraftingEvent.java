@@ -3,7 +3,7 @@ package soupply.bedrock.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-class CraftingEvent extends soupply.bedrock.Packet
+public class CraftingEvent extends soupply.bedrock.Packet
 {
 
     public static final int ID = 53;

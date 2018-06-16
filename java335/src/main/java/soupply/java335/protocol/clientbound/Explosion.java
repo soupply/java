@@ -16,7 +16,6 @@ class Explosion extends soupply.java335.Packet
     public Explosion()
     {
         this.position = new FloatXYZ();
-        this.records = new ByteXYZ[]();
         this.motion = new FloatXYZ();
     }
 

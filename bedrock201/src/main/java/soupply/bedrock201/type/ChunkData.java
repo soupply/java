@@ -15,10 +15,8 @@ class ChunkData extends Type
 
     public ChunkData()
     {
-        this.sections = new soupply.bedrock201.type.Section[]();
         this.heights = new short[256];
         this.biomes = new byte[256];
-        this.extraData = new soupply.bedrock201.type.ExtraData[]();
     }
 
     public ChunkData(soupply.bedrock201.type.Section[] sections, short[] heights, byte[] biomes, byte[] borders, soupply.bedrock201.type.ExtraData[] extraData, byte[] blockEntities)

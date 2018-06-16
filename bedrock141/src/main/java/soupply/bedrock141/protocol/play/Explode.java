@@ -15,7 +15,6 @@ class Explode extends soupply.bedrock141.Packet
     public Explode()
     {
         this.position = new FloatXYZ();
-        this.destroyedBlocks = new soupply.bedrock141.type.BlockPosition[]();
     }
 
     public Explode(FloatXYZ position, float radius, soupply.bedrock141.type.BlockPosition[] destroyedBlocks)

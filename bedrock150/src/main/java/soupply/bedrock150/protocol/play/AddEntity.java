@@ -23,9 +23,7 @@ class AddEntity extends soupply.bedrock150.Packet
     {
         this.position = new FloatXYZ();
         this.motion = new FloatXYZ();
-        this.attributes = new soupply.bedrock150.type.Attribute[]();
         this.metadata = new soupply.bedrock150.Metadata();
-        this.links = new soupply.bedrock150.type.Link[]();
     }
 
     public AddEntity(long entityId, long runtimeId, int type, FloatXYZ position, FloatXYZ motion, float pitch, float yaw, soupply.bedrock150.type.Attribute[] attributes, soupply.bedrock150.Metadata metadata, soupply.bedrock150.type.Link[] links)

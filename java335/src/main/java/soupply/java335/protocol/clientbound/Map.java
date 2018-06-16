@@ -19,7 +19,6 @@ class Map extends soupply.java335.Packet
 
     public Map()
     {
-        this.icons = new soupply.java335.type.Icon[]();
         this.offset = new ByteXZ();
     }
 

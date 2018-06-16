@@ -72,7 +72,6 @@ class StartGame extends soupply.bedrock160.Packet
     {
         this.position = new FloatXYZ();
         this.spawnPosition = new IntXYZ();
-        this.gameRules = new soupply.bedrock160.type.Rule[]();
     }
 
     public StartGame(long entityId, long runtimeId, int gamemode, FloatXYZ position, float yaw, float pitch, int seed, int dimension, int generator, int worldGamemode, int difficulty, IntXYZ spawnPosition, boolean loadedInCreative, int time, byte version, float rainLevel, float lightningLevel, boolean multiplayerGame, boolean broadcastToLan, boolean broadcastToXbl, boolean commandsEnabled, boolean textureRequired, soupply.bedrock160.type.Rule[] gameRules, boolean bonusChestEnabled, boolean startWithMapEnabled, boolean trustPlayersEnabled, int permissionLevel, int unknown27, String levelId, String worldName, String premiumWorldTemplate, boolean unknown31, long worldTicks, int unknown33)

@@ -13,7 +13,6 @@ class WindowItems extends soupply.java210.Packet
 
     public WindowItems()
     {
-        this.slots = new soupply.java210.type.Slot[]();
     }
 
     public WindowItems(byte window, soupply.java210.type.Slot[] slots)

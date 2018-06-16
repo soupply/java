@@ -34,7 +34,6 @@ class AddPlayer extends soupply.bedrock160.Packet
         this.motion = new FloatXYZ();
         this.heldItem = new soupply.bedrock160.type.Slot();
         this.metadata = new soupply.bedrock160.Metadata();
-        this.links = new soupply.bedrock160.type.Link[]();
     }
 
     public AddPlayer(soupply.bedrock160.type.McpeUuid uuid, String username, long entityId, long runtimeId, FloatXYZ position, FloatXYZ motion, float pitch, float headYaw, float yaw, soupply.bedrock160.type.Slot heldItem, soupply.bedrock160.Metadata metadata, int unknown11, int unknown12, int unknown13, int unknown14, int unknown15, long unknown16, soupply.bedrock160.type.Link[] links)

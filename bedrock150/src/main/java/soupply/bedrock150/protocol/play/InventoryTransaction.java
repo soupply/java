@@ -13,7 +13,6 @@ class InventoryTransaction extends soupply.bedrock150.Packet
 
     public InventoryTransaction()
     {
-        this.actions = new soupply.bedrock150.type.InventoryAction[]();
     }
 
     public InventoryTransaction(int type, soupply.bedrock150.type.InventoryAction[] actions)

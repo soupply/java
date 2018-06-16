@@ -15,8 +15,6 @@ class CraftingGrid extends soupply.java335.Packet
 
     public CraftingGrid()
     {
-        this.returnEntry = new soupply.java335.type.Entry[]();
-        this.prepareEntry = new soupply.java335.type.Entry[]();
     }
 
     public CraftingGrid(byte window, short action, soupply.java335.type.Entry[] returnEntry, soupply.java335.type.Entry[] prepareEntry)

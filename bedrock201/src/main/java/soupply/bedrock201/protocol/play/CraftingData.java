@@ -12,7 +12,6 @@ class CraftingData extends soupply.bedrock201.Packet
 
     public CraftingData()
     {
-        this.recipes = new soupply.bedrock201.type.Recipe[]();
     }
 
     public CraftingData(soupply.bedrock201.type.Recipe[] recipes)

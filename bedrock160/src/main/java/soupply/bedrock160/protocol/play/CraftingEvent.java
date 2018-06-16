@@ -17,8 +17,6 @@ class CraftingEvent extends soupply.bedrock160.Packet
     public CraftingEvent()
     {
         this.uuid = new soupply.bedrock160.type.McpeUuid();
-        this.input = new soupply.bedrock160.type.Slot[]();
-        this.output = new soupply.bedrock160.type.Slot[]();
     }
 
     public CraftingEvent(byte window, int type, soupply.bedrock160.type.McpeUuid uuid, soupply.bedrock160.type.Slot[] input, soupply.bedrock160.type.Slot[] output)

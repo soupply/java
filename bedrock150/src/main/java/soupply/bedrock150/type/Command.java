@@ -15,7 +15,6 @@ class Command extends Type
 
     public Command()
     {
-        this.overloads = new soupply.bedrock150.type.Overload[]();
     }
 
     public Command(String name, String description, byte unknown2, byte permissionLevel, int aliasesEnum, soupply.bedrock150.type.Overload[] overloads)

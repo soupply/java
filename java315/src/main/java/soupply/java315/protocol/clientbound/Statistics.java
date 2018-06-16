@@ -12,7 +12,6 @@ class Statistics extends soupply.java315.Packet
 
     public Statistics()
     {
-        this.statistics = new soupply.java315.type.Statistic[]();
     }
 
     public Statistics(soupply.java315.type.Statistic[] statistics)

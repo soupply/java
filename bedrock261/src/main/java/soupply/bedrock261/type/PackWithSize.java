@@ -28,9 +28,9 @@ public class PackWithSize extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        byte[] aq = _buffer.convertString(id);
-        _buffer.writeVaruint((int)aq.length);
-        _buffer.writeBytes(aq);
+        byte[] arz = _buffer.convertString(id);
+        _buffer.writeVaruint((int)arz.length);
+        _buffer.writeBytes(arz);
         byte[] dvclb = _buffer.convertString(version);
         _buffer.writeVaruint((int)dvclb.length);
         _buffer.writeBytes(dvclb);

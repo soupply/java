@@ -36,9 +36,9 @@ public class ResourcePackDataInfo extends soupply.bedrock141.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        byte[] aq = _buffer.convertString(id);
-        _buffer.writeVaruint((int)aq.length);
-        _buffer.writeBytes(aq);
+        byte[] arz = _buffer.convertString(id);
+        _buffer.writeVaruint((int)arz.length);
+        _buffer.writeBytes(arz);
         _buffer.writeLittleEndianInt(maxChunkSize);
         _buffer.writeLittleEndianInt(chunkCount);
         _buffer.writeLittleEndianLong(compressedPackSize);

@@ -30,9 +30,9 @@ public class ResourcePackChunkRequest extends soupply.bedrock201.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        byte[] aq = _buffer.convertString(id);
-        _buffer.writeVaruint((int)aq.length);
-        _buffer.writeBytes(aq);
+        byte[] arz = _buffer.convertString(id);
+        _buffer.writeVaruint((int)arz.length);
+        _buffer.writeBytes(arz);
         _buffer.writeLittleEndianInt(chunkIndex);
     }
 

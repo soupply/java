@@ -35,9 +35,9 @@ public class AdvencementTab extends soupply.java335.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(action);
-        byte[] df = _buffer.convertString(tab);
-        _buffer.writeVaruint((int)df.length);
-        _buffer.writeBytes(df);
+        byte[] dfdf = _buffer.convertString(tab);
+        _buffer.writeVaruint((int)dfdf.length);
+        _buffer.writeBytes(dfdf);
     }
 
     @Override

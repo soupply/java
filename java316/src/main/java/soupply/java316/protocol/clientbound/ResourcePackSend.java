@@ -30,9 +30,9 @@ public class ResourcePackSend extends soupply.java316.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        byte[] dj = _buffer.convertString(url);
-        _buffer.writeVaruint((int)dj.length);
-        _buffer.writeBytes(dj);
+        byte[] djdj = _buffer.convertString(url);
+        _buffer.writeVaruint((int)djdj.length);
+        _buffer.writeBytes(djdj);
         byte[] afa = _buffer.convertString(hash);
         _buffer.writeVaruint((int)afa.length);
         _buffer.writeBytes(afa);

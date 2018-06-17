@@ -30,9 +30,9 @@ public class Transfer extends soupply.bedrock201.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        byte[] aa = _buffer.convertString(ip);
-        _buffer.writeVaruint((int)aa.length);
-        _buffer.writeBytes(aa);
+        byte[] abc = _buffer.convertString(ip);
+        _buffer.writeVaruint((int)abc.length);
+        _buffer.writeBytes(abc);
         _buffer.writeLittleEndianShort(port);
     }
 

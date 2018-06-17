@@ -24,9 +24,9 @@ public class Attribute extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        byte[] av = _buffer.convertString(key);
-        _buffer.writeVaruint((int)av.length);
-        _buffer.writeBytes(av);
+        byte[] avav = _buffer.convertString(key);
+        _buffer.writeVaruint((int)avav.length);
+        _buffer.writeBytes(avav);
         _buffer.writeBigEndianDouble(value);
         _buffer.writeVaruint((int)modifiers.length);
         for(soupply.java316.type.Modifier b9azzj:modifiers)

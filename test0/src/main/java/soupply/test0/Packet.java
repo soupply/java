@@ -12,7 +12,7 @@ public abstract class Packet extends soupply.util.Packet
     public byte[] encode()
     {
         Buffer buffer = new Buffer();
-        buffer.writeUbyte(this.getId());
+        _buffer.writeByte(this.getId());
         this.encodeBody(buffer);
         return buffer.toByteArray();
     }
@@ -21,7 +21,7 @@ public abstract class Packet extends soupply.util.Packet
     public void decode(byte[] _buffer) throws BufferOverflowException
     {
         Buffer buffer = new Buffer(_buffer);
-        buffer.readUbyte();
+        final int _id = _buffer.readByte();
         this.decodeBody(buffer);
     }
 

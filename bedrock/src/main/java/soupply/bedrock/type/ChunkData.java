@@ -35,7 +35,7 @@ public class ChunkData extends Type
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

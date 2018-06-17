@@ -36,7 +36,7 @@ public class EntityEquipment extends soupply.java340.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

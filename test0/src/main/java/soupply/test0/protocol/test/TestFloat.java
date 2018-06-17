@@ -35,7 +35,7 @@ public class TestFloat extends soupply.test0.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

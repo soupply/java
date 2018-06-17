@@ -33,7 +33,7 @@ public class EnchantItem extends soupply.java315.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

@@ -16,6 +16,7 @@ public class PlayStatus extends soupply.bedrock.Packet
     public static final int INVALID_TENANT = (int)4;
     public static final int EDITION_MISMATCH_EDU_TO_VANILLA = (int)5;
     public static final int EDITION_MISMATCH_VANILLA_TO_EDU = (int)6;
+    public static final int SERVER_FULL = (int)7;
 
     public int status;
 
@@ -40,7 +41,7 @@ public class PlayStatus extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

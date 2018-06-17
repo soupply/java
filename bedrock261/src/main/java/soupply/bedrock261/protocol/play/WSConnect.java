@@ -1,20 +1,20 @@
-package soupply.bedrock.protocol.play;
+package soupply.bedrock261.protocol.play;
 
 import java.util.*;
 import soupply.util.*;
 
-public class InitiateWebSocketConnection extends soupply.bedrock.Packet
+public class WSConnect extends soupply.bedrock261.Packet
 {
 
     public static final int ID = 95;
 
     public String unknown0;
 
-    public InitiateWebSocketConnection()
+    public WSConnect()
     {
     }
 
-    public InitiateWebSocketConnection(String unknown0)
+    public WSConnect(String unknown0)
     {
         this.unknown0 = unknown0;
     }
@@ -31,7 +31,7 @@ public class InitiateWebSocketConnection extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

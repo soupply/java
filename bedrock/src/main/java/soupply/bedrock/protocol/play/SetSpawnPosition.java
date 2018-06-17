@@ -40,7 +40,7 @@ public class SetSpawnPosition extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

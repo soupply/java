@@ -27,6 +27,11 @@ public class PlayerAction extends soupply.bedrock.Packet
     public static final int BUILD_DENIED = (int)17;
     public static final int CONTINUE_BREAK = (int)18;
     public static final int CHANGE_SKIN = (int)19;
+    public static final int SET_ENCHANTMENT_SEED = (int)20;
+    public static final int START_SWIMMING = (int)21;
+    public static final int STOP_SWIMMING = (int)22;
+    public static final int START_SPIN_ATTACK = (int)23;
+    public static final int STOP_SPIN_ATTACK = (int)24;
 
     public long entityId;
     public int action;
@@ -58,7 +63,7 @@ public class PlayerAction extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

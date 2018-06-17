@@ -1,9 +1,9 @@
-package soupply.bedrock.protocol.play;
+package soupply.bedrock261.protocol.play;
 
 import java.util.*;
 import soupply.util.*;
 
-public class TelemetryEvent extends soupply.bedrock.Packet
+public class Event extends soupply.bedrock261.Packet
 {
 
     public static final int ID = 65;
@@ -11,11 +11,11 @@ public class TelemetryEvent extends soupply.bedrock.Packet
     public long entityId;
     public int eventId;
 
-    public TelemetryEvent()
+    public Event()
     {
     }
 
-    public TelemetryEvent(long entityId, int eventId)
+    public Event(long entityId, int eventId)
     {
         this.entityId = entityId;
         this.eventId = eventId;
@@ -33,7 +33,7 @@ public class TelemetryEvent extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

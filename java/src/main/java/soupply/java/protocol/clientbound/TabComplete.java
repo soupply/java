@@ -31,7 +31,7 @@ public class TabComplete extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

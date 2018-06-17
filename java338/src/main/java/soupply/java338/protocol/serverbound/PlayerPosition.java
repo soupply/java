@@ -34,7 +34,7 @@ public class PlayerPosition extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

@@ -8,7 +8,7 @@ public class Login extends soupply.bedrock.Packet
 
     public static final int ID = 1;
 
-    public int protocol = 201;
+    public int protocol = 261;
     public soupply.bedrock.type.LoginBody body;
 
     public Login()
@@ -34,7 +34,7 @@ public class Login extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

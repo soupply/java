@@ -1,0 +1,48 @@
+package soupply.bedrock261.protocol.play;
+
+import java.util.*;
+import soupply.util.*;
+
+public class ChangeDimension extends soupply.bedrock261.Packet
+{
+
+    public static final int ID = 61;
+
+    // dimension
+    public static final int OVERWORLD = (int)0;
+    public static final int NETHER = (int)1;
+    public static final int END = (int)2;
+
+    public int dimension;
+    public FloatXYZ position;
+    public boolean unknown2;
+
+    public ChangeDimension()
+    {
+        this.position = new FloatXYZ();
+    }
+
+    public ChangeDimension(int dimension, FloatXYZ position, boolean unknown2)
+    {
+        this.dimension = dimension;
+        this.position = position;
+        this.unknown2 = unknown2;
+    }
+
+    @Override
+    public int getId()
+    {
+        return ID;
+    }
+
+    @Override
+    public void encodeBody(Buffer buffer)
+    {
+    }
+
+    @Override
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    {
+    }
+
+}

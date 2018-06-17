@@ -27,7 +27,7 @@ public class PackWithSize extends Type
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

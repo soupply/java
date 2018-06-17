@@ -35,7 +35,7 @@ public class ResourcePacksStackPacket extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

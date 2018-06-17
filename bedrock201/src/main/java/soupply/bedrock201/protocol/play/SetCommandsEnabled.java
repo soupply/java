@@ -31,7 +31,7 @@ public class SetCommandsEnabled extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer buffer)
+    public void decodeBody(Buffer buffer) throws BufferOverflowException
     {
     }
 

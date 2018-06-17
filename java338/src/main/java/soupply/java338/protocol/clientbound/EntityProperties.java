@@ -28,13 +28,32 @@ public class EntityProperties extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeVaruint((int)attributes.length);
+        for(soupply.java338.type.Attribute yrcldrc:attributes)
+        {
+            yrcldrc.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        final int bfdjyvzm = _buffer.readVaruint();
+        for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)
+        {
+            attributes[yrcldrc].decodeBody(_buffer);
+        }
+    }
+
+    public static EntityProperties fromBuffer(byte[] buffer)
+    {
+        EntityProperties packet = new EntityProperties();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

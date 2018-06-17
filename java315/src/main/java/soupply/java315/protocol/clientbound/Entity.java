@@ -26,13 +26,22 @@ public class Entity extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+    }
+
+    public static Entity fromBuffer(byte[] buffer)
+    {
+        Entity packet = new Entity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

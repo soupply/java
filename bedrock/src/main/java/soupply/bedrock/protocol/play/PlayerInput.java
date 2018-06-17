@@ -32,13 +32,28 @@ public class PlayerInput extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianFloat(sideways);
+        _buffer.writeLittleEndianFloat(forward);
+        _buffer.writeBool(unknown2);
+        _buffer.writeBool(unknown3);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        sideways = _buffer.readLittleEndianFloat();
+        forward = _buffer.readLittleEndianFloat();
+        unknown2 = _buffer.readBool();
+        unknown3 = _buffer.readBool();
+    }
+
+    public static PlayerInput fromBuffer(byte[] buffer)
+    {
+        PlayerInput packet = new PlayerInput();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

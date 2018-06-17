@@ -26,13 +26,25 @@ public class WSConnect extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] d5b9ba = _buffer.convertString(unknown0);
+        _buffer.writeVaruint((int)d5b9ba.length);
+        _buffer.writeBytes(d5b9ba);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvd5b9ba = _buffer.readVaruint();
+        unknown0 = _buffer.readString(bvd5b9ba);
+    }
+
+    public static WSConnect fromBuffer(byte[] buffer)
+    {
+        WSConnect packet = new WSConnect();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

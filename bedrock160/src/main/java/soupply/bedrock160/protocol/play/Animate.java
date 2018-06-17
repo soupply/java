@@ -34,13 +34,26 @@ public class Animate extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(action);
+        _buffer.writeVarlong(entityId);
+        _buffer.writeLittleEndianFloat(unknown2);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVarint();
+        entityId = _buffer.readVarlong();
+        unknown2 = _buffer.readLittleEndianFloat();
+    }
+
+    public static Animate fromBuffer(byte[] buffer)
+    {
+        Animate packet = new Animate();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

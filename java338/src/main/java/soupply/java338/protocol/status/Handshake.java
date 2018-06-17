@@ -36,13 +36,31 @@ public class Handshake extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(protocol);
+        byte[] cvdvqrcv = _buffer.convertString(serverAddress);
+        _buffer.writeVaruint((int)cvdvqrcv.length);
+        _buffer.writeBytes(cvdvqrcv);
+        _buffer.writeBigEndianShort(serverPort);
+        _buffer.writeVaruint(next);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        protocol = _buffer.readVaruint();
+        final int bvcvdvqr = _buffer.readVaruint();
+        serverAddress = _buffer.readString(bvcvdvqr);
+        serverPort = _buffer.readBigEndianShort();
+        next = _buffer.readVaruint();
+    }
+
+    public static Handshake fromBuffer(byte[] buffer)
+    {
+        Handshake packet = new Handshake();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

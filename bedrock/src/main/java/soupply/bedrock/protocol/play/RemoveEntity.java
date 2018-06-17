@@ -26,13 +26,22 @@ public class RemoveEntity extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+    }
+
+    public static RemoveEntity fromBuffer(byte[] buffer)
+    {
+        RemoveEntity packet = new RemoveEntity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -26,13 +26,22 @@ public class TeleportConfirm extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(teleportId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        teleportId = _buffer.readVaruint();
+    }
+
+    public static TeleportConfirm fromBuffer(byte[] buffer)
+    {
+        TeleportConfirm packet = new TeleportConfirm();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

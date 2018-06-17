@@ -54,13 +54,35 @@ public class ClientSettings extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bfzvzu = _buffer.convertString(language);
+        _buffer.writeVaruint((int)bfzvzu.length);
+        _buffer.writeBytes(bfzvzu);
+        _buffer.writeBigEndianByte(viewDistance);
+        _buffer.writeVaruint(chatMode);
+        _buffer.writeBool(chatColors);
+        _buffer.writeBigEndianByte(displayedSkinParts);
+        _buffer.writeBigEndianByte(mainHand);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbfzvzu = _buffer.readVaruint();
+        language = _buffer.readString(bvbfzvzu);
+        viewDistance = _buffer.readBigEndianByte();
+        chatMode = _buffer.readVaruint();
+        chatColors = _buffer.readBool();
+        displayedSkinParts = _buffer.readBigEndianByte();
+        mainHand = _buffer.readBigEndianByte();
+    }
+
+    public static ClientSettings fromBuffer(byte[] buffer)
+    {
+        ClientSettings packet = new ClientSettings();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

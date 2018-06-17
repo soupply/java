@@ -28,13 +28,32 @@ public class WindowItems extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(window);
+        _buffer.writeVaruint((int)slots.length);
+        for(soupply.java335.type.Slot cxdm:slots)
+        {
+            cxdm.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readBigEndianByte();
+        final int bnbr = _buffer.readVaruint();
+        for(int cxdm=0;cxdm<slots.length;cxdm++)
+        {
+            slots[cxdm].decodeBody(_buffer);
+        }
+    }
+
+    public static WindowItems fromBuffer(byte[] buffer)
+    {
+        WindowItems packet = new WindowItems();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

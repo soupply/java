@@ -23,13 +23,22 @@ public class ListUpdateDisplayName extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeUUID(uuid);
+        _buffer.writeBool(hasDisplayName);
+        byte[] zlcxe5bu = _buffer.convertString(displayName);
+        _buffer.writeVaruint((int)zlcxe5bu.length);
+        _buffer.writeBytes(zlcxe5bu);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid = _buffer.readUUID();
+        hasDisplayName = _buffer.readBool();
+        final int bvzlcxe5 = _buffer.readVaruint();
+        displayName = _buffer.readString(bvzlcxe5);
     }
 
 }

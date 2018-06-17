@@ -21,13 +21,17 @@ public class OptionalUuid extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(hasUuid);
+        _buffer.writeUUID(uuid);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        hasUuid = _buffer.readBool();
+        uuid = _buffer.readUUID();
     }
 
 }

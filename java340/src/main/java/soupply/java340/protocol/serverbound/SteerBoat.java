@@ -28,13 +28,24 @@ public class SteerBoat extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(rightPaddleTurning);
+        _buffer.writeBool(leftPaddleTurning);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        rightPaddleTurning = _buffer.readBool();
+        leftPaddleTurning = _buffer.readBool();
+    }
+
+    public static SteerBoat fromBuffer(byte[] buffer)
+    {
+        SteerBoat packet = new SteerBoat();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

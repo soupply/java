@@ -20,13 +20,17 @@ public class ExtraData extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(key);
+        _buffer.writeLittleEndianShort(value);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        key = _buffer.readVaruint();
+        value = _buffer.readLittleEndianShort();
     }
 
 }

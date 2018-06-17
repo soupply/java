@@ -34,13 +34,26 @@ public class SetEntityLink extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(vehicle);
+        _buffer.writeVarlong(passenger);
+        _buffer.writeLittleEndianByte(action);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        vehicle = _buffer.readVarlong();
+        passenger = _buffer.readVarlong();
+        action = _buffer.readLittleEndianByte();
+    }
+
+    public static SetEntityLink fromBuffer(byte[] buffer)
+    {
+        SetEntityLink packet = new SetEntityLink();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -27,13 +27,22 @@ public class Spectate extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeUUID(player);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        player = _buffer.readUUID();
+    }
+
+    public static Spectate fromBuffer(byte[] buffer)
+    {
+        Spectate packet = new Spectate();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -30,13 +30,26 @@ public class SetExperience extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianFloat(experience);
+        _buffer.writeVaruint(level);
+        _buffer.writeVaruint(totalExperience);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        experience = _buffer.readBigEndianFloat();
+        level = _buffer.readVaruint();
+        totalExperience = _buffer.readVaruint();
+    }
+
+    public static SetExperience fromBuffer(byte[] buffer)
+    {
+        SetExperience packet = new SetExperience();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

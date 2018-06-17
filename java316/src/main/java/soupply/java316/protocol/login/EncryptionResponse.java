@@ -28,13 +28,28 @@ public class EncryptionResponse extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)sharedSecret.length);
+        _buffer.writeBytes(sharedSecret);
+        _buffer.writeVaruint((int)verifyToken.length);
+        _buffer.writeBytes(verifyToken);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bnyjznyj = _buffer.readVaruint();
+        sharedSecret = _buffer.readBytes(bnyjznyj);
+        final int bzclerav = _buffer.readVaruint();
+        verifyToken = _buffer.readBytes(bzclerav);
+    }
+
+    public static EncryptionResponse fromBuffer(byte[] buffer)
+    {
+        EncryptionResponse packet = new EncryptionResponse();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

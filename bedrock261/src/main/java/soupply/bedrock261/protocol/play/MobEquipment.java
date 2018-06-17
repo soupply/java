@@ -35,13 +35,30 @@ public class MobEquipment extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        item.encodeBody(_buffer);
+        _buffer.writeLittleEndianByte(inventorySlot);
+        _buffer.writeLittleEndianByte(hotbarSlot);
+        _buffer.writeLittleEndianByte(unknown4);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        item.decodeBody(_buffer);
+        inventorySlot = _buffer.readLittleEndianByte();
+        hotbarSlot = _buffer.readLittleEndianByte();
+        unknown4 = _buffer.readLittleEndianByte();
+    }
+
+    public static MobEquipment fromBuffer(byte[] buffer)
+    {
+        MobEquipment packet = new MobEquipment();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

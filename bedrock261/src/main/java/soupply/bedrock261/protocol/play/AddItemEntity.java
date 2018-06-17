@@ -40,13 +40,40 @@ public class AddItemEntity extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarulong(runtimeId);
+        item.encodeBody(_buffer);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeLittleEndianFloat(motion.x);
+        _buffer.writeLittleEndianFloat(motion.y);
+        _buffer.writeLittleEndianFloat(motion.z);
+        metadata.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        runtimeId = _buffer.readVarulong();
+        item.decodeBody(_buffer);
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        motion.x = _buffer.readLittleEndianFloat();
+        motion.y = _buffer.readLittleEndianFloat();
+        motion.z = _buffer.readLittleEndianFloat();
+        metadata.decodeBody(_buffer);
+    }
+
+    public static AddItemEntity fromBuffer(byte[] buffer)
+    {
+        AddItemEntity packet = new AddItemEntity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

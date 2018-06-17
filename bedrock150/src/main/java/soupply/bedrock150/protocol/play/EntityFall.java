@@ -30,13 +30,26 @@ public class EntityFall extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeLittleEndianFloat(distance);
+        _buffer.writeBool(unknown2);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        distance = _buffer.readLittleEndianFloat();
+        unknown2 = _buffer.readBool();
+    }
+
+    public static EntityFall fromBuffer(byte[] buffer)
+    {
+        EntityFall packet = new EntityFall();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

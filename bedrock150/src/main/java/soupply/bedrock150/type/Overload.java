@@ -18,13 +18,23 @@ public class Overload extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)parameters.length);
+        for(soupply.bedrock150.type.Parameter cfy1dvc:parameters)
+        {
+            cfy1dvc.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bbcfzrcm = _buffer.readVaruint();
+        for(int cfy1dvc=0;cfy1dvc<parameters.length;cfy1dvc++)
+        {
+            parameters[cfy1dvc].decodeBody(_buffer);
+        }
     }
 
 }

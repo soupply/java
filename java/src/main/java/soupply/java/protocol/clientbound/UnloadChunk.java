@@ -27,13 +27,24 @@ public class UnloadChunk extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(position.x);
+        _buffer.writeBigEndianInt(position.z);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.x = _buffer.readBigEndianInt();
+        position.z = _buffer.readBigEndianInt();
+    }
+
+    public static UnloadChunk fromBuffer(byte[] buffer)
+    {
+        UnloadChunk packet = new UnloadChunk();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

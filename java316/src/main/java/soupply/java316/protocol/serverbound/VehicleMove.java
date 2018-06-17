@@ -31,13 +31,30 @@ public class VehicleMove extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBigEndianFloat(yaw);
+        _buffer.writeBigEndianFloat(pitch);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        yaw = _buffer.readBigEndianFloat();
+        pitch = _buffer.readBigEndianFloat();
+    }
+
+    public static VehicleMove fromBuffer(byte[] buffer)
+    {
+        VehicleMove packet = new VehicleMove();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

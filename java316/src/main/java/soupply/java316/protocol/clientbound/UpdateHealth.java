@@ -30,13 +30,26 @@ public class UpdateHealth extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianFloat(health);
+        _buffer.writeVaruint(hunger);
+        _buffer.writeBigEndianFloat(saturation);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        health = _buffer.readBigEndianFloat();
+        hunger = _buffer.readVaruint();
+        saturation = _buffer.readBigEndianFloat();
+    }
+
+    public static UpdateHealth fromBuffer(byte[] buffer)
+    {
+        UpdateHealth packet = new UpdateHealth();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

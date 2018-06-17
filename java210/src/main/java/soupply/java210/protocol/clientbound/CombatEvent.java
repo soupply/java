@@ -26,13 +26,22 @@ public class CombatEvent extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(eventId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        eventId = _buffer.readBigEndianByte();
+    }
+
+    public static CombatEvent fromBuffer(byte[] buffer)
+    {
+        CombatEvent packet = new CombatEvent();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

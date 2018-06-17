@@ -29,13 +29,21 @@ public class Link extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(from);
+        _buffer.writeVarlong(to);
+        _buffer.writeLittleEndianByte(action);
+        _buffer.writeLittleEndianByte(unknown3);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        from = _buffer.readVarlong();
+        to = _buffer.readVarlong();
+        action = _buffer.readLittleEndianByte();
+        unknown3 = _buffer.readLittleEndianByte();
     }
 
 }

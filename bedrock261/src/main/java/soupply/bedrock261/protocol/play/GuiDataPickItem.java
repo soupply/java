@@ -26,13 +26,22 @@ public class GuiDataPickItem extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianInt(slot);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        slot = _buffer.readLittleEndianInt();
+    }
+
+    public static GuiDataPickItem fromBuffer(byte[] buffer)
+    {
+        GuiDataPickItem packet = new GuiDataPickItem();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

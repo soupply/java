@@ -26,13 +26,30 @@ public class GameRulesChanged extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)rules.length);
+        for(soupply.bedrock160.type.Rule cvzm:rules)
+        {
+            cvzm.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bjbv = _buffer.readVaruint();
+        for(int cvzm=0;cvzm<rules.length;cvzm++)
+        {
+            rules[cvzm].decodeBody(_buffer);
+        }
+    }
+
+    public static GameRulesChanged fromBuffer(byte[] buffer)
+    {
+        GameRulesChanged packet = new GameRulesChanged();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

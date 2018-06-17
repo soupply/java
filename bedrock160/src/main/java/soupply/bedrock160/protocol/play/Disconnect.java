@@ -28,13 +28,27 @@ public class Disconnect extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(hideDisconnectionScreen);
+        byte[] bvcfz = _buffer.convertString(message);
+        _buffer.writeVaruint((int)bvcfz.length);
+        _buffer.writeBytes(bvcfz);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        hideDisconnectionScreen = _buffer.readBool();
+        final int bvbvcfz = _buffer.readVaruint();
+        message = _buffer.readString(bvbvcfz);
+    }
+
+    public static Disconnect fromBuffer(byte[] buffer)
+    {
+        Disconnect packet = new Disconnect();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -43,13 +43,38 @@ public class CommandRequest extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] y9bfz = _buffer.convertString(command);
+        _buffer.writeVaruint((int)y9bfz.length);
+        _buffer.writeBytes(y9bfz);
+        _buffer.writeVaruint(type);
+        uuid.encodeBody(_buffer);
+        byte[] cvdvdl = _buffer.convertString(requestId);
+        _buffer.writeVaruint((int)cvdvdl.length);
+        _buffer.writeBytes(cvdvdl);
+        _buffer.writeVarint(playerId);
+        _buffer.writeBool(internal);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvy9bfz = _buffer.readVaruint();
+        command = _buffer.readString(bvy9bfz);
+        type = _buffer.readVaruint();
+        uuid.decodeBody(_buffer);
+        final int bvcvdvdl = _buffer.readVaruint();
+        requestId = _buffer.readString(bvcvdvdl);
+        playerId = _buffer.readVarint();
+        internal = _buffer.readBool();
+    }
+
+    public static CommandRequest fromBuffer(byte[] buffer)
+    {
+        CommandRequest packet = new CommandRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

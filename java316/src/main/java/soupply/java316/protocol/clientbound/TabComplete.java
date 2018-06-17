@@ -26,13 +26,33 @@ public class TabComplete extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)matches.length);
+        for(String bfyhc:matches)
+        {
+            byte[] yzam = _buffer.convertString(bfyhc);
+            _buffer.writeVaruint((int)yzam.length);
+            _buffer.writeBytes(yzam);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int b1dnzm = _buffer.readVaruint();
+        for(int bfyhc=0;bfyhc<matches.length;bfyhc++)
+        {
+            final int bvbfyhct = _buffer.readVaruint();
+            matches[bfyhc] = _buffer.readString(bvbfyhct);
+        }
+    }
+
+    public static TabComplete fromBuffer(byte[] buffer)
+    {
+        TabComplete packet = new TabComplete();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

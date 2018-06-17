@@ -32,13 +32,31 @@ public class TabComplete extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] dvd = _buffer.convertString(text);
+        _buffer.writeVaruint((int)dvd.length);
+        _buffer.writeBytes(dvd);
+        _buffer.writeBool(command);
+        _buffer.writeBool(hasPosition);
+        _buffer.writeBigEndianLong(block);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvdvd = _buffer.readVaruint();
+        text = _buffer.readString(bvdvd);
+        command = _buffer.readBool();
+        hasPosition = _buffer.readBool();
+        block = _buffer.readBigEndianLong();
+    }
+
+    public static TabComplete fromBuffer(byte[] buffer)
+    {
+        TabComplete packet = new TabComplete();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

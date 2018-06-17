@@ -31,13 +31,30 @@ public class SpawnExperienceOrb extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBigEndianShort(count);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        count = _buffer.readBigEndianShort();
+    }
+
+    public static SpawnExperienceOrb fromBuffer(byte[] buffer)
+    {
+        SpawnExperienceOrb packet = new SpawnExperienceOrb();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

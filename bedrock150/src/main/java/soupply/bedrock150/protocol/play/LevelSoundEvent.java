@@ -205,13 +205,36 @@ public class LevelSoundEvent extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(sound);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeVaruint(volume);
+        _buffer.writeVarint(pitch);
+        _buffer.writeBool(unknown4);
+        _buffer.writeBool(disableRelativeVolume);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        sound = _buffer.readLittleEndianByte();
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        volume = _buffer.readVaruint();
+        pitch = _buffer.readVarint();
+        unknown4 = _buffer.readBool();
+        disableRelativeVolume = _buffer.readBool();
+    }
+
+    public static LevelSoundEvent fromBuffer(byte[] buffer)
+    {
+        LevelSoundEvent packet = new LevelSoundEvent();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

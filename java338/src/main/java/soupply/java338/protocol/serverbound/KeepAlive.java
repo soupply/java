@@ -26,13 +26,22 @@ public class KeepAlive extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(id);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        id = _buffer.readVaruint();
+    }
+
+    public static KeepAlive fromBuffer(byte[] buffer)
+    {
+        KeepAlive packet = new KeepAlive();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -51,13 +51,44 @@ public class MovePlayer extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeLittleEndianFloat(pitch);
+        _buffer.writeLittleEndianFloat(headYaw);
+        _buffer.writeLittleEndianFloat(yaw);
+        _buffer.writeLittleEndianByte(animation);
+        _buffer.writeBool(onGround);
+        _buffer.writeVarlong(unknown7);
+        _buffer.writeLittleEndianInt(unknown8);
+        _buffer.writeLittleEndianInt(unknown9);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        pitch = _buffer.readLittleEndianFloat();
+        headYaw = _buffer.readLittleEndianFloat();
+        yaw = _buffer.readLittleEndianFloat();
+        animation = _buffer.readLittleEndianByte();
+        onGround = _buffer.readBool();
+        unknown7 = _buffer.readVarlong();
+        unknown8 = _buffer.readLittleEndianInt();
+        unknown9 = _buffer.readLittleEndianInt();
+    }
+
+    public static MovePlayer fromBuffer(byte[] buffer)
+    {
+        MovePlayer packet = new MovePlayer();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

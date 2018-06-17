@@ -32,13 +32,24 @@ public class ShowCredits extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarint(status);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        status = _buffer.readVarint();
+    }
+
+    public static ShowCredits fromBuffer(byte[] buffer)
+    {
+        ShowCredits packet = new ShowCredits();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

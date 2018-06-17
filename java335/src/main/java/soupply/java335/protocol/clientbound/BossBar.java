@@ -29,13 +29,24 @@ public class BossBar extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeUUID(uuid);
+        _buffer.writeVaruint(action);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid = _buffer.readUUID();
+        action = _buffer.readVaruint();
+    }
+
+    public static BossBar fromBuffer(byte[] buffer)
+    {
+        BossBar packet = new BossBar();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

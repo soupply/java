@@ -41,13 +41,32 @@ public class MobEffect extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeLittleEndianByte(eventId);
+        _buffer.writeVarint(effect);
+        _buffer.writeVarint(amplifier);
+        _buffer.writeBool(particles);
+        _buffer.writeVarint(duration);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        eventId = _buffer.readLittleEndianByte();
+        effect = _buffer.readVarint();
+        amplifier = _buffer.readVarint();
+        particles = _buffer.readBool();
+        duration = _buffer.readVarint();
+    }
+
+    public static MobEffect fromBuffer(byte[] buffer)
+    {
+        MobEffect packet = new MobEffect();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

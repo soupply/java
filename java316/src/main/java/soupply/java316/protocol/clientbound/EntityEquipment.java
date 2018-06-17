@@ -31,13 +31,26 @@ public class EntityEquipment extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeVaruint(slot);
+        item.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        slot = _buffer.readVaruint();
+        item.decodeBody(_buffer);
+    }
+
+    public static EntityEquipment fromBuffer(byte[] buffer)
+    {
+        EntityEquipment packet = new EntityEquipment();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

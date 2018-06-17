@@ -29,13 +29,28 @@ public class EntityVelocity extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeBigEndianShort(velocity.x);
+        _buffer.writeBigEndianShort(velocity.y);
+        _buffer.writeBigEndianShort(velocity.z);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        velocity.x = _buffer.readBigEndianShort();
+        velocity.y = _buffer.readBigEndianShort();
+        velocity.z = _buffer.readBigEndianShort();
+    }
+
+    public static EntityVelocity fromBuffer(byte[] buffer)
+    {
+        EntityVelocity packet = new EntityVelocity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -26,13 +26,22 @@ public class Player extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(onGround);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        onGround = _buffer.readBool();
+    }
+
+    public static Player fromBuffer(byte[] buffer)
+    {
+        Player packet = new Player();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

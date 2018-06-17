@@ -22,13 +22,19 @@ public class BlockPosition extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(x);
+        _buffer.writeVaruint(y);
+        _buffer.writeVarint(z);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        x = _buffer.readVarint();
+        y = _buffer.readVaruint();
+        z = _buffer.readVarint();
     }
 
 }

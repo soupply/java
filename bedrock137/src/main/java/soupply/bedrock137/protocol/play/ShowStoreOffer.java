@@ -30,13 +30,32 @@ public class ShowStoreOffer extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] d5b9ba = _buffer.convertString(unknown0);
+        _buffer.writeVaruint((int)d5b9ba.length);
+        _buffer.writeBytes(d5b9ba);
+        _buffer.writeBool(unknown1);
+        byte[] d5b9bi = _buffer.convertString(unknown2);
+        _buffer.writeVaruint((int)d5b9bi.length);
+        _buffer.writeBytes(d5b9bi);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvd5b9ba = _buffer.readVaruint();
+        unknown0 = _buffer.readString(bvd5b9ba);
+        unknown1 = _buffer.readBool();
+        final int bvd5b9bi = _buffer.readVaruint();
+        unknown2 = _buffer.readString(bvd5b9bi);
+    }
+
+    public static ShowStoreOffer fromBuffer(byte[] buffer)
+    {
+        ShowStoreOffer packet = new ShowStoreOffer();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -32,13 +32,22 @@ public class ResourcePackStatus extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(result);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        result = _buffer.readVaruint();
+    }
+
+    public static ResourcePackStatus fromBuffer(byte[] buffer)
+    {
+        ResourcePackStatus packet = new ResourcePackStatus();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

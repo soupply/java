@@ -26,13 +26,22 @@ public class MapInfoRequest extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(mapId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        mapId = _buffer.readVarlong();
+    }
+
+    public static MapInfoRequest fromBuffer(byte[] buffer)
+    {
+        MapInfoRequest packet = new MapInfoRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

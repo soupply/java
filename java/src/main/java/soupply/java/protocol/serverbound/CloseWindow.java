@@ -26,13 +26,22 @@ public class CloseWindow extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(window);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readBigEndianByte();
+    }
+
+    public static CloseWindow fromBuffer(byte[] buffer)
+    {
+        CloseWindow packet = new CloseWindow();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -26,13 +26,26 @@ public class Attribute extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianFloat(min);
+        _buffer.writeLittleEndianFloat(max);
+        _buffer.writeLittleEndianFloat(value);
+        _buffer.writeLittleEndianFloat(default);
+        byte[] bfz = _buffer.convertString(name);
+        _buffer.writeVaruint((int)bfz.length);
+        _buffer.writeBytes(bfz);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        min = _buffer.readLittleEndianFloat();
+        max = _buffer.readLittleEndianFloat();
+        value = _buffer.readLittleEndianFloat();
+        default = _buffer.readLittleEndianFloat();
+        final int bvbfz = _buffer.readVaruint();
+        name = _buffer.readString(bvbfz);
     }
 
 }

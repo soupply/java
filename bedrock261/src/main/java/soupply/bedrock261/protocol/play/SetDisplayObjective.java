@@ -34,13 +34,42 @@ public class SetDisplayObjective extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] zlcxenbq = _buffer.convertString(displaySlot);
+        _buffer.writeVaruint((int)zlcxenbq.length);
+        _buffer.writeBytes(zlcxenbq);
+        byte[] bjznaztf = _buffer.convertString(objectiveName);
+        _buffer.writeVaruint((int)bjznaztf.length);
+        _buffer.writeBytes(bjznaztf);
+        byte[] zlcxe5bu = _buffer.convertString(displayName);
+        _buffer.writeVaruint((int)zlcxe5bu.length);
+        _buffer.writeBytes(zlcxe5bu);
+        byte[] yjdvafy1 = _buffer.convertString(criteriaName);
+        _buffer.writeVaruint((int)yjdvafy1.length);
+        _buffer.writeBytes(yjdvafy1);
+        _buffer.writeVarint(sortOrder);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvzlcxen = _buffer.readVaruint();
+        displaySlot = _buffer.readString(bvzlcxen);
+        final int bvbjznaz = _buffer.readVaruint();
+        objectiveName = _buffer.readString(bvbjznaz);
+        final int bvzlcxe5 = _buffer.readVaruint();
+        displayName = _buffer.readString(bvzlcxe5);
+        final int bvyjdvaf = _buffer.readVaruint();
+        criteriaName = _buffer.readString(bvyjdvaf);
+        sortOrder = _buffer.readVarint();
+    }
+
+    public static SetDisplayObjective fromBuffer(byte[] buffer)
+    {
+        SetDisplayObjective packet = new SetDisplayObjective();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

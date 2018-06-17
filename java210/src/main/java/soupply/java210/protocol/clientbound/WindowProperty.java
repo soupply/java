@@ -51,13 +51,26 @@ public class WindowProperty extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(window);
+        _buffer.writeBigEndianShort(property);
+        _buffer.writeBigEndianShort(value);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readBigEndianByte();
+        property = _buffer.readBigEndianShort();
+        value = _buffer.readBigEndianShort();
+    }
+
+    public static WindowProperty fromBuffer(byte[] buffer)
+    {
+        WindowProperty packet = new WindowProperty();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

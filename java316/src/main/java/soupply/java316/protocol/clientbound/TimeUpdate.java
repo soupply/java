@@ -28,13 +28,24 @@ public class TimeUpdate extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianLong(worldAge);
+        _buffer.writeBigEndianLong(time);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        worldAge = _buffer.readBigEndianLong();
+        time = _buffer.readBigEndianLong();
+    }
+
+    public static TimeUpdate fromBuffer(byte[] buffer)
+    {
+        TimeUpdate packet = new TimeUpdate();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

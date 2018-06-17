@@ -31,13 +31,26 @@ public class LabTable extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(unknown0);
+        position.encodeBody(_buffer);
+        _buffer.writeLittleEndianByte(reactionType);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        unknown0 = _buffer.readLittleEndianByte();
+        position.decodeBody(_buffer);
+        reactionType = _buffer.readLittleEndianByte();
+    }
+
+    public static LabTable fromBuffer(byte[] buffer)
+    {
+        LabTable packet = new LabTable();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

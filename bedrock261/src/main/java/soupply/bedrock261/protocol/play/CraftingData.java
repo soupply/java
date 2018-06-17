@@ -26,13 +26,30 @@ public class CraftingData extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)recipes.length);
+        for(soupply.bedrock261.type.Recipe cvabc:recipes)
+        {
+            cvabc.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bjylzm = _buffer.readVaruint();
+        for(int cvabc=0;cvabc<recipes.length;cvabc++)
+        {
+            recipes[cvabc].decodeBody(_buffer);
+        }
+    }
+
+    public static CraftingData fromBuffer(byte[] buffer)
+    {
+        CraftingData packet = new CraftingData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

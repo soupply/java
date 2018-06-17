@@ -22,13 +22,28 @@ public class Pack extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] aq = _buffer.convertString(id);
+        _buffer.writeVaruint((int)aq.length);
+        _buffer.writeBytes(aq);
+        byte[] dvclb = _buffer.convertString(version);
+        _buffer.writeVaruint((int)dvclb.length);
+        _buffer.writeBytes(dvclb);
+        byte[] d5b9bi = _buffer.convertString(unknown2);
+        _buffer.writeVaruint((int)d5b9bi.length);
+        _buffer.writeBytes(d5b9bi);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvaq = _buffer.readVaruint();
+        id = _buffer.readString(bvaq);
+        final int bvdvclb = _buffer.readVaruint();
+        version = _buffer.readString(bvdvclb);
+        final int bvd5b9bi = _buffer.readVaruint();
+        unknown2 = _buffer.readString(bvd5b9bi);
     }
 
 }

@@ -29,13 +29,31 @@ public class MobArmorEquipment extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        for(soupply.bedrock.type.Slot yjbi:armor)
+        {
+            yjbi.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        armor = new soupply.bedrock.type.Slot[bfb9];
+        for(int yjbi=0;yjbi<armor.length;yjbi++)
+        {
+            armor[yjbi].decodeBody(_buffer);
+        }
+    }
+
+    public static MobArmorEquipment fromBuffer(byte[] buffer)
+    {
+        MobArmorEquipment packet = new MobArmorEquipment();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

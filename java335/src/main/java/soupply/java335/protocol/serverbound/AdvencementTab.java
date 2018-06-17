@@ -32,13 +32,27 @@ public class AdvencementTab extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(action);
+        byte[] df = _buffer.convertString(tab);
+        _buffer.writeVaruint((int)df.length);
+        _buffer.writeBytes(df);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVaruint();
+        final int bvdf = _buffer.readVaruint();
+        tab = _buffer.readString(bvdf);
+    }
+
+    public static AdvencementTab fromBuffer(byte[] buffer)
+    {
+        AdvencementTab packet = new AdvencementTab();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

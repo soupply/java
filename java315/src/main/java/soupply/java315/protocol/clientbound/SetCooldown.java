@@ -28,13 +28,24 @@ public class SetCooldown extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(item);
+        _buffer.writeVaruint(cooldown);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        item = _buffer.readVaruint();
+        cooldown = _buffer.readVaruint();
+    }
+
+    public static SetCooldown fromBuffer(byte[] buffer)
+    {
+        SetCooldown packet = new SetCooldown();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

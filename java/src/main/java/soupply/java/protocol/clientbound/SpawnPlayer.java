@@ -39,13 +39,36 @@ public class SpawnPlayer extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeUUID(uuid);
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBigEndianByte(yaw);
+        _buffer.writeBigEndianByte(pitch);
+        metadata.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        uuid = _buffer.readUUID();
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        yaw = _buffer.readBigEndianByte();
+        pitch = _buffer.readBigEndianByte();
+        metadata.decodeBody(_buffer);
+    }
+
+    public static SpawnPlayer fromBuffer(byte[] buffer)
+    {
+        SpawnPlayer packet = new SpawnPlayer();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

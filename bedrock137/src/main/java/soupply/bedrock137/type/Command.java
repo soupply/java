@@ -28,13 +28,39 @@ public class Command extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bfz = _buffer.convertString(name);
+        _buffer.writeVaruint((int)bfz.length);
+        _buffer.writeBytes(bfz);
+        byte[] zvyjcrb4 = _buffer.convertString(description);
+        _buffer.writeVaruint((int)zvyjcrb4.length);
+        _buffer.writeBytes(zvyjcrb4);
+        _buffer.writeLittleEndianByte(unknown2);
+        _buffer.writeLittleEndianByte(permissionLevel);
+        _buffer.writeLittleEndianInt(aliasesEnum);
+        _buffer.writeVaruint((int)overloads.length);
+        for(soupply.bedrock137.type.Overload bzcxyr:overloads)
+        {
+            bzcxyr.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbfz = _buffer.readVaruint();
+        name = _buffer.readString(bvbfz);
+        final int bvzvyjcr = _buffer.readVaruint();
+        description = _buffer.readString(bvzvyjcr);
+        unknown2 = _buffer.readLittleEndianByte();
+        permissionLevel = _buffer.readLittleEndianByte();
+        aliasesEnum = _buffer.readLittleEndianInt();
+        final int b9zjbfc = _buffer.readVaruint();
+        for(int bzcxyr=0;bzcxyr<overloads.length;bzcxyr++)
+        {
+            overloads[bzcxyr].decodeBody(_buffer);
+        }
     }
 
 }

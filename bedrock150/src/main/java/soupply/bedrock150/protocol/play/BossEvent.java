@@ -33,13 +33,24 @@ public class BossEvent extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVaruint(eventId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        eventId = _buffer.readVaruint();
+    }
+
+    public static BossEvent fromBuffer(byte[] buffer)
+    {
+        BossEvent packet = new BossEvent();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

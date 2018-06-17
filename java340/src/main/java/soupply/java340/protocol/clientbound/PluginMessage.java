@@ -28,13 +28,27 @@ public class PluginMessage extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] yhb5b = _buffer.convertString(channel);
+        _buffer.writeVaruint((int)yhb5b.length);
+        _buffer.writeBytes(yhb5b);
+        _buffer.writeBytes(data);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvyhb5b = _buffer.readVaruint();
+        channel = _buffer.readString(bvyhb5b);
+        data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+    }
+
+    public static PluginMessage fromBuffer(byte[] buffer)
+    {
+        PluginMessage packet = new PluginMessage();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

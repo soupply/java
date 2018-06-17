@@ -21,13 +21,17 @@ public class ListUpdateLatency extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeUUID(uuid);
+        _buffer.writeVaruint(latency);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid = _buffer.readUUID();
+        latency = _buffer.readVaruint();
     }
 
 }

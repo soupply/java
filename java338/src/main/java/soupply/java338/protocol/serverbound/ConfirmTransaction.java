@@ -30,13 +30,26 @@ public class ConfirmTransaction extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(window);
+        _buffer.writeBigEndianShort(action);
+        _buffer.writeBool(accepted);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readBigEndianByte();
+        action = _buffer.readBigEndianShort();
+        accepted = _buffer.readBool();
+    }
+
+    public static ConfirmTransaction fromBuffer(byte[] buffer)
+    {
+        ConfirmTransaction packet = new ConfirmTransaction();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

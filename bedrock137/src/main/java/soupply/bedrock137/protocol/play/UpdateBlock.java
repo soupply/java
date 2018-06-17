@@ -37,13 +37,26 @@ public class UpdateBlock extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        position.encodeBody(_buffer);
+        _buffer.writeVaruint(block);
+        _buffer.writeVaruint(flagsAndMeta);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.decodeBody(_buffer);
+        block = _buffer.readVaruint();
+        flagsAndMeta = _buffer.readVaruint();
+    }
+
+    public static UpdateBlock fromBuffer(byte[] buffer)
+    {
+        UpdateBlock packet = new UpdateBlock();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

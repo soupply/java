@@ -28,13 +28,32 @@ public class UpdateAttributes extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVaruint((int)attributes.length);
+        for(soupply.bedrock.type.Attribute yrcldrc:attributes)
+        {
+            yrcldrc.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        final int bfdjyvzm = _buffer.readVaruint();
+        for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)
+        {
+            attributes[yrcldrc].decodeBody(_buffer);
+        }
+    }
+
+    public static UpdateAttributes fromBuffer(byte[] buffer)
+    {
+        UpdateAttributes packet = new UpdateAttributes();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

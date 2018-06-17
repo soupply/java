@@ -42,13 +42,32 @@ public class UseEntity extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(target);
+        _buffer.writeVaruint(type);
+        _buffer.writeBigEndianFloat(targetPosition.x);
+        _buffer.writeBigEndianFloat(targetPosition.y);
+        _buffer.writeBigEndianFloat(targetPosition.z);
+        _buffer.writeVaruint(hand);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        target = _buffer.readVaruint();
+        type = _buffer.readVaruint();
+        targetPosition.x = _buffer.readBigEndianFloat();
+        targetPosition.y = _buffer.readBigEndianFloat();
+        targetPosition.z = _buffer.readBigEndianFloat();
+        hand = _buffer.readVaruint();
+    }
+
+    public static UseEntity fromBuffer(byte[] buffer)
+    {
+        UseEntity packet = new UseEntity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

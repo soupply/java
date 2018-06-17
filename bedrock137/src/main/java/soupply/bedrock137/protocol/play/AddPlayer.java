@@ -65,13 +65,75 @@ public class AddPlayer extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        uuid.encodeBody(_buffer);
+        byte[] dnc5bu = _buffer.convertString(username);
+        _buffer.writeVaruint((int)dnc5bu.length);
+        _buffer.writeBytes(dnc5bu);
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarulong(runtimeId);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeLittleEndianFloat(motion.x);
+        _buffer.writeLittleEndianFloat(motion.y);
+        _buffer.writeLittleEndianFloat(motion.z);
+        _buffer.writeLittleEndianFloat(pitch);
+        _buffer.writeLittleEndianFloat(headYaw);
+        _buffer.writeLittleEndianFloat(yaw);
+        heldItem.encodeBody(_buffer);
+        metadata.encodeBody(_buffer);
+        _buffer.writeVaruint(unknown11);
+        _buffer.writeVaruint(unknown12);
+        _buffer.writeVaruint(unknown13);
+        _buffer.writeVaruint(unknown14);
+        _buffer.writeVaruint(unknown15);
+        _buffer.writeLittleEndianLong(unknown16);
+        _buffer.writeVaruint((int)links.length);
+        for(soupply.bedrock137.type.Link blam:links)
+        {
+            blam.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid.decodeBody(_buffer);
+        final int bvdnc5bu = _buffer.readVaruint();
+        username = _buffer.readString(bvdnc5bu);
+        entityId = _buffer.readVarlong();
+        runtimeId = _buffer.readVarulong();
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        motion.x = _buffer.readLittleEndianFloat();
+        motion.y = _buffer.readLittleEndianFloat();
+        motion.z = _buffer.readLittleEndianFloat();
+        pitch = _buffer.readLittleEndianFloat();
+        headYaw = _buffer.readLittleEndianFloat();
+        yaw = _buffer.readLittleEndianFloat();
+        heldItem.decodeBody(_buffer);
+        metadata.decodeBody(_buffer);
+        unknown11 = _buffer.readVaruint();
+        unknown12 = _buffer.readVaruint();
+        unknown13 = _buffer.readVaruint();
+        unknown14 = _buffer.readVaruint();
+        unknown15 = _buffer.readVaruint();
+        unknown16 = _buffer.readLittleEndianLong();
+        final int bxbt = _buffer.readVaruint();
+        for(int blam=0;blam<links.length;blam++)
+        {
+            links[blam].decodeBody(_buffer);
+        }
+    }
+
+    public static AddPlayer fromBuffer(byte[] buffer)
+    {
+        AddPlayer packet = new AddPlayer();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

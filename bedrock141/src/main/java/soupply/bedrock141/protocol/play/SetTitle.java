@@ -42,13 +42,33 @@ public class SetTitle extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(action);
+        byte[] dvd = _buffer.convertString(text);
+        _buffer.writeVaruint((int)dvd.length);
+        _buffer.writeBytes(dvd);
+        _buffer.writeVarint(fadeIn);
+        _buffer.writeVarint(stay);
+        _buffer.writeVarint(fadeOut);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVarint();
+        final int bvdvd = _buffer.readVaruint();
+        text = _buffer.readString(bvdvd);
+        fadeIn = _buffer.readVarint();
+        stay = _buffer.readVarint();
+        fadeOut = _buffer.readVarint();
+    }
+
+    public static SetTitle fromBuffer(byte[] buffer)
+    {
+        SetTitle packet = new SetTitle();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -28,13 +28,27 @@ public class ResourcePackChunkRequest extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] aq = _buffer.convertString(id);
+        _buffer.writeVaruint((int)aq.length);
+        _buffer.writeBytes(aq);
+        _buffer.writeLittleEndianInt(chunkIndex);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvaq = _buffer.readVaruint();
+        id = _buffer.readString(bvaq);
+        chunkIndex = _buffer.readLittleEndianInt();
+    }
+
+    public static ResourcePackChunkRequest fromBuffer(byte[] buffer)
+    {
+        ResourcePackChunkRequest packet = new ResourcePackChunkRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

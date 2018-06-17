@@ -26,13 +26,47 @@ public class Slot extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(id);
+        _buffer.writeVarint(metaAndCount);
+        _buffer.writeVaruint((int)nbt.length);
+        _buffer.writeBytes(nbt);
+        _buffer.writeVaruint((int)canPlaceOn.length);
+        for(String yfuxyvb:canPlaceOn)
+        {
+            byte[] ezely = _buffer.convertString(yfuxyvb);
+            _buffer.writeVaruint((int)ezely.length);
+            _buffer.writeBytes(ezely);
+        }
+        _buffer.writeVaruint((int)canDestroy.length);
+        for(String yfrvdje:canDestroy)
+        {
+            byte[] ezdrz = _buffer.convertString(yfrvdje);
+            _buffer.writeVaruint((int)ezdrz.length);
+            _buffer.writeBytes(ezdrz);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        id = _buffer.readVarint();
+        metaAndCount = _buffer.readVarint();
+        final int b5d = _buffer.readVaruint();
+        nbt = _buffer.readBytes(b5d);
+        final int bnbbynt4 = _buffer.readVaruint();
+        for(int yfuxyvb=0;yfuxyvb<canPlaceOn.length;yfuxyvb++)
+        {
+            final int bvyfuxyv = _buffer.readVaruint();
+            canPlaceOn[yfuxyvb] = _buffer.readString(bvyfuxyv);
+        }
+        final int bnbrcrbk = _buffer.readVaruint();
+        for(int yfrvdje=0;yfrvdje<canDestroy.length;yfrvdje++)
+        {
+            final int bvyfrvdj = _buffer.readVaruint();
+            canDestroy[yfrvdje] = _buffer.readString(bvyfrvdj);
+        }
     }
 
 }

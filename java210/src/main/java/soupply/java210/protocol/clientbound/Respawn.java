@@ -55,13 +55,31 @@ public class Respawn extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(dimension);
+        _buffer.writeBigEndianByte(difficulty);
+        _buffer.writeBigEndianByte(gamemode);
+        byte[] bvzxeb = _buffer.convertString(levelType);
+        _buffer.writeVaruint((int)bvzxeb.length);
+        _buffer.writeBytes(bvzxeb);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        dimension = _buffer.readBigEndianInt();
+        difficulty = _buffer.readBigEndianByte();
+        gamemode = _buffer.readBigEndianByte();
+        final int bvbvzxeb = _buffer.readVaruint();
+        levelType = _buffer.readString(bvbvzxeb);
+    }
+
+    public static Respawn fromBuffer(byte[] buffer)
+    {
+        Respawn packet = new Respawn();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

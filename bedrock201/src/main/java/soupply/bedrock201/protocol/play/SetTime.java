@@ -26,13 +26,22 @@ public class SetTime extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(time);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        time = _buffer.readVarint();
+    }
+
+    public static SetTime fromBuffer(byte[] buffer)
+    {
+        SetTime packet = new SetTime();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

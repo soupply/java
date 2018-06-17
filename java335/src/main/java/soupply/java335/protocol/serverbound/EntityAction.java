@@ -41,13 +41,26 @@ public class EntityAction extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeVaruint(action);
+        _buffer.writeVaruint(jumpBoost);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        action = _buffer.readVaruint();
+        jumpBoost = _buffer.readVaruint();
+    }
+
+    public static EntityAction fromBuffer(byte[] buffer)
+    {
+        EntityAction packet = new EntityAction();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -29,13 +29,34 @@ public class UpdateSign extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianLong(position);
+        for(String blzm:lines)
+        {
+            byte[] yxb = _buffer.convertString(blzm);
+            _buffer.writeVaruint((int)yxb.length);
+            _buffer.writeBytes(yxb);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position = _buffer.readBigEndianLong();
+        lines = new String[bxbv];
+        for(int blzm=0;blzm<lines.length;blzm++)
+        {
+            final int bvblznyx = _buffer.readVaruint();
+            lines[blzm] = _buffer.readString(bvblznyx);
+        }
+    }
+
+    public static UpdateSign fromBuffer(byte[] buffer)
+    {
+        UpdateSign packet = new UpdateSign();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

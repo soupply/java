@@ -29,13 +29,24 @@ public class SetEntityData extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        metadata.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        metadata.decodeBody(_buffer);
+    }
+
+    public static SetEntityData fromBuffer(byte[] buffer)
+    {
+        SetEntityData packet = new SetEntityData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

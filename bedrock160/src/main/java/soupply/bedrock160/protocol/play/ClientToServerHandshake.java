@@ -15,13 +15,20 @@ public class ClientToServerHandshake extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+    }
+
+    public static ClientToServerHandshake fromBuffer(byte[] buffer)
+    {
+        ClientToServerHandshake packet = new ClientToServerHandshake();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

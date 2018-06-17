@@ -29,13 +29,28 @@ public class SpawnExperienceOrb extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeVarint(count);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        count = _buffer.readVarint();
+    }
+
+    public static SpawnExperienceOrb fromBuffer(byte[] buffer)
+    {
+        SpawnExperienceOrb packet = new SpawnExperienceOrb();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

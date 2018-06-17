@@ -30,13 +30,24 @@ public class ItemFrameDropItem extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        position.encodeBody(_buffer);
+        item.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.decodeBody(_buffer);
+        item.decodeBody(_buffer);
+    }
+
+    public static ItemFrameDropItem fromBuffer(byte[] buffer)
+    {
+        ItemFrameDropItem packet = new ItemFrameDropItem();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

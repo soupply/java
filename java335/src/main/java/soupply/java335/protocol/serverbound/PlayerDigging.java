@@ -40,13 +40,26 @@ public class PlayerDigging extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(status);
+        _buffer.writeBigEndianLong(position);
+        _buffer.writeBigEndianByte(face);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        status = _buffer.readVaruint();
+        position = _buffer.readBigEndianLong();
+        face = _buffer.readBigEndianByte();
+    }
+
+    public static PlayerDigging fromBuffer(byte[] buffer)
+    {
+        PlayerDigging packet = new PlayerDigging();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

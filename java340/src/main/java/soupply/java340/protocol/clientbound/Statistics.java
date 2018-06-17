@@ -26,13 +26,30 @@ public class Statistics extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)statistics.length);
+        for(soupply.java340.type.Statistic crdldlc:statistics)
+        {
+            crdldlc.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bnyrcrym = _buffer.readVaruint();
+        for(int crdldlc=0;crdldlc<statistics.length;crdldlc++)
+        {
+            statistics[crdldlc].decodeBody(_buffer);
+        }
+    }
+
+    public static Statistics fromBuffer(byte[] buffer)
+    {
+        Statistics packet = new Statistics();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

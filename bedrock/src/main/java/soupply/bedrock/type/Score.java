@@ -23,13 +23,22 @@ public class Score extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeUUID(uuid);
+        byte[] bjznaztf = _buffer.convertString(objectiveName);
+        _buffer.writeVaruint((int)bjznaztf.length);
+        _buffer.writeBytes(bjznaztf);
+        _buffer.writeLittleEndianInt(score);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid = _buffer.readUUID();
+        final int bvbjznaz = _buffer.readVaruint();
+        objectiveName = _buffer.readString(bvbjznaz);
+        score = _buffer.readLittleEndianInt();
     }
 
 }

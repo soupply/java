@@ -30,13 +30,26 @@ public class FullChunkData extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(position.x);
+        _buffer.writeVarint(position.z);
+        data.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.x = _buffer.readVarint();
+        position.z = _buffer.readVarint();
+        data.decodeBody(_buffer);
+    }
+
+    public static FullChunkData fromBuffer(byte[] buffer)
+    {
+        FullChunkData packet = new FullChunkData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

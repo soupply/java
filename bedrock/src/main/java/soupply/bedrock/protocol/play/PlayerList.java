@@ -26,13 +26,22 @@ public class PlayerList extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(action);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readLittleEndianByte();
+    }
+
+    public static PlayerList fromBuffer(byte[] buffer)
+    {
+        PlayerList packet = new PlayerList();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

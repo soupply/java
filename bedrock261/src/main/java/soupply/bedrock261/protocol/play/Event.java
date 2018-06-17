@@ -28,13 +28,24 @@ public class Event extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarint(eventId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        eventId = _buffer.readVarint();
+    }
+
+    public static Event fromBuffer(byte[] buffer)
+    {
+        Event packet = new Event();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

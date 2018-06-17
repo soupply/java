@@ -29,13 +29,24 @@ public class EntityMetadata extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        metadata.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        metadata.decodeBody(_buffer);
+    }
+
+    public static EntityMetadata fromBuffer(byte[] buffer)
+    {
+        EntityMetadata packet = new EntityMetadata();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

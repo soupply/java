@@ -20,13 +20,28 @@ public class Enum extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bfz = _buffer.convertString(name);
+        _buffer.writeVaruint((int)bfz.length);
+        _buffer.writeBytes(bfz);
+        _buffer.writeVaruint((int)valuesIndexes.length);
+        for(short dfdvs5zh:valuesIndexes)
+        {
+            _buffer.writeLittleEndianShort(dfdvs5zh);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbfz = _buffer.readVaruint();
+        name = _buffer.readString(bvbfz);
+        final int bzbvclzv = _buffer.readVaruint();
+        for(int dfdvs5zh=0;dfdvs5zh<valuesIndexes.length;dfdvs5zh++)
+        {
+            valuesIndexes[dfdvs5zh] = _buffer.readLittleEndianShort();
+        }
     }
 
 }

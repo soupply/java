@@ -26,13 +26,22 @@ public class Title extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(action);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVaruint();
+    }
+
+    public static Title fromBuffer(byte[] buffer)
+    {
+        Title packet = new Title();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -35,13 +35,34 @@ public class SoundEffect extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(soundId);
+        _buffer.writeVaruint(category);
+        _buffer.writeBigEndianInt(position.x);
+        _buffer.writeBigEndianInt(position.y);
+        _buffer.writeBigEndianInt(position.z);
+        _buffer.writeBigEndianFloat(volume);
+        _buffer.writeBigEndianFloat(pitch);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        soundId = _buffer.readVaruint();
+        category = _buffer.readVaruint();
+        position.x = _buffer.readBigEndianInt();
+        position.y = _buffer.readBigEndianInt();
+        position.z = _buffer.readBigEndianInt();
+        volume = _buffer.readBigEndianFloat();
+        pitch = _buffer.readBigEndianFloat();
+    }
+
+    public static SoundEffect fromBuffer(byte[] buffer)
+    {
+        SoundEffect packet = new SoundEffect();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -28,13 +28,32 @@ public class InventoryContent extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(window);
+        _buffer.writeVaruint((int)slots.length);
+        for(soupply.bedrock261.type.Slot cxdm:slots)
+        {
+            cxdm.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readVaruint();
+        final int bnbr = _buffer.readVaruint();
+        for(int cxdm=0;cxdm<slots.length;cxdm++)
+        {
+            slots[cxdm].decodeBody(_buffer);
+        }
+    }
+
+    public static InventoryContent fromBuffer(byte[] buffer)
+    {
+        InventoryContent packet = new InventoryContent();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

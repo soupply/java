@@ -30,13 +30,26 @@ public class ContainerSetData extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(window);
+        _buffer.writeVarint(property);
+        _buffer.writeVarint(value);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readLittleEndianByte();
+        property = _buffer.readVarint();
+        value = _buffer.readVarint();
+    }
+
+    public static ContainerSetData fromBuffer(byte[] buffer)
+    {
+        ContainerSetData packet = new ContainerSetData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

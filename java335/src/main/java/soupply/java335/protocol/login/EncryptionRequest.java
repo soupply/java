@@ -30,13 +30,33 @@ public class EncryptionRequest extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] cvdvsq = _buffer.convertString(serverId);
+        _buffer.writeVaruint((int)cvdvsq.length);
+        _buffer.writeBytes(cvdvsq);
+        _buffer.writeVaruint((int)publicKey.length);
+        _buffer.writeBytes(publicKey);
+        _buffer.writeVaruint((int)verifyToken.length);
+        _buffer.writeBytes(verifyToken);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvcvdvsq = _buffer.readVaruint();
+        serverId = _buffer.readString(bvcvdvsq);
+        final int bbyxyte = _buffer.readVaruint();
+        publicKey = _buffer.readBytes(bbyxyte);
+        final int bzclerav = _buffer.readVaruint();
+        verifyToken = _buffer.readBytes(bzclerav);
+    }
+
+    public static EncryptionRequest fromBuffer(byte[] buffer)
+    {
+        EncryptionRequest packet = new EncryptionRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

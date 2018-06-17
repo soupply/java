@@ -34,13 +34,30 @@ public class TestInt extends soupply.test0.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(a);
+        _buffer.writeBigEndianShort(b);
+        _buffer.writeLittleEndianLong(c);
+        _buffer.writeVarshort(d);
+        _buffer.writeVaruint(e);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        a = _buffer.readBigEndianByte();
+        b = _buffer.readBigEndianShort();
+        c = _buffer.readLittleEndianLong();
+        d = _buffer.readVarshort();
+        e = _buffer.readVaruint();
+    }
+
+    public static TestInt fromBuffer(byte[] buffer)
+    {
+        TestInt packet = new TestInt();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

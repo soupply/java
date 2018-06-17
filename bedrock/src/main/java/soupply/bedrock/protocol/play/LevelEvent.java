@@ -86,13 +86,30 @@ public class LevelEvent extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(eventId);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeVarint(data);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        eventId = _buffer.readVarint();
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        data = _buffer.readVarint();
+    }
+
+    public static LevelEvent fromBuffer(byte[] buffer)
+    {
+        LevelEvent packet = new LevelEvent();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

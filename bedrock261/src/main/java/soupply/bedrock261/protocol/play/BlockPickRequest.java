@@ -31,13 +31,30 @@ public class BlockPickRequest extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(position.x);
+        _buffer.writeVarint(position.y);
+        _buffer.writeVarint(position.z);
+        _buffer.writeBool(unknown1);
+        _buffer.writeLittleEndianByte(slot);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.x = _buffer.readVarint();
+        position.y = _buffer.readVarint();
+        position.z = _buffer.readVarint();
+        unknown1 = _buffer.readBool();
+        slot = _buffer.readLittleEndianByte();
+    }
+
+    public static BlockPickRequest fromBuffer(byte[] buffer)
+    {
+        BlockPickRequest packet = new BlockPickRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

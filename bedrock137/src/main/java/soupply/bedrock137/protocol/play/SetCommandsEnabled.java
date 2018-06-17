@@ -26,13 +26,22 @@ public class SetCommandsEnabled extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(enabled);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        enabled = _buffer.readBool();
+    }
+
+    public static SetCommandsEnabled fromBuffer(byte[] buffer)
+    {
+        SetCommandsEnabled packet = new SetCommandsEnabled();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -81,13 +81,28 @@ public class Effect extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(effectId);
+        _buffer.writeBigEndianLong(position);
+        _buffer.writeBigEndianInt(data);
+        _buffer.writeBool(disableVolume);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        effectId = _buffer.readBigEndianInt();
+        position = _buffer.readBigEndianLong();
+        data = _buffer.readBigEndianInt();
+        disableVolume = _buffer.readBool();
+    }
+
+    public static Effect fromBuffer(byte[] buffer)
+    {
+        Effect packet = new Effect();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

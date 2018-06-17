@@ -26,13 +26,25 @@ public class RemoveObject extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bjzntfz = _buffer.convertString(objectName);
+        _buffer.writeVaruint((int)bjzntfz.length);
+        _buffer.writeBytes(bjzntfz);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbjzntf = _buffer.readVaruint();
+        objectName = _buffer.readString(bvbjzntf);
+    }
+
+    public static RemoveObject fromBuffer(byte[] buffer)
+    {
+        RemoveObject packet = new RemoveObject();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

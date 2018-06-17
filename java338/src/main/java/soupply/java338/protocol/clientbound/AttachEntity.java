@@ -28,13 +28,24 @@ public class AttachEntity extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(target);
+        _buffer.writeBigEndianInt(holder);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        target = _buffer.readBigEndianInt();
+        holder = _buffer.readBigEndianInt();
+    }
+
+    public static AttachEntity fromBuffer(byte[] buffer)
+    {
+        AttachEntity packet = new AttachEntity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

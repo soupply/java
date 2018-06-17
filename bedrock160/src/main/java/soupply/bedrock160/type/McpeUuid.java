@@ -20,13 +20,17 @@ public class McpeUuid extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianLong(mostSignificantBits);
+        _buffer.writeLittleEndianLong(leastSignificantBits);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        mostSignificantBits = _buffer.readLittleEndianLong();
+        leastSignificantBits = _buffer.readLittleEndianLong();
     }
 
 }

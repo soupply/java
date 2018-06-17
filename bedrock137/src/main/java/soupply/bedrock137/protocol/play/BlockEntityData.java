@@ -29,13 +29,24 @@ public class BlockEntityData extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        position.encodeBody(_buffer);
+        _buffer.writeBytes(nbt);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.decodeBody(_buffer);
+        nbt = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+    }
+
+    public static BlockEntityData fromBuffer(byte[] buffer)
+    {
+        BlockEntityData packet = new BlockEntityData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

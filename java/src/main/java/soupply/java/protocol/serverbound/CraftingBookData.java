@@ -26,13 +26,22 @@ public class CraftingBookData extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(type);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        type = _buffer.readVaruint();
+    }
+
+    public static CraftingBookData fromBuffer(byte[] buffer)
+    {
+        CraftingBookData packet = new CraftingBookData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

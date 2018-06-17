@@ -28,13 +28,24 @@ public class CollectItem extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(collected);
+        _buffer.writeVaruint(collector);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        collected = _buffer.readVaruint();
+        collector = _buffer.readVaruint();
+    }
+
+    public static CollectItem fromBuffer(byte[] buffer)
+    {
+        CollectItem packet = new CollectItem();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

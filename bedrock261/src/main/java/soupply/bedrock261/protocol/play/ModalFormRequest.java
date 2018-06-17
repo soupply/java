@@ -28,13 +28,27 @@ public class ModalFormRequest extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(formId);
+        byte[] zfy = _buffer.convertString(data);
+        _buffer.writeVaruint((int)zfy.length);
+        _buffer.writeBytes(zfy);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        formId = _buffer.readVaruint();
+        final int bvzfy = _buffer.readVaruint();
+        data = _buffer.readString(bvzfy);
+    }
+
+    public static ModalFormRequest fromBuffer(byte[] buffer)
+    {
+        ModalFormRequest packet = new ModalFormRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

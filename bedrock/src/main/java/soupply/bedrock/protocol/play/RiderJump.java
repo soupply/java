@@ -26,13 +26,22 @@ public class RiderJump extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(rider);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        rider = _buffer.readVarlong();
+    }
+
+    public static RiderJump fromBuffer(byte[] buffer)
+    {
+        RiderJump packet = new RiderJump();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

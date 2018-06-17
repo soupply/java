@@ -33,13 +33,28 @@ public class AddHangingEntity extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarulong(runtimeId);
+        position.encodeBody(_buffer);
+        _buffer.writeVarint(unknown3);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        runtimeId = _buffer.readVarulong();
+        position.decodeBody(_buffer);
+        unknown3 = _buffer.readVarint();
+    }
+
+    public static AddHangingEntity fromBuffer(byte[] buffer)
+    {
+        AddHangingEntity packet = new AddHangingEntity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

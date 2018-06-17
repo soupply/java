@@ -28,13 +28,32 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(type);
+        _buffer.writeVaruint((int)actions.length);
+        for(soupply.bedrock261.type.InventoryAction yna9c:actions)
+        {
+            yna9c.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        type = _buffer.readVaruint();
+        final int bfdlbm = _buffer.readVaruint();
+        for(int yna9c=0;yna9c<actions.length;yna9c++)
+        {
+            actions[yna9c].decodeBody(_buffer);
+        }
+    }
+
+    public static InventoryTransaction fromBuffer(byte[] buffer)
+    {
+        InventoryTransaction packet = new InventoryTransaction();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

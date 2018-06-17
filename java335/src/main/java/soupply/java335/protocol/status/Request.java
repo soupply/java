@@ -15,13 +15,20 @@ public class Request extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+    }
+
+    public static Request fromBuffer(byte[] buffer)
+    {
+        Request packet = new Request();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

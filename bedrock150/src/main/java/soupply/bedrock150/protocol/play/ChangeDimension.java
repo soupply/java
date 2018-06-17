@@ -36,13 +36,30 @@ public class ChangeDimension extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(dimension);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeBool(unknown2);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        dimension = _buffer.readVarint();
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        unknown2 = _buffer.readBool();
+    }
+
+    public static ChangeDimension fromBuffer(byte[] buffer)
+    {
+        ChangeDimension packet = new ChangeDimension();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

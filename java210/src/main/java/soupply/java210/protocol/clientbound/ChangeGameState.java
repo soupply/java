@@ -54,13 +54,24 @@ public class ChangeGameState extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(reason);
+        _buffer.writeBigEndianFloat(value);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        reason = _buffer.readBigEndianByte();
+        value = _buffer.readBigEndianFloat();
+    }
+
+    public static ChangeGameState fromBuffer(byte[] buffer)
+    {
+        ChangeGameState packet = new ChangeGameState();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

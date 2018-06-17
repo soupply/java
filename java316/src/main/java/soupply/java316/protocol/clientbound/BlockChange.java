@@ -28,13 +28,24 @@ public class BlockChange extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianLong(position);
+        _buffer.writeVaruint(block);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position = _buffer.readBigEndianLong();
+        block = _buffer.readVaruint();
+    }
+
+    public static BlockChange fromBuffer(byte[] buffer)
+    {
+        BlockChange packet = new BlockChange();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

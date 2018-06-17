@@ -28,13 +28,24 @@ public class TakeItemEntity extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(collected);
+        _buffer.writeVarlong(collector);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        collected = _buffer.readVarlong();
+        collector = _buffer.readVarlong();
+    }
+
+    public static TakeItemEntity fromBuffer(byte[] buffer)
+    {
+        TakeItemEntity packet = new TakeItemEntity();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

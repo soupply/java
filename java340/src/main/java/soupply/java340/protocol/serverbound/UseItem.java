@@ -30,13 +30,22 @@ public class UseItem extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(hand);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        hand = _buffer.readVaruint();
+    }
+
+    public static UseItem fromBuffer(byte[] buffer)
+    {
+        UseItem packet = new UseItem();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

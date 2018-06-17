@@ -30,13 +30,22 @@ public class Animation extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(hand);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        hand = _buffer.readVaruint();
+    }
+
+    public static Animation fromBuffer(byte[] buffer)
+    {
+        Animation packet = new Animation();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

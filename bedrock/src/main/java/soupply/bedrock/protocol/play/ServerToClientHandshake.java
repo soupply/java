@@ -28,13 +28,29 @@ public class ServerToClientHandshake extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] cvdvuvbl = _buffer.convertString(serverPublicKey);
+        _buffer.writeVaruint((int)cvdvuvbl.length);
+        _buffer.writeBytes(cvdvuvbl);
+        _buffer.writeVaruint((int)token.length);
+        _buffer.writeBytes(token);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvcvdvuv = _buffer.readVaruint();
+        serverPublicKey = _buffer.readString(bvcvdvuv);
+        final int brav = _buffer.readVaruint();
+        token = _buffer.readBytes(brav);
+    }
+
+    public static ServerToClientHandshake fromBuffer(byte[] buffer)
+    {
+        ServerToClientHandshake packet = new ServerToClientHandshake();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

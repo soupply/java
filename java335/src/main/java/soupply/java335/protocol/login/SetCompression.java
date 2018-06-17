@@ -26,13 +26,22 @@ public class SetCompression extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(thresold);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        thresold = _buffer.readVaruint();
+    }
+
+    public static SetCompression fromBuffer(byte[] buffer)
+    {
+        SetCompression packet = new SetCompression();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

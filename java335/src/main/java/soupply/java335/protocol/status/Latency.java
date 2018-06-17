@@ -26,13 +26,22 @@ public class Latency extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianLong(id);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        id = _buffer.readBigEndianLong();
+    }
+
+    public static Latency fromBuffer(byte[] buffer)
+    {
+        Latency packet = new Latency();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

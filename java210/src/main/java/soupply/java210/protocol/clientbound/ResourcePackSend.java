@@ -28,13 +28,30 @@ public class ResourcePackSend extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] dj = _buffer.convertString(url);
+        _buffer.writeVaruint((int)dj.length);
+        _buffer.writeBytes(dj);
+        byte[] afa = _buffer.convertString(hash);
+        _buffer.writeVaruint((int)afa.length);
+        _buffer.writeBytes(afa);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvdj = _buffer.readVaruint();
+        url = _buffer.readString(bvdj);
+        final int bvafa = _buffer.readVaruint();
+        hash = _buffer.readString(bvafa);
+    }
+
+    public static ResourcePackSend fromBuffer(byte[] buffer)
+    {
+        ResourcePackSend packet = new ResourcePackSend();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

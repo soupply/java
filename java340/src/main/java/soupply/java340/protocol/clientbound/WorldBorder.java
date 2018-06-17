@@ -26,13 +26,22 @@ public class WorldBorder extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(action);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVaruint();
+    }
+
+    public static WorldBorder fromBuffer(byte[] buffer)
+    {
+        WorldBorder packet = new WorldBorder();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

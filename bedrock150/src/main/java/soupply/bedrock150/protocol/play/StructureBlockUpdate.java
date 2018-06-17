@@ -15,13 +15,20 @@ public class StructureBlockUpdate extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+    }
+
+    public static StructureBlockUpdate fromBuffer(byte[] buffer)
+    {
+        StructureBlockUpdate packet = new StructureBlockUpdate();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

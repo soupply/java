@@ -26,13 +26,33 @@ public class PurchaseReceipt extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)unknown0.length);
+        for(String d5b9ba:unknown0)
+        {
+            byte[] zvoj = _buffer.convertString(d5b9ba);
+            _buffer.writeVaruint((int)zvoj.length);
+            _buffer.writeBytes(zvoj);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bva5d4 = _buffer.readVaruint();
+        for(int d5b9ba=0;d5b9ba<unknown0.length;d5b9ba++)
+        {
+            final int bvd5b9bb = _buffer.readVaruint();
+            unknown0[d5b9ba] = _buffer.readString(bvd5b9bb);
+        }
+    }
+
+    public static PurchaseReceipt fromBuffer(byte[] buffer)
+    {
+        PurchaseReceipt packet = new PurchaseReceipt();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

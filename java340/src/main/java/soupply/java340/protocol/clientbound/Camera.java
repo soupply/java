@@ -26,13 +26,22 @@ public class Camera extends soupply.java340.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+    }
+
+    public static Camera fromBuffer(byte[] buffer)
+    {
+        Camera packet = new Camera();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

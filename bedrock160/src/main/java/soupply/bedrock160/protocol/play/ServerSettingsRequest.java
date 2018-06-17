@@ -15,13 +15,20 @@ public class ServerSettingsRequest extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+    }
+
+    public static ServerSettingsRequest fromBuffer(byte[] buffer)
+    {
+        ServerSettingsRequest packet = new ServerSettingsRequest();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

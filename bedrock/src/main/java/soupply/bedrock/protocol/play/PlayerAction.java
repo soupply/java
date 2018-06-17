@@ -58,13 +58,28 @@ public class PlayerAction extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarint(action);
+        position.encodeBody(_buffer);
+        _buffer.writeVarint(face);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        action = _buffer.readVarint();
+        position.decodeBody(_buffer);
+        face = _buffer.readVarint();
+    }
+
+    public static PlayerAction fromBuffer(byte[] buffer)
+    {
+        PlayerAction packet = new PlayerAction();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

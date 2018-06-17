@@ -30,13 +30,42 @@ public class ResourcePacksStackPacket extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(mustAccept);
+        _buffer.writeVaruint((int)behaviourPacks.length);
+        for(soupply.bedrock137.type.Pack yvyzbvuf:behaviourPacks)
+        {
+            yvyzbvuf.encodeBody(_buffer);
+        }
+        _buffer.writeVaruint((int)resourcePacks.length);
+        for(soupply.bedrock137.type.Pack cvbvyvyn:resourcePacks)
+        {
+            cvbvyvyn.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        mustAccept = _buffer.readBool();
+        final int bjafa9cb = _buffer.readVaruint();
+        for(int yvyzbvuf=0;yvyzbvuf<behaviourPacks.length;yvyzbvuf++)
+        {
+            behaviourPacks[yvyzbvuf].decodeBody(_buffer);
+        }
+        final int bjc9cnuf = _buffer.readVaruint();
+        for(int cvbvyvyn=0;cvbvyvyn<resourcePacks.length;cvbvyvyn++)
+        {
+            resourcePacks[cvbvyvyn].decodeBody(_buffer);
+        }
+    }
+
+    public static ResourcePacksStackPacket fromBuffer(byte[] buffer)
+    {
+        ResourcePacksStackPacket packet = new ResourcePacksStackPacket();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -30,13 +30,31 @@ public class BlockEvent extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        position.encodeBody(_buffer);
+        for(int zfy:data)
+        {
+            _buffer.writeVarint(zfy);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.decodeBody(_buffer);
+        data = new int[brde];
+        for(int zfy=0;zfy<data.length;zfy++)
+        {
+            data[zfy] = _buffer.readVarint();
+        }
+    }
+
+    public static BlockEvent fromBuffer(byte[] buffer)
+    {
+        BlockEvent packet = new BlockEvent();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

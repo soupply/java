@@ -35,13 +35,33 @@ public class AddPainting extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarulong(runtimeId);
+        position.encodeBody(_buffer);
+        _buffer.writeVarint(direction);
+        byte[] dlbu = _buffer.convertString(title);
+        _buffer.writeVaruint((int)dlbu.length);
+        _buffer.writeBytes(dlbu);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        runtimeId = _buffer.readVarulong();
+        position.decodeBody(_buffer);
+        direction = _buffer.readVarint();
+        final int bvdlbu = _buffer.readVaruint();
+        title = _buffer.readString(bvdlbu);
+    }
+
+    public static AddPainting fromBuffer(byte[] buffer)
+    {
+        AddPainting packet = new AddPainting();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

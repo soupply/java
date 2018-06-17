@@ -28,13 +28,19 @@ public class Modifier extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeUUID(uuid);
+        _buffer.writeBigEndianDouble(amount);
+        _buffer.writeBigEndianByte(operation);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid = _buffer.readUUID();
+        amount = _buffer.readBigEndianDouble();
+        operation = _buffer.readBigEndianByte();
     }
 
 }

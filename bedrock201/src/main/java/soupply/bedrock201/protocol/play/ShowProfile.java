@@ -15,13 +15,20 @@ public class ShowProfile extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+    }
+
+    public static ShowProfile fromBuffer(byte[] buffer)
+    {
+        ShowProfile packet = new ShowProfile();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

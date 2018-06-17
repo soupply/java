@@ -31,13 +31,22 @@ public class SetDefaultGameType extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(gameType);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        gameType = _buffer.readVaruint();
+    }
+
+    public static SetDefaultGameType fromBuffer(byte[] buffer)
+    {
+        SetDefaultGameType packet = new SetDefaultGameType();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -32,13 +32,22 @@ public class ServerDifficulty extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianByte(difficulty);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        difficulty = _buffer.readBigEndianByte();
+    }
+
+    public static ServerDifficulty fromBuffer(byte[] buffer)
+    {
+        ServerDifficulty packet = new ServerDifficulty();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

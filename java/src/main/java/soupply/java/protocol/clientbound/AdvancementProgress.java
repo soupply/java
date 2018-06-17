@@ -28,13 +28,27 @@ public class AdvancementProgress extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(notEmpty);
+        byte[] arbrzlc = _buffer.convertString(identifier);
+        _buffer.writeVaruint((int)arbrzlc.length);
+        _buffer.writeBytes(arbrzlc);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        notEmpty = _buffer.readBool();
+        final int bvarbrzl = _buffer.readVaruint();
+        identifier = _buffer.readString(bvarbrzl);
+    }
+
+    public static AdvancementProgress fromBuffer(byte[] buffer)
+    {
+        AdvancementProgress packet = new AdvancementProgress();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

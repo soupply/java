@@ -26,13 +26,22 @@ public class SetLastHurtBy extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(unknown0);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        unknown0 = _buffer.readVarint();
+    }
+
+    public static SetLastHurtBy fromBuffer(byte[] buffer)
+    {
+        SetLastHurtBy packet = new SetLastHurtBy();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -35,13 +35,26 @@ public class SetSpawnPosition extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(type);
+        position.encodeBody(_buffer);
+        _buffer.writeBool(forced);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        type = _buffer.readVarint();
+        position.decodeBody(_buffer);
+        forced = _buffer.readBool();
+    }
+
+    public static SetSpawnPosition fromBuffer(byte[] buffer)
+    {
+        SetSpawnPosition packet = new SetSpawnPosition();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

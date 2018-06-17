@@ -28,13 +28,24 @@ public class Camera extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(unknown0);
+        _buffer.writeVarlong(unknown1);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        unknown0 = _buffer.readVarlong();
+        unknown1 = _buffer.readVarlong();
+    }
+
+    public static Camera fromBuffer(byte[] buffer)
+    {
+        Camera packet = new Camera();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

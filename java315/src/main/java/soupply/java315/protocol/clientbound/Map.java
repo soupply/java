@@ -41,13 +41,48 @@ public class Map extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(mapId);
+        _buffer.writeBigEndianByte(scale);
+        _buffer.writeBool(showIcons);
+        _buffer.writeVaruint((int)icons.length);
+        for(soupply.java315.type.Icon anbm:icons)
+        {
+            anbm.encodeBody(_buffer);
+        }
+        _buffer.writeBigEndianByte(colums);
+        _buffer.writeBigEndianByte(rows);
+        _buffer.writeBigEndianByte(offset.x);
+        _buffer.writeBigEndianByte(offset.z);
+        _buffer.writeVaruint((int)data.length);
+        _buffer.writeBytes(data);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        mapId = _buffer.readVaruint();
+        scale = _buffer.readBigEndianByte();
+        showIcons = _buffer.readBool();
+        final int blb5 = _buffer.readVaruint();
+        for(int anbm=0;anbm<icons.length;anbm++)
+        {
+            icons[anbm].decodeBody(_buffer);
+        }
+        colums = _buffer.readBigEndianByte();
+        rows = _buffer.readBigEndianByte();
+        offset.x = _buffer.readBigEndianByte();
+        offset.z = _buffer.readBigEndianByte();
+        final int brde = _buffer.readVaruint();
+        data = _buffer.readBytes(brde);
+    }
+
+    public static Map fromBuffer(byte[] buffer)
+    {
+        Map packet = new Map();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

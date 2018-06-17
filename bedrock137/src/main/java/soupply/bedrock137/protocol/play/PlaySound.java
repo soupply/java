@@ -33,13 +33,31 @@ public class PlaySound extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bfz = _buffer.convertString(name);
+        _buffer.writeVaruint((int)bfz.length);
+        _buffer.writeBytes(bfz);
+        position.encodeBody(_buffer);
+        _buffer.writeLittleEndianFloat(volume);
+        _buffer.writeLittleEndianFloat(pitch);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbfz = _buffer.readVaruint();
+        name = _buffer.readString(bvbfz);
+        position.decodeBody(_buffer);
+        volume = _buffer.readLittleEndianFloat();
+        pitch = _buffer.readLittleEndianFloat();
+    }
+
+    public static PlaySound fromBuffer(byte[] buffer)
+    {
+        PlaySound packet = new PlaySound();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -42,13 +42,41 @@ public class UpdateTrade extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(window);
+        _buffer.writeLittleEndianByte(windowType);
+        _buffer.writeVarint(unknown2);
+        _buffer.writeVarint(unknown3);
+        _buffer.writeBool(willing);
+        _buffer.writeVarlong(trader);
+        _buffer.writeVarlong(player);
+        byte[] zlcxe5bu = _buffer.convertString(displayName);
+        _buffer.writeVaruint((int)zlcxe5bu.length);
+        _buffer.writeBytes(zlcxe5bu);
+        _buffer.writeBytes(offers);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readLittleEndianByte();
+        windowType = _buffer.readLittleEndianByte();
+        unknown2 = _buffer.readVarint();
+        unknown3 = _buffer.readVarint();
+        willing = _buffer.readBool();
+        trader = _buffer.readVarlong();
+        player = _buffer.readVarlong();
+        final int bvzlcxe5 = _buffer.readVaruint();
+        displayName = _buffer.readString(bvzlcxe5);
+        offers = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+    }
+
+    public static UpdateTrade fromBuffer(byte[] buffer)
+    {
+        UpdateTrade packet = new UpdateTrade();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

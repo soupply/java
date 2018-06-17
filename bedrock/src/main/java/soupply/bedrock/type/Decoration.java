@@ -25,13 +25,26 @@ public class Decoration extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(rotationAndIcon);
+        _buffer.writeLittleEndianByte(position.x);
+        _buffer.writeLittleEndianByte(position.z);
+        byte[] bfzw = _buffer.convertString(label);
+        _buffer.writeVaruint((int)bfzw.length);
+        _buffer.writeBytes(bfzw);
+        _buffer.writeLittleEndianInt(color);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        rotationAndIcon = _buffer.readVarint();
+        position.x = _buffer.readLittleEndianByte();
+        position.z = _buffer.readLittleEndianByte();
+        final int bvbfzw = _buffer.readVaruint();
+        label = _buffer.readString(bvbfzw);
+        color = _buffer.readLittleEndianInt();
     }
 
 }

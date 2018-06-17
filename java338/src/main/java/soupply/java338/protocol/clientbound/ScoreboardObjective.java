@@ -41,13 +41,37 @@ public class ScoreboardObjective extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bfz = _buffer.convertString(name);
+        _buffer.writeVaruint((int)bfz.length);
+        _buffer.writeBytes(bfz);
+        _buffer.writeBigEndianByte(mode);
+        byte[] dfdu = _buffer.convertString(value);
+        _buffer.writeVaruint((int)dfdu.length);
+        _buffer.writeBytes(dfdu);
+        byte[] dlz = _buffer.convertString(type);
+        _buffer.writeVaruint((int)dlz.length);
+        _buffer.writeBytes(dlz);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbfz = _buffer.readVaruint();
+        name = _buffer.readString(bvbfz);
+        mode = _buffer.readBigEndianByte();
+        final int bvdfdu = _buffer.readVaruint();
+        value = _buffer.readString(bvdfdu);
+        final int bvdlz = _buffer.readVaruint();
+        type = _buffer.readString(bvdlz);
+    }
+
+    public static ScoreboardObjective fromBuffer(byte[] buffer)
+    {
+        ScoreboardObjective packet = new ScoreboardObjective();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

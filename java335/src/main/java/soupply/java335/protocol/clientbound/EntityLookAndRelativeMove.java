@@ -35,13 +35,34 @@ public class EntityLookAndRelativeMove extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeBigEndianShort(delta.x);
+        _buffer.writeBigEndianShort(delta.y);
+        _buffer.writeBigEndianShort(delta.z);
+        _buffer.writeBigEndianByte(yaw);
+        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeBool(onGround);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        delta.x = _buffer.readBigEndianShort();
+        delta.y = _buffer.readBigEndianShort();
+        delta.z = _buffer.readBigEndianShort();
+        yaw = _buffer.readBigEndianByte();
+        pitch = _buffer.readBigEndianByte();
+        onGround = _buffer.readBool();
+    }
+
+    public static EntityLookAndRelativeMove fromBuffer(byte[] buffer)
+    {
+        EntityLookAndRelativeMove packet = new EntityLookAndRelativeMove();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

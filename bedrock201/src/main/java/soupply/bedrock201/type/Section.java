@@ -24,13 +24,19 @@ public class Section extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(storageVersion);
+        _buffer.writeBytes(blockIds);
+        _buffer.writeBytes(blockMetas);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        storageVersion = _buffer.readLittleEndianByte();
+        blockIds = _buffer.readBytes(blockIds.length);
+        blockMetas = _buffer.readBytes(blockMetas.length);
     }
 
 }

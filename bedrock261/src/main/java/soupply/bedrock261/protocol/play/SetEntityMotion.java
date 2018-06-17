@@ -29,13 +29,28 @@ public class SetEntityMotion extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeLittleEndianFloat(motion.x);
+        _buffer.writeLittleEndianFloat(motion.y);
+        _buffer.writeLittleEndianFloat(motion.z);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        motion.x = _buffer.readLittleEndianFloat();
+        motion.y = _buffer.readLittleEndianFloat();
+        motion.z = _buffer.readLittleEndianFloat();
+    }
+
+    public static SetEntityMotion fromBuffer(byte[] buffer)
+    {
+        SetEntityMotion packet = new SetEntityMotion();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

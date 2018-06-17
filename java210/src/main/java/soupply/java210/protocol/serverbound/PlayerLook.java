@@ -30,13 +30,26 @@ public class PlayerLook extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianFloat(yaw);
+        _buffer.writeBigEndianFloat(pitch);
+        _buffer.writeBool(onGround);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        yaw = _buffer.readBigEndianFloat();
+        pitch = _buffer.readBigEndianFloat();
+        onGround = _buffer.readBool();
+    }
+
+    public static PlayerLook fromBuffer(byte[] buffer)
+    {
+        PlayerLook packet = new PlayerLook();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -28,13 +28,30 @@ public class LoginSuccess extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] dvz = _buffer.convertString(uuid);
+        _buffer.writeVaruint((int)dvz.length);
+        _buffer.writeBytes(dvz);
+        byte[] dnc5bu = _buffer.convertString(username);
+        _buffer.writeVaruint((int)dnc5bu.length);
+        _buffer.writeBytes(dnc5bu);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvdvz = _buffer.readVaruint();
+        uuid = _buffer.readString(bvdvz);
+        final int bvdnc5bu = _buffer.readVaruint();
+        username = _buffer.readString(bvdnc5bu);
+    }
+
+    public static LoginSuccess fromBuffer(byte[] buffer)
+    {
+        LoginSuccess packet = new LoginSuccess();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

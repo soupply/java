@@ -35,13 +35,25 @@ public class InventoryAction extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(source);
+        _buffer.writeVarint(container);
+        _buffer.writeVaruint(unknown2);
+        _buffer.writeVaruint(slot);
+        oldItem.encodeBody(_buffer);
+        newItem.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        source = _buffer.readVaruint();
+        container = _buffer.readVarint();
+        unknown2 = _buffer.readVaruint();
+        slot = _buffer.readVaruint();
+        oldItem.decodeBody(_buffer);
+        newItem.decodeBody(_buffer);
     }
 
 }

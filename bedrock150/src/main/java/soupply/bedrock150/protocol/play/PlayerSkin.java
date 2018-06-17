@@ -41,13 +41,54 @@ public class PlayerSkin extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        uuid.encodeBody(_buffer);
+        byte[] ctbl = _buffer.convertString(skinId);
+        _buffer.writeVaruint((int)ctbl.length);
+        _buffer.writeBytes(ctbl);
+        byte[] ctb5bu = _buffer.convertString(skinName);
+        _buffer.writeVaruint((int)ctb5bu.length);
+        _buffer.writeBytes(ctb5bu);
+        byte[] d5b9bm = _buffer.convertString(unknown3);
+        _buffer.writeVaruint((int)d5b9bm.length);
+        _buffer.writeBytes(d5b9bm);
+        _buffer.writeVaruint((int)skinData.length);
+        _buffer.writeBytes(skinData);
+        _buffer.writeVaruint((int)capeData.length);
+        _buffer.writeBytes(capeData);
+        byte[] zvbvclbr = _buffer.convertString(geometryModel);
+        _buffer.writeVaruint((int)zvbvclbr.length);
+        _buffer.writeBytes(zvbvclbr);
+        _buffer.writeVaruint((int)geometryData.length);
+        _buffer.writeBytes(geometryData);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        uuid.decodeBody(_buffer);
+        final int bvctbl = _buffer.readVaruint();
+        skinId = _buffer.readString(bvctbl);
+        final int bvctb5bu = _buffer.readVaruint();
+        skinName = _buffer.readString(bvctb5bu);
+        final int bvd5b9bm = _buffer.readVaruint();
+        unknown3 = _buffer.readString(bvd5b9bm);
+        final int bna5yr = _buffer.readVaruint();
+        skinData = _buffer.readBytes(bna5yr);
+        final int bncvyr = _buffer.readVaruint();
+        capeData = _buffer.readBytes(bncvyr);
+        final int bvzvbvcl = _buffer.readVaruint();
+        geometryModel = _buffer.readString(bvzvbvcl);
+        final int bdb1djrf = _buffer.readVaruint();
+        geometryData = _buffer.readBytes(bdb1djrf);
+    }
+
+    public static PlayerSkin fromBuffer(byte[] buffer)
+    {
+        PlayerSkin packet = new PlayerSkin();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

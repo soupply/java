@@ -26,13 +26,30 @@ public class DestroyEntities extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint((int)entityIds.length);
+        for(int z5arsr:entityIds)
+        {
+            _buffer.writeVaruint(z5arsr);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvdlelc = _buffer.readVaruint();
+        for(int z5arsr=0;z5arsr<entityIds.length;z5arsr++)
+        {
+            entityIds[z5arsr] = _buffer.readVaruint();
+        }
+    }
+
+    public static DestroyEntities fromBuffer(byte[] buffer)
+    {
+        DestroyEntities packet = new DestroyEntities();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

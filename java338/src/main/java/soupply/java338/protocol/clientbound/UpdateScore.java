@@ -36,13 +36,34 @@ public class UpdateScore extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] cncvy1 = _buffer.convertString(scoreName);
+        _buffer.writeVaruint((int)cncvy1.length);
+        _buffer.writeBytes(cncvy1);
+        _buffer.writeBigEndianByte(action);
+        byte[] bjznaztf = _buffer.convertString(objectiveName);
+        _buffer.writeVaruint((int)bjznaztf.length);
+        _buffer.writeBytes(bjznaztf);
+        _buffer.writeVaruint(value);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvcncvy1 = _buffer.readVaruint();
+        scoreName = _buffer.readString(bvcncvy1);
+        action = _buffer.readBigEndianByte();
+        final int bvbjznaz = _buffer.readVaruint();
+        objectiveName = _buffer.readString(bvbjznaz);
+        value = _buffer.readVaruint();
+    }
+
+    public static UpdateScore fromBuffer(byte[] buffer)
+    {
+        UpdateScore packet = new UpdateScore();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

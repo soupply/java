@@ -26,13 +26,22 @@ public class PlayerListItem extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(action);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVaruint();
+    }
+
+    public static PlayerListItem fromBuffer(byte[] buffer)
+    {
+        PlayerListItem packet = new PlayerListItem();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

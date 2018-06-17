@@ -45,13 +45,46 @@ public class ClientboundMapItemData extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(mapId);
+        _buffer.writeVaruint(update);
+        _buffer.writeLittleEndianByte(scale);
+        _buffer.writeVarint(size.x);
+        _buffer.writeVarint(size.z);
+        _buffer.writeVarint(offset.x);
+        _buffer.writeVarint(offset.z);
+        _buffer.writeBytes(data);
+        _buffer.writeVaruint((int)decorations.length);
+        for(soupply.bedrock141.type.Decoration zvbjdlbm:decorations)
+        {
+            zvbjdlbm.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        mapId = _buffer.readVarlong();
+        update = _buffer.readVaruint();
+        scale = _buffer.readLittleEndianByte();
+        size.x = _buffer.readVarint();
+        size.z = _buffer.readVarint();
+        offset.x = _buffer.readVarint();
+        offset.z = _buffer.readVarint();
+        data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+        final int bry9yrb5 = _buffer.readVaruint();
+        for(int zvbjdlbm=0;zvbjdlbm<decorations.length;zvbjdlbm++)
+        {
+            decorations[zvbjdlbm].decodeBody(_buffer);
+        }
+    }
+
+    public static ClientboundMapItemData fromBuffer(byte[] buffer)
+    {
+        ClientboundMapItemData packet = new ClientboundMapItemData();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

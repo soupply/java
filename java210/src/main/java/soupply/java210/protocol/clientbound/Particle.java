@@ -90,13 +90,49 @@ public class Particle extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(particleId);
+        _buffer.writeBool(longDistance);
+        _buffer.writeBigEndianFloat(position.x);
+        _buffer.writeBigEndianFloat(position.y);
+        _buffer.writeBigEndianFloat(position.z);
+        _buffer.writeBigEndianFloat(offset.x);
+        _buffer.writeBigEndianFloat(offset.y);
+        _buffer.writeBigEndianFloat(offset.z);
+        _buffer.writeBigEndianFloat(data);
+        _buffer.writeBigEndianInt(count);
+        for(int yrarb5br:additionalData)
+        {
+            _buffer.writeVaruint(yrarb5br);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        particleId = _buffer.readBigEndianInt();
+        longDistance = _buffer.readBool();
+        position.x = _buffer.readBigEndianFloat();
+        position.y = _buffer.readBigEndianFloat();
+        position.z = _buffer.readBigEndianFloat();
+        offset.x = _buffer.readBigEndianFloat();
+        offset.y = _buffer.readBigEndianFloat();
+        offset.z = _buffer.readBigEndianFloat();
+        data = _buffer.readBigEndianFloat();
+        count = _buffer.readBigEndianInt();
+        additionalData = new int[bfzla9yx];
+        for(int yrarb5br=0;yrarb5br<additionalData.length;yrarb5br++)
+        {
+            additionalData[yrarb5br] = _buffer.readVaruint();
+        }
+    }
+
+    public static Particle fromBuffer(byte[] buffer)
+    {
+        Particle packet = new Particle();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

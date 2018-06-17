@@ -35,13 +35,34 @@ public class EntityTeleport extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBigEndianByte(yaw);
+        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeBool(onGround);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        yaw = _buffer.readBigEndianByte();
+        pitch = _buffer.readBigEndianByte();
+        onGround = _buffer.readBool();
+    }
+
+    public static EntityTeleport fromBuffer(byte[] buffer)
+    {
+        EntityTeleport packet = new EntityTeleport();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

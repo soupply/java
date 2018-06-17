@@ -26,13 +26,22 @@ public class SpawnPosition extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianLong(position);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position = _buffer.readBigEndianLong();
+    }
+
+    public static SpawnPosition fromBuffer(byte[] buffer)
+    {
+        SpawnPosition packet = new SpawnPosition();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

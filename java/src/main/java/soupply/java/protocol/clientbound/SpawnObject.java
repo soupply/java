@@ -43,13 +43,44 @@ public class SpawnObject extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeUUID(uuid);
+        _buffer.writeBigEndianByte(type);
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeBigEndianByte(yaw);
+        _buffer.writeBigEndianInt(data);
+        _buffer.writeBigEndianShort(velocity.x);
+        _buffer.writeBigEndianShort(velocity.y);
+        _buffer.writeBigEndianShort(velocity.z);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        uuid = _buffer.readUUID();
+        type = _buffer.readBigEndianByte();
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        pitch = _buffer.readBigEndianByte();
+        yaw = _buffer.readBigEndianByte();
+        data = _buffer.readBigEndianInt();
+        velocity.x = _buffer.readBigEndianShort();
+        velocity.y = _buffer.readBigEndianShort();
+        velocity.z = _buffer.readBigEndianShort();
+    }
+
+    public static SpawnObject fromBuffer(byte[] buffer)
+    {
+        SpawnObject packet = new SpawnObject();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

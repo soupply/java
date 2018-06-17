@@ -41,13 +41,33 @@ public class SpawnPainting extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeUUID(uuid);
+        byte[] dlbu = _buffer.convertString(title);
+        _buffer.writeVaruint((int)dlbu.length);
+        _buffer.writeBytes(dlbu);
+        _buffer.writeBigEndianLong(position);
+        _buffer.writeBigEndianByte(direction);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        uuid = _buffer.readUUID();
+        final int bvdlbu = _buffer.readVaruint();
+        title = _buffer.readString(bvdlbu);
+        position = _buffer.readBigEndianLong();
+        direction = _buffer.readBigEndianByte();
+    }
+
+    public static SpawnPainting fromBuffer(byte[] buffer)
+    {
+        SpawnPainting packet = new SpawnPainting();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

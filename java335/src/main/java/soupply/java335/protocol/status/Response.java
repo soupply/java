@@ -26,13 +26,25 @@ public class Response extends soupply.java335.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] anb = _buffer.convertString(json);
+        _buffer.writeVaruint((int)anb.length);
+        _buffer.writeBytes(anb);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvanb = _buffer.readVaruint();
+        json = _buffer.readString(bvanb);
+    }
+
+    public static Response fromBuffer(byte[] buffer)
+    {
+        Response packet = new Response();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

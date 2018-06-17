@@ -29,13 +29,28 @@ public class PlayerPosition extends soupply.java.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBool(onGround);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        onGround = _buffer.readBool();
+    }
+
+    public static PlayerPosition fromBuffer(byte[] buffer)
+    {
+        PlayerPosition packet = new PlayerPosition();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

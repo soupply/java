@@ -39,13 +39,24 @@ public class CommandOriginData extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(type);
+        _buffer.writeUUID(uuid);
+        byte[] cvdvdl = _buffer.convertString(requestId);
+        _buffer.writeVaruint((int)cvdvdl.length);
+        _buffer.writeBytes(cvdvdl);
+        _buffer.writeVarlong(unknown3);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        type = _buffer.readVaruint();
+        uuid = _buffer.readUUID();
+        final int bvcvdvdl = _buffer.readVaruint();
+        requestId = _buffer.readString(bvcvdvdl);
+        unknown3 = _buffer.readVarlong();
     }
 
 }

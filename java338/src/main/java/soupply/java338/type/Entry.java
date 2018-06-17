@@ -23,13 +23,19 @@ public class Entry extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        item.encodeBody(_buffer);
+        _buffer.writeBigEndianByte(craftingSlot);
+        _buffer.writeBigEndianByte(playerSlot);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        item.decodeBody(_buffer);
+        craftingSlot = _buffer.readBigEndianByte();
+        playerSlot = _buffer.readBigEndianByte();
     }
 
 }

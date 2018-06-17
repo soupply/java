@@ -33,13 +33,28 @@ public class ContainerOpen extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(window);
+        _buffer.writeLittleEndianByte(type);
+        position.encodeBody(_buffer);
+        _buffer.writeVarlong(entityId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        window = _buffer.readLittleEndianByte();
+        type = _buffer.readLittleEndianByte();
+        position.decodeBody(_buffer);
+        entityId = _buffer.readVarlong();
+    }
+
+    public static ContainerOpen fromBuffer(byte[] buffer)
+    {
+        ContainerOpen packet = new ContainerOpen();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

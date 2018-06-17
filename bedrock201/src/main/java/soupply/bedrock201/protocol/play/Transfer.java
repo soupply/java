@@ -28,13 +28,27 @@ public class Transfer extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] aa = _buffer.convertString(ip);
+        _buffer.writeVaruint((int)aa.length);
+        _buffer.writeBytes(aa);
+        _buffer.writeLittleEndianShort(port);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvaa = _buffer.readVaruint();
+        ip = _buffer.readString(bvaa);
+        port = _buffer.readLittleEndianShort();
+    }
+
+    public static Transfer fromBuffer(byte[] buffer)
+    {
+        Transfer packet = new Transfer();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

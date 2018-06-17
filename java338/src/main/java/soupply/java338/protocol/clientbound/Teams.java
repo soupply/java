@@ -28,13 +28,27 @@ public class Teams extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bfz = _buffer.convertString(name);
+        _buffer.writeVaruint((int)bfz.length);
+        _buffer.writeBytes(bfz);
+        _buffer.writeBigEndianByte(mode);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbfz = _buffer.readVaruint();
+        name = _buffer.readString(bvbfz);
+        mode = _buffer.readBigEndianByte();
+    }
+
+    public static Teams fromBuffer(byte[] buffer)
+    {
+        Teams packet = new Teams();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

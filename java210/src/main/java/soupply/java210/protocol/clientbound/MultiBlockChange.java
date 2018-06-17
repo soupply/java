@@ -29,13 +29,34 @@ public class MultiBlockChange extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(chunk.x);
+        _buffer.writeBigEndianInt(chunk.z);
+        _buffer.writeVaruint((int)changes.length);
+        for(soupply.java210.type.BlockChange yhbdc:changes)
+        {
+            yhbdc.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        chunk.x = _buffer.readBigEndianInt();
+        chunk.z = _buffer.readBigEndianInt();
+        final int bny5zm = _buffer.readVaruint();
+        for(int yhbdc=0;yhbdc<changes.length;yhbdc++)
+        {
+            changes[yhbdc].decodeBody(_buffer);
+        }
+    }
+
+    public static MultiBlockChange fromBuffer(byte[] buffer)
+    {
+        MultiBlockChange packet = new MultiBlockChange();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

@@ -30,13 +30,26 @@ public class BlockBreakAnimation extends soupply.java210.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeBigEndianLong(position);
+        _buffer.writeBigEndianByte(stage);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        position = _buffer.readBigEndianLong();
+        stage = _buffer.readBigEndianByte();
+    }
+
+    public static BlockBreakAnimation fromBuffer(byte[] buffer)
+    {
+        BlockBreakAnimation packet = new BlockBreakAnimation();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

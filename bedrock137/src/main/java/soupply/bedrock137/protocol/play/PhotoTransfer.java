@@ -30,13 +30,35 @@ public class PhotoTransfer extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] d5b9ba = _buffer.convertString(unknown0);
+        _buffer.writeVaruint((int)d5b9ba.length);
+        _buffer.writeBytes(d5b9ba);
+        byte[] d5b9be = _buffer.convertString(unknown1);
+        _buffer.writeVaruint((int)d5b9be.length);
+        _buffer.writeBytes(d5b9be);
+        byte[] d5b9bi = _buffer.convertString(unknown2);
+        _buffer.writeVaruint((int)d5b9bi.length);
+        _buffer.writeBytes(d5b9bi);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvd5b9ba = _buffer.readVaruint();
+        unknown0 = _buffer.readString(bvd5b9ba);
+        final int bvd5b9be = _buffer.readVaruint();
+        unknown1 = _buffer.readString(bvd5b9be);
+        final int bvd5b9bi = _buffer.readVaruint();
+        unknown2 = _buffer.readString(bvd5b9bi);
+    }
+
+    public static PhotoTransfer fromBuffer(byte[] buffer)
+    {
+        PhotoTransfer packet = new PhotoTransfer();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

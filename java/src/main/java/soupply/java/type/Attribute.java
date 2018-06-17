@@ -22,13 +22,30 @@ public class Attribute extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] av = _buffer.convertString(key);
+        _buffer.writeVaruint((int)av.length);
+        _buffer.writeBytes(av);
+        _buffer.writeBigEndianDouble(value);
+        _buffer.writeVaruint((int)modifiers.length);
+        for(soupply.java.type.Modifier b9azzj:modifiers)
+        {
+            b9azzj.encodeBody(_buffer);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvav = _buffer.readVaruint();
+        key = _buffer.readString(bvav);
+        value = _buffer.readBigEndianDouble();
+        final int b1zlavc = _buffer.readVaruint();
+        for(int b9azzj=0;b9azzj<modifiers.length;b9azzj++)
+        {
+            modifiers[b9azzj].decodeBody(_buffer);
+        }
     }
 
 }

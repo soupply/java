@@ -31,13 +31,30 @@ public class EntityRelativeMove extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeBigEndianShort(delta.x);
+        _buffer.writeBigEndianShort(delta.y);
+        _buffer.writeBigEndianShort(delta.z);
+        _buffer.writeBool(onGround);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        delta.x = _buffer.readBigEndianShort();
+        delta.y = _buffer.readBigEndianShort();
+        delta.z = _buffer.readBigEndianShort();
+        onGround = _buffer.readBool();
+    }
+
+    public static EntityRelativeMove fromBuffer(byte[] buffer)
+    {
+        EntityRelativeMove packet = new EntityRelativeMove();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

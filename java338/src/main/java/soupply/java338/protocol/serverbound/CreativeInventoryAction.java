@@ -29,13 +29,24 @@ public class CreativeInventoryAction extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianShort(slot);
+        clickedItem.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        slot = _buffer.readBigEndianShort();
+        clickedItem.decodeBody(_buffer);
+    }
+
+    public static CreativeInventoryAction fromBuffer(byte[] buffer)
+    {
+        CreativeInventoryAction packet = new CreativeInventoryAction();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

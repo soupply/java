@@ -33,13 +33,27 @@ public class ChatMessage extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] bvcfz = _buffer.convertString(message);
+        _buffer.writeVaruint((int)bvcfz.length);
+        _buffer.writeBytes(bvcfz);
+        _buffer.writeBigEndianByte(position);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvbvcfz = _buffer.readVaruint();
+        message = _buffer.readString(bvbvcfz);
+        position = _buffer.readBigEndianByte();
+    }
+
+    public static ChatMessage fromBuffer(byte[] buffer)
+    {
+        ChatMessage packet = new ChatMessage();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

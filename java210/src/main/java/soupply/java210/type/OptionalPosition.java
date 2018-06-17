@@ -20,13 +20,17 @@ public class OptionalPosition extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(hasPosition);
+        _buffer.writeBigEndianLong(position);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        hasPosition = _buffer.readBool();
+        position = _buffer.readBigEndianLong();
     }
 
 }

@@ -32,13 +32,22 @@ public class SetDifficulty extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(difficulty);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        difficulty = _buffer.readVaruint();
+    }
+
+    public static SetDifficulty fromBuffer(byte[] buffer)
+    {
+        SetDifficulty packet = new SetDifficulty();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

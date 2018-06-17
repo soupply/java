@@ -26,13 +26,22 @@ public class RequestChunkRadius extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(radius);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        radius = _buffer.readVarint();
+    }
+
+    public static RequestChunkRadius fromBuffer(byte[] buffer)
+    {
+        RequestChunkRadius packet = new RequestChunkRadius();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

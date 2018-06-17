@@ -70,13 +70,32 @@ public class AdventureSettings extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(flags);
+        _buffer.writeVaruint(permissionLevel);
+        _buffer.writeVaruint(abilities);
+        _buffer.writeVaruint(playerRank);
+        _buffer.writeVaruint(customPermissions);
+        _buffer.writeLittleEndianLong(entityId);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        flags = _buffer.readVaruint();
+        permissionLevel = _buffer.readVaruint();
+        abilities = _buffer.readVaruint();
+        playerRank = _buffer.readVaruint();
+        customPermissions = _buffer.readVaruint();
+        entityId = _buffer.readLittleEndianLong();
+    }
+
+    public static AdventureSettings fromBuffer(byte[] buffer)
+    {
+        AdventureSettings packet = new AdventureSettings();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

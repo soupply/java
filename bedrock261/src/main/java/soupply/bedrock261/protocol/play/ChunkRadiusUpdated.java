@@ -26,13 +26,22 @@ public class ChunkRadiusUpdated extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(radius);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        radius = _buffer.readVarint();
+    }
+
+    public static ChunkRadiusUpdated fromBuffer(byte[] buffer)
+    {
+        ChunkRadiusUpdated packet = new ChunkRadiusUpdated();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

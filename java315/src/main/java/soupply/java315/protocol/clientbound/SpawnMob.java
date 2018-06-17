@@ -46,13 +46,46 @@ public class SpawnMob extends soupply.java315.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(entityId);
+        _buffer.writeUUID(uuid);
+        _buffer.writeVaruint(type);
+        _buffer.writeBigEndianDouble(position.x);
+        _buffer.writeBigEndianDouble(position.y);
+        _buffer.writeBigEndianDouble(position.z);
+        _buffer.writeBigEndianByte(yaw);
+        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeBigEndianByte(headPitch);
+        _buffer.writeBigEndianShort(velocity.x);
+        _buffer.writeBigEndianShort(velocity.y);
+        _buffer.writeBigEndianShort(velocity.z);
+        metadata.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVaruint();
+        uuid = _buffer.readUUID();
+        type = _buffer.readVaruint();
+        position.x = _buffer.readBigEndianDouble();
+        position.y = _buffer.readBigEndianDouble();
+        position.z = _buffer.readBigEndianDouble();
+        yaw = _buffer.readBigEndianByte();
+        pitch = _buffer.readBigEndianByte();
+        headPitch = _buffer.readBigEndianByte();
+        velocity.x = _buffer.readBigEndianShort();
+        velocity.y = _buffer.readBigEndianShort();
+        velocity.z = _buffer.readBigEndianShort();
+        metadata.decodeBody(_buffer);
+    }
+
+    public static SpawnMob fromBuffer(byte[] buffer)
+    {
+        SpawnMob packet = new SpawnMob();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

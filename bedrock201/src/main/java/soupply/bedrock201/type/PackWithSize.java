@@ -26,13 +26,35 @@ public class PackWithSize extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] aq = _buffer.convertString(id);
+        _buffer.writeVaruint((int)aq.length);
+        _buffer.writeBytes(aq);
+        byte[] dvclb = _buffer.convertString(version);
+        _buffer.writeVaruint((int)dvclb.length);
+        _buffer.writeBytes(dvclb);
+        _buffer.writeLittleEndianLong(size);
+        byte[] d5b9bm = _buffer.convertString(unknown3);
+        _buffer.writeVaruint((int)d5b9bm.length);
+        _buffer.writeBytes(d5b9bm);
+        byte[] d5b9bq = _buffer.convertString(unknown4);
+        _buffer.writeVaruint((int)d5b9bq.length);
+        _buffer.writeBytes(d5b9bq);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvaq = _buffer.readVaruint();
+        id = _buffer.readString(bvaq);
+        final int bvdvclb = _buffer.readVaruint();
+        version = _buffer.readString(bvdvclb);
+        size = _buffer.readLittleEndianLong();
+        final int bvd5b9bm = _buffer.readVaruint();
+        unknown3 = _buffer.readString(bvd5b9bm);
+        final int bvd5b9bq = _buffer.readVaruint();
+        unknown4 = _buffer.readString(bvd5b9bq);
     }
 
 }

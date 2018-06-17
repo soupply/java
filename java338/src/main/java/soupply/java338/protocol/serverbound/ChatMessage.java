@@ -26,13 +26,25 @@ public class ChatMessage extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] dvd = _buffer.convertString(text);
+        _buffer.writeVaruint((int)dvd.length);
+        _buffer.writeBytes(dvd);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvdvd = _buffer.readVaruint();
+        text = _buffer.readString(bvdvd);
+    }
+
+    public static ChatMessage fromBuffer(byte[] buffer)
+    {
+        ChatMessage packet = new ChatMessage();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

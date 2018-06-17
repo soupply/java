@@ -27,13 +27,17 @@ public class Recipe extends Type
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(type);
+        _buffer.writeBytes(data);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        type = _buffer.readVarint();
+        data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
     }
 
 }

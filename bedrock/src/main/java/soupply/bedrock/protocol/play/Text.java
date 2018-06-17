@@ -28,13 +28,24 @@ public class Text extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeLittleEndianByte(type);
+        _buffer.writeBool(unknown1);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        type = _buffer.readLittleEndianByte();
+        unknown1 = _buffer.readBool();
+    }
+
+    public static Text fromBuffer(byte[] buffer)
+    {
+        Text packet = new Text();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

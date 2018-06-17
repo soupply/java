@@ -34,13 +34,36 @@ public class ResourcePackDataInfo extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] aq = _buffer.convertString(id);
+        _buffer.writeVaruint((int)aq.length);
+        _buffer.writeBytes(aq);
+        _buffer.writeLittleEndianInt(maxChunkSize);
+        _buffer.writeLittleEndianInt(chunkCount);
+        _buffer.writeLittleEndianLong(compressedPackSize);
+        byte[] chmu = _buffer.convertString(sha256);
+        _buffer.writeVaruint((int)chmu.length);
+        _buffer.writeBytes(chmu);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvaq = _buffer.readVaruint();
+        id = _buffer.readString(bvaq);
+        maxChunkSize = _buffer.readLittleEndianInt();
+        chunkCount = _buffer.readLittleEndianInt();
+        compressedPackSize = _buffer.readLittleEndianLong();
+        final int bvchmu = _buffer.readVaruint();
+        sha256 = _buffer.readString(bvchmu);
+    }
+
+    public static ResourcePackDataInfo fromBuffer(byte[] buffer)
+    {
+        ResourcePackDataInfo packet = new ResourcePackDataInfo();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

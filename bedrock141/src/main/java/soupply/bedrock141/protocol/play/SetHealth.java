@@ -26,13 +26,22 @@ public class SetHealth extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarint(health);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        health = _buffer.readVarint();
+    }
+
+    public static SetHealth fromBuffer(byte[] buffer)
+    {
+        SetHealth packet = new SetHealth();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

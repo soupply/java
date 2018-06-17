@@ -39,13 +39,46 @@ public class UnlockRecipes extends soupply.java338.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVaruint(action);
+        _buffer.writeBool(openBook);
+        _buffer.writeBool(filtering);
+        _buffer.writeVaruint((int)recipes.length);
+        for(int cvabc:recipes)
+        {
+            _buffer.writeVaruint(cvabc);
+        }
+        _buffer.writeVaruint((int)bookRecipes.length);
+        for(int y9ajylzm:bookRecipes)
+        {
+            _buffer.writeVaruint(y9ajylzm);
+        }
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        action = _buffer.readVaruint();
+        openBook = _buffer.readBool();
+        filtering = _buffer.readBool();
+        final int bjylzm = _buffer.readVaruint();
+        for(int cvabc=0;cvabc<recipes.length;cvabc++)
+        {
+            recipes[cvabc] = _buffer.readVaruint();
+        }
+        final int bjbtzncv = _buffer.readVaruint();
+        for(int y9ajylzm=0;y9ajylzm<bookRecipes.length;y9ajylzm++)
+        {
+            bookRecipes[y9ajylzm] = _buffer.readVaruint();
+        }
+    }
+
+    public static UnlockRecipes fromBuffer(byte[] buffer)
+    {
+        UnlockRecipes packet = new UnlockRecipes();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

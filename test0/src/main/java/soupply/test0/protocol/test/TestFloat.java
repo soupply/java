@@ -30,13 +30,26 @@ public class TestFloat extends soupply.test0.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianFloat(a);
+        _buffer.writeBigEndianDouble(b);
+        _buffer.writeLittleEndianFloat(c);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        a = _buffer.readBigEndianFloat();
+        b = _buffer.readBigEndianDouble();
+        c = _buffer.readLittleEndianFloat();
+    }
+
+    public static TestFloat fromBuffer(byte[] buffer)
+    {
+        TestFloat packet = new TestFloat();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

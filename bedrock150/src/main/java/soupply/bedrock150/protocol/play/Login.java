@@ -29,13 +29,24 @@ public class Login extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(protocol);
+        body.encodeBody(_buffer);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        protocol = _buffer.readBigEndianInt();
+        body.decodeBody(_buffer);
+    }
+
+    public static Login fromBuffer(byte[] buffer)
+    {
+        Login packet = new Login();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

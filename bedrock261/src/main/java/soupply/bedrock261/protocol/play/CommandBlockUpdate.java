@@ -45,13 +45,49 @@ public class CommandBlockUpdate extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBool(updateBlock);
+        position.encodeBody(_buffer);
+        _buffer.writeVaruint(mode);
+        _buffer.writeBool(redstoneMode);
+        _buffer.writeBool(conditional);
+        _buffer.writeVarlong(minecart);
+        byte[] y9bfz = _buffer.convertString(command);
+        _buffer.writeVaruint((int)y9bfz.length);
+        _buffer.writeBytes(y9bfz);
+        byte[] bfd9dbd = _buffer.convertString(lastOutput);
+        _buffer.writeVaruint((int)bfd9dbd.length);
+        _buffer.writeBytes(bfd9dbd);
+        byte[] a9zi = _buffer.convertString(hover);
+        _buffer.writeVaruint((int)a9zi.length);
+        _buffer.writeBytes(a9zi);
+        _buffer.writeBool(trackOutput);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        updateBlock = _buffer.readBool();
+        position.decodeBody(_buffer);
+        mode = _buffer.readVaruint();
+        redstoneMode = _buffer.readBool();
+        conditional = _buffer.readBool();
+        minecart = _buffer.readVarlong();
+        final int bvy9bfz = _buffer.readVaruint();
+        command = _buffer.readString(bvy9bfz);
+        final int bvbfd9db = _buffer.readVaruint();
+        lastOutput = _buffer.readString(bvbfd9db);
+        final int bva9zi = _buffer.readVaruint();
+        hover = _buffer.readString(bva9zi);
+        trackOutput = _buffer.readBool();
+    }
+
+    public static CommandBlockUpdate fromBuffer(byte[] buffer)
+    {
+        CommandBlockUpdate packet = new CommandBlockUpdate();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

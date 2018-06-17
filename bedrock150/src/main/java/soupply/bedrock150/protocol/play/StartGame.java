@@ -119,13 +119,113 @@ public class StartGame extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeVarlong(entityId);
+        _buffer.writeVarulong(runtimeId);
+        _buffer.writeVarint(gamemode);
+        _buffer.writeLittleEndianFloat(position.x);
+        _buffer.writeLittleEndianFloat(position.y);
+        _buffer.writeLittleEndianFloat(position.z);
+        _buffer.writeLittleEndianFloat(yaw);
+        _buffer.writeLittleEndianFloat(pitch);
+        _buffer.writeVarint(seed);
+        _buffer.writeVarint(dimension);
+        _buffer.writeVarint(generator);
+        _buffer.writeVarint(worldGamemode);
+        _buffer.writeVarint(difficulty);
+        _buffer.writeVarint(spawnPosition.x);
+        _buffer.writeVarint(spawnPosition.y);
+        _buffer.writeVarint(spawnPosition.z);
+        _buffer.writeBool(loadedInCreative);
+        _buffer.writeVarint(time);
+        _buffer.writeLittleEndianByte(version);
+        _buffer.writeLittleEndianFloat(rainLevel);
+        _buffer.writeLittleEndianFloat(lightningLevel);
+        _buffer.writeBool(multiplayerGame);
+        _buffer.writeBool(broadcastToLan);
+        _buffer.writeBool(broadcastToXbl);
+        _buffer.writeBool(commandsEnabled);
+        _buffer.writeBool(textureRequired);
+        _buffer.writeVaruint((int)gameRules.length);
+        for(soupply.bedrock150.type.Rule zfzjbv:gameRules)
+        {
+            zfzjbv.encodeBody(_buffer);
+        }
+        _buffer.writeBool(bonusChestEnabled);
+        _buffer.writeBool(startWithMapEnabled);
+        _buffer.writeBool(trustPlayersEnabled);
+        _buffer.writeVarint(permissionLevel);
+        _buffer.writeVarint(unknown27);
+        byte[] bvzxz = _buffer.convertString(levelId);
+        _buffer.writeVaruint((int)bvzxz.length);
+        _buffer.writeBytes(bvzxz);
+        byte[] d9bry1 = _buffer.convertString(worldName);
+        _buffer.writeVaruint((int)d9bry1.length);
+        _buffer.writeBytes(d9bry1);
+        byte[] cjblbdcx = _buffer.convertString(premiumWorldTemplate);
+        _buffer.writeVaruint((int)cjblbdcx.length);
+        _buffer.writeBytes(cjblbdcx);
+        _buffer.writeBool(unknown31);
+        _buffer.writeLittleEndianLong(worldTicks);
+        _buffer.writeVarint(unknown33);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        entityId = _buffer.readVarlong();
+        runtimeId = _buffer.readVarulong();
+        gamemode = _buffer.readVarint();
+        position.x = _buffer.readLittleEndianFloat();
+        position.y = _buffer.readLittleEndianFloat();
+        position.z = _buffer.readLittleEndianFloat();
+        yaw = _buffer.readLittleEndianFloat();
+        pitch = _buffer.readLittleEndianFloat();
+        seed = _buffer.readVarint();
+        dimension = _buffer.readVarint();
+        generator = _buffer.readVarint();
+        worldGamemode = _buffer.readVarint();
+        difficulty = _buffer.readVarint();
+        spawnPosition.x = _buffer.readVarint();
+        spawnPosition.y = _buffer.readVarint();
+        spawnPosition.z = _buffer.readVarint();
+        loadedInCreative = _buffer.readBool();
+        time = _buffer.readVarint();
+        version = _buffer.readLittleEndianByte();
+        rainLevel = _buffer.readLittleEndianFloat();
+        lightningLevel = _buffer.readLittleEndianFloat();
+        multiplayerGame = _buffer.readBool();
+        broadcastToLan = _buffer.readBool();
+        broadcastToXbl = _buffer.readBool();
+        commandsEnabled = _buffer.readBool();
+        textureRequired = _buffer.readBool();
+        final int bdbvdxc = _buffer.readVaruint();
+        for(int zfzjbv=0;zfzjbv<gameRules.length;zfzjbv++)
+        {
+            gameRules[zfzjbv].decodeBody(_buffer);
+        }
+        bonusChestEnabled = _buffer.readBool();
+        startWithMapEnabled = _buffer.readBool();
+        trustPlayersEnabled = _buffer.readBool();
+        permissionLevel = _buffer.readVarint();
+        unknown27 = _buffer.readVarint();
+        final int bvbvzxz = _buffer.readVaruint();
+        levelId = _buffer.readString(bvbvzxz);
+        final int bvd9bry1 = _buffer.readVaruint();
+        worldName = _buffer.readString(bvd9bry1);
+        final int bvcjblbd = _buffer.readVaruint();
+        premiumWorldTemplate = _buffer.readString(bvcjblbd);
+        unknown31 = _buffer.readBool();
+        worldTicks = _buffer.readLittleEndianLong();
+        unknown33 = _buffer.readVarint();
+    }
+
+    public static StartGame fromBuffer(byte[] buffer)
+    {
+        StartGame packet = new StartGame();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

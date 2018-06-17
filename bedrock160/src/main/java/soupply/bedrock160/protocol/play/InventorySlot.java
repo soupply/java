@@ -15,13 +15,20 @@ public class InventorySlot extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+    }
+
+    public static InventorySlot fromBuffer(byte[] buffer)
+    {
+        InventorySlot packet = new InventorySlot();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

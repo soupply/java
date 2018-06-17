@@ -37,13 +37,32 @@ public class PlayerBlockPlacement extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianLong(position);
+        _buffer.writeVaruint(face);
+        _buffer.writeVaruint(hand);
+        _buffer.writeBigEndianFloat(cursorPosition.x);
+        _buffer.writeBigEndianFloat(cursorPosition.y);
+        _buffer.writeBigEndianFloat(cursorPosition.z);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        position = _buffer.readBigEndianLong();
+        face = _buffer.readVaruint();
+        hand = _buffer.readVaruint();
+        cursorPosition.x = _buffer.readBigEndianFloat();
+        cursorPosition.y = _buffer.readBigEndianFloat();
+        cursorPosition.z = _buffer.readBigEndianFloat();
+    }
+
+    public static PlayerBlockPlacement fromBuffer(byte[] buffer)
+    {
+        PlayerBlockPlacement packet = new PlayerBlockPlacement();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

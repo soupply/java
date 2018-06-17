@@ -26,13 +26,25 @@ public class Disconnect extends soupply.java316.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        byte[] cvc9 = _buffer.convertString(reason);
+        _buffer.writeVaruint((int)cvc9.length);
+        _buffer.writeBytes(cvc9);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        final int bvcvc9 = _buffer.readVaruint();
+        reason = _buffer.readString(bvcvc9);
+    }
+
+    public static Disconnect fromBuffer(byte[] buffer)
+    {
+        Disconnect packet = new Disconnect();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

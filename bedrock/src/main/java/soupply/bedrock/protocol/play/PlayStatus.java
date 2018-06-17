@@ -36,13 +36,22 @@ public class PlayStatus extends soupply.bedrock.Packet
     }
 
     @Override
-    public void encodeBody(Buffer buffer)
+    public void encodeBody(Buffer _buffer)
     {
+        _buffer.writeBigEndianInt(status);
     }
 
     @Override
-    public void decodeBody(Buffer buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
+        status = _buffer.readBigEndianInt();
+    }
+
+    public static PlayStatus fromBuffer(byte[] buffer)
+    {
+        PlayStatus packet = new PlayStatus();
+        packet.safeDecode(new Buffer(buffer));
+        return packet;
     }
 
 }

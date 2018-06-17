@@ -40,7 +40,7 @@ public class Camera extends soupply.java210.Packet
     public static Camera fromBuffer(byte[] buffer)
     {
         Camera packet = new Camera();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

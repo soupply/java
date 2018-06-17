@@ -77,7 +77,7 @@ public class UnlockRecipes extends soupply.java.Packet
     public static UnlockRecipes fromBuffer(byte[] buffer)
     {
         UnlockRecipes packet = new UnlockRecipes();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

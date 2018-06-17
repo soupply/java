@@ -27,7 +27,7 @@ public class UpdateEquip extends soupply.bedrock141.Packet
     public static UpdateEquip fromBuffer(byte[] buffer)
     {
         UpdateEquip packet = new UpdateEquip();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

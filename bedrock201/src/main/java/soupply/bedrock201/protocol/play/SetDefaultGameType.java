@@ -45,7 +45,7 @@ public class SetDefaultGameType extends soupply.bedrock201.Packet
     public static SetDefaultGameType fromBuffer(byte[] buffer)
     {
         SetDefaultGameType packet = new SetDefaultGameType();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

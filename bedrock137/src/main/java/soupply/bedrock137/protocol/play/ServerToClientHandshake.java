@@ -49,7 +49,7 @@ public class ServerToClientHandshake extends soupply.bedrock137.Packet
     public static ServerToClientHandshake fromBuffer(byte[] buffer)
     {
         ServerToClientHandshake packet = new ServerToClientHandshake();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

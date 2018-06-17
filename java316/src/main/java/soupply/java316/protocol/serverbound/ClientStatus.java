@@ -45,7 +45,7 @@ public class ClientStatus extends soupply.java316.Packet
     public static ClientStatus fromBuffer(byte[] buffer)
     {
         ClientStatus packet = new ClientStatus();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -50,7 +50,7 @@ public class LoginSuccess extends soupply.java315.Packet
     public static LoginSuccess fromBuffer(byte[] buffer)
     {
         LoginSuccess packet = new LoginSuccess();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

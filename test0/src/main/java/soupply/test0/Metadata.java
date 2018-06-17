@@ -1,4 +1,7 @@
 package soupply.test0;
+
+import soupply.util.*;
+
 public class Metadata
 {
 

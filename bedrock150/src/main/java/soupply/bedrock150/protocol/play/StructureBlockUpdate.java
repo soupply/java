@@ -27,7 +27,7 @@ public class StructureBlockUpdate extends soupply.bedrock150.Packet
     public static StructureBlockUpdate fromBuffer(byte[] buffer)
     {
         StructureBlockUpdate packet = new StructureBlockUpdate();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

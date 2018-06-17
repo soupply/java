@@ -48,7 +48,7 @@ public class PlayerLook extends soupply.java315.Packet
     public static PlayerLook fromBuffer(byte[] buffer)
     {
         PlayerLook packet = new PlayerLook();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

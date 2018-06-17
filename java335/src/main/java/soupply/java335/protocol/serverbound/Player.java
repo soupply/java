@@ -40,7 +40,7 @@ public class Player extends soupply.java335.Packet
     public static Player fromBuffer(byte[] buffer)
     {
         Player packet = new Player();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

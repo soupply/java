@@ -55,7 +55,7 @@ public class EncryptionRequest extends soupply.java.Packet
     public static EncryptionRequest fromBuffer(byte[] buffer)
     {
         EncryptionRequest packet = new EncryptionRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

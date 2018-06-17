@@ -38,7 +38,7 @@ public class CommandOutput extends soupply.bedrock.Packet
     public void encodeBody(Buffer _buffer)
     {
         originData.encodeBody(_buffer);
-        _buffer.writeLittleEndianByte(outputType);
+        _buffer.writeByte(outputType);
         _buffer.writeVaruint(successCount);
         _buffer.writeVaruint((int)messages.length);
         for(soupply.bedrock.type.CommandMessage bvcfzm:messages)
@@ -54,7 +54,7 @@ public class CommandOutput extends soupply.bedrock.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         originData.decodeBody(_buffer);
-        outputType = _buffer.readLittleEndianByte();
+        outputType = _buffer.readByte();
         successCount = _buffer.readVaruint();
         final int b1cnzv = _buffer.readVaruint();
         for(int bvcfzm=0;bvcfzm<messages.length;bvcfzm++)
@@ -68,7 +68,7 @@ public class CommandOutput extends soupply.bedrock.Packet
     public static CommandOutput fromBuffer(byte[] buffer)
     {
         CommandOutput packet = new CommandOutput();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

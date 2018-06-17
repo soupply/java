@@ -40,7 +40,7 @@ public class OpenSignEditor extends soupply.java316.Packet
     public static OpenSignEditor fromBuffer(byte[] buffer)
     {
         OpenSignEditor packet = new OpenSignEditor();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

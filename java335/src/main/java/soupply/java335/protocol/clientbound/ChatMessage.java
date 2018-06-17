@@ -38,7 +38,7 @@ public class ChatMessage extends soupply.java335.Packet
         byte[] bvcfz = _buffer.convertString(message);
         _buffer.writeVaruint((int)bvcfz.length);
         _buffer.writeBytes(bvcfz);
-        _buffer.writeBigEndianByte(position);
+        _buffer.writeByte(position);
     }
 
     @Override
@@ -46,13 +46,13 @@ public class ChatMessage extends soupply.java335.Packet
     {
         final int bvbvcfz = _buffer.readVaruint();
         message = _buffer.readString(bvbvcfz);
-        position = _buffer.readBigEndianByte();
+        position = _buffer.readByte();
     }
 
     public static ChatMessage fromBuffer(byte[] buffer)
     {
         ChatMessage packet = new ChatMessage();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

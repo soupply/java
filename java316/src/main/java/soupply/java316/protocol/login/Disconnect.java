@@ -43,7 +43,7 @@ public class Disconnect extends soupply.java316.Packet
     public static Disconnect fromBuffer(byte[] buffer)
     {
         Disconnect packet = new Disconnect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

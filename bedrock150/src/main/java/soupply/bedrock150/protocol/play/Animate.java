@@ -52,7 +52,7 @@ public class Animate extends soupply.bedrock150.Packet
     public static Animate fromBuffer(byte[] buffer)
     {
         Animate packet = new Animate();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

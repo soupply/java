@@ -73,7 +73,7 @@ public class CommandRequest extends soupply.bedrock.Packet
     public static CommandRequest fromBuffer(byte[] buffer)
     {
         CommandRequest packet = new CommandRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

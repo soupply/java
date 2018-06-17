@@ -35,7 +35,7 @@ public class DisplayScoreboard extends soupply.java.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(position);
+        _buffer.writeByte(position);
         byte[] cncvy1 = _buffer.convertString(scoreName);
         _buffer.writeVaruint((int)cncvy1.length);
         _buffer.writeBytes(cncvy1);
@@ -44,7 +44,7 @@ public class DisplayScoreboard extends soupply.java.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        position = _buffer.readBigEndianByte();
+        position = _buffer.readByte();
         final int bvcncvy1 = _buffer.readVaruint();
         scoreName = _buffer.readString(bvcncvy1);
     }
@@ -52,7 +52,7 @@ public class DisplayScoreboard extends soupply.java.Packet
     public static DisplayScoreboard fromBuffer(byte[] buffer)
     {
         DisplayScoreboard packet = new DisplayScoreboard();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

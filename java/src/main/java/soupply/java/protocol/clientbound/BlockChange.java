@@ -44,7 +44,7 @@ public class BlockChange extends soupply.java.Packet
     public static BlockChange fromBuffer(byte[] buffer)
     {
         BlockChange packet = new BlockChange();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -40,7 +40,7 @@ public class MapInfoRequest extends soupply.bedrock150.Packet
     public static MapInfoRequest fromBuffer(byte[] buffer)
     {
         MapInfoRequest packet = new MapInfoRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

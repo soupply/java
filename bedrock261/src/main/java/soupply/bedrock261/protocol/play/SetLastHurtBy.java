@@ -40,7 +40,7 @@ public class SetLastHurtBy extends soupply.bedrock261.Packet
     public static SetLastHurtBy fromBuffer(byte[] buffer)
     {
         SetLastHurtBy packet = new SetLastHurtBy();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

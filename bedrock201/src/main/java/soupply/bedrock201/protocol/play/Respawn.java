@@ -45,7 +45,7 @@ public class Respawn extends soupply.bedrock201.Packet
     public static Respawn fromBuffer(byte[] buffer)
     {
         Respawn packet = new Respawn();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

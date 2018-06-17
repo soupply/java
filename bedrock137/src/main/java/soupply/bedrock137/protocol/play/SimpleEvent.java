@@ -27,7 +27,7 @@ public class SimpleEvent extends soupply.bedrock137.Packet
     public static SimpleEvent fromBuffer(byte[] buffer)
     {
         SimpleEvent packet = new SimpleEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

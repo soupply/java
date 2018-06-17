@@ -49,7 +49,7 @@ public class EntityVelocity extends soupply.java.Packet
     public static EntityVelocity fromBuffer(byte[] buffer)
     {
         EntityVelocity packet = new EntityVelocity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

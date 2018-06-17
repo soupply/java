@@ -73,7 +73,7 @@ public class EntityEvent extends soupply.bedrock.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVarlong(entityId);
-        _buffer.writeLittleEndianByte(eventId);
+        _buffer.writeByte(eventId);
         _buffer.writeVarint(data);
     }
 
@@ -81,14 +81,14 @@ public class EntityEvent extends soupply.bedrock.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVarlong();
-        eventId = _buffer.readLittleEndianByte();
+        eventId = _buffer.readByte();
         data = _buffer.readVarint();
     }
 
     public static EntityEvent fromBuffer(byte[] buffer)
     {
         EntityEvent packet = new EntityEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

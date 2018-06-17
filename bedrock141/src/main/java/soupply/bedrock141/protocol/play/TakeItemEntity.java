@@ -44,7 +44,7 @@ public class TakeItemEntity extends soupply.bedrock141.Packet
     public static TakeItemEntity fromBuffer(byte[] buffer)
     {
         TakeItemEntity packet = new TakeItemEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -49,7 +49,7 @@ public class EntityEquipment extends soupply.java335.Packet
     public static EntityEquipment fromBuffer(byte[] buffer)
     {
         EntityEquipment packet = new EntityEquipment();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

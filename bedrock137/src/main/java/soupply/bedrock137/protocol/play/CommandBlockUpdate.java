@@ -86,7 +86,7 @@ public class CommandBlockUpdate extends soupply.bedrock137.Packet
     public static CommandBlockUpdate fromBuffer(byte[] buffer)
     {
         CommandBlockUpdate packet = new CommandBlockUpdate();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

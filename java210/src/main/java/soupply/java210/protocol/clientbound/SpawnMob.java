@@ -50,13 +50,13 @@ public class SpawnMob extends soupply.java210.Packet
     {
         _buffer.writeVaruint(entityId);
         _buffer.writeUUID(uuid);
-        _buffer.writeBigEndianByte(type);
+        _buffer.writeByte(type);
         _buffer.writeBigEndianDouble(position.x);
         _buffer.writeBigEndianDouble(position.y);
         _buffer.writeBigEndianDouble(position.z);
-        _buffer.writeBigEndianByte(yaw);
-        _buffer.writeBigEndianByte(pitch);
-        _buffer.writeBigEndianByte(headPitch);
+        _buffer.writeByte(yaw);
+        _buffer.writeByte(pitch);
+        _buffer.writeByte(headPitch);
         _buffer.writeBigEndianShort(velocity.x);
         _buffer.writeBigEndianShort(velocity.y);
         _buffer.writeBigEndianShort(velocity.z);
@@ -68,13 +68,13 @@ public class SpawnMob extends soupply.java210.Packet
     {
         entityId = _buffer.readVaruint();
         uuid = _buffer.readUUID();
-        type = _buffer.readBigEndianByte();
+        type = _buffer.readByte();
         position.x = _buffer.readBigEndianDouble();
         position.y = _buffer.readBigEndianDouble();
         position.z = _buffer.readBigEndianDouble();
-        yaw = _buffer.readBigEndianByte();
-        pitch = _buffer.readBigEndianByte();
-        headPitch = _buffer.readBigEndianByte();
+        yaw = _buffer.readByte();
+        pitch = _buffer.readByte();
+        headPitch = _buffer.readByte();
         velocity.x = _buffer.readBigEndianShort();
         velocity.y = _buffer.readBigEndianShort();
         velocity.z = _buffer.readBigEndianShort();
@@ -84,7 +84,7 @@ public class SpawnMob extends soupply.java210.Packet
     public static SpawnMob fromBuffer(byte[] buffer)
     {
         SpawnMob packet = new SpawnMob();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

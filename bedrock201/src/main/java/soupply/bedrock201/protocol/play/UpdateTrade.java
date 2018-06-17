@@ -44,8 +44,8 @@ public class UpdateTrade extends soupply.bedrock201.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(window);
-        _buffer.writeLittleEndianByte(windowType);
+        _buffer.writeByte(window);
+        _buffer.writeByte(windowType);
         _buffer.writeVarint(unknown2);
         _buffer.writeVarint(unknown3);
         _buffer.writeBool(willing);
@@ -60,8 +60,8 @@ public class UpdateTrade extends soupply.bedrock201.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readLittleEndianByte();
-        windowType = _buffer.readLittleEndianByte();
+        window = _buffer.readByte();
+        windowType = _buffer.readByte();
         unknown2 = _buffer.readVarint();
         unknown3 = _buffer.readVarint();
         willing = _buffer.readBool();
@@ -75,7 +75,7 @@ public class UpdateTrade extends soupply.bedrock201.Packet
     public static UpdateTrade fromBuffer(byte[] buffer)
     {
         UpdateTrade packet = new UpdateTrade();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

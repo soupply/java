@@ -141,7 +141,7 @@ public class StartGame extends soupply.bedrock261.Packet
         _buffer.writeVarint(spawnPosition.z);
         _buffer.writeBool(loadedInCreative);
         _buffer.writeVarint(time);
-        _buffer.writeLittleEndianByte(version);
+        _buffer.writeByte(version);
         _buffer.writeLittleEndianFloat(rainLevel);
         _buffer.writeLittleEndianFloat(lightningLevel);
         _buffer.writeBool(multiplayerGame);
@@ -195,7 +195,7 @@ public class StartGame extends soupply.bedrock261.Packet
         spawnPosition.z = _buffer.readVarint();
         loadedInCreative = _buffer.readBool();
         time = _buffer.readVarint();
-        version = _buffer.readLittleEndianByte();
+        version = _buffer.readByte();
         rainLevel = _buffer.readLittleEndianFloat();
         lightningLevel = _buffer.readLittleEndianFloat();
         multiplayerGame = _buffer.readBool();
@@ -228,7 +228,7 @@ public class StartGame extends soupply.bedrock261.Packet
     public static StartGame fromBuffer(byte[] buffer)
     {
         StartGame packet = new StartGame();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

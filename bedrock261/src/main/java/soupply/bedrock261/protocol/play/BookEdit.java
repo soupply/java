@@ -30,21 +30,21 @@ public class BookEdit extends soupply.bedrock261.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(type);
-        _buffer.writeLittleEndianByte(slot);
+        _buffer.writeByte(type);
+        _buffer.writeByte(slot);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        type = _buffer.readLittleEndianByte();
-        slot = _buffer.readLittleEndianByte();
+        type = _buffer.readByte();
+        slot = _buffer.readByte();
     }
 
     public static BookEdit fromBuffer(byte[] buffer)
     {
         BookEdit packet = new BookEdit();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

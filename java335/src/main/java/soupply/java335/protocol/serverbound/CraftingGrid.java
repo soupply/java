@@ -34,7 +34,7 @@ public class CraftingGrid extends soupply.java335.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
+        _buffer.writeByte(window);
         _buffer.writeBigEndianShort(action);
         _buffer.writeVaruint((int)returnEntry.length);
         for(soupply.java335.type.Entry cvdjr5ck:returnEntry)
@@ -51,7 +51,7 @@ public class CraftingGrid extends soupply.java335.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
         action = _buffer.readBigEndianShort();
         final int bjdvbvdj = _buffer.readVaruint();
         for(int cvdjr5ck=0;cvdjr5ck<returnEntry.length;cvdjr5ck++)
@@ -68,7 +68,7 @@ public class CraftingGrid extends soupply.java335.Packet
     public static CraftingGrid fromBuffer(byte[] buffer)
     {
         CraftingGrid packet = new CraftingGrid();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

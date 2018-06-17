@@ -47,7 +47,7 @@ public class ModalFormResponse extends soupply.bedrock201.Packet
     public static ModalFormResponse fromBuffer(byte[] buffer)
     {
         ModalFormResponse packet = new ModalFormResponse();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

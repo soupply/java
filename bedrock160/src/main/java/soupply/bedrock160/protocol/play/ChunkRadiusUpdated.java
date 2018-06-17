@@ -40,7 +40,7 @@ public class ChunkRadiusUpdated extends soupply.bedrock160.Packet
     public static ChunkRadiusUpdated fromBuffer(byte[] buffer)
     {
         ChunkRadiusUpdated packet = new ChunkRadiusUpdated();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

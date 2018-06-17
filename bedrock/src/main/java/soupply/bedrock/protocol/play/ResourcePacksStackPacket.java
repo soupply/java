@@ -64,7 +64,7 @@ public class ResourcePacksStackPacket extends soupply.bedrock.Packet
     public static ResourcePacksStackPacket fromBuffer(byte[] buffer)
     {
         ResourcePacksStackPacket packet = new ResourcePacksStackPacket();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

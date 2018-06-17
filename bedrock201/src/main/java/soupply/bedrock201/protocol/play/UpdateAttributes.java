@@ -52,7 +52,7 @@ public class UpdateAttributes extends soupply.bedrock201.Packet
     public static UpdateAttributes fromBuffer(byte[] buffer)
     {
         UpdateAttributes packet = new UpdateAttributes();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

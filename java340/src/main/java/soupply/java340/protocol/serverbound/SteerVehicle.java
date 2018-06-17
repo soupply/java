@@ -38,7 +38,7 @@ public class SteerVehicle extends soupply.java340.Packet
     {
         _buffer.writeBigEndianFloat(sideways);
         _buffer.writeBigEndianFloat(forward);
-        _buffer.writeBigEndianByte(flags);
+        _buffer.writeByte(flags);
     }
 
     @Override
@@ -46,13 +46,13 @@ public class SteerVehicle extends soupply.java340.Packet
     {
         sideways = _buffer.readBigEndianFloat();
         forward = _buffer.readBigEndianFloat();
-        flags = _buffer.readBigEndianByte();
+        flags = _buffer.readByte();
     }
 
     public static SteerVehicle fromBuffer(byte[] buffer)
     {
         SteerVehicle packet = new SteerVehicle();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

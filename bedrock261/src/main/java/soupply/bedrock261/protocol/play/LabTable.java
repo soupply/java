@@ -33,23 +33,23 @@ public class LabTable extends soupply.bedrock261.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(unknown0);
+        _buffer.writeByte(unknown0);
         position.encodeBody(_buffer);
-        _buffer.writeLittleEndianByte(reactionType);
+        _buffer.writeByte(reactionType);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        unknown0 = _buffer.readLittleEndianByte();
+        unknown0 = _buffer.readByte();
         position.decodeBody(_buffer);
-        reactionType = _buffer.readLittleEndianByte();
+        reactionType = _buffer.readByte();
     }
 
     public static LabTable fromBuffer(byte[] buffer)
     {
         LabTable packet = new LabTable();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

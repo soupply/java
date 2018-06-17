@@ -46,8 +46,8 @@ public class SpawnPlayer extends soupply.java335.Packet
         _buffer.writeBigEndianDouble(position.x);
         _buffer.writeBigEndianDouble(position.y);
         _buffer.writeBigEndianDouble(position.z);
-        _buffer.writeBigEndianByte(yaw);
-        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeByte(yaw);
+        _buffer.writeByte(pitch);
         metadata.encodeBody(_buffer);
     }
 
@@ -59,15 +59,15 @@ public class SpawnPlayer extends soupply.java335.Packet
         position.x = _buffer.readBigEndianDouble();
         position.y = _buffer.readBigEndianDouble();
         position.z = _buffer.readBigEndianDouble();
-        yaw = _buffer.readBigEndianByte();
-        pitch = _buffer.readBigEndianByte();
+        yaw = _buffer.readByte();
+        pitch = _buffer.readByte();
         metadata.decodeBody(_buffer);
     }
 
     public static SpawnPlayer fromBuffer(byte[] buffer)
     {
         SpawnPlayer packet = new SpawnPlayer();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

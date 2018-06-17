@@ -66,7 +66,7 @@ public class UseEntity extends soupply.java335.Packet
     public static UseEntity fromBuffer(byte[] buffer)
     {
         UseEntity packet = new UseEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

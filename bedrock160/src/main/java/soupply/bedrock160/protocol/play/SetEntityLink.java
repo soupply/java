@@ -38,7 +38,7 @@ public class SetEntityLink extends soupply.bedrock160.Packet
     {
         _buffer.writeVarlong(vehicle);
         _buffer.writeVarlong(passenger);
-        _buffer.writeLittleEndianByte(action);
+        _buffer.writeByte(action);
     }
 
     @Override
@@ -46,13 +46,13 @@ public class SetEntityLink extends soupply.bedrock160.Packet
     {
         vehicle = _buffer.readVarlong();
         passenger = _buffer.readVarlong();
-        action = _buffer.readLittleEndianByte();
+        action = _buffer.readByte();
     }
 
     public static SetEntityLink fromBuffer(byte[] buffer)
     {
         SetEntityLink packet = new SetEntityLink();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

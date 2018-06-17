@@ -44,7 +44,7 @@ public class UseBed extends soupply.java210.Packet
     public static UseBed fromBuffer(byte[] buffer)
     {
         UseBed packet = new UseBed();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

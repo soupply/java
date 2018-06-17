@@ -46,7 +46,7 @@ public class ItemFrameDropItem extends soupply.bedrock160.Packet
     public static ItemFrameDropItem fromBuffer(byte[] buffer)
     {
         ItemFrameDropItem packet = new ItemFrameDropItem();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

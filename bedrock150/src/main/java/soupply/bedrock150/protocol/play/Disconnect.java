@@ -47,7 +47,7 @@ public class Disconnect extends soupply.bedrock150.Packet
     public static Disconnect fromBuffer(byte[] buffer)
     {
         Disconnect packet = new Disconnect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

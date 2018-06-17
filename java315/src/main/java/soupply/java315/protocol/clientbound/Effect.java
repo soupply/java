@@ -101,7 +101,7 @@ public class Effect extends soupply.java315.Packet
     public static Effect fromBuffer(byte[] buffer)
     {
         Effect packet = new Effect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -46,7 +46,7 @@ public class SetDifficulty extends soupply.bedrock141.Packet
     public static SetDifficulty fromBuffer(byte[] buffer)
     {
         SetDifficulty packet = new SetDifficulty();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

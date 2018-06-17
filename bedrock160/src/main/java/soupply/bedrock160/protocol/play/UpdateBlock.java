@@ -55,7 +55,7 @@ public class UpdateBlock extends soupply.bedrock160.Packet
     public static UpdateBlock fromBuffer(byte[] buffer)
     {
         UpdateBlock packet = new UpdateBlock();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

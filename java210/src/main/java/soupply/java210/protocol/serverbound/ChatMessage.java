@@ -43,7 +43,7 @@ public class ChatMessage extends soupply.java210.Packet
     public static ChatMessage fromBuffer(byte[] buffer)
     {
         ChatMessage packet = new ChatMessage();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -202,7 +202,7 @@ public class LevelSoundEvent extends soupply.bedrock137.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(sound);
+        _buffer.writeByte(sound);
         _buffer.writeLittleEndianFloat(position.x);
         _buffer.writeLittleEndianFloat(position.y);
         _buffer.writeLittleEndianFloat(position.z);
@@ -215,7 +215,7 @@ public class LevelSoundEvent extends soupply.bedrock137.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        sound = _buffer.readLittleEndianByte();
+        sound = _buffer.readByte();
         position.x = _buffer.readLittleEndianFloat();
         position.y = _buffer.readLittleEndianFloat();
         position.z = _buffer.readLittleEndianFloat();
@@ -228,7 +228,7 @@ public class LevelSoundEvent extends soupply.bedrock137.Packet
     public static LevelSoundEvent fromBuffer(byte[] buffer)
     {
         LevelSoundEvent packet = new LevelSoundEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

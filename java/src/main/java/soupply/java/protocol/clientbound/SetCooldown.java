@@ -44,7 +44,7 @@ public class SetCooldown extends soupply.java.Packet
     public static SetCooldown fromBuffer(byte[] buffer)
     {
         SetCooldown packet = new SetCooldown();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -41,8 +41,8 @@ public class EntityTeleport extends soupply.java316.Packet
         _buffer.writeBigEndianDouble(position.x);
         _buffer.writeBigEndianDouble(position.y);
         _buffer.writeBigEndianDouble(position.z);
-        _buffer.writeBigEndianByte(yaw);
-        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeByte(yaw);
+        _buffer.writeByte(pitch);
         _buffer.writeBool(onGround);
     }
 
@@ -53,15 +53,15 @@ public class EntityTeleport extends soupply.java316.Packet
         position.x = _buffer.readBigEndianDouble();
         position.y = _buffer.readBigEndianDouble();
         position.z = _buffer.readBigEndianDouble();
-        yaw = _buffer.readBigEndianByte();
-        pitch = _buffer.readBigEndianByte();
+        yaw = _buffer.readByte();
+        pitch = _buffer.readByte();
         onGround = _buffer.readBool();
     }
 
     public static EntityTeleport fromBuffer(byte[] buffer)
     {
         EntityTeleport packet = new EntityTeleport();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

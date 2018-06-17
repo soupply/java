@@ -61,7 +61,7 @@ public class SoundEffect extends soupply.java210.Packet
     public static SoundEffect fromBuffer(byte[] buffer)
     {
         SoundEffect packet = new SoundEffect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

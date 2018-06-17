@@ -57,7 +57,7 @@ public class ResourcePackChunkData extends soupply.bedrock.Packet
     public static ResourcePackChunkData fromBuffer(byte[] buffer)
     {
         ResourcePackChunkData packet = new ResourcePackChunkData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

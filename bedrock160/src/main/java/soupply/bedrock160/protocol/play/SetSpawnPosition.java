@@ -53,7 +53,7 @@ public class SetSpawnPosition extends soupply.bedrock160.Packet
     public static SetSpawnPosition fromBuffer(byte[] buffer)
     {
         SetSpawnPosition packet = new SetSpawnPosition();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

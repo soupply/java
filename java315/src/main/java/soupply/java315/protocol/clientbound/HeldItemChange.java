@@ -28,19 +28,19 @@ public class HeldItemChange extends soupply.java315.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(slot);
+        _buffer.writeByte(slot);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        slot = _buffer.readBigEndianByte();
+        slot = _buffer.readByte();
     }
 
     public static HeldItemChange fromBuffer(byte[] buffer)
     {
         HeldItemChange packet = new HeldItemChange();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

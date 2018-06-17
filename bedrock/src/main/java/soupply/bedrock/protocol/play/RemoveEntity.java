@@ -40,7 +40,7 @@ public class RemoveEntity extends soupply.bedrock.Packet
     public static RemoveEntity fromBuffer(byte[] buffer)
     {
         RemoveEntity packet = new RemoveEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

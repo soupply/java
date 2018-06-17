@@ -58,7 +58,7 @@ public class ChangeDimension extends soupply.bedrock150.Packet
     public static ChangeDimension fromBuffer(byte[] buffer)
     {
         ChangeDimension packet = new ChangeDimension();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

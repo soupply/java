@@ -52,7 +52,7 @@ public class EntityProperties extends soupply.java335.Packet
     public static EntityProperties fromBuffer(byte[] buffer)
     {
         EntityProperties packet = new EntityProperties();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

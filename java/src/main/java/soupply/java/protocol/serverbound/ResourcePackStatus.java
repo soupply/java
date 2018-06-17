@@ -46,7 +46,7 @@ public class ResourcePackStatus extends soupply.java.Packet
     public static ResourcePackStatus fromBuffer(byte[] buffer)
     {
         ResourcePackStatus packet = new ResourcePackStatus();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

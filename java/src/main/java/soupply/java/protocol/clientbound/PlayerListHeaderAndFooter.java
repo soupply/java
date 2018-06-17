@@ -50,7 +50,7 @@ public class PlayerListHeaderAndFooter extends soupply.java.Packet
     public static PlayerListHeaderAndFooter fromBuffer(byte[] buffer)
     {
         PlayerListHeaderAndFooter packet = new PlayerListHeaderAndFooter();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

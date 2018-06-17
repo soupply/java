@@ -47,7 +47,7 @@ public class Transfer extends soupply.bedrock160.Packet
     public static Transfer fromBuffer(byte[] buffer)
     {
         Transfer packet = new Transfer();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

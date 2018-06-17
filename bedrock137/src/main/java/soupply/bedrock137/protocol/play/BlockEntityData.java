@@ -45,7 +45,7 @@ public class BlockEntityData extends soupply.bedrock137.Packet
     public static BlockEntityData fromBuffer(byte[] buffer)
     {
         BlockEntityData packet = new BlockEntityData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

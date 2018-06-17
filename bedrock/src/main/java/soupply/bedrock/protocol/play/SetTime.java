@@ -40,7 +40,7 @@ public class SetTime extends soupply.bedrock.Packet
     public static SetTime fromBuffer(byte[] buffer)
     {
         SetTime packet = new SetTime();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

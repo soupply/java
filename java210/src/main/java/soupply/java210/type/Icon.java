@@ -32,17 +32,17 @@ public class Icon extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(directionAndType);
-        _buffer.writeBigEndianByte(position.x);
-        _buffer.writeBigEndianByte(position.z);
+        _buffer.writeByte(directionAndType);
+        _buffer.writeByte(position.x);
+        _buffer.writeByte(position.z);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        directionAndType = _buffer.readBigEndianByte();
-        position.x = _buffer.readBigEndianByte();
-        position.z = _buffer.readBigEndianByte();
+        directionAndType = _buffer.readByte();
+        position.x = _buffer.readByte();
+        position.z = _buffer.readByte();
     }
 
 }

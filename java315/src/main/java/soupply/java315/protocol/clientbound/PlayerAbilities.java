@@ -38,7 +38,7 @@ public class PlayerAbilities extends soupply.java315.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(flags);
+        _buffer.writeByte(flags);
         _buffer.writeBigEndianFloat(flyingSpeed);
         _buffer.writeBigEndianFloat(fovModifier);
     }
@@ -46,7 +46,7 @@ public class PlayerAbilities extends soupply.java315.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        flags = _buffer.readBigEndianByte();
+        flags = _buffer.readByte();
         flyingSpeed = _buffer.readBigEndianFloat();
         fovModifier = _buffer.readBigEndianFloat();
     }
@@ -54,7 +54,7 @@ public class PlayerAbilities extends soupply.java315.Packet
     public static PlayerAbilities fromBuffer(byte[] buffer)
     {
         PlayerAbilities packet = new PlayerAbilities();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

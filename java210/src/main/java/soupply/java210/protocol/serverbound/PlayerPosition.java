@@ -49,7 +49,7 @@ public class PlayerPosition extends soupply.java210.Packet
     public static PlayerPosition fromBuffer(byte[] buffer)
     {
         PlayerPosition packet = new PlayerPosition();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

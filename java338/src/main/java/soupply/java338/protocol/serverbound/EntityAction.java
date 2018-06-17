@@ -59,7 +59,7 @@ public class EntityAction extends soupply.java338.Packet
     public static EntityAction fromBuffer(byte[] buffer)
     {
         EntityAction packet = new EntityAction();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

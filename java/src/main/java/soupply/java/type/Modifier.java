@@ -32,7 +32,7 @@ public class Modifier extends Type
     {
         _buffer.writeUUID(uuid);
         _buffer.writeBigEndianDouble(amount);
-        _buffer.writeBigEndianByte(operation);
+        _buffer.writeByte(operation);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Modifier extends Type
     {
         uuid = _buffer.readUUID();
         amount = _buffer.readBigEndianDouble();
-        operation = _buffer.readBigEndianByte();
+        operation = _buffer.readByte();
     }
 
 }

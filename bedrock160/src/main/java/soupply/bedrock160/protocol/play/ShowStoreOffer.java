@@ -54,7 +54,7 @@ public class ShowStoreOffer extends soupply.bedrock160.Packet
     public static ShowStoreOffer fromBuffer(byte[] buffer)
     {
         ShowStoreOffer packet = new ShowStoreOffer();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

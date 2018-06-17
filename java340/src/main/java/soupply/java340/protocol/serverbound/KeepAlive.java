@@ -40,7 +40,7 @@ public class KeepAlive extends soupply.java340.Packet
     public static KeepAlive fromBuffer(byte[] buffer)
     {
         KeepAlive packet = new KeepAlive();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

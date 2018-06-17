@@ -27,7 +27,7 @@ public class ClientToServerHandshake extends soupply.bedrock141.Packet
     public static ClientToServerHandshake fromBuffer(byte[] buffer)
     {
         ClientToServerHandshake packet = new ClientToServerHandshake();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

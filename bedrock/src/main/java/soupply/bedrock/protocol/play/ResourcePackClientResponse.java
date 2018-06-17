@@ -36,7 +36,7 @@ public class ResourcePackClientResponse extends soupply.bedrock.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(status);
+        _buffer.writeByte(status);
         _buffer.writeVaruint((int)packIds.length);
         for(String cfalc:packIds)
         {
@@ -49,7 +49,7 @@ public class ResourcePackClientResponse extends soupply.bedrock.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        status = _buffer.readLittleEndianByte();
+        status = _buffer.readByte();
         final int bbytzm = _buffer.readVaruint();
         for(int cfalc=0;cfalc<packIds.length;cfalc++)
         {
@@ -61,7 +61,7 @@ public class ResourcePackClientResponse extends soupply.bedrock.Packet
     public static ResourcePackClientResponse fromBuffer(byte[] buffer)
     {
         ResourcePackClientResponse packet = new ResourcePackClientResponse();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

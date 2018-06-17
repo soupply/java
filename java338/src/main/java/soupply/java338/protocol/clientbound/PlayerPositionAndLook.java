@@ -49,7 +49,7 @@ public class PlayerPositionAndLook extends soupply.java338.Packet
         _buffer.writeBigEndianDouble(position.z);
         _buffer.writeBigEndianFloat(yaw);
         _buffer.writeBigEndianFloat(pitch);
-        _buffer.writeBigEndianByte(flags);
+        _buffer.writeByte(flags);
         _buffer.writeVaruint(teleportId);
     }
 
@@ -61,14 +61,14 @@ public class PlayerPositionAndLook extends soupply.java338.Packet
         position.z = _buffer.readBigEndianDouble();
         yaw = _buffer.readBigEndianFloat();
         pitch = _buffer.readBigEndianFloat();
-        flags = _buffer.readBigEndianByte();
+        flags = _buffer.readByte();
         teleportId = _buffer.readVaruint();
     }
 
     public static PlayerPositionAndLook fromBuffer(byte[] buffer)
     {
         PlayerPositionAndLook packet = new PlayerPositionAndLook();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

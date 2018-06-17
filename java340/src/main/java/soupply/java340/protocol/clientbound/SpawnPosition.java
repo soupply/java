@@ -40,7 +40,7 @@ public class SpawnPosition extends soupply.java340.Packet
     public static SpawnPosition fromBuffer(byte[] buffer)
     {
         SpawnPosition packet = new SpawnPosition();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

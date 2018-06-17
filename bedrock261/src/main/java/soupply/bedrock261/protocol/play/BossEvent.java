@@ -49,7 +49,7 @@ public class BossEvent extends soupply.bedrock261.Packet
     public static BossEvent fromBuffer(byte[] buffer)
     {
         BossEvent packet = new BossEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

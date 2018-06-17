@@ -48,7 +48,7 @@ public class CraftingData extends soupply.bedrock.Packet
     public static CraftingData fromBuffer(byte[] buffer)
     {
         CraftingData packet = new CraftingData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

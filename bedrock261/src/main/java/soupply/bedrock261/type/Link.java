@@ -33,8 +33,8 @@ public class Link extends Type
     {
         _buffer.writeVarlong(from);
         _buffer.writeVarlong(to);
-        _buffer.writeLittleEndianByte(action);
-        _buffer.writeLittleEndianByte(unknown3);
+        _buffer.writeByte(action);
+        _buffer.writeByte(unknown3);
     }
 
     @Override
@@ -42,8 +42,8 @@ public class Link extends Type
     {
         from = _buffer.readVarlong();
         to = _buffer.readVarlong();
-        action = _buffer.readLittleEndianByte();
-        unknown3 = _buffer.readLittleEndianByte();
+        action = _buffer.readByte();
+        unknown3 = _buffer.readByte();
     }
 
 }

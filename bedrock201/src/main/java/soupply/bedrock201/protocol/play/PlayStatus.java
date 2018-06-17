@@ -49,7 +49,7 @@ public class PlayStatus extends soupply.bedrock201.Packet
     public static PlayStatus fromBuffer(byte[] buffer)
     {
         PlayStatus packet = new PlayStatus();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

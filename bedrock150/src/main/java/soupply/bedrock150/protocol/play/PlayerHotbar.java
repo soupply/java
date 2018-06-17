@@ -27,7 +27,7 @@ public class PlayerHotbar extends soupply.bedrock150.Packet
     public static PlayerHotbar fromBuffer(byte[] buffer)
     {
         PlayerHotbar packet = new PlayerHotbar();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

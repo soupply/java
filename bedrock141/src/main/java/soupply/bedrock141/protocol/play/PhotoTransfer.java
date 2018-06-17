@@ -57,7 +57,7 @@ public class PhotoTransfer extends soupply.bedrock141.Packet
     public static PhotoTransfer fromBuffer(byte[] buffer)
     {
         PhotoTransfer packet = new PhotoTransfer();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

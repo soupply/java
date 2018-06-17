@@ -43,7 +43,7 @@ public class AddBehaviorTree extends soupply.bedrock261.Packet
     public static AddBehaviorTree fromBuffer(byte[] buffer)
     {
         AddBehaviorTree packet = new AddBehaviorTree();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

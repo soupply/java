@@ -43,7 +43,7 @@ public class InitiateWebSocketConnection extends soupply.bedrock150.Packet
     public static InitiateWebSocketConnection fromBuffer(byte[] buffer)
     {
         InitiateWebSocketConnection packet = new InitiateWebSocketConnection();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

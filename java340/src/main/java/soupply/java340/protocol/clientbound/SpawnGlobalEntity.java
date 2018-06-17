@@ -37,7 +37,7 @@ public class SpawnGlobalEntity extends soupply.java340.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeBigEndianByte(type);
+        _buffer.writeByte(type);
         _buffer.writeBigEndianDouble(position.x);
         _buffer.writeBigEndianDouble(position.y);
         _buffer.writeBigEndianDouble(position.z);
@@ -47,7 +47,7 @@ public class SpawnGlobalEntity extends soupply.java340.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        type = _buffer.readBigEndianByte();
+        type = _buffer.readByte();
         position.x = _buffer.readBigEndianDouble();
         position.y = _buffer.readBigEndianDouble();
         position.z = _buffer.readBigEndianDouble();
@@ -56,7 +56,7 @@ public class SpawnGlobalEntity extends soupply.java340.Packet
     public static SpawnGlobalEntity fromBuffer(byte[] buffer)
     {
         SpawnGlobalEntity packet = new SpawnGlobalEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

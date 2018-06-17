@@ -53,7 +53,7 @@ public class AddHangingEntity extends soupply.bedrock137.Packet
     public static AddHangingEntity fromBuffer(byte[] buffer)
     {
         AddHangingEntity packet = new AddHangingEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

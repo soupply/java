@@ -52,7 +52,7 @@ public class MobArmorEquipment extends soupply.bedrock141.Packet
     public static MobArmorEquipment fromBuffer(byte[] buffer)
     {
         MobArmorEquipment packet = new MobArmorEquipment();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

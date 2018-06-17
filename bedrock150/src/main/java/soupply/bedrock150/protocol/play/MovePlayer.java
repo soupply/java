@@ -60,7 +60,7 @@ public class MovePlayer extends soupply.bedrock150.Packet
         _buffer.writeLittleEndianFloat(pitch);
         _buffer.writeLittleEndianFloat(headYaw);
         _buffer.writeLittleEndianFloat(yaw);
-        _buffer.writeLittleEndianByte(animation);
+        _buffer.writeByte(animation);
         _buffer.writeBool(onGround);
         _buffer.writeVarlong(unknown7);
         _buffer.writeLittleEndianInt(unknown8);
@@ -77,7 +77,7 @@ public class MovePlayer extends soupply.bedrock150.Packet
         pitch = _buffer.readLittleEndianFloat();
         headYaw = _buffer.readLittleEndianFloat();
         yaw = _buffer.readLittleEndianFloat();
-        animation = _buffer.readLittleEndianByte();
+        animation = _buffer.readByte();
         onGround = _buffer.readBool();
         unknown7 = _buffer.readVarlong();
         unknown8 = _buffer.readLittleEndianInt();
@@ -87,7 +87,7 @@ public class MovePlayer extends soupply.bedrock150.Packet
     public static MovePlayer fromBuffer(byte[] buffer)
     {
         MovePlayer packet = new MovePlayer();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -35,8 +35,8 @@ public class EntityLook extends soupply.java210.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeBigEndianByte(yaw);
-        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeByte(yaw);
+        _buffer.writeByte(pitch);
         _buffer.writeBool(onGround);
     }
 
@@ -44,15 +44,15 @@ public class EntityLook extends soupply.java210.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        yaw = _buffer.readBigEndianByte();
-        pitch = _buffer.readBigEndianByte();
+        yaw = _buffer.readByte();
+        pitch = _buffer.readByte();
         onGround = _buffer.readBool();
     }
 
     public static EntityLook fromBuffer(byte[] buffer)
     {
         EntityLook packet = new EntityLook();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

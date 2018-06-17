@@ -27,7 +27,7 @@ public class ShowProfile extends soupply.bedrock141.Packet
     public static ShowProfile fromBuffer(byte[] buffer)
     {
         ShowProfile packet = new ShowProfile();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

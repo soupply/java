@@ -87,7 +87,7 @@ public class PlayerSkin extends soupply.bedrock137.Packet
     public static PlayerSkin fromBuffer(byte[] buffer)
     {
         PlayerSkin packet = new PlayerSkin();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

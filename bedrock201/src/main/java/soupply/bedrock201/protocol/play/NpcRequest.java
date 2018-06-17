@@ -35,27 +35,27 @@ public class NpcRequest extends soupply.bedrock201.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVarlong(entityId);
-        _buffer.writeLittleEndianByte(requestType);
+        _buffer.writeByte(requestType);
         byte[] y9bfz = _buffer.convertString(command);
         _buffer.writeVaruint((int)y9bfz.length);
         _buffer.writeBytes(y9bfz);
-        _buffer.writeLittleEndianByte(actionType);
+        _buffer.writeByte(actionType);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVarlong();
-        requestType = _buffer.readLittleEndianByte();
+        requestType = _buffer.readByte();
         final int bvy9bfz = _buffer.readVaruint();
         command = _buffer.readString(bvy9bfz);
-        actionType = _buffer.readLittleEndianByte();
+        actionType = _buffer.readByte();
     }
 
     public static NpcRequest fromBuffer(byte[] buffer)
     {
         NpcRequest packet = new NpcRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

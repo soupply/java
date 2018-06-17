@@ -40,7 +40,7 @@ public class GuiDataPickItem extends soupply.bedrock160.Packet
     public static GuiDataPickItem fromBuffer(byte[] buffer)
     {
         GuiDataPickItem packet = new GuiDataPickItem();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

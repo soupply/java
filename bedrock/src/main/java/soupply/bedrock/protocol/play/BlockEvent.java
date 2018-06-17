@@ -53,7 +53,7 @@ public class BlockEvent extends soupply.bedrock.Packet
     public static BlockEvent fromBuffer(byte[] buffer)
     {
         BlockEvent packet = new BlockEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

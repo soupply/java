@@ -52,7 +52,7 @@ public class SetPassengers extends soupply.java340.Packet
     public static SetPassengers fromBuffer(byte[] buffer)
     {
         SetPassengers packet = new SetPassengers();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

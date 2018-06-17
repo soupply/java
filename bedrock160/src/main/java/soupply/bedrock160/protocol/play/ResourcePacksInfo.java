@@ -64,7 +64,7 @@ public class ResourcePacksInfo extends soupply.bedrock160.Packet
     public static ResourcePacksInfo fromBuffer(byte[] buffer)
     {
         ResourcePacksInfo packet = new ResourcePacksInfo();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

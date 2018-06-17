@@ -28,19 +28,19 @@ public class ContainerClose extends soupply.bedrock141.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(window);
+        _buffer.writeByte(window);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readLittleEndianByte();
+        window = _buffer.readByte();
     }
 
     public static ContainerClose fromBuffer(byte[] buffer)
     {
         ContainerClose packet = new ContainerClose();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -40,7 +40,7 @@ public class SetCompression extends soupply.java315.Packet
     public static SetCompression fromBuffer(byte[] buffer)
     {
         SetCompression packet = new SetCompression();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

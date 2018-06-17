@@ -55,7 +55,7 @@ public class MultiBlockChange extends soupply.java210.Packet
     public static MultiBlockChange fromBuffer(byte[] buffer)
     {
         MultiBlockChange packet = new MultiBlockChange();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

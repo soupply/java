@@ -55,7 +55,7 @@ public class UpdateSign extends soupply.java340.Packet
     public static UpdateSign fromBuffer(byte[] buffer)
     {
         UpdateSign packet = new UpdateSign();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

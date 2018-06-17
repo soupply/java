@@ -45,7 +45,7 @@ public class EntityMetadata extends soupply.java335.Packet
     public static EntityMetadata fromBuffer(byte[] buffer)
     {
         EntityMetadata packet = new EntityMetadata();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

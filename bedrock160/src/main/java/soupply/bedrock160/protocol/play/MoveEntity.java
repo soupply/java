@@ -45,9 +45,9 @@ public class MoveEntity extends soupply.bedrock160.Packet
         _buffer.writeLittleEndianFloat(position.x);
         _buffer.writeLittleEndianFloat(position.y);
         _buffer.writeLittleEndianFloat(position.z);
-        _buffer.writeLittleEndianByte(pitch);
-        _buffer.writeLittleEndianByte(headYaw);
-        _buffer.writeLittleEndianByte(yaw);
+        _buffer.writeByte(pitch);
+        _buffer.writeByte(headYaw);
+        _buffer.writeByte(yaw);
         _buffer.writeBool(onGround);
         _buffer.writeBool(teleported);
     }
@@ -59,9 +59,9 @@ public class MoveEntity extends soupply.bedrock160.Packet
         position.x = _buffer.readLittleEndianFloat();
         position.y = _buffer.readLittleEndianFloat();
         position.z = _buffer.readLittleEndianFloat();
-        pitch = _buffer.readLittleEndianByte();
-        headYaw = _buffer.readLittleEndianByte();
-        yaw = _buffer.readLittleEndianByte();
+        pitch = _buffer.readByte();
+        headYaw = _buffer.readByte();
+        yaw = _buffer.readByte();
         onGround = _buffer.readBool();
         teleported = _buffer.readBool();
     }
@@ -69,7 +69,7 @@ public class MoveEntity extends soupply.bedrock160.Packet
     public static MoveEntity fromBuffer(byte[] buffer)
     {
         MoveEntity packet = new MoveEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

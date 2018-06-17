@@ -44,7 +44,7 @@ public class Camera extends soupply.bedrock141.Packet
     public static Camera fromBuffer(byte[] buffer)
     {
         Camera packet = new Camera();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -31,20 +31,20 @@ public class EntityHeadLook extends soupply.java335.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeBigEndianByte(headYaw);
+        _buffer.writeByte(headYaw);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        headYaw = _buffer.readBigEndianByte();
+        headYaw = _buffer.readByte();
     }
 
     public static EntityHeadLook fromBuffer(byte[] buffer)
     {
         EntityHeadLook packet = new EntityHeadLook();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

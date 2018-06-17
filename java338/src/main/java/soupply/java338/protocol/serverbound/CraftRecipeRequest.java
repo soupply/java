@@ -32,7 +32,7 @@ public class CraftRecipeRequest extends soupply.java338.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
+        _buffer.writeByte(window);
         _buffer.writeVaruint(recipe);
         _buffer.writeBool(makeAll);
     }
@@ -40,7 +40,7 @@ public class CraftRecipeRequest extends soupply.java338.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
         recipe = _buffer.readVaruint();
         makeAll = _buffer.readBool();
     }
@@ -48,7 +48,7 @@ public class CraftRecipeRequest extends soupply.java338.Packet
     public static CraftRecipeRequest fromBuffer(byte[] buffer)
     {
         CraftRecipeRequest packet = new CraftRecipeRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

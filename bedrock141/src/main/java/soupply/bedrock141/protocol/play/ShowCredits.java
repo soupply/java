@@ -48,7 +48,7 @@ public class ShowCredits extends soupply.bedrock141.Packet
     public static ShowCredits fromBuffer(byte[] buffer)
     {
         ShowCredits packet = new ShowCredits();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

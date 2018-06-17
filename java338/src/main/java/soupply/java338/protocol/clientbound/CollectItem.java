@@ -48,7 +48,7 @@ public class CollectItem extends soupply.java338.Packet
     public static CollectItem fromBuffer(byte[] buffer)
     {
         CollectItem packet = new CollectItem();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

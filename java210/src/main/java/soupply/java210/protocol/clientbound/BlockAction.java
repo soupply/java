@@ -57,8 +57,8 @@ public class BlockAction extends soupply.java210.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBigEndianLong(position);
-        _buffer.writeBigEndianByte(action);
-        _buffer.writeBigEndianByte(parameter);
+        _buffer.writeByte(action);
+        _buffer.writeByte(parameter);
         _buffer.writeVaruint(blockType);
     }
 
@@ -66,15 +66,15 @@ public class BlockAction extends soupply.java210.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         position = _buffer.readBigEndianLong();
-        action = _buffer.readBigEndianByte();
-        parameter = _buffer.readBigEndianByte();
+        action = _buffer.readByte();
+        parameter = _buffer.readByte();
         blockType = _buffer.readVaruint();
     }
 
     public static BlockAction fromBuffer(byte[] buffer)
     {
         BlockAction packet = new BlockAction();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

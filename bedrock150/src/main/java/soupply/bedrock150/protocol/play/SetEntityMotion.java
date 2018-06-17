@@ -49,7 +49,7 @@ public class SetEntityMotion extends soupply.bedrock150.Packet
     public static SetEntityMotion fromBuffer(byte[] buffer)
     {
         SetEntityMotion packet = new SetEntityMotion();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

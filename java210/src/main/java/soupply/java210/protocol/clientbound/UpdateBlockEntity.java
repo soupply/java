@@ -44,7 +44,7 @@ public class UpdateBlockEntity extends soupply.java210.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBigEndianLong(position);
-        _buffer.writeBigEndianByte(action);
+        _buffer.writeByte(action);
         _buffer.writeBytes(nbt);
     }
 
@@ -52,14 +52,14 @@ public class UpdateBlockEntity extends soupply.java210.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         position = _buffer.readBigEndianLong();
-        action = _buffer.readBigEndianByte();
+        action = _buffer.readByte();
         nbt = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
     }
 
     public static UpdateBlockEntity fromBuffer(byte[] buffer)
     {
         UpdateBlockEntity packet = new UpdateBlockEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

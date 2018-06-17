@@ -44,7 +44,7 @@ public class PlayerDigging extends soupply.java316.Packet
     {
         _buffer.writeVaruint(status);
         _buffer.writeBigEndianLong(position);
-        _buffer.writeBigEndianByte(face);
+        _buffer.writeByte(face);
     }
 
     @Override
@@ -52,13 +52,13 @@ public class PlayerDigging extends soupply.java316.Packet
     {
         status = _buffer.readVaruint();
         position = _buffer.readBigEndianLong();
-        face = _buffer.readBigEndianByte();
+        face = _buffer.readByte();
     }
 
     public static PlayerDigging fromBuffer(byte[] buffer)
     {
         PlayerDigging packet = new PlayerDigging();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

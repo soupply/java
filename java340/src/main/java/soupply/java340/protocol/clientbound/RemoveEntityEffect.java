@@ -31,20 +31,20 @@ public class RemoveEntityEffect extends soupply.java340.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeBigEndianByte(effectId);
+        _buffer.writeByte(effectId);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        effectId = _buffer.readBigEndianByte();
+        effectId = _buffer.readByte();
     }
 
     public static RemoveEntityEffect fromBuffer(byte[] buffer)
     {
         RemoveEntityEffect packet = new RemoveEntityEffect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

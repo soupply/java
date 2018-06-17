@@ -132,7 +132,7 @@ public class AddPlayer extends soupply.bedrock141.Packet
     public static AddPlayer fromBuffer(byte[] buffer)
     {
         AddPlayer packet = new AddPlayer();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

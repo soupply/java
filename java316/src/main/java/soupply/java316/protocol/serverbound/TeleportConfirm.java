@@ -40,7 +40,7 @@ public class TeleportConfirm extends soupply.java316.Packet
     public static TeleportConfirm fromBuffer(byte[] buffer)
     {
         TeleportConfirm packet = new TeleportConfirm();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -44,7 +44,7 @@ public class AttachEntity extends soupply.java340.Packet
     public static AttachEntity fromBuffer(byte[] buffer)
     {
         AttachEntity packet = new AttachEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

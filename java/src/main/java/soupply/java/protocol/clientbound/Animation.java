@@ -39,20 +39,20 @@ public class Animation extends soupply.java.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeBigEndianByte(animation);
+        _buffer.writeByte(animation);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        animation = _buffer.readBigEndianByte();
+        animation = _buffer.readByte();
     }
 
     public static Animation fromBuffer(byte[] buffer)
     {
         Animation packet = new Animation();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

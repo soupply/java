@@ -48,7 +48,7 @@ public class TestFloat extends soupply.test0.Packet
     public static TestFloat fromBuffer(byte[] buffer)
     {
         TestFloat packet = new TestFloat();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -45,7 +45,7 @@ public class SetPlayerGameType extends soupply.bedrock141.Packet
     public static SetPlayerGameType fromBuffer(byte[] buffer)
     {
         SetPlayerGameType packet = new SetPlayerGameType();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -43,7 +43,7 @@ public class LoginStart extends soupply.java338.Packet
     public static LoginStart fromBuffer(byte[] buffer)
     {
         LoginStart packet = new LoginStart();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

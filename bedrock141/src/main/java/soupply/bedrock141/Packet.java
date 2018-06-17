@@ -15,7 +15,7 @@ public abstract class Packet extends soupply.util.Packet
         buffer.writeVaruint(this.getId());
         buffer.writeBytes(new byte[2]);
         this.encodeBody(buffer);
-        return buffer.toArray();
+        return buffer.toByteArray();
     }
 
     @Override

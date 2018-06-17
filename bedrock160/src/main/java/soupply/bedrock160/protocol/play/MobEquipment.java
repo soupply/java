@@ -39,9 +39,9 @@ public class MobEquipment extends soupply.bedrock160.Packet
     {
         _buffer.writeVarlong(entityId);
         item.encodeBody(_buffer);
-        _buffer.writeLittleEndianByte(inventorySlot);
-        _buffer.writeLittleEndianByte(hotbarSlot);
-        _buffer.writeLittleEndianByte(unknown4);
+        _buffer.writeByte(inventorySlot);
+        _buffer.writeByte(hotbarSlot);
+        _buffer.writeByte(unknown4);
     }
 
     @Override
@@ -49,15 +49,15 @@ public class MobEquipment extends soupply.bedrock160.Packet
     {
         entityId = _buffer.readVarlong();
         item.decodeBody(_buffer);
-        inventorySlot = _buffer.readLittleEndianByte();
-        hotbarSlot = _buffer.readLittleEndianByte();
-        unknown4 = _buffer.readLittleEndianByte();
+        inventorySlot = _buffer.readByte();
+        hotbarSlot = _buffer.readByte();
+        unknown4 = _buffer.readByte();
     }
 
     public static MobEquipment fromBuffer(byte[] buffer)
     {
         MobEquipment packet = new MobEquipment();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

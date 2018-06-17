@@ -44,7 +44,7 @@ public class TimeUpdate extends soupply.java315.Packet
     public static TimeUpdate fromBuffer(byte[] buffer)
     {
         TimeUpdate packet = new TimeUpdate();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

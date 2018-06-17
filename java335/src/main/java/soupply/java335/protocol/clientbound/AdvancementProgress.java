@@ -47,7 +47,7 @@ public class AdvancementProgress extends soupply.java335.Packet
     public static AdvancementProgress fromBuffer(byte[] buffer)
     {
         AdvancementProgress packet = new AdvancementProgress();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

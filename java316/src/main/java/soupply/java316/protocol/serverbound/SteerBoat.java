@@ -44,7 +44,7 @@ public class SteerBoat extends soupply.java316.Packet
     public static SteerBoat fromBuffer(byte[] buffer)
     {
         SteerBoat packet = new SteerBoat();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

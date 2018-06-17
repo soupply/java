@@ -43,9 +43,9 @@ public class Explosion extends soupply.java.Packet
         _buffer.writeVaruint((int)records.length);
         for(ByteXYZ cvbjc:records)
         {
-            _buffer.writeBigEndianByte(cvbjc.x);
-            _buffer.writeBigEndianByte(cvbjc.y);
-            _buffer.writeBigEndianByte(cvbjc.z);
+            _buffer.writeByte(cvbjc.x);
+            _buffer.writeByte(cvbjc.y);
+            _buffer.writeByte(cvbjc.z);
         }
         _buffer.writeBigEndianFloat(motion.x);
         _buffer.writeBigEndianFloat(motion.y);
@@ -62,9 +62,9 @@ public class Explosion extends soupply.java.Packet
         final int bjy9zm = _buffer.readVaruint();
         for(int cvbjc=0;cvbjc<records.length;cvbjc++)
         {
-            records[cvbjc].x = _buffer.readBigEndianByte();
-            records[cvbjc].y = _buffer.readBigEndianByte();
-            records[cvbjc].z = _buffer.readBigEndianByte();
+            records[cvbjc].x = _buffer.readByte();
+            records[cvbjc].y = _buffer.readByte();
+            records[cvbjc].z = _buffer.readByte();
         }
         motion.x = _buffer.readBigEndianFloat();
         motion.y = _buffer.readBigEndianFloat();
@@ -74,7 +74,7 @@ public class Explosion extends soupply.java.Packet
     public static Explosion fromBuffer(byte[] buffer)
     {
         Explosion packet = new Explosion();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

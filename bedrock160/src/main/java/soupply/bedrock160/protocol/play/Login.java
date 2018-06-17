@@ -45,7 +45,7 @@ public class Login extends soupply.bedrock160.Packet
     public static Login fromBuffer(byte[] buffer)
     {
         Login packet = new Login();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

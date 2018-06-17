@@ -34,7 +34,7 @@ public class BlockBreakAnimation extends soupply.java335.Packet
     {
         _buffer.writeVaruint(entityId);
         _buffer.writeBigEndianLong(position);
-        _buffer.writeBigEndianByte(stage);
+        _buffer.writeByte(stage);
     }
 
     @Override
@@ -42,13 +42,13 @@ public class BlockBreakAnimation extends soupply.java335.Packet
     {
         entityId = _buffer.readVaruint();
         position = _buffer.readBigEndianLong();
-        stage = _buffer.readBigEndianByte();
+        stage = _buffer.readByte();
     }
 
     public static BlockBreakAnimation fromBuffer(byte[] buffer)
     {
         BlockBreakAnimation packet = new BlockBreakAnimation();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

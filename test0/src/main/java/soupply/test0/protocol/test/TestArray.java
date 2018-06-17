@@ -73,7 +73,7 @@ public class TestArray extends soupply.test0.Packet
     public static TestArray fromBuffer(byte[] buffer)
     {
         TestArray packet = new TestArray();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

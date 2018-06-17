@@ -70,20 +70,20 @@ public class EntityStatus extends soupply.java210.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBigEndianInt(entityId);
-        _buffer.writeBigEndianByte(status);
+        _buffer.writeByte(status);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readBigEndianInt();
-        status = _buffer.readBigEndianByte();
+        status = _buffer.readByte();
     }
 
     public static EntityStatus fromBuffer(byte[] buffer)
     {
         EntityStatus packet = new EntityStatus();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

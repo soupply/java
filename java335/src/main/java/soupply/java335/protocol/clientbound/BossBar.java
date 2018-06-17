@@ -45,7 +45,7 @@ public class BossBar extends soupply.java335.Packet
     public static BossBar fromBuffer(byte[] buffer)
     {
         BossBar packet = new BossBar();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

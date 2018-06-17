@@ -45,7 +45,7 @@ public class CreativeInventoryAction extends soupply.java340.Packet
     public static CreativeInventoryAction fromBuffer(byte[] buffer)
     {
         CreativeInventoryAction packet = new CreativeInventoryAction();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

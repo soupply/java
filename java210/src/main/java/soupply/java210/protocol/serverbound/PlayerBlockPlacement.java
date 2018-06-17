@@ -42,9 +42,9 @@ public class PlayerBlockPlacement extends soupply.java210.Packet
         _buffer.writeBigEndianLong(position);
         _buffer.writeVaruint(face);
         _buffer.writeVaruint(hand);
-        _buffer.writeBigEndianByte(cursorPosition.x);
-        _buffer.writeBigEndianByte(cursorPosition.y);
-        _buffer.writeBigEndianByte(cursorPosition.z);
+        _buffer.writeByte(cursorPosition.x);
+        _buffer.writeByte(cursorPosition.y);
+        _buffer.writeByte(cursorPosition.z);
     }
 
     @Override
@@ -53,15 +53,15 @@ public class PlayerBlockPlacement extends soupply.java210.Packet
         position = _buffer.readBigEndianLong();
         face = _buffer.readVaruint();
         hand = _buffer.readVaruint();
-        cursorPosition.x = _buffer.readBigEndianByte();
-        cursorPosition.y = _buffer.readBigEndianByte();
-        cursorPosition.z = _buffer.readBigEndianByte();
+        cursorPosition.x = _buffer.readByte();
+        cursorPosition.y = _buffer.readByte();
+        cursorPosition.z = _buffer.readByte();
     }
 
     public static PlayerBlockPlacement fromBuffer(byte[] buffer)
     {
         PlayerBlockPlacement packet = new PlayerBlockPlacement();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

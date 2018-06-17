@@ -48,7 +48,7 @@ public class FullChunkData extends soupply.bedrock261.Packet
     public static FullChunkData fromBuffer(byte[] buffer)
     {
         FullChunkData packet = new FullChunkData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

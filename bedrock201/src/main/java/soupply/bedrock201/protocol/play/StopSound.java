@@ -47,7 +47,7 @@ public class StopSound extends soupply.bedrock201.Packet
     public static StopSound fromBuffer(byte[] buffer)
     {
         StopSound packet = new StopSound();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

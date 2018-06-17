@@ -51,7 +51,7 @@ public class AdvencementTab extends soupply.java.Packet
     public static AdvencementTab fromBuffer(byte[] buffer)
     {
         AdvencementTab packet = new AdvencementTab();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

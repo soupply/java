@@ -52,7 +52,7 @@ public class InventoryTransaction extends soupply.bedrock201.Packet
     public static InventoryTransaction fromBuffer(byte[] buffer)
     {
         InventoryTransaction packet = new InventoryTransaction();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

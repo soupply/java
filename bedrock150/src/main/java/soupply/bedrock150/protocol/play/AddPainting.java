@@ -60,7 +60,7 @@ public class AddPainting extends soupply.bedrock150.Packet
     public static AddPainting fromBuffer(byte[] buffer)
     {
         AddPainting packet = new AddPainting();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

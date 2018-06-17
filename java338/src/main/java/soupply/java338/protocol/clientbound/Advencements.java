@@ -27,7 +27,7 @@ public class Advencements extends soupply.java338.Packet
     public static Advencements fromBuffer(byte[] buffer)
     {
         Advencements packet = new Advencements();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

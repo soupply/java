@@ -27,7 +27,7 @@ public class ServerSettingsRequest extends soupply.bedrock.Packet
     public static ServerSettingsRequest fromBuffer(byte[] buffer)
     {
         ServerSettingsRequest packet = new ServerSettingsRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

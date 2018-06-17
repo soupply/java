@@ -49,7 +49,7 @@ public class ClientboundMapItemData extends soupply.bedrock201.Packet
     {
         _buffer.writeVarlong(mapId);
         _buffer.writeVaruint(update);
-        _buffer.writeLittleEndianByte(scale);
+        _buffer.writeByte(scale);
         _buffer.writeVarint(size.x);
         _buffer.writeVarint(size.z);
         _buffer.writeVarint(offset.x);
@@ -67,7 +67,7 @@ public class ClientboundMapItemData extends soupply.bedrock201.Packet
     {
         mapId = _buffer.readVarlong();
         update = _buffer.readVaruint();
-        scale = _buffer.readLittleEndianByte();
+        scale = _buffer.readByte();
         size.x = _buffer.readVarint();
         size.z = _buffer.readVarint();
         offset.x = _buffer.readVarint();
@@ -83,7 +83,7 @@ public class ClientboundMapItemData extends soupply.bedrock201.Packet
     public static ClientboundMapItemData fromBuffer(byte[] buffer)
     {
         ClientboundMapItemData packet = new ClientboundMapItemData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

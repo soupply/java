@@ -67,7 +67,7 @@ public class SetTitle extends soupply.bedrock261.Packet
     public static SetTitle fromBuffer(byte[] buffer)
     {
         SetTitle packet = new SetTitle();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

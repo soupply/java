@@ -36,7 +36,7 @@ public class TestInt extends soupply.test0.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(a);
+        _buffer.writeByte(a);
         _buffer.writeBigEndianShort(b);
         _buffer.writeLittleEndianLong(c);
         _buffer.writeVarshort(d);
@@ -46,7 +46,7 @@ public class TestInt extends soupply.test0.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        a = _buffer.readBigEndianByte();
+        a = _buffer.readByte();
         b = _buffer.readBigEndianShort();
         c = _buffer.readLittleEndianLong();
         d = _buffer.readVarshort();
@@ -56,7 +56,7 @@ public class TestInt extends soupply.test0.Packet
     public static TestInt fromBuffer(byte[] buffer)
     {
         TestInt packet = new TestInt();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

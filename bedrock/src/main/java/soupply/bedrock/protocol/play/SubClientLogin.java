@@ -27,7 +27,7 @@ public class SubClientLogin extends soupply.bedrock.Packet
     public static SubClientLogin fromBuffer(byte[] buffer)
     {
         SubClientLogin packet = new SubClientLogin();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

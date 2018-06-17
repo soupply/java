@@ -44,7 +44,7 @@ public class Event extends soupply.bedrock261.Packet
     public static Event fromBuffer(byte[] buffer)
     {
         Event packet = new Event();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

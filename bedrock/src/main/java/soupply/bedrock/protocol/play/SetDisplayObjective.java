@@ -68,7 +68,7 @@ public class SetDisplayObjective extends soupply.bedrock.Packet
     public static SetDisplayObjective fromBuffer(byte[] buffer)
     {
         SetDisplayObjective packet = new SetDisplayObjective();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -108,7 +108,7 @@ public class LevelEvent extends soupply.bedrock160.Packet
     public static LevelEvent fromBuffer(byte[] buffer)
     {
         LevelEvent packet = new LevelEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

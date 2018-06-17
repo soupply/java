@@ -65,7 +65,7 @@ public class ChunkData extends soupply.java335.Packet
     public static ChunkData fromBuffer(byte[] buffer)
     {
         ChunkData packet = new ChunkData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

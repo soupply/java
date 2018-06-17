@@ -49,7 +49,7 @@ public class SpawnExperienceOrb extends soupply.bedrock201.Packet
     public static SpawnExperienceOrb fromBuffer(byte[] buffer)
     {
         SpawnExperienceOrb packet = new SpawnExperienceOrb();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

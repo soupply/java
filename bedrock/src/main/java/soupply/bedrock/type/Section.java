@@ -26,7 +26,7 @@ public class Section extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(storageVersion);
+        _buffer.writeByte(storageVersion);
         _buffer.writeBytes(blockIds);
         _buffer.writeBytes(blockMetas);
     }
@@ -34,7 +34,7 @@ public class Section extends Type
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        storageVersion = _buffer.readLittleEndianByte();
+        storageVersion = _buffer.readByte();
         blockIds = _buffer.readBytes(blockIds.length);
         blockMetas = _buffer.readBytes(blockMetas.length);
     }

@@ -37,7 +37,7 @@ public class BlockPickRequest extends soupply.bedrock137.Packet
         _buffer.writeVarint(position.y);
         _buffer.writeVarint(position.z);
         _buffer.writeBool(unknown1);
-        _buffer.writeLittleEndianByte(slot);
+        _buffer.writeByte(slot);
     }
 
     @Override
@@ -47,13 +47,13 @@ public class BlockPickRequest extends soupply.bedrock137.Packet
         position.y = _buffer.readVarint();
         position.z = _buffer.readVarint();
         unknown1 = _buffer.readBool();
-        slot = _buffer.readLittleEndianByte();
+        slot = _buffer.readByte();
     }
 
     public static BlockPickRequest fromBuffer(byte[] buffer)
     {
         BlockPickRequest packet = new BlockPickRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

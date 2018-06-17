@@ -46,7 +46,7 @@ public class ScoreboardObjective extends soupply.java315.Packet
         byte[] bfz = _buffer.convertString(name);
         _buffer.writeVaruint((int)bfz.length);
         _buffer.writeBytes(bfz);
-        _buffer.writeBigEndianByte(mode);
+        _buffer.writeByte(mode);
         byte[] dfdu = _buffer.convertString(value);
         _buffer.writeVaruint((int)dfdu.length);
         _buffer.writeBytes(dfdu);
@@ -60,7 +60,7 @@ public class ScoreboardObjective extends soupply.java315.Packet
     {
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
-        mode = _buffer.readBigEndianByte();
+        mode = _buffer.readByte();
         final int bvdfdu = _buffer.readVaruint();
         value = _buffer.readString(bvdfdu);
         final int bvdlz = _buffer.readVaruint();
@@ -70,7 +70,7 @@ public class ScoreboardObjective extends soupply.java315.Packet
     public static ScoreboardObjective fromBuffer(byte[] buffer)
     {
         ScoreboardObjective packet = new ScoreboardObjective();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

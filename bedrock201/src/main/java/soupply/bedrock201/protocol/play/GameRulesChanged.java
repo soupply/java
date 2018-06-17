@@ -48,7 +48,7 @@ public class GameRulesChanged extends soupply.bedrock201.Packet
     public static GameRulesChanged fromBuffer(byte[] buffer)
     {
         GameRulesChanged packet = new GameRulesChanged();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

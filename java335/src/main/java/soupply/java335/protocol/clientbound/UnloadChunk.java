@@ -43,7 +43,7 @@ public class UnloadChunk extends soupply.java335.Packet
     public static UnloadChunk fromBuffer(byte[] buffer)
     {
         UnloadChunk packet = new UnloadChunk();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -90,7 +90,7 @@ public class AvailableCommands extends soupply.bedrock201.Packet
     public static AvailableCommands fromBuffer(byte[] buffer)
     {
         AvailableCommands packet = new AvailableCommands();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

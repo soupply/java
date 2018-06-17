@@ -48,7 +48,7 @@ public class SetExperience extends soupply.java210.Packet
     public static SetExperience fromBuffer(byte[] buffer)
     {
         SetExperience packet = new SetExperience();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -103,7 +103,7 @@ public class AddEntity extends soupply.bedrock160.Packet
     public static AddEntity fromBuffer(byte[] buffer)
     {
         AddEntity packet = new AddEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

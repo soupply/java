@@ -30,21 +30,21 @@ public class CraftRecipeResponse extends soupply.java340.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
+        _buffer.writeByte(window);
         _buffer.writeVaruint(recipe);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
         recipe = _buffer.readVaruint();
     }
 
     public static CraftRecipeResponse fromBuffer(byte[] buffer)
     {
         CraftRecipeResponse packet = new CraftRecipeResponse();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -57,7 +57,7 @@ public class PlayerPositionAndLook extends soupply.java338.Packet
     public static PlayerPositionAndLook fromBuffer(byte[] buffer)
     {
         PlayerPositionAndLook packet = new PlayerPositionAndLook();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

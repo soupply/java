@@ -53,7 +53,7 @@ public class VehicleMove extends soupply.java210.Packet
     public static VehicleMove fromBuffer(byte[] buffer)
     {
         VehicleMove packet = new VehicleMove();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

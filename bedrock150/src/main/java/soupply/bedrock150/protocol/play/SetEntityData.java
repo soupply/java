@@ -45,7 +45,7 @@ public class SetEntityData extends soupply.bedrock150.Packet
     public static SetEntityData fromBuffer(byte[] buffer)
     {
         SetEntityData packet = new SetEntityData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

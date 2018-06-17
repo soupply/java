@@ -47,7 +47,7 @@ public class ResourcePackChunkRequest extends soupply.bedrock150.Packet
     public static ResourcePackChunkRequest fromBuffer(byte[] buffer)
     {
         ResourcePackChunkRequest packet = new ResourcePackChunkRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

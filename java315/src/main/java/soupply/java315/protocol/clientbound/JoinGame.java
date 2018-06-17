@@ -64,10 +64,10 @@ public class JoinGame extends soupply.java315.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBigEndianInt(entityId);
-        _buffer.writeBigEndianByte(gamemode);
+        _buffer.writeByte(gamemode);
         _buffer.writeBigEndianInt(dimension);
-        _buffer.writeBigEndianByte(difficulty);
-        _buffer.writeBigEndianByte(maxPlayers);
+        _buffer.writeByte(difficulty);
+        _buffer.writeByte(maxPlayers);
         byte[] bvzxeb = _buffer.convertString(levelType);
         _buffer.writeVaruint((int)bvzxeb.length);
         _buffer.writeBytes(bvzxeb);
@@ -78,10 +78,10 @@ public class JoinGame extends soupply.java315.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readBigEndianInt();
-        gamemode = _buffer.readBigEndianByte();
+        gamemode = _buffer.readByte();
         dimension = _buffer.readBigEndianInt();
-        difficulty = _buffer.readBigEndianByte();
-        maxPlayers = _buffer.readBigEndianByte();
+        difficulty = _buffer.readByte();
+        maxPlayers = _buffer.readByte();
         final int bvbvzxeb = _buffer.readVaruint();
         levelType = _buffer.readString(bvbvzxeb);
         reducedDebug = _buffer.readBool();
@@ -90,7 +90,7 @@ public class JoinGame extends soupply.java315.Packet
     public static JoinGame fromBuffer(byte[] buffer)
     {
         JoinGame packet = new JoinGame();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

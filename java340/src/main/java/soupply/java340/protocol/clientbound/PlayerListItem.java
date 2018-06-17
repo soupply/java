@@ -40,7 +40,7 @@ public class PlayerListItem extends soupply.java340.Packet
     public static PlayerListItem fromBuffer(byte[] buffer)
     {
         PlayerListItem packet = new PlayerListItem();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

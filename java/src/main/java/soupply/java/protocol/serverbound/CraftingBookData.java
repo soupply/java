@@ -40,7 +40,7 @@ public class CraftingBookData extends soupply.java.Packet
     public static CraftingBookData fromBuffer(byte[] buffer)
     {
         CraftingBookData packet = new CraftingBookData();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

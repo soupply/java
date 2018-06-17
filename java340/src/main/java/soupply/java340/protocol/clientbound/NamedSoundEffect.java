@@ -64,7 +64,7 @@ public class NamedSoundEffect extends soupply.java340.Packet
     public static NamedSoundEffect fromBuffer(byte[] buffer)
     {
         NamedSoundEffect packet = new NamedSoundEffect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

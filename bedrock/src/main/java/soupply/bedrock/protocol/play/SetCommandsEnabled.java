@@ -40,7 +40,7 @@ public class SetCommandsEnabled extends soupply.bedrock.Packet
     public static SetCommandsEnabled fromBuffer(byte[] buffer)
     {
         SetCommandsEnabled packet = new SetCommandsEnabled();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

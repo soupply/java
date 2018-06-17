@@ -72,7 +72,7 @@ public class AddItemEntity extends soupply.bedrock137.Packet
     public static AddItemEntity fromBuffer(byte[] buffer)
     {
         AddItemEntity packet = new AddItemEntity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -48,7 +48,7 @@ public class Statistics extends soupply.java.Packet
     public static Statistics fromBuffer(byte[] buffer)
     {
         Statistics packet = new Statistics();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -53,7 +53,7 @@ public class EntityRelativeMove extends soupply.java315.Packet
     public static EntityRelativeMove fromBuffer(byte[] buffer)
     {
         EntityRelativeMove packet = new EntityRelativeMove();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -59,11 +59,11 @@ public class ClientSettings extends soupply.java.Packet
         byte[] bfzvzu = _buffer.convertString(language);
         _buffer.writeVaruint((int)bfzvzu.length);
         _buffer.writeBytes(bfzvzu);
-        _buffer.writeBigEndianByte(viewDistance);
+        _buffer.writeByte(viewDistance);
         _buffer.writeVaruint(chatMode);
         _buffer.writeBool(chatColors);
-        _buffer.writeBigEndianByte(displayedSkinParts);
-        _buffer.writeBigEndianByte(mainHand);
+        _buffer.writeByte(displayedSkinParts);
+        _buffer.writeByte(mainHand);
     }
 
     @Override
@@ -71,17 +71,17 @@ public class ClientSettings extends soupply.java.Packet
     {
         final int bvbfzvzu = _buffer.readVaruint();
         language = _buffer.readString(bvbfzvzu);
-        viewDistance = _buffer.readBigEndianByte();
+        viewDistance = _buffer.readByte();
         chatMode = _buffer.readVaruint();
         chatColors = _buffer.readBool();
-        displayedSkinParts = _buffer.readBigEndianByte();
-        mainHand = _buffer.readBigEndianByte();
+        displayedSkinParts = _buffer.readByte();
+        mainHand = _buffer.readByte();
     }
 
     public static ClientSettings fromBuffer(byte[] buffer)
     {
         ClientSettings packet = new ClientSettings();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

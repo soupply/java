@@ -30,21 +30,21 @@ public class EnchantItem extends soupply.java316.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
-        _buffer.writeBigEndianByte(enchantment);
+        _buffer.writeByte(window);
+        _buffer.writeByte(enchantment);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
-        enchantment = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
+        enchantment = _buffer.readByte();
     }
 
     public static EnchantItem fromBuffer(byte[] buffer)
     {
         EnchantItem packet = new EnchantItem();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

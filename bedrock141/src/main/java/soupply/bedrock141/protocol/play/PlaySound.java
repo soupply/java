@@ -56,7 +56,7 @@ public class PlaySound extends soupply.bedrock141.Packet
     public static PlaySound fromBuffer(byte[] buffer)
     {
         PlaySound packet = new PlaySound();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

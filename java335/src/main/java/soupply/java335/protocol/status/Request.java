@@ -27,7 +27,7 @@ public class Request extends soupply.java335.Packet
     public static Request fromBuffer(byte[] buffer)
     {
         Request packet = new Request();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

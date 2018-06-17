@@ -34,31 +34,31 @@ public class OpenWindow extends soupply.java210.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
+        _buffer.writeByte(window);
         byte[] dlz = _buffer.convertString(type);
         _buffer.writeVaruint((int)dlz.length);
         _buffer.writeBytes(dlz);
         byte[] dlbu = _buffer.convertString(title);
         _buffer.writeVaruint((int)dlbu.length);
         _buffer.writeBytes(dlbu);
-        _buffer.writeBigEndianByte(slots);
+        _buffer.writeByte(slots);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
         final int bvdlz = _buffer.readVaruint();
         type = _buffer.readString(bvdlz);
         final int bvdlbu = _buffer.readVaruint();
         title = _buffer.readString(bvdlbu);
-        slots = _buffer.readBigEndianByte();
+        slots = _buffer.readByte();
     }
 
     public static OpenWindow fromBuffer(byte[] buffer)
     {
         OpenWindow packet = new OpenWindow();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

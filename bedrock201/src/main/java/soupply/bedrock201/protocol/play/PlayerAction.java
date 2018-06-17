@@ -73,7 +73,7 @@ public class PlayerAction extends soupply.bedrock201.Packet
     public static PlayerAction fromBuffer(byte[] buffer)
     {
         PlayerAction packet = new PlayerAction();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

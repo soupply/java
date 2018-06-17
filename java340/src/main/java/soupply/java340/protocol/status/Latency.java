@@ -40,7 +40,7 @@ public class Latency extends soupply.java340.Packet
     public static Latency fromBuffer(byte[] buffer)
     {
         Latency packet = new Latency();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

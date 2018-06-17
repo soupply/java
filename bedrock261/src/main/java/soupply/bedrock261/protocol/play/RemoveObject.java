@@ -43,7 +43,7 @@ public class RemoveObject extends soupply.bedrock261.Packet
     public static RemoveObject fromBuffer(byte[] buffer)
     {
         RemoveObject packet = new RemoveObject();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

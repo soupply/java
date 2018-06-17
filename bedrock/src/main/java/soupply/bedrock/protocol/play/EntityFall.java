@@ -48,7 +48,7 @@ public class EntityFall extends soupply.bedrock.Packet
     public static EntityFall fromBuffer(byte[] buffer)
     {
         EntityFall packet = new EntityFall();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

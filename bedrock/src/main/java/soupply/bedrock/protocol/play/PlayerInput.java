@@ -52,7 +52,7 @@ public class PlayerInput extends soupply.bedrock.Packet
     public static PlayerInput fromBuffer(byte[] buffer)
     {
         PlayerInput packet = new PlayerInput();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

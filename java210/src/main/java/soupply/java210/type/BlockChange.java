@@ -24,16 +24,16 @@ public class BlockChange extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(xz);
-        _buffer.writeBigEndianByte(y);
+        _buffer.writeByte(xz);
+        _buffer.writeByte(y);
         _buffer.writeVaruint(block);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        xz = _buffer.readBigEndianByte();
-        y = _buffer.readBigEndianByte();
+        xz = _buffer.readByte();
+        y = _buffer.readByte();
         block = _buffer.readVaruint();
     }
 

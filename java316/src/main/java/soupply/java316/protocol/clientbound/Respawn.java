@@ -58,8 +58,8 @@ public class Respawn extends soupply.java316.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBigEndianInt(dimension);
-        _buffer.writeBigEndianByte(difficulty);
-        _buffer.writeBigEndianByte(gamemode);
+        _buffer.writeByte(difficulty);
+        _buffer.writeByte(gamemode);
         byte[] bvzxeb = _buffer.convertString(levelType);
         _buffer.writeVaruint((int)bvzxeb.length);
         _buffer.writeBytes(bvzxeb);
@@ -69,8 +69,8 @@ public class Respawn extends soupply.java316.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         dimension = _buffer.readBigEndianInt();
-        difficulty = _buffer.readBigEndianByte();
-        gamemode = _buffer.readBigEndianByte();
+        difficulty = _buffer.readByte();
+        gamemode = _buffer.readByte();
         final int bvbvzxeb = _buffer.readVaruint();
         levelType = _buffer.readString(bvbvzxeb);
     }
@@ -78,7 +78,7 @@ public class Respawn extends soupply.java316.Packet
     public static Respawn fromBuffer(byte[] buffer)
     {
         Respawn packet = new Respawn();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

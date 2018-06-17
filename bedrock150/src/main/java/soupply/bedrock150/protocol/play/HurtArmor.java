@@ -40,7 +40,7 @@ public class HurtArmor extends soupply.bedrock150.Packet
     public static HurtArmor fromBuffer(byte[] buffer)
     {
         HurtArmor packet = new HurtArmor();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

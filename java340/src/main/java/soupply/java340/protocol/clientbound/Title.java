@@ -40,7 +40,7 @@ public class Title extends soupply.java340.Packet
     public static Title fromBuffer(byte[] buffer)
     {
         Title packet = new Title();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

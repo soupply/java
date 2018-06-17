@@ -43,7 +43,7 @@ public class Response extends soupply.java316.Packet
     public static Response fromBuffer(byte[] buffer)
     {
         Response packet = new Response();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

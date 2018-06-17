@@ -59,7 +59,7 @@ public class Handshake extends soupply.java316.Packet
     public static Handshake fromBuffer(byte[] buffer)
     {
         Handshake packet = new Handshake();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

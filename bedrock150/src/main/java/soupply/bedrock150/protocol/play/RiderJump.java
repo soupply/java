@@ -40,7 +40,7 @@ public class RiderJump extends soupply.bedrock150.Packet
     public static RiderJump fromBuffer(byte[] buffer)
     {
         RiderJump packet = new RiderJump();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

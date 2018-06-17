@@ -94,7 +94,7 @@ public class AdventureSettings extends soupply.bedrock137.Packet
     public static AdventureSettings fromBuffer(byte[] buffer)
     {
         AdventureSettings packet = new AdventureSettings();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

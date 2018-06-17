@@ -33,7 +33,7 @@ public class Teams extends soupply.java315.Packet
         byte[] bfz = _buffer.convertString(name);
         _buffer.writeVaruint((int)bfz.length);
         _buffer.writeBytes(bfz);
-        _buffer.writeBigEndianByte(mode);
+        _buffer.writeByte(mode);
     }
 
     @Override
@@ -41,13 +41,13 @@ public class Teams extends soupply.java315.Packet
     {
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
-        mode = _buffer.readBigEndianByte();
+        mode = _buffer.readByte();
     }
 
     public static Teams fromBuffer(byte[] buffer)
     {
         Teams packet = new Teams();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

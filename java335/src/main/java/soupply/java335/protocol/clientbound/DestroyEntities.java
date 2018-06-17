@@ -48,7 +48,7 @@ public class DestroyEntities extends soupply.java335.Packet
     public static DestroyEntities fromBuffer(byte[] buffer)
     {
         DestroyEntities packet = new DestroyEntities();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

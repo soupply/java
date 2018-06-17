@@ -41,8 +41,8 @@ public class EntityLookAndRelativeMove extends soupply.java335.Packet
         _buffer.writeBigEndianShort(delta.x);
         _buffer.writeBigEndianShort(delta.y);
         _buffer.writeBigEndianShort(delta.z);
-        _buffer.writeBigEndianByte(yaw);
-        _buffer.writeBigEndianByte(pitch);
+        _buffer.writeByte(yaw);
+        _buffer.writeByte(pitch);
         _buffer.writeBool(onGround);
     }
 
@@ -53,15 +53,15 @@ public class EntityLookAndRelativeMove extends soupply.java335.Packet
         delta.x = _buffer.readBigEndianShort();
         delta.y = _buffer.readBigEndianShort();
         delta.z = _buffer.readBigEndianShort();
-        yaw = _buffer.readBigEndianByte();
-        pitch = _buffer.readBigEndianByte();
+        yaw = _buffer.readByte();
+        pitch = _buffer.readByte();
         onGround = _buffer.readBool();
     }
 
     public static EntityLookAndRelativeMove fromBuffer(byte[] buffer)
     {
         EntityLookAndRelativeMove packet = new EntityLookAndRelativeMove();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

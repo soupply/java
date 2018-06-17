@@ -47,7 +47,7 @@ public class PluginMessage extends soupply.java.Packet
     public static PluginMessage fromBuffer(byte[] buffer)
     {
         PluginMessage packet = new PluginMessage();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

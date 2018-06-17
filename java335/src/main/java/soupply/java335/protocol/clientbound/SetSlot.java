@@ -33,7 +33,7 @@ public class SetSlot extends soupply.java335.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
+        _buffer.writeByte(window);
         _buffer.writeBigEndianShort(slot);
         item.encodeBody(_buffer);
     }
@@ -41,7 +41,7 @@ public class SetSlot extends soupply.java335.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
         slot = _buffer.readBigEndianShort();
         item.decodeBody(_buffer);
     }
@@ -49,7 +49,7 @@ public class SetSlot extends soupply.java335.Packet
     public static SetSlot fromBuffer(byte[] buffer)
     {
         SetSlot packet = new SetSlot();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

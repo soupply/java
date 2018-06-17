@@ -40,7 +40,7 @@ public class Entity extends soupply.java315.Packet
     public static Entity fromBuffer(byte[] buffer)
     {
         Entity packet = new Entity();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

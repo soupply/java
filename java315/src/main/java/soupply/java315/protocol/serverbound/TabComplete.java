@@ -55,7 +55,7 @@ public class TabComplete extends soupply.java315.Packet
     public static TabComplete fromBuffer(byte[] buffer)
     {
         TabComplete packet = new TabComplete();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

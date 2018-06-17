@@ -48,7 +48,7 @@ public class UpdateHealth extends soupply.java340.Packet
     public static UpdateHealth fromBuffer(byte[] buffer)
     {
         UpdateHealth packet = new UpdateHealth();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

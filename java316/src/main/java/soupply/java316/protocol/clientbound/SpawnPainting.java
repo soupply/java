@@ -49,7 +49,7 @@ public class SpawnPainting extends soupply.java316.Packet
         _buffer.writeVaruint((int)dlbu.length);
         _buffer.writeBytes(dlbu);
         _buffer.writeBigEndianLong(position);
-        _buffer.writeBigEndianByte(direction);
+        _buffer.writeByte(direction);
     }
 
     @Override
@@ -60,13 +60,13 @@ public class SpawnPainting extends soupply.java316.Packet
         final int bvdlbu = _buffer.readVaruint();
         title = _buffer.readString(bvdlbu);
         position = _buffer.readBigEndianLong();
-        direction = _buffer.readBigEndianByte();
+        direction = _buffer.readByte();
     }
 
     public static SpawnPainting fromBuffer(byte[] buffer)
     {
         SpawnPainting packet = new SpawnPainting();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

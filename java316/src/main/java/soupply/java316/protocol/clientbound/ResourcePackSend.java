@@ -50,7 +50,7 @@ public class ResourcePackSend extends soupply.java316.Packet
     public static ResourcePackSend fromBuffer(byte[] buffer)
     {
         ResourcePackSend packet = new ResourcePackSend();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -41,7 +41,7 @@ public class UpdateScore extends soupply.java335.Packet
         byte[] cncvy1 = _buffer.convertString(scoreName);
         _buffer.writeVaruint((int)cncvy1.length);
         _buffer.writeBytes(cncvy1);
-        _buffer.writeBigEndianByte(action);
+        _buffer.writeByte(action);
         byte[] bjznaztf = _buffer.convertString(objectiveName);
         _buffer.writeVaruint((int)bjznaztf.length);
         _buffer.writeBytes(bjznaztf);
@@ -53,7 +53,7 @@ public class UpdateScore extends soupply.java335.Packet
     {
         final int bvcncvy1 = _buffer.readVaruint();
         scoreName = _buffer.readString(bvcncvy1);
-        action = _buffer.readBigEndianByte();
+        action = _buffer.readByte();
         final int bvbjznaz = _buffer.readVaruint();
         objectiveName = _buffer.readString(bvbjznaz);
         value = _buffer.readVaruint();
@@ -62,7 +62,7 @@ public class UpdateScore extends soupply.java335.Packet
     public static UpdateScore fromBuffer(byte[] buffer)
     {
         UpdateScore packet = new UpdateScore();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

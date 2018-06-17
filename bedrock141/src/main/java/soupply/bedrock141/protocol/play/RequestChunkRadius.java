@@ -40,7 +40,7 @@ public class RequestChunkRadius extends soupply.bedrock141.Packet
     public static RequestChunkRadius fromBuffer(byte[] buffer)
     {
         RequestChunkRadius packet = new RequestChunkRadius();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

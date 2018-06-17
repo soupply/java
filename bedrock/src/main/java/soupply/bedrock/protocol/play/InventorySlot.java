@@ -27,7 +27,7 @@ public class InventorySlot extends soupply.bedrock.Packet
     public static InventorySlot fromBuffer(byte[] buffer)
     {
         InventorySlot packet = new InventorySlot();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

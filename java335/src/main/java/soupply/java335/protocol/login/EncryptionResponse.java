@@ -48,7 +48,7 @@ public class EncryptionResponse extends soupply.java335.Packet
     public static EncryptionResponse fromBuffer(byte[] buffer)
     {
         EncryptionResponse packet = new EncryptionResponse();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

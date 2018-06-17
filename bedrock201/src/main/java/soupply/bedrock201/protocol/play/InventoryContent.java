@@ -52,7 +52,7 @@ public class InventoryContent extends soupply.bedrock201.Packet
     public static InventoryContent fromBuffer(byte[] buffer)
     {
         InventoryContent packet = new InventoryContent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

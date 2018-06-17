@@ -40,7 +40,7 @@ public class SetHealth extends soupply.bedrock150.Packet
     public static SetHealth fromBuffer(byte[] buffer)
     {
         SetHealth packet = new SetHealth();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -30,21 +30,21 @@ public class Text extends soupply.bedrock150.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(type);
+        _buffer.writeByte(type);
         _buffer.writeBool(unknown1);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        type = _buffer.readLittleEndianByte();
+        type = _buffer.readByte();
         unknown1 = _buffer.readBool();
     }
 
     public static Text fromBuffer(byte[] buffer)
     {
         Text packet = new Text();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

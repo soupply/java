@@ -44,7 +44,7 @@ public class UseItem extends soupply.java.Packet
     public static UseItem fromBuffer(byte[] buffer)
     {
         UseItem packet = new UseItem();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

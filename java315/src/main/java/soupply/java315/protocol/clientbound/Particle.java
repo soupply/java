@@ -131,7 +131,7 @@ public class Particle extends soupply.java315.Packet
     public static Particle fromBuffer(byte[] buffer)
     {
         Particle packet = new Particle();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

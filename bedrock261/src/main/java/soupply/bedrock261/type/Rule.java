@@ -53,7 +53,7 @@ public class Rule extends Type
         byte[] bfz = _buffer.convertString(name);
         _buffer.writeVaruint((int)bfz.length);
         _buffer.writeBytes(bfz);
-        _buffer.writeLittleEndianByte(type);
+        _buffer.writeByte(type);
         _buffer.writeBool(booleanValue);
         _buffer.writeVaruint(integerValue);
         _buffer.writeLittleEndianFloat(floatingValue);
@@ -64,7 +64,7 @@ public class Rule extends Type
     {
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
-        type = _buffer.readLittleEndianByte();
+        type = _buffer.readByte();
         booleanValue = _buffer.readBool();
         integerValue = _buffer.readVaruint();
         floatingValue = _buffer.readLittleEndianFloat();

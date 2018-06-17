@@ -39,9 +39,9 @@ public class ClickWindow extends soupply.java338.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeBigEndianByte(window);
+        _buffer.writeByte(window);
         _buffer.writeBigEndianShort(slot);
-        _buffer.writeBigEndianByte(button);
+        _buffer.writeByte(button);
         _buffer.writeBigEndianShort(action);
         _buffer.writeVaruint(mode);
         clickedItem.encodeBody(_buffer);
@@ -50,9 +50,9 @@ public class ClickWindow extends soupply.java338.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readBigEndianByte();
+        window = _buffer.readByte();
         slot = _buffer.readBigEndianShort();
-        button = _buffer.readBigEndianByte();
+        button = _buffer.readByte();
         action = _buffer.readBigEndianShort();
         mode = _buffer.readVaruint();
         clickedItem.decodeBody(_buffer);
@@ -61,7 +61,7 @@ public class ClickWindow extends soupply.java338.Packet
     public static ClickWindow fromBuffer(byte[] buffer)
     {
         ClickWindow packet = new ClickWindow();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

@@ -40,7 +40,7 @@ public class HeldItemChange extends soupply.java340.Packet
     public static HeldItemChange fromBuffer(byte[] buffer)
     {
         HeldItemChange packet = new HeldItemChange();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

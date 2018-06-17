@@ -61,7 +61,7 @@ public class Explode extends soupply.bedrock141.Packet
     public static Explode fromBuffer(byte[] buffer)
     {
         Explode packet = new Explode();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

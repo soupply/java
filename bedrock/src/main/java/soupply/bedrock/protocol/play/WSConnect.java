@@ -43,7 +43,7 @@ public class WSConnect extends soupply.bedrock.Packet
     public static WSConnect fromBuffer(byte[] buffer)
     {
         WSConnect packet = new WSConnect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

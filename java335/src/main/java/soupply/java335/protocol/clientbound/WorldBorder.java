@@ -40,7 +40,7 @@ public class WorldBorder extends soupply.java335.Packet
     public static WorldBorder fromBuffer(byte[] buffer)
     {
         WorldBorder packet = new WorldBorder();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

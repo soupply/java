@@ -44,7 +44,7 @@ public class TelemetryEvent extends soupply.bedrock201.Packet
     public static TelemetryEvent fromBuffer(byte[] buffer)
     {
         TelemetryEvent packet = new TelemetryEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

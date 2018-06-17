@@ -31,20 +31,20 @@ public class EntityPickRequest extends soupply.bedrock201.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeLittleEndianLong(entityType);
-        _buffer.writeLittleEndianByte(slot);
+        _buffer.writeByte(slot);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityType = _buffer.readLittleEndianLong();
-        slot = _buffer.readLittleEndianByte();
+        slot = _buffer.readByte();
     }
 
     public static EntityPickRequest fromBuffer(byte[] buffer)
     {
         EntityPickRequest packet = new EntityPickRequest();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

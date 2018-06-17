@@ -51,7 +51,7 @@ public class PurchaseReceipt extends soupply.bedrock160.Packet
     public static PurchaseReceipt fromBuffer(byte[] buffer)
     {
         PurchaseReceipt packet = new PurchaseReceipt();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

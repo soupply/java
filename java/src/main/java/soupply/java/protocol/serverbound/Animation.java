@@ -44,7 +44,7 @@ public class Animation extends soupply.java.Packet
     public static Animation fromBuffer(byte[] buffer)
     {
         Animation packet = new Animation();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

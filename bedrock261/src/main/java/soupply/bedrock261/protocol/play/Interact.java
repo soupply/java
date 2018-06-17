@@ -38,7 +38,7 @@ public class Interact extends soupply.bedrock261.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(action);
+        _buffer.writeByte(action);
         _buffer.writeVarlong(target);
         _buffer.writeLittleEndianFloat(targetPosition.x);
         _buffer.writeLittleEndianFloat(targetPosition.y);
@@ -48,7 +48,7 @@ public class Interact extends soupply.bedrock261.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        action = _buffer.readLittleEndianByte();
+        action = _buffer.readByte();
         target = _buffer.readVarlong();
         targetPosition.x = _buffer.readLittleEndianFloat();
         targetPosition.y = _buffer.readLittleEndianFloat();
@@ -58,7 +58,7 @@ public class Interact extends soupply.bedrock261.Packet
     public static Interact fromBuffer(byte[] buffer)
     {
         Interact packet = new Interact();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

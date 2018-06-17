@@ -41,7 +41,7 @@ public class Spectate extends soupply.java340.Packet
     public static Spectate fromBuffer(byte[] buffer)
     {
         Spectate packet = new Spectate();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

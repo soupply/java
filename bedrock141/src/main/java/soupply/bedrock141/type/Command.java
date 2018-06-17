@@ -36,8 +36,8 @@ public class Command extends Type
         byte[] zvyjcrb4 = _buffer.convertString(description);
         _buffer.writeVaruint((int)zvyjcrb4.length);
         _buffer.writeBytes(zvyjcrb4);
-        _buffer.writeLittleEndianByte(unknown2);
-        _buffer.writeLittleEndianByte(permissionLevel);
+        _buffer.writeByte(unknown2);
+        _buffer.writeByte(permissionLevel);
         _buffer.writeLittleEndianInt(aliasesEnum);
         _buffer.writeVaruint((int)overloads.length);
         for(soupply.bedrock141.type.Overload bzcxyr:overloads)
@@ -53,8 +53,8 @@ public class Command extends Type
         name = _buffer.readString(bvbfz);
         final int bvzvyjcr = _buffer.readVaruint();
         description = _buffer.readString(bvzvyjcr);
-        unknown2 = _buffer.readLittleEndianByte();
-        permissionLevel = _buffer.readLittleEndianByte();
+        unknown2 = _buffer.readByte();
+        permissionLevel = _buffer.readByte();
         aliasesEnum = _buffer.readLittleEndianInt();
         final int b9zjbfc = _buffer.readVaruint();
         for(int bzcxyr=0;bzcxyr<overloads.length;bzcxyr++)

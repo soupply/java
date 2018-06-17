@@ -37,7 +37,7 @@ public class CraftingEvent extends soupply.bedrock261.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        _buffer.writeLittleEndianByte(window);
+        _buffer.writeByte(window);
         _buffer.writeVarint(type);
         uuid.encodeBody(_buffer);
         _buffer.writeVaruint((int)input.length);
@@ -55,7 +55,7 @@ public class CraftingEvent extends soupply.bedrock261.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
-        window = _buffer.readLittleEndianByte();
+        window = _buffer.readByte();
         type = _buffer.readVarint();
         uuid.decodeBody(_buffer);
         final int blcv = _buffer.readVaruint();
@@ -73,7 +73,7 @@ public class CraftingEvent extends soupply.bedrock261.Packet
     public static CraftingEvent fromBuffer(byte[] buffer)
     {
         CraftingEvent packet = new CraftingEvent();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

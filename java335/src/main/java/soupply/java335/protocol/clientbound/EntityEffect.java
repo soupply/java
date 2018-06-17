@@ -41,26 +41,26 @@ public class EntityEffect extends soupply.java335.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeBigEndianByte(effectId);
-        _buffer.writeBigEndianByte(amplifier);
+        _buffer.writeByte(effectId);
+        _buffer.writeByte(amplifier);
         _buffer.writeVaruint(duration);
-        _buffer.writeBigEndianByte(flags);
+        _buffer.writeByte(flags);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        effectId = _buffer.readBigEndianByte();
-        amplifier = _buffer.readBigEndianByte();
+        effectId = _buffer.readByte();
+        amplifier = _buffer.readByte();
         duration = _buffer.readVaruint();
-        flags = _buffer.readBigEndianByte();
+        flags = _buffer.readByte();
     }
 
     public static EntityEffect fromBuffer(byte[] buffer)
     {
         EntityEffect packet = new EntityEffect();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

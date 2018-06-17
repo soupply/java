@@ -61,7 +61,7 @@ public class PlayerBlockPlacement extends soupply.java315.Packet
     public static PlayerBlockPlacement fromBuffer(byte[] buffer)
     {
         PlayerBlockPlacement packet = new PlayerBlockPlacement();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

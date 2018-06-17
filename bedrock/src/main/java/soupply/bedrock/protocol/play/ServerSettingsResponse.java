@@ -47,7 +47,7 @@ public class ServerSettingsResponse extends soupply.bedrock.Packet
     public static ServerSettingsResponse fromBuffer(byte[] buffer)
     {
         ServerSettingsResponse packet = new ServerSettingsResponse();
-        packet.safeDecode(new Buffer(buffer));
+        packet.safeDecode(buffer);
         return packet;
     }
 

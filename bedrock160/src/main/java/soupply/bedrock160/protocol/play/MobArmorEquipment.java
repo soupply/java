@@ -42,7 +42,6 @@ public class MobArmorEquipment extends soupply.bedrock160.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVarlong();
-        armor = new soupply.bedrock160.type.Slot[bfb9];
         for(int yjbi=0;yjbi<armor.length;yjbi++)
         {
             armor[yjbi].decodeBody(_buffer);

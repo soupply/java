@@ -56,11 +56,11 @@ public class ChunkData extends Type
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         final int bnyrb5 = _buffer.readVaruint();
+        sections = new soupply.bedrock201.type.Section[bnyrb5];
         for(int cvdlbm=0;cvdlbm<sections.length;cvdlbm++)
         {
             sections[cvdlbm].decodeBody(_buffer);
         }
-        heights = new short[bhaddm];
         for(int avzhc=0;avzhc<heights.length;avzhc++)
         {
             heights[avzhc] = _buffer.readLittleEndianShort();
@@ -69,6 +69,7 @@ public class ChunkData extends Type
         final int bjcrcm = _buffer.readVaruint();
         borders = _buffer.readBytes(bjcrcm);
         final int bvdjrfy = _buffer.readVaruint();
+        extraData = new soupply.bedrock201.type.ExtraData[bvdjrfy];
         for(int zhcfyr=0;zhcfyr<extraData.length;zhcfyr++)
         {
             extraData[zhcfyr].decodeBody(_buffer);

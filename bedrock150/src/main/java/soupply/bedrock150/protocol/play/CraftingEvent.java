@@ -59,11 +59,13 @@ public class CraftingEvent extends soupply.bedrock150.Packet
         type = _buffer.readVarint();
         uuid.decodeBody(_buffer);
         final int blcv = _buffer.readVaruint();
+        input = new soupply.bedrock150.type.Slot[blcv];
         for(int a5dq=0;a5dq<input.length;a5dq++)
         {
             input[a5dq].decodeBody(_buffer);
         }
         final int b9dbd = _buffer.readVaruint();
+        output = new soupply.bedrock150.type.Slot[b9dbd];
         for(int bvcv=0;bvcv<output.length;bvcv++)
         {
             output[bvcv].decodeBody(_buffer);

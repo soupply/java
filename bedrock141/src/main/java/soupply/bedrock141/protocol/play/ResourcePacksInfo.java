@@ -50,11 +50,13 @@ public class ResourcePacksInfo extends soupply.bedrock141.Packet
     {
         mustAccept = _buffer.readBool();
         final int bjafa9cb = _buffer.readVaruint();
+        behaviourPacks = new soupply.bedrock141.type.PackWithSize[bjafa9cb];
         for(int yvyzbvuf=0;yvyzbvuf<behaviourPacks.length;yvyzbvuf++)
         {
             behaviourPacks[yvyzbvuf].decodeBody(_buffer);
         }
         final int bjc9cnuf = _buffer.readVaruint();
+        resourcePacks = new soupply.bedrock141.type.PackWithSize[bjc9cnuf];
         for(int cvbvyvyn=0;cvbvyvyn<resourcePacks.length;cvbvyvyn++)
         {
             resourcePacks[cvbvyvyn].decodeBody(_buffer);

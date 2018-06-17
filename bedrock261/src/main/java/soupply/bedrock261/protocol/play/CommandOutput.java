@@ -57,6 +57,7 @@ public class CommandOutput extends soupply.bedrock261.Packet
         outputType = _buffer.readByte();
         successCount = _buffer.readVaruint();
         final int b1cnzv = _buffer.readVaruint();
+        messages = new soupply.bedrock261.type.CommandMessage[b1cnzv];
         for(int bvcfzm=0;bvcfzm<messages.length;bvcfzm++)
         {
             messages[bvcfzm].decodeBody(_buffer);

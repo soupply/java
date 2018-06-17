@@ -43,6 +43,7 @@ public class EntityProperties extends soupply.java316.Packet
     {
         entityId = _buffer.readVaruint();
         final int bfdjyvzm = _buffer.readVaruint();
+        attributes = new soupply.java316.type.Attribute[bfdjyvzm];
         for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)
         {
             attributes[yrcldrc].decodeBody(_buffer);

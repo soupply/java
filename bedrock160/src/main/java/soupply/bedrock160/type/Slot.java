@@ -56,12 +56,14 @@ public class Slot extends Type
         final int b5d = _buffer.readVaruint();
         nbt = _buffer.readBytes(b5d);
         final int bnbbynt4 = _buffer.readVaruint();
+        canPlaceOn = new String[bnbbynt4];
         for(int yfuxyvb=0;yfuxyvb<canPlaceOn.length;yfuxyvb++)
         {
             final int bvyfuxyv = _buffer.readVaruint();
             canPlaceOn[yfuxyvb] = _buffer.readString(bvyfuxyv);
         }
         final int bnbrcrbk = _buffer.readVaruint();
+        canDestroy = new String[bnbrcrbk];
         for(int yfrvdje=0;yfrvdje<canDestroy.length;yfrvdje++)
         {
             final int bvyfrvdj = _buffer.readVaruint();

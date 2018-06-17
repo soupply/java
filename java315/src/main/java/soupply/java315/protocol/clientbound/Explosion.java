@@ -60,6 +60,7 @@ public class Explosion extends soupply.java315.Packet
         position.z = _buffer.readBigEndianFloat();
         radius = _buffer.readBigEndianFloat();
         final int bjy9zm = _buffer.readVaruint();
+        records = new ByteXYZ[bjy9zm];
         for(int cvbjc=0;cvbjc<records.length;cvbjc++)
         {
             records[cvbjc].x = _buffer.readByte();

@@ -47,6 +47,7 @@ public class SetScore extends soupply.bedrock261.Packet
     {
         type = _buffer.readByte();
         final int bnbjc = _buffer.readVaruint();
+        scores = new soupply.bedrock261.type.Score[bnbjc];
         for(int cncv=0;cncv<scores.length;cncv++)
         {
             scores[cncv].decodeBody(_buffer);

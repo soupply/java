@@ -44,6 +44,7 @@ public class CommandMessage extends Type
         final int bvbvcfzl = _buffer.readVaruint();
         messageId = _buffer.readString(bvbvcfzl);
         final int bbcfzrcm = _buffer.readVaruint();
+        parameters = new String[bbcfzrcm];
         for(int cfy1dvc=0;cfy1dvc<parameters.length;cfy1dvc++)
         {
             final int bvcfy1dv = _buffer.readVaruint();

@@ -52,6 +52,7 @@ public class Explode extends soupply.bedrock261.Packet
         position.z = _buffer.readLittleEndianFloat();
         radius = _buffer.readLittleEndianFloat();
         final int brcrblzj = _buffer.readVaruint();
+        destroyedBlocks = new soupply.bedrock261.type.BlockPosition[brcrblzj];
         for(int zvdjevqx=0;zvdjevqx<destroyedBlocks.length;zvdjevqx++)
         {
             destroyedBlocks[zvdjevqx].decodeBody(_buffer);

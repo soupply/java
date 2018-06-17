@@ -43,6 +43,7 @@ public class InventoryContent extends soupply.bedrock150.Packet
     {
         window = _buffer.readVaruint();
         final int bnbr = _buffer.readVaruint();
+        slots = new soupply.bedrock150.type.Slot[bnbr];
         for(int cxdm=0;cxdm<slots.length;cxdm++)
         {
             slots[cxdm].decodeBody(_buffer);

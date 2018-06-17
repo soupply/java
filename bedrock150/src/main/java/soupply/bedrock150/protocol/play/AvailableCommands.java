@@ -64,23 +64,27 @@ public class AvailableCommands extends soupply.bedrock150.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         final int bvd1yxzm = _buffer.readVaruint();
+        enumValues = new String[bvd1yxzm];
         for(int z5bzbvc=0;z5bzbvc<enumValues.length;z5bzbvc++)
         {
             final int bvz5bzbv = _buffer.readVaruint();
             enumValues[z5bzbvc] = _buffer.readString(bvz5bzbv);
         }
         final int bva5d4 = _buffer.readVaruint();
+        unknown1 = new String[bva5d4];
         for(int d5b9be=0;d5b9be<unknown1.length;d5b9be++)
         {
             final int bvd5b9bf = _buffer.readVaruint();
             unknown1[d5b9be] = _buffer.readString(bvd5b9bf);
         }
         final int bvd1 = _buffer.readVaruint();
+        enums = new soupply.bedrock150.type.Enum[bvd1];
         for(int z5bm=0;z5bm<enums.length;z5bm++)
         {
             enums[z5bm].decodeBody(_buffer);
         }
         final int bnb1br = _buffer.readVaruint();
+        commands = new soupply.bedrock150.type.Command[bnb1br];
         for(int y9bfzm=0;y9bfzm<commands.length;y9bfzm++)
         {
             commands[y9bfzm].decodeBody(_buffer);

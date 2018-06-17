@@ -39,6 +39,7 @@ public class DestroyEntities extends soupply.java340.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         final int bvdlelc = _buffer.readVaruint();
+        entityIds = new int[bvdlelc];
         for(int z5arsr=0;z5arsr<entityIds.length;z5arsr++)
         {
             entityIds[z5arsr] = _buffer.readVaruint();

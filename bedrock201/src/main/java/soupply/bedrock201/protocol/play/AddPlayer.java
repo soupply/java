@@ -123,6 +123,7 @@ public class AddPlayer extends soupply.bedrock201.Packet
         unknown15 = _buffer.readVaruint();
         unknown16 = _buffer.readLittleEndianLong();
         final int bxbt = _buffer.readVaruint();
+        links = new soupply.bedrock201.type.Link[bxbt];
         for(int blam=0;blam<links.length;blam++)
         {
             links[blam].decodeBody(_buffer);

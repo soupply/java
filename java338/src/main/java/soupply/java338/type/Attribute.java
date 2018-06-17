@@ -42,6 +42,7 @@ public class Attribute extends Type
         key = _buffer.readString(bvav);
         value = _buffer.readBigEndianDouble();
         final int b1zlavc = _buffer.readVaruint();
+        modifiers = new soupply.java338.type.Modifier[b1zlavc];
         for(int b9azzj=0;b9azzj<modifiers.length;b9azzj++)
         {
             modifiers[b9azzj].decodeBody(_buffer);

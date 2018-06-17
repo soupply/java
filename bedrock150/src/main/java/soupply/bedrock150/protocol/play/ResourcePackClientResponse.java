@@ -51,6 +51,7 @@ public class ResourcePackClientResponse extends soupply.bedrock150.Packet
     {
         status = _buffer.readByte();
         final int bbytzm = _buffer.readVaruint();
+        packIds = new String[bbytzm];
         for(int cfalc=0;cfalc<packIds.length;cfalc++)
         {
             final int bvcfalct = _buffer.readVaruint();

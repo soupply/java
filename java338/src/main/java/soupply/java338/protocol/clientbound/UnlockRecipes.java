@@ -63,11 +63,13 @@ public class UnlockRecipes extends soupply.java338.Packet
         openBook = _buffer.readBool();
         filtering = _buffer.readBool();
         final int bjylzm = _buffer.readVaruint();
+        recipes = new int[bjylzm];
         for(int cvabc=0;cvabc<recipes.length;cvabc++)
         {
             recipes[cvabc] = _buffer.readVaruint();
         }
         final int bjbtzncv = _buffer.readVaruint();
+        bookRecipes = new int[bjbtzncv];
         for(int y9ajylzm=0;y9ajylzm<bookRecipes.length;y9ajylzm++)
         {
             bookRecipes[y9ajylzm] = _buffer.readVaruint();

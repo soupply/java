@@ -38,6 +38,7 @@ public class Enum extends Type
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
         final int bzbvclzv = _buffer.readVaruint();
+        valuesIndexes = new short[bzbvclzv];
         for(int dfdvs5zh=0;dfdvs5zh<valuesIndexes.length;dfdvs5zh++)
         {
             valuesIndexes[dfdvs5zh] = _buffer.readLittleEndianShort();

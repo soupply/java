@@ -57,6 +57,7 @@ public class Command extends Type
         permissionLevel = _buffer.readByte();
         aliasesEnum = _buffer.readLittleEndianInt();
         final int b9zjbfc = _buffer.readVaruint();
+        overloads = new soupply.bedrock160.type.Overload[b9zjbfc];
         for(int bzcxyr=0;bzcxyr<overloads.length;bzcxyr++)
         {
             overloads[bzcxyr].decodeBody(_buffer);

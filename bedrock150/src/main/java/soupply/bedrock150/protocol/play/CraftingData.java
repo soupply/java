@@ -39,6 +39,7 @@ public class CraftingData extends soupply.bedrock150.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         final int bjylzm = _buffer.readVaruint();
+        recipes = new soupply.bedrock150.type.Recipe[bjylzm];
         for(int cvabc=0;cvabc<recipes.length;cvabc++)
         {
             recipes[cvabc].decodeBody(_buffer);

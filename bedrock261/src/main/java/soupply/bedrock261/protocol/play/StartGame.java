@@ -204,6 +204,7 @@ public class StartGame extends soupply.bedrock261.Packet
         commandsEnabled = _buffer.readBool();
         textureRequired = _buffer.readBool();
         final int bdbvdxc = _buffer.readVaruint();
+        gameRules = new soupply.bedrock261.type.Rule[bdbvdxc];
         for(int zfzjbv=0;zfzjbv<gameRules.length;zfzjbv++)
         {
             gameRules[zfzjbv].decodeBody(_buffer);

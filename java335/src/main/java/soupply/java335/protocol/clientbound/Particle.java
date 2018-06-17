@@ -121,7 +121,6 @@ public class Particle extends soupply.java335.Packet
         offset.z = _buffer.readBigEndianFloat();
         data = _buffer.readBigEndianFloat();
         count = _buffer.readBigEndianInt();
-        additionalData = new int[bfzla9yx];
         for(int yrarb5br=0;yrarb5br<additionalData.length;yrarb5br++)
         {
             additionalData[yrarb5br] = _buffer.readVaruint();

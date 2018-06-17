@@ -43,7 +43,6 @@ public class BlockEvent extends soupply.bedrock261.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         position.decodeBody(_buffer);
-        data = new int[brde];
         for(int zfy=0;zfy<data.length;zfy++)
         {
             data[zfy] = _buffer.readVarint();

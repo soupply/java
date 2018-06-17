@@ -59,11 +59,13 @@ public class TestArray extends soupply.test0.Packet
         final int bvy = _buffer.readVaruint();
         b = _buffer.readString(bvy);
         final int bm = _buffer.readVaruint();
+        c = new short[bm];
         for(int y=0;y<c.length;y++)
         {
             c[y] = _buffer.readBigEndianShort();
         }
         final int bq = _buffer.readVaruint();
+        d = new int[bq];
         for(int z=0;z<d.length;z++)
         {
             d[z] = _buffer.readVaruint();

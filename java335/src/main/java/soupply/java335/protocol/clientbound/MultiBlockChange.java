@@ -46,6 +46,7 @@ public class MultiBlockChange extends soupply.java335.Packet
         chunk.x = _buffer.readBigEndianInt();
         chunk.z = _buffer.readBigEndianInt();
         final int bny5zm = _buffer.readVaruint();
+        changes = new soupply.java335.type.BlockChange[bny5zm];
         for(int yhbdc=0;yhbdc<changes.length;yhbdc++)
         {
             changes[yhbdc].decodeBody(_buffer);

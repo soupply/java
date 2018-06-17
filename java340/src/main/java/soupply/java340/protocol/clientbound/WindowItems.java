@@ -43,6 +43,7 @@ public class WindowItems extends soupply.java340.Packet
     {
         window = _buffer.readByte();
         final int bnbr = _buffer.readVaruint();
+        slots = new soupply.java340.type.Slot[bnbr];
         for(int cxdm=0;cxdm<slots.length;cxdm++)
         {
             slots[cxdm].decodeBody(_buffer);

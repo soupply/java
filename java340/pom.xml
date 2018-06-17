@@ -5,7 +5,7 @@
   <parent>
     <groupId>soupply</groupId>
     <artifactId>soupply</artifactId>
-    <version>2.20.0</version>
+    <version>2.21.0</version>
   </parent>
 
   <artifactId>java340</artifactId>
@@ -14,7 +14,7 @@
     <dependency>
       <groupId>soupply</groupId>
       <artifactId>util</artifactId>
-      <version>2.20.0</version>
+      <version>2.21.0</version>
     </dependency>
   </dependencies>
 

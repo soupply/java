@@ -74,6 +74,7 @@ public class ClientboundMapItemData extends soupply.bedrock.Packet
         offset.z = _buffer.readVarint();
         data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
         final int bry9yrb5 = _buffer.readVaruint();
+        decorations = new soupply.bedrock.type.Decoration[bry9yrb5];
         for(int zvbjdlbm=0;zvbjdlbm<decorations.length;zvbjdlbm++)
         {
             decorations[zvbjdlbm].decodeBody(_buffer);

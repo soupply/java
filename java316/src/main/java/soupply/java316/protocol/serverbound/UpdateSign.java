@@ -44,7 +44,6 @@ public class UpdateSign extends soupply.java316.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         position = _buffer.readBigEndianLong();
-        lines = new String[bxbv];
         for(int blzm=0;blzm<lines.length;blzm++)
         {
             final int bvblznyx = _buffer.readVaruint();

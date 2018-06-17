@@ -66,6 +66,7 @@ public class Map extends soupply.java210.Packet
         scale = _buffer.readByte();
         showIcons = _buffer.readBool();
         final int blb5 = _buffer.readVaruint();
+        icons = new soupply.java210.type.Icon[blb5];
         for(int anbm=0;anbm<icons.length;anbm++)
         {
             icons[anbm].decodeBody(_buffer);

@@ -43,6 +43,7 @@ public class UpdateAttributes extends soupply.bedrock261.Packet
     {
         entityId = _buffer.readVarlong();
         final int bfdjyvzm = _buffer.readVaruint();
+        attributes = new soupply.bedrock261.type.Attribute[bfdjyvzm];
         for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)
         {
             attributes[yrcldrc].decodeBody(_buffer);

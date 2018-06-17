@@ -54,11 +54,13 @@ public class CraftingGrid extends soupply.java335.Packet
         window = _buffer.readByte();
         action = _buffer.readBigEndianShort();
         final int bjdvbvdj = _buffer.readVaruint();
+        returnEntry = new soupply.java335.type.Entry[bjdvbvdj];
         for(int cvdjr5ck=0;cvdjr5ck<returnEntry.length;cvdjr5ck++)
         {
             returnEntry[cvdjr5ck].decodeBody(_buffer);
         }
         final int bbzbcvbr = _buffer.readVaruint();
+        prepareEntry = new soupply.java335.type.Entry[bbzbcvbr];
         for(int cjcfzvdj=0;cjcfzvdj<prepareEntry.length;cjcfzvdj++)
         {
             prepareEntry[cjcfzvdj].decodeBody(_buffer);

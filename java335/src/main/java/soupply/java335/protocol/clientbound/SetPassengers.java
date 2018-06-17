@@ -43,6 +43,7 @@ public class SetPassengers extends soupply.java335.Packet
     {
         entityId = _buffer.readVaruint();
         final int bbcnbdcm = _buffer.readVaruint();
+        passengers = new int[bbcnbdcm];
         for(int cfcvzvc=0;cfcvzvc<passengers.length;cfcvzvc++)
         {
             passengers[cfcvzvc] = _buffer.readVaruint();

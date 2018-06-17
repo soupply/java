@@ -88,12 +88,14 @@ public class AddEntity extends soupply.bedrock.Packet
         pitch = _buffer.readLittleEndianFloat();
         yaw = _buffer.readLittleEndianFloat();
         final int bfdjyvzm = _buffer.readVaruint();
+        attributes = new soupply.bedrock.type.Attribute[bfdjyvzm];
         for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)
         {
             attributes[yrcldrc].decodeBody(_buffer);
         }
         metadata.decodeBody(_buffer);
         final int bxbt = _buffer.readVaruint();
+        links = new soupply.bedrock.type.Link[bxbt];
         for(int blam=0;blam<links.length;blam++)
         {
             links[blam].decodeBody(_buffer);

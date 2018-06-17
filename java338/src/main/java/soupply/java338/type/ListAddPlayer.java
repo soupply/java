@@ -63,6 +63,7 @@ public class ListAddPlayer extends Type
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
         final int bbbbcrzm = _buffer.readVaruint();
+        properties = new soupply.java338.type.Property[bbbbcrzm];
         for(int cjcvdlc=0;cjcvdlc<properties.length;cjcvdlc++)
         {
             properties[cjcvdlc].decodeBody(_buffer);

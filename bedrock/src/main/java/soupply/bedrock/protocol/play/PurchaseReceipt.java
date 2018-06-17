@@ -41,6 +41,7 @@ public class PurchaseReceipt extends soupply.bedrock.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         final int bva5d4 = _buffer.readVaruint();
+        unknown0 = new String[bva5d4];
         for(int d5b9ba=0;d5b9ba<unknown0.length;d5b9ba++)
         {
             final int bvd5b9bb = _buffer.readVaruint();

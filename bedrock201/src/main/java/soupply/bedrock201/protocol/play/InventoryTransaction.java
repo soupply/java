@@ -43,6 +43,7 @@ public class InventoryTransaction extends soupply.bedrock201.Packet
     {
         type = _buffer.readVaruint();
         final int bfdlbm = _buffer.readVaruint();
+        actions = new soupply.bedrock201.type.InventoryAction[bfdlbm];
         for(int yna9c=0;yna9c<actions.length;yna9c++)
         {
             actions[yna9c].decodeBody(_buffer);

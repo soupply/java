@@ -39,6 +39,7 @@ public class Statistics extends soupply.java340.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         final int bnyrcrym = _buffer.readVaruint();
+        statistics = new soupply.java340.type.Statistic[bnyrcrym];
         for(int crdldlc=0;crdldlc<statistics.length;crdldlc++)
         {
             statistics[crdldlc].decodeBody(_buffer);

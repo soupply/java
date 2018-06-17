@@ -19,7 +19,7 @@ public class SpawnObject extends soupply.java.Packet
 
     public SpawnObject()
     {
-        this.uuid = new UUID();
+        this.uuid = new UUID(0, 0);
         this.position = new DoubleXYZ();
         this.velocity = new ShortXYZ();
     }

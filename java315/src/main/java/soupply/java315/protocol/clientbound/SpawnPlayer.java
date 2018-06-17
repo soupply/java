@@ -17,7 +17,7 @@ public class SpawnPlayer extends soupply.java315.Packet
 
     public SpawnPlayer()
     {
-        this.uuid = new UUID();
+        this.uuid = new UUID(0, 0);
         this.position = new DoubleXYZ();
         this.metadata = new soupply.java315.Metadata();
     }

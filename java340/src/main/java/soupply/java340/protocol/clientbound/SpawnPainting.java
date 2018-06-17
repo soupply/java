@@ -22,7 +22,7 @@ public class SpawnPainting extends soupply.java340.Packet
 
     public SpawnPainting()
     {
-        this.uuid = new UUID();
+        this.uuid = new UUID(0, 0);
     }
 
     public SpawnPainting(int entityId, UUID uuid, String title, long position, byte direction)

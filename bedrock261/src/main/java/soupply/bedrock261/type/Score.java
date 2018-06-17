@@ -12,7 +12,7 @@ public class Score extends Type
 
     public Score()
     {
-        this.uuid = new UUID();
+        this.uuid = new UUID(0, 0);
     }
 
     public Score(UUID uuid, String objectiveName, int score)

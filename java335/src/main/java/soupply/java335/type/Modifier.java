@@ -17,7 +17,7 @@ public class Modifier extends Type
 
     public Modifier()
     {
-        this.uuid = new UUID();
+        this.uuid = new UUID(0, 0);
     }
 
     public Modifier(UUID uuid, double amount, byte operation)

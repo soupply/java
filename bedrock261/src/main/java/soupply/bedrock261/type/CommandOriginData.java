@@ -27,7 +27,7 @@ public class CommandOriginData extends Type
 
     public CommandOriginData()
     {
-        this.uuid = new UUID();
+        this.uuid = new UUID(0, 0);
     }
 
     public CommandOriginData(int type, UUID uuid, String requestId, long unknown3)

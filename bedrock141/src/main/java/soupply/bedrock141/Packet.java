@@ -19,9 +19,9 @@ public abstract class Packet extends soupply.util.Packet
     }
 
     @Override
-    public void decode(byte[] _buffer) throws BufferOverflowException
+    public void decode(byte[] data) throws BufferOverflowException
     {
-        Buffer _buffer = new Buffer(_buffer);
+        Buffer _buffer = new Buffer(data);
         final int _id = _buffer.readVaruint();
         _buffer.readBytes(2);
         this.decodeBody(_buffer);

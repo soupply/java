@@ -11,18 +11,18 @@ public abstract class Packet extends soupply.util.Packet
     @Override
     public byte[] encode()
     {
-        Buffer buffer = new Buffer();
+        Buffer _buffer = new Buffer();
         _buffer.writeByte(this.getId());
-        this.encodeBody(buffer);
-        return buffer.toByteArray();
+        this.encodeBody(_buffer);
+        return _buffer.toByteArray();
     }
 
     @Override
     public void decode(byte[] _buffer) throws BufferOverflowException
     {
-        Buffer buffer = new Buffer(_buffer);
+        Buffer _buffer = new Buffer(_buffer);
         final int _id = _buffer.readByte();
-        this.decodeBody(buffer);
+        this.decodeBody(_buffer);
     }
 
 }

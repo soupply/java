@@ -31,7 +31,7 @@ public class Attribute extends Type
         _buffer.writeLittleEndianFloat(min);
         _buffer.writeLittleEndianFloat(max);
         _buffer.writeLittleEndianFloat(value);
-        _buffer.writeLittleEndianFloat(default);
+        _buffer.writeLittleEndianFloat(default_);
         byte[] bfz = _buffer.convertString(name);
         _buffer.writeVaruint((int)bfz.length);
         _buffer.writeBytes(bfz);
@@ -43,7 +43,7 @@ public class Attribute extends Type
         min = _buffer.readLittleEndianFloat();
         max = _buffer.readLittleEndianFloat();
         value = _buffer.readLittleEndianFloat();
-        default = _buffer.readLittleEndianFloat();
+        default_ = _buffer.readLittleEndianFloat();
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
     }

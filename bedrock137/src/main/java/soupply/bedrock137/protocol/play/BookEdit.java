@@ -53,7 +53,7 @@ public class BookEdit extends soupply.bedrock137.Packet
         this.encodeBody(_buffer);
     }
 
-    public class ReplacePage extends soupply.bedrock137.Packet
+    public class ReplacePage extends soupply.util.Packet
     {
 
         public byte pageNumber;
@@ -97,7 +97,7 @@ public class BookEdit extends soupply.bedrock137.Packet
 
     }
 
-    public class AddPage extends soupply.bedrock137.Packet
+    public class AddPage extends soupply.util.Packet
     {
 
         public byte pageNumber;
@@ -141,7 +141,7 @@ public class BookEdit extends soupply.bedrock137.Packet
 
     }
 
-    public class DeletePage extends soupply.bedrock137.Packet
+    public class DeletePage extends soupply.util.Packet
     {
 
         public byte pageNumber;
@@ -171,7 +171,7 @@ public class BookEdit extends soupply.bedrock137.Packet
 
     }
 
-    public class SwapPages extends soupply.bedrock137.Packet
+    public class SwapPages extends soupply.util.Packet
     {
 
         public byte page1;
@@ -205,7 +205,7 @@ public class BookEdit extends soupply.bedrock137.Packet
 
     }
 
-    public class Sign extends soupply.bedrock137.Packet
+    public class Sign extends soupply.util.Packet
     {
 
         public String title;

@@ -54,7 +54,7 @@ public class BossBar extends soupply.java335.Packet
         this.encodeBody(_buffer);
     }
 
-    public class Add extends soupply.java335.Packet
+    public class Add extends soupply.util.Packet
     {
 
         // color
@@ -123,7 +123,7 @@ public class BossBar extends soupply.java335.Packet
 
     }
 
-    public class Remove extends soupply.java335.Packet
+    public class Remove extends soupply.util.Packet
     {
 
         @Override
@@ -140,7 +140,7 @@ public class BossBar extends soupply.java335.Packet
 
     }
 
-    public class UpdateHealth extends soupply.java335.Packet
+    public class UpdateHealth extends soupply.util.Packet
     {
 
         public float health;
@@ -170,7 +170,7 @@ public class BossBar extends soupply.java335.Packet
 
     }
 
-    public class UpdateTitle extends soupply.java335.Packet
+    public class UpdateTitle extends soupply.util.Packet
     {
 
         public String title;
@@ -203,7 +203,7 @@ public class BossBar extends soupply.java335.Packet
 
     }
 
-    public class UpdateStyle extends soupply.java335.Packet
+    public class UpdateStyle extends soupply.util.Packet
     {
 
         // color
@@ -253,7 +253,7 @@ public class BossBar extends soupply.java335.Packet
 
     }
 
-    public class UpdateFlags extends soupply.java335.Packet
+    public class UpdateFlags extends soupply.util.Packet
     {
 
         // flags

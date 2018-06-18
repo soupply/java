@@ -49,7 +49,7 @@ public class PlayerList extends soupply.bedrock160.Packet
         this.encodeBody(_buffer);
     }
 
-    public class Add extends soupply.bedrock160.Packet
+    public class Add extends soupply.util.Packet
     {
 
         public soupply.bedrock160.type.PlayerList[] players;
@@ -88,7 +88,7 @@ public class PlayerList extends soupply.bedrock160.Packet
 
     }
 
-    public class Remove extends soupply.bedrock160.Packet
+    public class Remove extends soupply.util.Packet
     {
 
         public soupply.bedrock160.type.McpeUuid[] players;

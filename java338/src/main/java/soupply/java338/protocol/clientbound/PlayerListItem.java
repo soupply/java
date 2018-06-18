@@ -49,7 +49,7 @@ public class PlayerListItem extends soupply.java338.Packet
         this.encodeBody(_buffer);
     }
 
-    public class AddPlayer extends soupply.java338.Packet
+    public class AddPlayer extends soupply.util.Packet
     {
 
         public soupply.java338.type.ListAddPlayer[] players;
@@ -88,7 +88,7 @@ public class PlayerListItem extends soupply.java338.Packet
 
     }
 
-    public class UpdateGamemode extends soupply.java338.Packet
+    public class UpdateGamemode extends soupply.util.Packet
     {
 
         public soupply.java338.type.ListUpdateGamemode[] players;
@@ -127,7 +127,7 @@ public class PlayerListItem extends soupply.java338.Packet
 
     }
 
-    public class UpdateLatency extends soupply.java338.Packet
+    public class UpdateLatency extends soupply.util.Packet
     {
 
         public soupply.java338.type.ListUpdateLatency[] players;
@@ -166,7 +166,7 @@ public class PlayerListItem extends soupply.java338.Packet
 
     }
 
-    public class UpdateDisplayName extends soupply.java338.Packet
+    public class UpdateDisplayName extends soupply.util.Packet
     {
 
         public soupply.java338.type.ListUpdateDisplayName[] players;
@@ -205,7 +205,7 @@ public class PlayerListItem extends soupply.java338.Packet
 
     }
 
-    public class RemovePlayer extends soupply.java338.Packet
+    public class RemovePlayer extends soupply.util.Packet
     {
 
         public UUID[] players;

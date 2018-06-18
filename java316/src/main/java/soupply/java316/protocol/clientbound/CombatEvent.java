@@ -49,7 +49,7 @@ public class CombatEvent extends soupply.java316.Packet
         this.encodeBody(_buffer);
     }
 
-    public class EnterCombat extends soupply.java316.Packet
+    public class EnterCombat extends soupply.util.Packet
     {
 
         @Override
@@ -66,7 +66,7 @@ public class CombatEvent extends soupply.java316.Packet
 
     }
 
-    public class EndCombat extends soupply.java316.Packet
+    public class EndCombat extends soupply.util.Packet
     {
 
         public int duration;
@@ -100,7 +100,7 @@ public class CombatEvent extends soupply.java316.Packet
 
     }
 
-    public class EntityDead extends soupply.java316.Packet
+    public class EntityDead extends soupply.util.Packet
     {
 
         public int playerId;

@@ -31,7 +31,7 @@ public class EntityProperties extends soupply.java.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(entityId);
-        _buffer.writeVaruint((int)attributes.length);
+        _buffer.writeBigEndianInt((int)attributes.length);
         for(soupply.java.type.Attribute yrcldrc:attributes)
         {
             yrcldrc.encodeBody(_buffer);
@@ -42,7 +42,7 @@ public class EntityProperties extends soupply.java.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         entityId = _buffer.readVaruint();
-        final int bfdjyvzm = _buffer.readVaruint();
+        final int bfdjyvzm = _buffer.readBigEndianInt();
         attributes = new soupply.java.type.Attribute[bfdjyvzm];
         for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)
         {

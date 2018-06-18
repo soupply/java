@@ -36,12 +36,12 @@ public class CraftingGrid extends soupply.java335.Packet
     {
         _buffer.writeByte(window);
         _buffer.writeBigEndianShort(action);
-        _buffer.writeVaruint((int)returnEntry.length);
+        _buffer.writeBigEndianShort((short)returnEntry.length);
         for(soupply.java335.type.Entry cvdjr5ck:returnEntry)
         {
             cvdjr5ck.encodeBody(_buffer);
         }
-        _buffer.writeVaruint((int)prepareEntry.length);
+        _buffer.writeBigEndianShort((short)prepareEntry.length);
         for(soupply.java335.type.Entry cjcfzvdj:prepareEntry)
         {
             cjcfzvdj.encodeBody(_buffer);
@@ -53,13 +53,13 @@ public class CraftingGrid extends soupply.java335.Packet
     {
         window = _buffer.readByte();
         action = _buffer.readBigEndianShort();
-        final int bjdvbvdj = _buffer.readVaruint();
+        final int bjdvbvdj = _buffer.readBigEndianShort();
         returnEntry = new soupply.java335.type.Entry[bjdvbvdj];
         for(int cvdjr5ck=0;cvdjr5ck<returnEntry.length;cvdjr5ck++)
         {
             returnEntry[cvdjr5ck].decodeBody(_buffer);
         }
-        final int bbzbcvbr = _buffer.readVaruint();
+        final int bbzbcvbr = _buffer.readBigEndianShort();
         prepareEntry = new soupply.java335.type.Entry[bbzbcvbr];
         for(int cjcfzvdj=0;cjcfzvdj<prepareEntry.length;cjcfzvdj++)
         {

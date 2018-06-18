@@ -39,7 +39,7 @@ public class ResourcePackChunkData extends soupply.bedrock.Packet
         _buffer.writeBytes(arz);
         _buffer.writeLittleEndianInt(chunkIndex);
         _buffer.writeLittleEndianLong(progress);
-        _buffer.writeVaruint((int)data.length);
+        _buffer.writeLittleEndianInt((int)data.length);
         _buffer.writeBytes(data);
     }
 
@@ -50,7 +50,7 @@ public class ResourcePackChunkData extends soupply.bedrock.Packet
         id = _buffer.readString(bvaq);
         chunkIndex = _buffer.readLittleEndianInt();
         progress = _buffer.readLittleEndianLong();
-        final int brde = _buffer.readVaruint();
+        final int brde = _buffer.readLittleEndianInt();
         data = _buffer.readBytes(brde);
     }
 

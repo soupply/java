@@ -40,7 +40,7 @@ public class Explosion extends soupply.java.Packet
         _buffer.writeBigEndianFloat(position.y);
         _buffer.writeBigEndianFloat(position.z);
         _buffer.writeBigEndianFloat(radius);
-        _buffer.writeVaruint((int)records.length);
+        _buffer.writeBigEndianInt((int)records.length);
         for(ByteXYZ cvbjc:records)
         {
             _buffer.writeByte(cvbjc.x);
@@ -59,7 +59,7 @@ public class Explosion extends soupply.java.Packet
         position.y = _buffer.readBigEndianFloat();
         position.z = _buffer.readBigEndianFloat();
         radius = _buffer.readBigEndianFloat();
-        final int bjy9zm = _buffer.readVaruint();
+        final int bjy9zm = _buffer.readBigEndianInt();
         records = new ByteXYZ[bjy9zm];
         for(int cvbjc=0;cvbjc<records.length;cvbjc++)
         {

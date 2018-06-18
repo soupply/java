@@ -31,7 +31,7 @@ public class WindowItems extends soupply.java335.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeByte(window);
-        _buffer.writeVaruint((int)slots.length);
+        _buffer.writeBigEndianShort((short)slots.length);
         for(soupply.java335.type.Slot cxdm:slots)
         {
             cxdm.encodeBody(_buffer);
@@ -42,7 +42,7 @@ public class WindowItems extends soupply.java335.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         window = _buffer.readByte();
-        final int bnbr = _buffer.readVaruint();
+        final int bnbr = _buffer.readBigEndianShort();
         slots = new soupply.java335.type.Slot[bnbr];
         for(int cxdm=0;cxdm<slots.length;cxdm++)
         {

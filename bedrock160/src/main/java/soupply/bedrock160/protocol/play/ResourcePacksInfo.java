@@ -33,12 +33,12 @@ public class ResourcePacksInfo extends soupply.bedrock160.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBool(mustAccept);
-        _buffer.writeVaruint((int)behaviourPacks.length);
+        _buffer.writeLittleEndianShort((short)behaviourPacks.length);
         for(soupply.bedrock160.type.PackWithSize yvyzbvuf:behaviourPacks)
         {
             yvyzbvuf.encodeBody(_buffer);
         }
-        _buffer.writeVaruint((int)resourcePacks.length);
+        _buffer.writeLittleEndianShort((short)resourcePacks.length);
         for(soupply.bedrock160.type.PackWithSize cvbvyvyn:resourcePacks)
         {
             cvbvyvyn.encodeBody(_buffer);
@@ -49,13 +49,13 @@ public class ResourcePacksInfo extends soupply.bedrock160.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         mustAccept = _buffer.readBool();
-        final int bjafa9cb = _buffer.readVaruint();
+        final int bjafa9cb = _buffer.readLittleEndianShort();
         behaviourPacks = new soupply.bedrock160.type.PackWithSize[bjafa9cb];
         for(int yvyzbvuf=0;yvyzbvuf<behaviourPacks.length;yvyzbvuf++)
         {
             behaviourPacks[yvyzbvuf].decodeBody(_buffer);
         }
-        final int bjc9cnuf = _buffer.readVaruint();
+        final int bjc9cnuf = _buffer.readLittleEndianShort();
         resourcePacks = new soupply.bedrock160.type.PackWithSize[bjc9cnuf];
         for(int cvbvyvyn=0;cvbvyvyn<resourcePacks.length;cvbvyvyn++)
         {

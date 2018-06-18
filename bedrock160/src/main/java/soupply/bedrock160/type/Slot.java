@@ -30,7 +30,7 @@ public class Slot extends Type
     {
         _buffer.writeVarint(id);
         _buffer.writeVarint(metaAndCount);
-        _buffer.writeVaruint((int)nbt.length);
+        _buffer.writeLittleEndianShort((short)nbt.length);
         _buffer.writeBytes(nbt);
         _buffer.writeVaruint((int)canPlaceOn.length);
         for(String yfuxyvb:canPlaceOn)
@@ -53,7 +53,7 @@ public class Slot extends Type
     {
         id = _buffer.readVarint();
         metaAndCount = _buffer.readVarint();
-        final int b5d = _buffer.readVaruint();
+        final int b5d = _buffer.readLittleEndianShort();
         nbt = _buffer.readBytes(b5d);
         final int bnbbynt4 = _buffer.readVaruint();
         canPlaceOn = new String[bnbbynt4];

@@ -39,7 +39,7 @@ public class TestArray extends soupply.test0.Packet
         byte[] yjy = _buffer.convertString(b);
         _buffer.writeVaruint((int)yjy.length);
         _buffer.writeBytes(yjy);
-        _buffer.writeVaruint((int)c.length);
+        _buffer.writeBigEndianInt((int)c.length);
         for(short yny:c)
         {
             _buffer.writeBigEndianShort(yny);
@@ -58,7 +58,7 @@ public class TestArray extends soupply.test0.Packet
         a = _buffer.readBytes(bfy);
         final int bvy = _buffer.readVaruint();
         b = _buffer.readString(bvy);
-        final int bny = _buffer.readVaruint();
+        final int bny = _buffer.readBigEndianInt();
         c = new short[bny];
         for(int yny=0;yny<c.length;yny++)
         {

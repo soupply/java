@@ -73,7 +73,7 @@ public class InventoryTransaction extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
         }
 
@@ -90,7 +90,7 @@ public class InventoryTransaction extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
         }
 
@@ -150,7 +150,7 @@ public class InventoryTransaction extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             actionType = _buffer.readVaruint();
             blockPosition.decodeBody(_buffer);
@@ -216,7 +216,7 @@ public class InventoryTransaction extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             entityId = _buffer.readVarlong();
             actionType = _buffer.readVaruint();
@@ -272,7 +272,7 @@ public class InventoryTransaction extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             actionType = _buffer.readVaruint();
             hotbarSlot = _buffer.readVarint();

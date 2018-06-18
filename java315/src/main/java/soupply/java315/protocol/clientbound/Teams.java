@@ -132,7 +132,7 @@ public class Teams extends soupply.java315.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bvzlcxe5 = _buffer.readVaruint();
             displayName = _buffer.readString(bvzlcxe5);
@@ -168,7 +168,7 @@ public class Teams extends soupply.java315.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
         }
 
@@ -241,7 +241,7 @@ public class Teams extends soupply.java315.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bvzlcxe5 = _buffer.readVaruint();
             displayName = _buffer.readString(bvzlcxe5);
@@ -288,7 +288,7 @@ public class Teams extends soupply.java315.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new String[bbylcm];
@@ -330,7 +330,7 @@ public class Teams extends soupply.java315.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new String[bbylcm];

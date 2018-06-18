@@ -72,7 +72,7 @@ public class WorldBorder extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             diameter = _buffer.readBigEndianDouble();
         }
@@ -108,7 +108,7 @@ public class WorldBorder extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             oldDiameter = _buffer.readBigEndianDouble();
             newDiameter = _buffer.readBigEndianDouble();
@@ -143,7 +143,7 @@ public class WorldBorder extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             center.x = _buffer.readBigEndianDouble();
             center.y = _buffer.readBigEndianDouble();
@@ -196,7 +196,7 @@ public class WorldBorder extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             center.x = _buffer.readBigEndianDouble();
             center.y = _buffer.readBigEndianDouble();
@@ -234,7 +234,7 @@ public class WorldBorder extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             warningTime = _buffer.readVaruint();
         }
@@ -264,7 +264,7 @@ public class WorldBorder extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             warningBlocks = _buffer.readVaruint();
         }

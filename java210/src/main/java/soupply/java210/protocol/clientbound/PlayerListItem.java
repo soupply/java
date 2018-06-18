@@ -76,7 +76,7 @@ public class PlayerListItem extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java210.type.ListAddPlayer[bbylcm];
@@ -115,7 +115,7 @@ public class PlayerListItem extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java210.type.ListUpdateGamemode[bbylcm];
@@ -154,7 +154,7 @@ public class PlayerListItem extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java210.type.ListUpdateLatency[bbylcm];
@@ -193,7 +193,7 @@ public class PlayerListItem extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java210.type.ListUpdateDisplayName[bbylcm];
@@ -232,7 +232,7 @@ public class PlayerListItem extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new UUID[bbylcm];

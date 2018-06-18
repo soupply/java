@@ -86,7 +86,7 @@ public class BookEdit extends soupply.bedrock160.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             pageNumber = _buffer.readByte();
             final int bvd5b9be = _buffer.readVaruint();
@@ -130,7 +130,7 @@ public class BookEdit extends soupply.bedrock160.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             pageNumber = _buffer.readByte();
             final int bvd5b9be = _buffer.readVaruint();
@@ -164,7 +164,7 @@ public class BookEdit extends soupply.bedrock160.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             pageNumber = _buffer.readByte();
         }
@@ -197,7 +197,7 @@ public class BookEdit extends soupply.bedrock160.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             page1 = _buffer.readByte();
             page2 = _buffer.readByte();
@@ -235,7 +235,7 @@ public class BookEdit extends soupply.bedrock160.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bvdlbu = _buffer.readVaruint();
             title = _buffer.readString(bvdlbu);

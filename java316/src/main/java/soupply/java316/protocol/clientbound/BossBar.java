@@ -111,7 +111,7 @@ public class BossBar extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bvdlbu = _buffer.readVaruint();
             title = _buffer.readString(bvdlbu);
@@ -134,7 +134,7 @@ public class BossBar extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
         }
 
@@ -163,7 +163,7 @@ public class BossBar extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             health = _buffer.readBigEndianFloat();
         }
@@ -195,7 +195,7 @@ public class BossBar extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             final int bvdlbu = _buffer.readVaruint();
             title = _buffer.readString(bvdlbu);
@@ -245,7 +245,7 @@ public class BossBar extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             color = _buffer.readVaruint();
             division = _buffer.readVaruint();
@@ -280,7 +280,7 @@ public class BossBar extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer)
+        public void decodeBody(Buffer _buffer) throws BufferOverflowException
         {
             flags = _buffer.readByte();
         }

@@ -22,6 +22,14 @@ public class LoginBody extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
+        Buffer _nbuffer = new Buffer();
+        this.encodeBodyImpl(_nbuffer);
+        _buffer.writeVaruint(_nbuffer.length);
+        _buffer.writeBytes(_nbuffer.toByteArray());
+    }
+
+    private void encodeBodyImpl(Buffer _buffer)
+    {
         _buffer.writeLittleEndianInt((int)chain.length);
         _buffer.writeBytes(chain);
         _buffer.writeLittleEndianInt((int)clientData.length);
@@ -30,6 +38,12 @@ public class LoginBody extends Type
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    {
+        final int _length = _buffer.readVaruint();
+        this.decodeBodyImpl(new Buffer(_buffer.readBytes(_length)));
+    }
+
+    private void decodeBodyImpl(Buffer _buffer) throws BufferOverflowException
     {
         final int bnyl = _buffer.readLittleEndianInt();
         chain = _buffer.readBytes(bnyl);

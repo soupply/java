@@ -32,6 +32,14 @@ public class ChunkData extends Type
     @Override
     public void encodeBody(Buffer _buffer)
     {
+        Buffer _nbuffer = new Buffer();
+        this.encodeBodyImpl(_nbuffer);
+        _buffer.writeVaruint(_nbuffer.length);
+        _buffer.writeBytes(_nbuffer.toByteArray());
+    }
+
+    private void encodeBodyImpl(Buffer _buffer)
+    {
         _buffer.writeVaruint((int)sections.length);
         for(soupply.bedrock160.type.Section cvdlbm:sections)
         {
@@ -54,6 +62,12 @@ public class ChunkData extends Type
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    {
+        final int _length = _buffer.readVaruint();
+        this.decodeBodyImpl(new Buffer(_buffer.readBytes(_length)));
+    }
+
+    private void decodeBodyImpl(Buffer _buffer) throws BufferOverflowException
     {
         final int bnyrb5 = _buffer.readVaruint();
         sections = new soupply.bedrock160.type.Section[bnyrb5];

@@ -44,4 +44,101 @@ public class CombatEvent extends soupply.java315.Packet
         return packet;
     }
 
+    private void encodeMainBody(Buffer _buffer)
+    {
+        this.encodeBody(_buffer);
+    }
+
+    public class EnterCombat extends soupply.java315.Packet
+    {
+
+        @Override
+        public void encodeBody(Buffer _buffer)
+        {
+            eventId = 0;
+            encodeMainBody(_buffer);
+        }
+
+        @Override
+        public void decodeBody(Buffer _buffer)
+        {
+        }
+
+    }
+
+    public class EndCombat extends soupply.java315.Packet
+    {
+
+        public int duration;
+        public int entityId;
+
+        public EndCombat()
+        {
+        }
+
+        public EndCombat(int duration, int entityId)
+        {
+            this.duration = duration;
+            this.entityId = entityId;
+        }
+
+        @Override
+        public void encodeBody(Buffer _buffer)
+        {
+            eventId = 1;
+            encodeMainBody(_buffer);
+            _buffer.writeVaruint(duration);
+            _buffer.writeBigEndianInt(entityId);
+        }
+
+        @Override
+        public void decodeBody(Buffer _buffer)
+        {
+            duration = _buffer.readVaruint();
+            entityId = _buffer.readBigEndianInt();
+        }
+
+    }
+
+    public class EntityDead extends soupply.java315.Packet
+    {
+
+        public int playerId;
+        public int entityId;
+        public String message;
+
+        public EntityDead()
+        {
+        }
+
+        public EntityDead(int playerId, int entityId, String message)
+        {
+            this.playerId = playerId;
+            this.entityId = entityId;
+            this.message = message;
+        }
+
+        @Override
+        public void encodeBody(Buffer _buffer)
+        {
+            eventId = 2;
+            encodeMainBody(_buffer);
+            _buffer.writeVaruint(playerId);
+            _buffer.writeBigEndianInt(entityId);
+            byte[] bvcfz = _buffer.convertString(message);
+            _buffer.writeVaruint((int)bvcfz.length);
+            _buffer.writeBytes(bvcfz);
+        }
+
+        @Override
+        public void decodeBody(Buffer _buffer)
+        {
+            playerId = _buffer.readVaruint();
+            entityId = _buffer.readBigEndianInt();
+            final int bvbvcfz = _buffer.readVaruint();
+            message = _buffer.readString(bvbvcfz);
+        }
+
+    }
+
 }

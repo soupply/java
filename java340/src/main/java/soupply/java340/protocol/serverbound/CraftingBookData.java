@@ -44,4 +44,73 @@ public class CraftingBookData extends soupply.java340.Packet
         return packet;
     }
 
+    private void encodeMainBody(Buffer _buffer)
+    {
+        this.encodeBody(_buffer);
+    }
+
+    public class DisplayedRecipe extends soupply.java340.Packet
+    {
+
+        public int id;
+
+        public DisplayedRecipe()
+        {
+        }
+
+        public DisplayedRecipe(int id)
+        {
+            this.id = id;
+        }
+
+        @Override
+        public void encodeBody(Buffer _buffer)
+        {
+            type = 1;
+            encodeMainBody(_buffer);
+            _buffer.writeBigEndianInt(id);
+        }
+
+        @Override
+        public void decodeBody(Buffer _buffer)
+        {
+            id = _buffer.readBigEndianInt();
+        }
+
+    }
+
+    public class CraftingBookStatus extends soupply.java340.Packet
+    {
+
+        public boolean bookOpened;
+        public boolean filtering;
+
+        public CraftingBookStatus()
+        {
+        }
+
+        public CraftingBookStatus(boolean bookOpened, boolean filtering)
+        {
+            this.bookOpened = bookOpened;
+            this.filtering = filtering;
+        }
+
+        @Override
+        public void encodeBody(Buffer _buffer)
+        {
+            type = 2;
+            encodeMainBody(_buffer);
+            _buffer.writeBool(bookOpened);
+            _buffer.writeBool(filtering);
+        }
+
+        @Override
+        public void decodeBody(Buffer _buffer)
+        {
+            bookOpened = _buffer.readBool();
+            filtering = _buffer.readBool();
+        }
+
+    }
+
 }

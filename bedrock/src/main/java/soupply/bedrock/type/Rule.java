@@ -54,9 +54,18 @@ public class Rule extends Type
         _buffer.writeVaruint((int)bfz.length);
         _buffer.writeBytes(bfz);
         _buffer.writeByte(type);
-        _buffer.writeBool(booleanValue);
-        _buffer.writeVaruint(integerValue);
-        _buffer.writeLittleEndianFloat(floatingValue);
+        if(type==1)
+        {
+            _buffer.writeBool(booleanValue);
+        }
+        if(type==2)
+        {
+            _buffer.writeVaruint(integerValue);
+        }
+        if(type==3)
+        {
+            _buffer.writeLittleEndianFloat(floatingValue);
+        }
     }
 
     @Override
@@ -65,9 +74,18 @@ public class Rule extends Type
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
         type = _buffer.readByte();
-        booleanValue = _buffer.readBool();
-        integerValue = _buffer.readVaruint();
-        floatingValue = _buffer.readLittleEndianFloat();
+        if(type==1)
+        {
+            booleanValue = _buffer.readBool();
+        }
+        if(type==2)
+        {
+            integerValue = _buffer.readVaruint();
+        }
+        if(type==3)
+        {
+            floatingValue = _buffer.readLittleEndianFloat();
+        }
     }
 
 }

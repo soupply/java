@@ -38,7 +38,10 @@ public class Animate extends soupply.bedrock201.Packet
     {
         _buffer.writeVarint(action);
         _buffer.writeVarlong(entityId);
-        _buffer.writeLittleEndianFloat(unknown2);
+        if(action>128)
+        {
+            _buffer.writeLittleEndianFloat(unknown2);
+        }
     }
 
     @Override
@@ -46,7 +49,10 @@ public class Animate extends soupply.bedrock201.Packet
     {
         action = _buffer.readVarint();
         entityId = _buffer.readVarlong();
-        unknown2 = _buffer.readLittleEndianFloat();
+        if(action>128)
+        {
+            unknown2 = _buffer.readLittleEndianFloat();
+        }
     }
 
     public static Animate fromBuffer(byte[] buffer)

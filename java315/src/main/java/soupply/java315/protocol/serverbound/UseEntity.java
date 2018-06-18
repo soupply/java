@@ -46,10 +46,16 @@ public class UseEntity extends soupply.java315.Packet
     {
         _buffer.writeVaruint(target);
         _buffer.writeVaruint(type);
-        _buffer.writeBigEndianFloat(targetPosition.x);
-        _buffer.writeBigEndianFloat(targetPosition.y);
-        _buffer.writeBigEndianFloat(targetPosition.z);
-        _buffer.writeVaruint(hand);
+        if(type==2)
+        {
+            _buffer.writeBigEndianFloat(targetPosition.x);
+            _buffer.writeBigEndianFloat(targetPosition.y);
+            _buffer.writeBigEndianFloat(targetPosition.z);
+        }
+        if(type==0||type==2)
+        {
+            _buffer.writeVaruint(hand);
+        }
     }
 
     @Override
@@ -57,10 +63,16 @@ public class UseEntity extends soupply.java315.Packet
     {
         target = _buffer.readVaruint();
         type = _buffer.readVaruint();
-        targetPosition.x = _buffer.readBigEndianFloat();
-        targetPosition.y = _buffer.readBigEndianFloat();
-        targetPosition.z = _buffer.readBigEndianFloat();
-        hand = _buffer.readVaruint();
+        if(type==2)
+        {
+            targetPosition.x = _buffer.readBigEndianFloat();
+            targetPosition.y = _buffer.readBigEndianFloat();
+            targetPosition.z = _buffer.readBigEndianFloat();
+        }
+        if(type==0||type==2)
+        {
+            hand = _buffer.readVaruint();
+        }
     }
 
     public static UseEntity fromBuffer(byte[] buffer)

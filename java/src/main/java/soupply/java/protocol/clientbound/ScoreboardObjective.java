@@ -47,12 +47,15 @@ public class ScoreboardObjective extends soupply.java.Packet
         _buffer.writeVaruint((int)bfz.length);
         _buffer.writeBytes(bfz);
         _buffer.writeByte(mode);
-        byte[] dfdu = _buffer.convertString(value);
-        _buffer.writeVaruint((int)dfdu.length);
-        _buffer.writeBytes(dfdu);
-        byte[] dlz = _buffer.convertString(type);
-        _buffer.writeVaruint((int)dlz.length);
-        _buffer.writeBytes(dlz);
+        if(mode!=1)
+        {
+            byte[] dfdu = _buffer.convertString(value);
+            _buffer.writeVaruint((int)dfdu.length);
+            _buffer.writeBytes(dfdu);
+            byte[] dlz = _buffer.convertString(type);
+            _buffer.writeVaruint((int)dlz.length);
+            _buffer.writeBytes(dlz);
+        }
     }
 
     @Override
@@ -61,10 +64,13 @@ public class ScoreboardObjective extends soupply.java.Packet
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);
         mode = _buffer.readByte();
-        final int bvdfdu = _buffer.readVaruint();
-        value = _buffer.readString(bvdfdu);
-        final int bvdlz = _buffer.readVaruint();
-        type = _buffer.readString(bvdlz);
+        if(mode!=1)
+        {
+            final int bvdfdu = _buffer.readVaruint();
+            value = _buffer.readString(bvdfdu);
+            final int bvdlz = _buffer.readVaruint();
+            type = _buffer.readString(bvdlz);
+        }
     }
 
     public static ScoreboardObjective fromBuffer(byte[] buffer)

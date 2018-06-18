@@ -39,7 +39,10 @@ public class TabComplete extends soupply.java210.Packet
         _buffer.writeBytes(dvd);
         _buffer.writeBool(command);
         _buffer.writeBool(hasPosition);
-        _buffer.writeBigEndianLong(block);
+        if(hasPosition==true)
+        {
+            _buffer.writeBigEndianLong(block);
+        }
     }
 
     @Override
@@ -49,7 +52,10 @@ public class TabComplete extends soupply.java210.Packet
         text = _buffer.readString(bvdvd);
         command = _buffer.readBool();
         hasPosition = _buffer.readBool();
-        block = _buffer.readBigEndianLong();
+        if(hasPosition==true)
+        {
+            block = _buffer.readBigEndianLong();
+        }
     }
 
     public static TabComplete fromBuffer(byte[] buffer)

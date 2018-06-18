@@ -40,9 +40,12 @@ public class Interact extends soupply.bedrock150.Packet
     {
         _buffer.writeByte(action);
         _buffer.writeVarlong(target);
-        _buffer.writeLittleEndianFloat(targetPosition.x);
-        _buffer.writeLittleEndianFloat(targetPosition.y);
-        _buffer.writeLittleEndianFloat(targetPosition.z);
+        if(action==4)
+        {
+            _buffer.writeLittleEndianFloat(targetPosition.x);
+            _buffer.writeLittleEndianFloat(targetPosition.y);
+            _buffer.writeLittleEndianFloat(targetPosition.z);
+        }
     }
 
     @Override
@@ -50,9 +53,12 @@ public class Interact extends soupply.bedrock150.Packet
     {
         action = _buffer.readByte();
         target = _buffer.readVarlong();
-        targetPosition.x = _buffer.readLittleEndianFloat();
-        targetPosition.y = _buffer.readLittleEndianFloat();
-        targetPosition.z = _buffer.readLittleEndianFloat();
+        if(action==4)
+        {
+            targetPosition.x = _buffer.readLittleEndianFloat();
+            targetPosition.y = _buffer.readLittleEndianFloat();
+            targetPosition.z = _buffer.readLittleEndianFloat();
+        }
     }
 
     public static Interact fromBuffer(byte[] buffer)

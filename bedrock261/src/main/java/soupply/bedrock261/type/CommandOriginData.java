@@ -46,7 +46,10 @@ public class CommandOriginData extends Type
         byte[] cvdvdl = _buffer.convertString(requestId);
         _buffer.writeVaruint((int)cvdvdl.length);
         _buffer.writeBytes(cvdvdl);
-        _buffer.writeVarlong(unknown3);
+        if(type==3||type==4)
+        {
+            _buffer.writeVarlong(unknown3);
+        }
     }
 
     @Override
@@ -56,7 +59,10 @@ public class CommandOriginData extends Type
         uuid = _buffer.readUUID();
         final int bvcvdvdl = _buffer.readVaruint();
         requestId = _buffer.readString(bvcvdvdl);
-        unknown3 = _buffer.readVarlong();
+        if(type==3||type==4)
+        {
+            unknown3 = _buffer.readVarlong();
+        }
     }
 
 }

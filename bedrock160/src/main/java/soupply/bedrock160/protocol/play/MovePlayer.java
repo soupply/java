@@ -63,8 +63,11 @@ public class MovePlayer extends soupply.bedrock160.Packet
         _buffer.writeByte(animation);
         _buffer.writeBool(onGround);
         _buffer.writeVarlong(unknown7);
-        _buffer.writeLittleEndianInt(unknown8);
-        _buffer.writeLittleEndianInt(unknown9);
+        if(animation==3)
+        {
+            _buffer.writeLittleEndianInt(unknown8);
+            _buffer.writeLittleEndianInt(unknown9);
+        }
     }
 
     @Override
@@ -80,8 +83,11 @@ public class MovePlayer extends soupply.bedrock160.Packet
         animation = _buffer.readByte();
         onGround = _buffer.readBool();
         unknown7 = _buffer.readVarlong();
-        unknown8 = _buffer.readLittleEndianInt();
-        unknown9 = _buffer.readLittleEndianInt();
+        if(animation==3)
+        {
+            unknown8 = _buffer.readLittleEndianInt();
+            unknown9 = _buffer.readLittleEndianInt();
+        }
     }
 
     public static MovePlayer fromBuffer(byte[] buffer)

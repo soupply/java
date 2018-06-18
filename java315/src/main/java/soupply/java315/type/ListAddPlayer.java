@@ -51,9 +51,12 @@ public class ListAddPlayer extends Type
         _buffer.writeVaruint(gamemode);
         _buffer.writeVaruint(latency);
         _buffer.writeBool(hasDisplayName);
-        byte[] zlcxe5bu = _buffer.convertString(displayName);
-        _buffer.writeVaruint((int)zlcxe5bu.length);
-        _buffer.writeBytes(zlcxe5bu);
+        if(hasDisplayName==true)
+        {
+            byte[] zlcxe5bu = _buffer.convertString(displayName);
+            _buffer.writeVaruint((int)zlcxe5bu.length);
+            _buffer.writeBytes(zlcxe5bu);
+        }
     }
 
     @Override
@@ -71,8 +74,11 @@ public class ListAddPlayer extends Type
         gamemode = _buffer.readVaruint();
         latency = _buffer.readVaruint();
         hasDisplayName = _buffer.readBool();
-        final int bvzlcxe5 = _buffer.readVaruint();
-        displayName = _buffer.readString(bvzlcxe5);
+        if(hasDisplayName==true)
+        {
+            final int bvzlcxe5 = _buffer.readVaruint();
+            displayName = _buffer.readString(bvzlcxe5);
+        }
     }
 
 }

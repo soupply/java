@@ -45,9 +45,12 @@ public class CommandOutput extends soupply.bedrock261.Packet
         {
             bvcfzm.encodeBody(_buffer);
         }
-        byte[] d5b9bq = _buffer.convertString(unknown4);
-        _buffer.writeVaruint((int)d5b9bq.length);
-        _buffer.writeBytes(d5b9bq);
+        if(outputType==4)
+        {
+            byte[] d5b9bq = _buffer.convertString(unknown4);
+            _buffer.writeVaruint((int)d5b9bq.length);
+            _buffer.writeBytes(d5b9bq);
+        }
     }
 
     @Override
@@ -62,8 +65,11 @@ public class CommandOutput extends soupply.bedrock261.Packet
         {
             messages[bvcfzm].decodeBody(_buffer);
         }
-        final int bvd5b9bq = _buffer.readVaruint();
-        unknown4 = _buffer.readString(bvd5b9bq);
+        if(outputType==4)
+        {
+            final int bvd5b9bq = _buffer.readVaruint();
+            unknown4 = _buffer.readString(bvd5b9bq);
+        }
     }
 
     public static CommandOutput fromBuffer(byte[] buffer)

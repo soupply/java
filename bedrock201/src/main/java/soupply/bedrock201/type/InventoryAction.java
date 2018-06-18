@@ -38,8 +38,14 @@ public class InventoryAction extends Type
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(source);
-        _buffer.writeVarint(container);
-        _buffer.writeVaruint(unknown2);
+        if(source==0)
+        {
+            _buffer.writeVarint(container);
+        }
+        if(source==2)
+        {
+            _buffer.writeVaruint(unknown2);
+        }
         _buffer.writeVaruint(slot);
         oldItem.encodeBody(_buffer);
         newItem.encodeBody(_buffer);
@@ -49,8 +55,14 @@ public class InventoryAction extends Type
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         source = _buffer.readVaruint();
-        container = _buffer.readVarint();
-        unknown2 = _buffer.readVaruint();
+        if(source==0)
+        {
+            container = _buffer.readVarint();
+        }
+        if(source==2)
+        {
+            unknown2 = _buffer.readVaruint();
+        }
         slot = _buffer.readVaruint();
         oldItem.decodeBody(_buffer);
         newItem.decodeBody(_buffer);

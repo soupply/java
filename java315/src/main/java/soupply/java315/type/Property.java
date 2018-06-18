@@ -33,9 +33,12 @@ public class Property extends Type
         _buffer.writeVaruint((int)dfdu.length);
         _buffer.writeBytes(dfdu);
         _buffer.writeBool(signed);
-        byte[] clbfdj = _buffer.convertString(signature);
-        _buffer.writeVaruint((int)clbfdj.length);
-        _buffer.writeBytes(clbfdj);
+        if(signed==true)
+        {
+            byte[] clbfdj = _buffer.convertString(signature);
+            _buffer.writeVaruint((int)clbfdj.length);
+            _buffer.writeBytes(clbfdj);
+        }
     }
 
     @Override
@@ -46,8 +49,11 @@ public class Property extends Type
         final int bvdfdu = _buffer.readVaruint();
         value = _buffer.readString(bvdfdu);
         signed = _buffer.readBool();
-        final int bvclbfdj = _buffer.readVaruint();
-        signature = _buffer.readString(bvclbfdj);
+        if(signed==true)
+        {
+            final int bvclbfdj = _buffer.readVaruint();
+            signature = _buffer.readString(bvclbfdj);
+        }
     }
 
 }

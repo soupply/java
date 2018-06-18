@@ -45,7 +45,10 @@ public class UpdateScore extends soupply.java.Packet
         byte[] bjznaztf = _buffer.convertString(objectiveName);
         _buffer.writeVaruint((int)bjznaztf.length);
         _buffer.writeBytes(bjznaztf);
-        _buffer.writeVaruint(value);
+        if(action==0)
+        {
+            _buffer.writeVaruint(value);
+        }
     }
 
     @Override
@@ -56,7 +59,10 @@ public class UpdateScore extends soupply.java.Packet
         action = _buffer.readByte();
         final int bvbjznaz = _buffer.readVaruint();
         objectiveName = _buffer.readString(bvbjznaz);
-        value = _buffer.readVaruint();
+        if(action==0)
+        {
+            value = _buffer.readVaruint();
+        }
     }
 
     public static UpdateScore fromBuffer(byte[] buffer)

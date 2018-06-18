@@ -27,18 +27,24 @@ public class Slot extends Type
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBigEndianShort(id);
-        _buffer.writeByte(count);
-        _buffer.writeBigEndianShort(damage);
-        _buffer.writeBytes(nbt);
+        if(id>0)
+        {
+            _buffer.writeByte(count);
+            _buffer.writeBigEndianShort(damage);
+            _buffer.writeBytes(nbt);
+        }
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         id = _buffer.readBigEndianShort();
-        count = _buffer.readByte();
-        damage = _buffer.readBigEndianShort();
-        nbt = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+        if(id>0)
+        {
+            count = _buffer.readByte();
+            damage = _buffer.readBigEndianShort();
+            nbt = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+        }
     }
 
 }

@@ -31,17 +31,23 @@ public class AdvancementProgress extends soupply.java340.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBool(notEmpty);
-        byte[] arbrzlc = _buffer.convertString(identifier);
-        _buffer.writeVaruint((int)arbrzlc.length);
-        _buffer.writeBytes(arbrzlc);
+        if(notEmpty==true)
+        {
+            byte[] arbrzlc = _buffer.convertString(identifier);
+            _buffer.writeVaruint((int)arbrzlc.length);
+            _buffer.writeBytes(arbrzlc);
+        }
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         notEmpty = _buffer.readBool();
-        final int bvarbrzl = _buffer.readVaruint();
-        identifier = _buffer.readString(bvarbrzl);
+        if(notEmpty==true)
+        {
+            final int bvarbrzl = _buffer.readVaruint();
+            identifier = _buffer.readString(bvarbrzl);
+        }
     }
 
     public static AdvancementProgress fromBuffer(byte[] buffer)

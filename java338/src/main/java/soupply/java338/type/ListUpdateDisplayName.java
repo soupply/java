@@ -27,9 +27,12 @@ public class ListUpdateDisplayName extends Type
     {
         _buffer.writeUUID(uuid);
         _buffer.writeBool(hasDisplayName);
-        byte[] zlcxe5bu = _buffer.convertString(displayName);
-        _buffer.writeVaruint((int)zlcxe5bu.length);
-        _buffer.writeBytes(zlcxe5bu);
+        if(hasDisplayName==true)
+        {
+            byte[] zlcxe5bu = _buffer.convertString(displayName);
+            _buffer.writeVaruint((int)zlcxe5bu.length);
+            _buffer.writeBytes(zlcxe5bu);
+        }
     }
 
     @Override
@@ -37,8 +40,11 @@ public class ListUpdateDisplayName extends Type
     {
         uuid = _buffer.readUUID();
         hasDisplayName = _buffer.readBool();
-        final int bvzlcxe5 = _buffer.readVaruint();
-        displayName = _buffer.readString(bvzlcxe5);
+        if(hasDisplayName==true)
+        {
+            final int bvzlcxe5 = _buffer.readVaruint();
+            displayName = _buffer.readString(bvzlcxe5);
+        }
     }
 
 }

@@ -48,11 +48,17 @@ public class CommandBlockUpdate extends soupply.bedrock261.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBool(updateBlock);
-        position.encodeBody(_buffer);
-        _buffer.writeVaruint(mode);
-        _buffer.writeBool(redstoneMode);
-        _buffer.writeBool(conditional);
-        _buffer.writeVarlong(minecart);
+        if(updateBlock==true)
+        {
+            position.encodeBody(_buffer);
+            _buffer.writeVaruint(mode);
+            _buffer.writeBool(redstoneMode);
+            _buffer.writeBool(conditional);
+        }
+        if(updateBlock==false)
+        {
+            _buffer.writeVarlong(minecart);
+        }
         byte[] y9bfz = _buffer.convertString(command);
         _buffer.writeVaruint((int)y9bfz.length);
         _buffer.writeBytes(y9bfz);
@@ -69,11 +75,17 @@ public class CommandBlockUpdate extends soupply.bedrock261.Packet
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         updateBlock = _buffer.readBool();
-        position.decodeBody(_buffer);
-        mode = _buffer.readVaruint();
-        redstoneMode = _buffer.readBool();
-        conditional = _buffer.readBool();
-        minecart = _buffer.readVarlong();
+        if(updateBlock==true)
+        {
+            position.decodeBody(_buffer);
+            mode = _buffer.readVaruint();
+            redstoneMode = _buffer.readBool();
+            conditional = _buffer.readBool();
+        }
+        if(updateBlock==false)
+        {
+            minecart = _buffer.readVarlong();
+        }
         final int bvy9bfz = _buffer.readVaruint();
         command = _buffer.readString(bvy9bfz);
         final int bvbfd9db = _buffer.readVaruint();

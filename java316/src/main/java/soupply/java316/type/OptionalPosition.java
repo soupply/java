@@ -23,14 +23,20 @@ public class OptionalPosition extends Type
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBool(hasPosition);
-        _buffer.writeBigEndianLong(position);
+        if(hasPosition==true)
+        {
+            _buffer.writeBigEndianLong(position);
+        }
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws BufferOverflowException
     {
         hasPosition = _buffer.readBool();
-        position = _buffer.readBigEndianLong();
+        if(hasPosition==true)
+        {
+            position = _buffer.readBigEndianLong();
+        }
     }
 
 }

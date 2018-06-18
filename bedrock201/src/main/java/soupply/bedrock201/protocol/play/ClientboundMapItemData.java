@@ -49,16 +49,25 @@ public class ClientboundMapItemData extends soupply.bedrock201.Packet
     {
         _buffer.writeVarlong(mapId);
         _buffer.writeVaruint(update);
-        _buffer.writeByte(scale);
-        _buffer.writeVarint(size.x);
-        _buffer.writeVarint(size.z);
-        _buffer.writeVarint(offset.x);
-        _buffer.writeVarint(offset.z);
-        _buffer.writeBytes(data);
-        _buffer.writeVaruint((int)decorations.length);
-        for(soupply.bedrock201.type.Decoration zvbjdlbm:decorations)
+        if(update==2||update==4)
         {
-            zvbjdlbm.encodeBody(_buffer);
+            _buffer.writeByte(scale);
+        }
+        if(update==2)
+        {
+            _buffer.writeVarint(size.x);
+            _buffer.writeVarint(size.z);
+            _buffer.writeVarint(offset.x);
+            _buffer.writeVarint(offset.z);
+            _buffer.writeBytes(data);
+        }
+        if(update==4)
+        {
+            _buffer.writeVaruint((int)decorations.length);
+            for(soupply.bedrock201.type.Decoration zvbjdlbm:decorations)
+            {
+                zvbjdlbm.encodeBody(_buffer);
+            }
         }
     }
 
@@ -67,17 +76,26 @@ public class ClientboundMapItemData extends soupply.bedrock201.Packet
     {
         mapId = _buffer.readVarlong();
         update = _buffer.readVaruint();
-        scale = _buffer.readByte();
-        size.x = _buffer.readVarint();
-        size.z = _buffer.readVarint();
-        offset.x = _buffer.readVarint();
-        offset.z = _buffer.readVarint();
-        data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
-        final int bry9yrb5 = _buffer.readVaruint();
-        decorations = new soupply.bedrock201.type.Decoration[bry9yrb5];
-        for(int zvbjdlbm=0;zvbjdlbm<decorations.length;zvbjdlbm++)
+        if(update==2||update==4)
         {
-            decorations[zvbjdlbm].decodeBody(_buffer);
+            scale = _buffer.readByte();
+        }
+        if(update==2)
+        {
+            size.x = _buffer.readVarint();
+            size.z = _buffer.readVarint();
+            offset.x = _buffer.readVarint();
+            offset.z = _buffer.readVarint();
+            data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
+        }
+        if(update==4)
+        {
+            final int bry9yrb5 = _buffer.readVaruint();
+            decorations = new soupply.bedrock201.type.Decoration[bry9yrb5];
+            for(int zvbjdlbm=0;zvbjdlbm<decorations.length;zvbjdlbm++)
+            {
+                decorations[zvbjdlbm].decodeBody(_buffer);
+            }
         }
     }
 

@@ -49,10 +49,13 @@ public class UnlockRecipes extends soupply.java.Packet
         {
             _buffer.writeVaruint(cvabc);
         }
-        _buffer.writeVaruint((int)bookRecipes.length);
-        for(int y9ajylzm:bookRecipes)
+        if(action==1||action==3)
         {
-            _buffer.writeVaruint(y9ajylzm);
+            _buffer.writeVaruint((int)bookRecipes.length);
+            for(int y9ajylzm:bookRecipes)
+            {
+                _buffer.writeVaruint(y9ajylzm);
+            }
         }
     }
 
@@ -68,11 +71,14 @@ public class UnlockRecipes extends soupply.java.Packet
         {
             recipes[cvabc] = _buffer.readVaruint();
         }
-        final int bjbtzncv = _buffer.readVaruint();
-        bookRecipes = new int[bjbtzncv];
-        for(int y9ajylzm=0;y9ajylzm<bookRecipes.length;y9ajylzm++)
+        if(action==1||action==3)
         {
-            bookRecipes[y9ajylzm] = _buffer.readVaruint();
+            final int bjbtzncv = _buffer.readVaruint();
+            bookRecipes = new int[bjbtzncv];
+            for(int y9ajylzm=0;y9ajylzm<bookRecipes.length;y9ajylzm++)
+            {
+                bookRecipes[y9ajylzm] = _buffer.readVaruint();
+            }
         }
     }
 

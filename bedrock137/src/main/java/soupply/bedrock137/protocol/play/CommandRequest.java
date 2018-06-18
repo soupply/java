@@ -47,7 +47,10 @@ public class CommandRequest extends soupply.bedrock137.Packet
         byte[] cvdvdl = _buffer.convertString(requestId);
         _buffer.writeVaruint((int)cvdvdl.length);
         _buffer.writeBytes(cvdvdl);
-        _buffer.writeVarint(playerId);
+        if(type==3)
+        {
+            _buffer.writeVarint(playerId);
+        }
     }
 
     @Override
@@ -58,7 +61,10 @@ public class CommandRequest extends soupply.bedrock137.Packet
         type = _buffer.readVaruint();
         final int bvcvdvdl = _buffer.readVaruint();
         requestId = _buffer.readString(bvcvdvdl);
-        playerId = _buffer.readVarint();
+        if(type==3)
+        {
+            playerId = _buffer.readVarint();
+        }
     }
 
     public static CommandRequest fromBuffer(byte[] buffer)

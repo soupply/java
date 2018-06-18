@@ -62,7 +62,7 @@ public class InventoryTransaction extends soupply.bedrock137.Packet
         this.encodeBody(_buffer);
     }
 
-    public class Normal0 extends soupply.util.Packet
+    public class Normal0 extends Type
     {
 
         @Override
@@ -79,7 +79,7 @@ public class InventoryTransaction extends soupply.bedrock137.Packet
 
     }
 
-    public class Normal1 extends soupply.util.Packet
+    public class Normal1 extends Type
     {
 
         @Override
@@ -96,7 +96,7 @@ public class InventoryTransaction extends soupply.bedrock137.Packet
 
     }
 
-    public class UseItem extends soupply.util.Packet
+    public class UseItem extends Type
     {
 
         // action type
@@ -167,7 +167,7 @@ public class InventoryTransaction extends soupply.bedrock137.Packet
 
     }
 
-    public class UseItemOnEntity extends soupply.util.Packet
+    public class UseItemOnEntity extends Type
     {
 
         // action type
@@ -232,7 +232,7 @@ public class InventoryTransaction extends soupply.bedrock137.Packet
 
     }
 
-    public class ReleaseItem extends soupply.util.Packet
+    public class ReleaseItem extends Type
     {
 
         // action type

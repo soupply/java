@@ -49,7 +49,7 @@ public class CraftingBookData extends soupply.java.Packet
         this.encodeBody(_buffer);
     }
 
-    public class DisplayedRecipe extends soupply.util.Packet
+    public class DisplayedRecipe extends Type
     {
 
         public int id;
@@ -79,7 +79,7 @@ public class CraftingBookData extends soupply.java.Packet
 
     }
 
-    public class CraftingBookStatus extends soupply.util.Packet
+    public class CraftingBookStatus extends Type
     {
 
         public boolean bookOpened;

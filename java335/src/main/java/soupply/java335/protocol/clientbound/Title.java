@@ -49,7 +49,7 @@ public class Title extends soupply.java335.Packet
         this.encodeBody(_buffer);
     }
 
-    public class SetTitle extends soupply.util.Packet
+    public class SetTitle extends Type
     {
 
         public String text;
@@ -82,7 +82,7 @@ public class Title extends soupply.java335.Packet
 
     }
 
-    public class SetSubtitle extends soupply.util.Packet
+    public class SetSubtitle extends Type
     {
 
         public String text;
@@ -115,7 +115,7 @@ public class Title extends soupply.java335.Packet
 
     }
 
-    public class SetActionBar extends soupply.util.Packet
+    public class SetActionBar extends Type
     {
 
         public String text;
@@ -148,7 +148,7 @@ public class Title extends soupply.java335.Packet
 
     }
 
-    public class SetTimings extends soupply.util.Packet
+    public class SetTimings extends Type
     {
 
         public int fadeIn;
@@ -186,7 +186,7 @@ public class Title extends soupply.java335.Packet
 
     }
 
-    public class Hide extends soupply.util.Packet
+    public class Hide extends Type
     {
 
         @Override
@@ -203,7 +203,7 @@ public class Title extends soupply.java335.Packet
 
     }
 
-    public class Reset extends soupply.util.Packet
+    public class Reset extends Type
     {
 
         @Override

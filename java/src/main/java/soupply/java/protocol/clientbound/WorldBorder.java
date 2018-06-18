@@ -49,7 +49,7 @@ public class WorldBorder extends soupply.java.Packet
         this.encodeBody(_buffer);
     }
 
-    public class SetSize extends soupply.util.Packet
+    public class SetSize extends Type
     {
 
         public double diameter;
@@ -79,7 +79,7 @@ public class WorldBorder extends soupply.java.Packet
 
     }
 
-    public class LerpSize extends soupply.util.Packet
+    public class LerpSize extends Type
     {
 
         public double oldDiameter;
@@ -117,7 +117,7 @@ public class WorldBorder extends soupply.java.Packet
 
     }
 
-    public class SetCenter extends soupply.util.Packet
+    public class SetCenter extends Type
     {
 
         public DoubleXYZ center;
@@ -152,7 +152,7 @@ public class WorldBorder extends soupply.java.Packet
 
     }
 
-    public class Initialize extends soupply.util.Packet
+    public class Initialize extends Type
     {
 
         public DoubleXYZ center;
@@ -211,7 +211,7 @@ public class WorldBorder extends soupply.java.Packet
 
     }
 
-    public class SetWarningTime extends soupply.util.Packet
+    public class SetWarningTime extends Type
     {
 
         public int warningTime;
@@ -241,7 +241,7 @@ public class WorldBorder extends soupply.java.Packet
 
     }
 
-    public class SetWarningBlocks extends soupply.util.Packet
+    public class SetWarningBlocks extends Type
     {
 
         public int warningBlocks;

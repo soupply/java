@@ -53,7 +53,7 @@ public class Text extends soupply.bedrock.Packet
         this.encodeBody(_buffer);
     }
 
-    public class Raw extends soupply.util.Packet
+    public class Raw extends Type
     {
 
         public String message;
@@ -93,7 +93,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class Chat extends soupply.util.Packet
+    public class Chat extends Type
     {
 
         public String sender;
@@ -140,7 +140,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class Translation extends soupply.util.Packet
+    public class Translation extends Type
     {
 
         public String message;
@@ -189,7 +189,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class Popup extends soupply.util.Packet
+    public class Popup extends Type
     {
 
         public String title;
@@ -229,7 +229,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class JukeboxPopup extends soupply.util.Packet
+    public class JukeboxPopup extends Type
     {
 
         public String message;
@@ -278,7 +278,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class Tip extends soupply.util.Packet
+    public class Tip extends Type
     {
 
         public String message;
@@ -311,7 +311,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class System extends soupply.util.Packet
+    public class System extends Type
     {
 
         public String message;
@@ -344,7 +344,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class Whisper extends soupply.util.Packet
+    public class Whisper extends Type
     {
 
         public String sender;
@@ -384,7 +384,7 @@ public class Text extends soupply.bedrock.Packet
 
     }
 
-    public class Announcement extends soupply.util.Packet
+    public class Announcement extends Type
     {
 
         public String announcer;

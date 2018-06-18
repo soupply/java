@@ -49,7 +49,7 @@ public class PlayerListItem extends soupply.java210.Packet
         this.encodeBody(_buffer);
     }
 
-    public class AddPlayer extends soupply.util.Packet
+    public class AddPlayer extends Type
     {
 
         public soupply.java210.type.ListAddPlayer[] players;
@@ -88,7 +88,7 @@ public class PlayerListItem extends soupply.java210.Packet
 
     }
 
-    public class UpdateGamemode extends soupply.util.Packet
+    public class UpdateGamemode extends Type
     {
 
         public soupply.java210.type.ListUpdateGamemode[] players;
@@ -127,7 +127,7 @@ public class PlayerListItem extends soupply.java210.Packet
 
     }
 
-    public class UpdateLatency extends soupply.util.Packet
+    public class UpdateLatency extends Type
     {
 
         public soupply.java210.type.ListUpdateLatency[] players;
@@ -166,7 +166,7 @@ public class PlayerListItem extends soupply.java210.Packet
 
     }
 
-    public class UpdateDisplayName extends soupply.util.Packet
+    public class UpdateDisplayName extends Type
     {
 
         public soupply.java210.type.ListUpdateDisplayName[] players;
@@ -205,7 +205,7 @@ public class PlayerListItem extends soupply.java210.Packet
 
     }
 
-    public class RemovePlayer extends soupply.util.Packet
+    public class RemovePlayer extends Type
     {
 
         public UUID[] players;

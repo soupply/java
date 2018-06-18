@@ -56,7 +56,7 @@ public class Teams extends soupply.java338.Packet
         this.encodeBody(_buffer);
     }
 
-    public class CreateTeam extends soupply.util.Packet
+    public class CreateTeam extends Type
     {
 
         // friendly flags
@@ -157,7 +157,7 @@ public class Teams extends soupply.java338.Packet
 
     }
 
-    public class RemoveTeam extends soupply.util.Packet
+    public class RemoveTeam extends Type
     {
 
         @Override
@@ -174,7 +174,7 @@ public class Teams extends soupply.java338.Packet
 
     }
 
-    public class UpdateTeamInfo extends soupply.util.Packet
+    public class UpdateTeamInfo extends Type
     {
 
         // friendly flags
@@ -259,7 +259,7 @@ public class Teams extends soupply.java338.Packet
 
     }
 
-    public class AddPlayers extends soupply.util.Packet
+    public class AddPlayers extends Type
     {
 
         public String[] players;
@@ -301,7 +301,7 @@ public class Teams extends soupply.java338.Packet
 
     }
 
-    public class RemovePlayers extends soupply.util.Packet
+    public class RemovePlayers extends Type
     {
 
         public String[] players;

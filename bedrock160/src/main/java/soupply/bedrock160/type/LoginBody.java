@@ -24,7 +24,7 @@ public class LoginBody extends Type
     {
         Buffer _nbuffer = new Buffer();
         this.encodeBodyImpl(_nbuffer);
-        _buffer.writeVaruint(_nbuffer.length);
+        _buffer.writeVaruint(_nbuffer._buffer.length);
         _buffer.writeBytes(_nbuffer.toByteArray());
     }
 

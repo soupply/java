@@ -16,7 +16,7 @@ public class MetadataNbt extends MetadataValue
 
     public MetadataNbt(byte id)
     {
-        this(id, (byte[])0);
+        this(id, new byte[]{});
     }
 
     @Override

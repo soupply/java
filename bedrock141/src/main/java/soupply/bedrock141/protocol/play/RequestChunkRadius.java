@@ -32,7 +32,7 @@ public class RequestChunkRadius extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         radius = _buffer.readVarint();
     }

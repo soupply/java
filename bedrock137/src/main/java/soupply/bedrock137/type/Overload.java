@@ -28,7 +28,7 @@ public class Overload extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bbcfzrcm = _buffer.readVaruint();
         parameters = new soupply.bedrock137.type.Parameter[bbcfzrcm];

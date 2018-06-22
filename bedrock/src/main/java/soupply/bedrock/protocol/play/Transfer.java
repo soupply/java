@@ -37,7 +37,7 @@ public class Transfer extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvaa = _buffer.readVaruint();
         ip = _buffer.readString(bvaa);

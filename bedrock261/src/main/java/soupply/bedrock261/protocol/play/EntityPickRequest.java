@@ -35,7 +35,7 @@ public class EntityPickRequest extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityType = _buffer.readLittleEndianLong();
         slot = _buffer.readByte();

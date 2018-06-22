@@ -35,7 +35,7 @@ public class Text extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         type = _buffer.readByte();
         unknown1 = _buffer.readBool();
@@ -83,7 +83,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvbvcfz = _buffer.readVaruint();
             message = _buffer.readString(bvbvcfz);
@@ -128,7 +128,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvcvzv = _buffer.readVaruint();
             sender = _buffer.readString(bvcvzv);
@@ -174,7 +174,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvbvcfz = _buffer.readVaruint();
             message = _buffer.readString(bvbvcfz);
@@ -219,7 +219,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvdlbu = _buffer.readVaruint();
             title = _buffer.readString(bvdlbu);
@@ -263,7 +263,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvbvcfz = _buffer.readVaruint();
             message = _buffer.readString(bvbvcfz);
@@ -303,7 +303,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvbvcfz = _buffer.readVaruint();
             message = _buffer.readString(bvbvcfz);
@@ -336,7 +336,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvbvcfz = _buffer.readVaruint();
             message = _buffer.readString(bvbvcfz);
@@ -374,7 +374,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvcvzv = _buffer.readVaruint();
             sender = _buffer.readString(bvcvzv);
@@ -414,7 +414,7 @@ public class Text extends soupply.bedrock150.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvy5bvyv = _buffer.readVaruint();
             announcer = _buffer.readString(bvy5bvyv);

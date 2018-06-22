@@ -54,7 +54,7 @@ public class CommandOutput extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         originData.decodeBody(_buffer);
         outputType = _buffer.readByte();

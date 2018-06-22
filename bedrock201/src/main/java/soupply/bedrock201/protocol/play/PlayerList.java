@@ -32,7 +32,7 @@ public class PlayerList extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readByte();
     }
@@ -76,7 +76,7 @@ public class PlayerList extends soupply.bedrock201.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.bedrock201.type.PlayerList[bbylcm];
@@ -115,7 +115,7 @@ public class PlayerList extends soupply.bedrock201.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.bedrock201.type.McpeUuid[bbylcm];

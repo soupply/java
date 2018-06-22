@@ -43,7 +43,7 @@ public class SetSpawnPosition extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         type = _buffer.readVarint();
         position.decodeBody(_buffer);

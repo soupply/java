@@ -59,7 +59,7 @@ public class WindowProperty extends soupply.java340.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         window = _buffer.readByte();
         property = _buffer.readBigEndianShort();

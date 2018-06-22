@@ -40,7 +40,7 @@ public class BossEvent extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVarlong();
         eventId = _buffer.readVaruint();

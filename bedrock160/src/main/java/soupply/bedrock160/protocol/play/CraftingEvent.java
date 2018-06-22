@@ -53,7 +53,7 @@ public class CraftingEvent extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         window = _buffer.readByte();
         type = _buffer.readVarint();

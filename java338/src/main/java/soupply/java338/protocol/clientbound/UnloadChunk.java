@@ -34,7 +34,7 @@ public class UnloadChunk extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.x = _buffer.readBigEndianInt();
         position.z = _buffer.readBigEndianInt();

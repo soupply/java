@@ -52,7 +52,7 @@ public class InventoryAction extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         source = _buffer.readVaruint();
         if(source==0)

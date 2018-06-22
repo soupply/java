@@ -60,7 +60,7 @@ public class ListAddPlayer extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         uuid = _buffer.readUUID();
         final int bvbfz = _buffer.readVaruint();

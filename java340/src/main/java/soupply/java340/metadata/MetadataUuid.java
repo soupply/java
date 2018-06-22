@@ -16,6 +16,7 @@ public class MetadataUuid extends MetadataValue
 
     public MetadataUuid(byte id)
     {
+        this(id, new soupply.java340.type.OptionalUuid());
     }
 
     @Override
@@ -26,7 +27,7 @@ public class MetadataUuid extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value.decodeBody(_buffer);
     }

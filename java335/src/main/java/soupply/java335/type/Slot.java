@@ -36,7 +36,7 @@ public class Slot extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         id = _buffer.readBigEndianShort();
         if(id>0)

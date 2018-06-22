@@ -48,7 +48,7 @@ public class PlayerBlockPlacement extends soupply.java335.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position = _buffer.readBigEndianLong();
         face = _buffer.readVaruint();

@@ -67,7 +67,7 @@ public class ClientSettings extends soupply.java315.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvbfzvzu = _buffer.readVaruint();
         language = _buffer.readString(bvbfzvzu);

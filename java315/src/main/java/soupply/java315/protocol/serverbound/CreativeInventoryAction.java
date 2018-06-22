@@ -36,7 +36,7 @@ public class CreativeInventoryAction extends soupply.java315.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         slot = _buffer.readBigEndianShort();
         clickedItem.decodeBody(_buffer);

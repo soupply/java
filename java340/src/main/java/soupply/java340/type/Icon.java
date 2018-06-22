@@ -41,7 +41,7 @@ public class Icon extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         directionAndType = _buffer.readByte();
         position.x = _buffer.readByte();

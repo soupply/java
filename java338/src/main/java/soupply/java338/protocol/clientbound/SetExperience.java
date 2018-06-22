@@ -38,7 +38,7 @@ public class SetExperience extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         experience = _buffer.readBigEndianFloat();
         level = _buffer.readVaruint();

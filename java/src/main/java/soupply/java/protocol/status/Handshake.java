@@ -47,7 +47,7 @@ public class Handshake extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         protocol = _buffer.readVaruint();
         final int bvcvdvqr = _buffer.readVaruint();

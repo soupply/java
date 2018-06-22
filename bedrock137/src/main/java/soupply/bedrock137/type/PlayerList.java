@@ -42,7 +42,7 @@ public class PlayerList extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         uuid.decodeBody(_buffer);
         entityId = _buffer.readVarlong();

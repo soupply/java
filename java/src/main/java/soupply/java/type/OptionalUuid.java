@@ -28,7 +28,7 @@ public class OptionalUuid extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         hasUuid = _buffer.readBool();
         uuid = _buffer.readUUID();

@@ -60,7 +60,7 @@ public class SpawnObject extends soupply.java340.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVaruint();
         uuid = _buffer.readUUID();

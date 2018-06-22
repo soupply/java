@@ -45,7 +45,7 @@ public class Explode extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.x = _buffer.readLittleEndianFloat();
         position.y = _buffer.readLittleEndianFloat();

@@ -32,7 +32,7 @@ public class CraftingBookData extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         type = _buffer.readVaruint();
     }
@@ -72,7 +72,7 @@ public class CraftingBookData extends soupply.java338.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             id = _buffer.readBigEndianInt();
         }
@@ -105,7 +105,7 @@ public class CraftingBookData extends soupply.java338.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             bookOpened = _buffer.readBool();
             filtering = _buffer.readBool();

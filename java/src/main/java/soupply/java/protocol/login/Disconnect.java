@@ -34,7 +34,7 @@ public class Disconnect extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvcvc9 = _buffer.readVaruint();
         reason = _buffer.readString(bvcvc9);

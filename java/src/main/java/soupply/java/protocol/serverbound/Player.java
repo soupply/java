@@ -32,7 +32,7 @@ public class Player extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         onGround = _buffer.readBool();
     }

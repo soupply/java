@@ -49,7 +49,7 @@ public class Interact extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readByte();
         target = _buffer.readVarlong();

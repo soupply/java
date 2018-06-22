@@ -35,7 +35,7 @@ public class TimeUpdate extends soupply.java315.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         worldAge = _buffer.readBigEndianLong();
         time = _buffer.readBigEndianLong();

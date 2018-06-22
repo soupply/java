@@ -39,7 +39,7 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         type = _buffer.readVaruint();
         final int bfdlbm = _buffer.readVaruint();
@@ -73,7 +73,7 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
         }
 
@@ -90,7 +90,7 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
         }
 
@@ -150,7 +150,7 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             actionType = _buffer.readVaruint();
             blockPosition.decodeBody(_buffer);
@@ -216,7 +216,7 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             entityId = _buffer.readVarlong();
             actionType = _buffer.readVaruint();
@@ -272,7 +272,7 @@ public class InventoryTransaction extends soupply.bedrock261.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             actionType = _buffer.readVaruint();
             hotbarSlot = _buffer.readVarint();

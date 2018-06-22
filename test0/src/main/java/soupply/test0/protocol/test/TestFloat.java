@@ -38,7 +38,7 @@ public class TestFloat extends soupply.test0.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         a = _buffer.readBigEndianFloat();
         b = _buffer.readBigEndianDouble();

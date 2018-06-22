@@ -42,7 +42,7 @@ public class DisplayScoreboard extends soupply.java210.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position = _buffer.readByte();
         final int bvcncvy1 = _buffer.readVaruint();

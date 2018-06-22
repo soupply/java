@@ -41,7 +41,7 @@ public class PlayerInput extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         sideways = _buffer.readLittleEndianFloat();
         forward = _buffer.readLittleEndianFloat();

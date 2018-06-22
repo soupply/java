@@ -39,7 +39,7 @@ public class PlayerListHeaderAndFooter extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvavzv = _buffer.readVaruint();
         header = _buffer.readString(bvavzv);

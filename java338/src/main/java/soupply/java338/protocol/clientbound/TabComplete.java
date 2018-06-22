@@ -38,7 +38,7 @@ public class TabComplete extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int b1dnzm = _buffer.readVaruint();
         matches = new String[b1dnzm];

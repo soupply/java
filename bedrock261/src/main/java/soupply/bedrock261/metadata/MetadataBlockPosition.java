@@ -16,6 +16,7 @@ public class MetadataBlockPosition extends MetadataValue
 
     public MetadataBlockPosition(int id)
     {
+        this(id, new IntXYZ());
     }
 
     @Override
@@ -28,7 +29,7 @@ public class MetadataBlockPosition extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value.x = _buffer.readVarint();
         value.y = _buffer.readVarint();

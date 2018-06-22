@@ -37,7 +37,7 @@ public class Decoration extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         rotationAndIcon = _buffer.readVarint();
         position.x = _buffer.readByte();

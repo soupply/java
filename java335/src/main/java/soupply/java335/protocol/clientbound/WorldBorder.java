@@ -32,7 +32,7 @@ public class WorldBorder extends soupply.java335.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readVaruint();
     }
@@ -72,7 +72,7 @@ public class WorldBorder extends soupply.java335.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             diameter = _buffer.readBigEndianDouble();
         }
@@ -108,7 +108,7 @@ public class WorldBorder extends soupply.java335.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             oldDiameter = _buffer.readBigEndianDouble();
             newDiameter = _buffer.readBigEndianDouble();
@@ -143,7 +143,7 @@ public class WorldBorder extends soupply.java335.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             center.x = _buffer.readBigEndianDouble();
             center.y = _buffer.readBigEndianDouble();
@@ -196,7 +196,7 @@ public class WorldBorder extends soupply.java335.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             center.x = _buffer.readBigEndianDouble();
             center.y = _buffer.readBigEndianDouble();
@@ -234,7 +234,7 @@ public class WorldBorder extends soupply.java335.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             warningTime = _buffer.readVaruint();
         }
@@ -264,7 +264,7 @@ public class WorldBorder extends soupply.java335.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             warningBlocks = _buffer.readVaruint();
         }

@@ -109,7 +109,7 @@ public class Particle extends soupply.java316.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         particleId = _buffer.readBigEndianInt();
         longDistance = _buffer.readBool();

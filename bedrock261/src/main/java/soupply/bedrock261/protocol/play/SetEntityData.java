@@ -36,7 +36,7 @@ public class SetEntityData extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVarlong();
         metadata.decodeBody(_buffer);

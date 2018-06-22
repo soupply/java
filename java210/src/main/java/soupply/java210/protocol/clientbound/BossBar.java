@@ -36,7 +36,7 @@ public class BossBar extends soupply.java210.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         uuid = _buffer.readUUID();
         action = _buffer.readVaruint();
@@ -111,7 +111,7 @@ public class BossBar extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvdlbu = _buffer.readVaruint();
             title = _buffer.readString(bvdlbu);
@@ -134,7 +134,7 @@ public class BossBar extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
         }
 
@@ -163,7 +163,7 @@ public class BossBar extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             health = _buffer.readBigEndianFloat();
         }
@@ -195,7 +195,7 @@ public class BossBar extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvdlbu = _buffer.readVaruint();
             title = _buffer.readString(bvdlbu);
@@ -245,7 +245,7 @@ public class BossBar extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             color = _buffer.readVaruint();
             division = _buffer.readVaruint();
@@ -280,7 +280,7 @@ public class BossBar extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             flags = _buffer.readByte();
         }

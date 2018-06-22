@@ -45,7 +45,7 @@ public class UpdateBlock extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.decodeBody(_buffer);
         block = _buffer.readVaruint();

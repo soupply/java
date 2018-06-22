@@ -1,6 +1,6 @@
 package soupply.bedrock150.metadata;
 
-import java.util.*;
+import java.util.HashMap;
 import soupply.util.*;
 
 public class Metadata extends HashMap<Int, MetadataValue>
@@ -20,7 +20,7 @@ public class Metadata extends HashMap<Int, MetadataValue>
         }
     }
 
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         int length = _buffer.readVaruint();
         while(length-- > 0)
@@ -33,7 +33,7 @@ public class Metadata extends HashMap<Int, MetadataValue>
         }
     }
 
-    public static MetadataValue getMetadataValue(int id, int type)
+    public static MetadataValue getMetadataValue(int id, int type) throws MetadataException
     {
         switch(type)
         {
@@ -46,7 +46,7 @@ public class Metadata extends HashMap<Int, MetadataValue>
             case 6: return new MetadataBlockPosition(id);
             case 7: return new MetadataLong(id);
             case 8: return new MetadataEntityPosition(id);
-            default: return null;
+            default: throw new MetadataException(id, type);
         }
     }
 }

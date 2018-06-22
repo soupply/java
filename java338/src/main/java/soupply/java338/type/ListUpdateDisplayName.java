@@ -36,7 +36,7 @@ public class ListUpdateDisplayName extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         uuid = _buffer.readUUID();
         hasDisplayName = _buffer.readBool();

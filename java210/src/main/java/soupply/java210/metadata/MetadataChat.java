@@ -16,6 +16,7 @@ public class MetadataChat extends MetadataValue
 
     public MetadataChat(byte id)
     {
+        this(id, 0);
     }
 
     @Override
@@ -28,7 +29,7 @@ public class MetadataChat extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvdfdu = _buffer.readVaruint();
         value = _buffer.readString(bvdfdu);

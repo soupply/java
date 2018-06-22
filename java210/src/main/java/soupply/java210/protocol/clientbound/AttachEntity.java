@@ -35,7 +35,7 @@ public class AttachEntity extends soupply.java210.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         target = _buffer.readBigEndianInt();
         holder = _buffer.readBigEndianInt();

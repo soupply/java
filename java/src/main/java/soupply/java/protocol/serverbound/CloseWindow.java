@@ -32,7 +32,7 @@ public class CloseWindow extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         window = _buffer.readByte();
     }

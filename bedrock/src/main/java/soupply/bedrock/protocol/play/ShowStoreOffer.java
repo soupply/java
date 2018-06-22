@@ -42,7 +42,7 @@ public class ShowStoreOffer extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvd5b9ba = _buffer.readVaruint();
         unknown0 = _buffer.readString(bvd5b9ba);

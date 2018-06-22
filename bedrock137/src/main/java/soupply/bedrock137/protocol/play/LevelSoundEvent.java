@@ -213,7 +213,7 @@ public class LevelSoundEvent extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         sound = _buffer.readByte();
         position.x = _buffer.readLittleEndianFloat();

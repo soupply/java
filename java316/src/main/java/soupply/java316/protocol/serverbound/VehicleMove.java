@@ -41,7 +41,7 @@ public class VehicleMove extends soupply.java316.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.x = _buffer.readBigEndianDouble();
         position.y = _buffer.readBigEndianDouble();

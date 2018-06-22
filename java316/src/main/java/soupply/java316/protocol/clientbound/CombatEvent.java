@@ -32,7 +32,7 @@ public class CombatEvent extends soupply.java316.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         eventId = _buffer.readByte();
     }
@@ -60,7 +60,7 @@ public class CombatEvent extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
         }
 
@@ -92,7 +92,7 @@ public class CombatEvent extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             duration = _buffer.readVaruint();
             entityId = _buffer.readBigEndianInt();
@@ -131,7 +131,7 @@ public class CombatEvent extends soupply.java316.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             playerId = _buffer.readVaruint();
             entityId = _buffer.readBigEndianInt();

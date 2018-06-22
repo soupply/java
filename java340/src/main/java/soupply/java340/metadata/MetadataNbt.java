@@ -16,6 +16,7 @@ public class MetadataNbt extends MetadataValue
 
     public MetadataNbt(byte id)
     {
+        this(id, 0);
     }
 
     @Override
@@ -26,7 +27,7 @@ public class MetadataNbt extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
     }

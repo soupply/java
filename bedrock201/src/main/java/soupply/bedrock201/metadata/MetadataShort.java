@@ -16,6 +16,7 @@ public class MetadataShort extends MetadataValue
 
     public MetadataShort(int id)
     {
+        this(id, 0);
     }
 
     @Override
@@ -26,7 +27,7 @@ public class MetadataShort extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value = _buffer.readLittleEndianShort();
     }

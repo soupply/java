@@ -1,6 +1,6 @@
 package soupply.java.metadata;
 
-import java.util.*;
+import java.util.HashMap;
 import soupply.util.*;
 
 public class Metadata extends HashMap<Byte, MetadataValue>
@@ -20,7 +20,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
         _buffer.writeByte((byte)255);
     }
 
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         while(true)
         {
@@ -33,7 +33,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
         }
     }
 
-    public static MetadataValue getMetadataValue(byte id, byte type)
+    public static MetadataValue getMetadataValue(byte id, byte type) throws MetadataException
     {
         switch(type)
         {
@@ -51,7 +51,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
             case 11: return new MetadataUuid(id);
             case 12: return new MetadataBlock(id);
             case 13: return new MetadataNbt(id);
-            default: return null;
+            default: throw new MetadataException(id, type);
         }
     }
 }

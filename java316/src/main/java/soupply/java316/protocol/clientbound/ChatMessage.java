@@ -42,7 +42,7 @@ public class ChatMessage extends soupply.java316.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvbvcfz = _buffer.readVaruint();
         message = _buffer.readString(bvbvcfz);

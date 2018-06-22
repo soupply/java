@@ -72,7 +72,7 @@ public class CommandBlockUpdate extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         updateBlock = _buffer.readBool();
         if(updateBlock==true)

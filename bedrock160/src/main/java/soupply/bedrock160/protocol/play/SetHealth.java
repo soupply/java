@@ -32,7 +32,7 @@ public class SetHealth extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         health = _buffer.readVarint();
     }

@@ -61,7 +61,7 @@ public class CommandRequest extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvy9bfz = _buffer.readVaruint();
         command = _buffer.readString(bvy9bfz);

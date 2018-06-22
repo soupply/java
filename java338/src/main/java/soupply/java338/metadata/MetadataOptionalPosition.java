@@ -16,6 +16,7 @@ public class MetadataOptionalPosition extends MetadataValue
 
     public MetadataOptionalPosition(byte id)
     {
+        this(id, new soupply.java338.type.OptionalPosition());
     }
 
     @Override
@@ -26,7 +27,7 @@ public class MetadataOptionalPosition extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value.decodeBody(_buffer);
     }

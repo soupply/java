@@ -37,7 +37,7 @@ public class ClientStatus extends soupply.java315.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readVaruint();
     }

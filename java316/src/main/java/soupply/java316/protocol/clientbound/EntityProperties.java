@@ -39,7 +39,7 @@ public class EntityProperties extends soupply.java316.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVaruint();
         final int bfdjyvzm = _buffer.readBigEndianInt();

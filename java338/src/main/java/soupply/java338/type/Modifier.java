@@ -36,7 +36,7 @@ public class Modifier extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         uuid = _buffer.readUUID();
         amount = _buffer.readBigEndianDouble();

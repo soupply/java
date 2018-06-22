@@ -54,7 +54,7 @@ public class PlayerPositionAndLook extends soupply.java340.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.x = _buffer.readBigEndianDouble();
         position.y = _buffer.readBigEndianDouble();

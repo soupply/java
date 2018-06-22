@@ -52,7 +52,7 @@ public class UpdateScore extends soupply.java335.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvcncvy1 = _buffer.readVaruint();
         scoreName = _buffer.readString(bvcncvy1);

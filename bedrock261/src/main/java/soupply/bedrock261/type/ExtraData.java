@@ -27,7 +27,7 @@ public class ExtraData extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         key = _buffer.readVaruint();
         value = _buffer.readLittleEndianShort();

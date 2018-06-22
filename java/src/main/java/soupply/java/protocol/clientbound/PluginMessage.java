@@ -37,7 +37,7 @@ public class PluginMessage extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvyhb5b = _buffer.readVaruint();
         channel = _buffer.readString(bvyhb5b);

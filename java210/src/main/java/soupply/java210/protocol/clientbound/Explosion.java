@@ -53,7 +53,7 @@ public class Explosion extends soupply.java210.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.x = _buffer.readBigEndianFloat();
         position.y = _buffer.readBigEndianFloat();

@@ -32,7 +32,7 @@ public class SetLastHurtBy extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         unknown0 = _buffer.readVarint();
     }

@@ -61,13 +61,13 @@ public class ChunkData extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int _length = _buffer.readVaruint();
         this.decodeBodyImpl(new Buffer(_buffer.readBytes(_length)));
     }
 
-    private void decodeBodyImpl(Buffer _buffer) throws BufferOverflowException
+    private void decodeBodyImpl(Buffer _buffer) throws DecodeException
     {
         final int bnyrb5 = _buffer.readVaruint();
         sections = new soupply.bedrock141.type.Section[bnyrb5];

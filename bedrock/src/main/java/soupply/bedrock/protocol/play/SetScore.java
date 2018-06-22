@@ -43,7 +43,7 @@ public class SetScore extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         type = _buffer.readByte();
         final int bnbjc = _buffer.readVaruint();

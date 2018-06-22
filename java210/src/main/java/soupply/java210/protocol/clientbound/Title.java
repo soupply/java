@@ -32,7 +32,7 @@ public class Title extends soupply.java210.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readVaruint();
     }
@@ -74,7 +74,7 @@ public class Title extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvdvd = _buffer.readVaruint();
             text = _buffer.readString(bvdvd);
@@ -107,7 +107,7 @@ public class Title extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bvdvd = _buffer.readVaruint();
             text = _buffer.readString(bvdvd);
@@ -144,7 +144,7 @@ public class Title extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             fadeIn = _buffer.readBigEndianInt();
             stay = _buffer.readBigEndianInt();
@@ -164,7 +164,7 @@ public class Title extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
         }
 
@@ -181,7 +181,7 @@ public class Title extends soupply.java210.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
         }
 

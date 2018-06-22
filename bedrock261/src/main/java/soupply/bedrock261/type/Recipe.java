@@ -34,7 +34,7 @@ public class Recipe extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         type = _buffer.readVarint();
         data = _buffer.readBytes(_buffer._buffer.length-_buffer._index);

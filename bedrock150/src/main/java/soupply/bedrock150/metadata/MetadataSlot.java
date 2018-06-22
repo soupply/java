@@ -16,6 +16,7 @@ public class MetadataSlot extends MetadataValue
 
     public MetadataSlot(int id)
     {
+        this(id, new soupply.bedrock150.type.Slot());
     }
 
     @Override
@@ -26,7 +27,7 @@ public class MetadataSlot extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value.decodeBody(_buffer);
     }

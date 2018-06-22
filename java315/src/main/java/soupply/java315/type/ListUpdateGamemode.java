@@ -34,7 +34,7 @@ public class ListUpdateGamemode extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         uuid = _buffer.readUUID();
         gamemode = _buffer.readVaruint();

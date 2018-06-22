@@ -35,7 +35,7 @@ public class SteerBoat extends soupply.java340.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         rightPaddleTurning = _buffer.readBool();
         leftPaddleTurning = _buffer.readBool();

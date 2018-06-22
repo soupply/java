@@ -30,7 +30,7 @@ public class BlockPosition extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         x = _buffer.readVarint();
         y = _buffer.readVaruint();

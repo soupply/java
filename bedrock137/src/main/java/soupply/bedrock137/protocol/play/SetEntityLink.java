@@ -42,7 +42,7 @@ public class SetEntityLink extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         vehicle = _buffer.readVarlong();
         passenger = _buffer.readVarlong();

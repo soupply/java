@@ -30,7 +30,7 @@ public class OptionalPosition extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         hasPosition = _buffer.readBool();
         if(hasPosition==true)

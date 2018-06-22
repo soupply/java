@@ -36,7 +36,7 @@ public class Attribute extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvav = _buffer.readVaruint();
         key = _buffer.readString(bvav);

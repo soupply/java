@@ -37,7 +37,7 @@ public class ServerSettingsResponse extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         formId = _buffer.readVaruint();
         final int bvzfy = _buffer.readVaruint();

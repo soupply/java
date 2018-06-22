@@ -35,7 +35,7 @@ public class Camera extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         unknown0 = _buffer.readVarlong();
         unknown1 = _buffer.readVarlong();

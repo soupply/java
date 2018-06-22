@@ -38,7 +38,7 @@ public class Link extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         from = _buffer.readVarlong();
         to = _buffer.readVarlong();

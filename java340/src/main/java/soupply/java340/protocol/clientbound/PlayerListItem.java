@@ -32,7 +32,7 @@ public class PlayerListItem extends soupply.java340.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readVaruint();
     }
@@ -76,7 +76,7 @@ public class PlayerListItem extends soupply.java340.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java340.type.ListAddPlayer[bbylcm];
@@ -115,7 +115,7 @@ public class PlayerListItem extends soupply.java340.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java340.type.ListUpdateGamemode[bbylcm];
@@ -154,7 +154,7 @@ public class PlayerListItem extends soupply.java340.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java340.type.ListUpdateLatency[bbylcm];
@@ -193,7 +193,7 @@ public class PlayerListItem extends soupply.java340.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new soupply.java340.type.ListUpdateDisplayName[bbylcm];
@@ -232,7 +232,7 @@ public class PlayerListItem extends soupply.java340.Packet
         }
 
         @Override
-        public void decodeBody(Buffer _buffer) throws BufferOverflowException
+        public void decodeBody(Buffer _buffer) throws DecodeException
         {
             final int bbylcm = _buffer.readVaruint();
             players = new UUID[bbylcm];

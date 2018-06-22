@@ -38,7 +38,7 @@ public class ServerToClientHandshake extends soupply.bedrock137.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvcvdvuv = _buffer.readVaruint();
         serverPublicKey = _buffer.readString(bvcvdvuv);

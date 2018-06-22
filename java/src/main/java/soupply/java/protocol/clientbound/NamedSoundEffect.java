@@ -49,7 +49,7 @@ public class NamedSoundEffect extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvbfz = _buffer.readVaruint();
         name = _buffer.readString(bvbfz);

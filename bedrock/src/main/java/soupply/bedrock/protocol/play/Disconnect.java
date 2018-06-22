@@ -40,7 +40,7 @@ public class Disconnect extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         hideDisconnectionScreen = _buffer.readBool();
         if(hideDisconnectionScreen==false)

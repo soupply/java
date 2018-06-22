@@ -16,6 +16,7 @@ public class MetadataEntityPosition extends MetadataValue
 
     public MetadataEntityPosition(int id)
     {
+        this(id, new FloatXYZ());
     }
 
     @Override
@@ -28,7 +29,7 @@ public class MetadataEntityPosition extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value.x = _buffer.readLittleEndianFloat();
         value.y = _buffer.readLittleEndianFloat();

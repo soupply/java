@@ -47,7 +47,7 @@ public class ResourcePackClientResponse extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         status = _buffer.readByte();
         final int bbytzm = _buffer.readLittleEndianShort();

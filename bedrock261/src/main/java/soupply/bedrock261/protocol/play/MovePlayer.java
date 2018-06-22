@@ -71,7 +71,7 @@ public class MovePlayer extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVarlong();
         position.x = _buffer.readLittleEndianFloat();

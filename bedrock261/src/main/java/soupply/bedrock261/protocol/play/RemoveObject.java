@@ -34,7 +34,7 @@ public class RemoveObject extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvbjzntf = _buffer.readVaruint();
         objectName = _buffer.readString(bvbjzntf);

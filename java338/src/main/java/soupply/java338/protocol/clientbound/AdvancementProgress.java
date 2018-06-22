@@ -40,7 +40,7 @@ public class AdvancementProgress extends soupply.java338.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         notEmpty = _buffer.readBool();
         if(notEmpty==true)

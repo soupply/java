@@ -66,7 +66,7 @@ public class Respawn extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         dimension = _buffer.readBigEndianInt();
         difficulty = _buffer.readByte();

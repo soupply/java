@@ -46,7 +46,7 @@ public class ResourcePacksStackPacket extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         mustAccept = _buffer.readBool();
         final int bjafa9cb = _buffer.readVaruint();

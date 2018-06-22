@@ -39,7 +39,7 @@ public class ResourcePackSend extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvdj = _buffer.readVaruint();
         url = _buffer.readString(bvdj);

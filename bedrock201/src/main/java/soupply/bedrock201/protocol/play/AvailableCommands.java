@@ -61,7 +61,7 @@ public class AvailableCommands extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvd1yxzm = _buffer.readVaruint();
         enumValues = new String[bvd1yxzm];

@@ -40,7 +40,7 @@ public class BlockEvent extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         position.decodeBody(_buffer);
         for(int zfy=0;zfy<data.length;zfy++)

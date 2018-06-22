@@ -32,7 +32,7 @@ public class ContainerClose extends soupply.bedrock261.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         window = _buffer.readByte();
     }

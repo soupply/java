@@ -38,7 +38,7 @@ public class CommandMessage extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         isInternal = _buffer.readBool();
         final int bvbvcfzl = _buffer.readVaruint();

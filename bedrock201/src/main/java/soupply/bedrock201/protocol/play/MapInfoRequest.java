@@ -32,7 +32,7 @@ public class MapInfoRequest extends soupply.bedrock201.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         mapId = _buffer.readVarlong();
     }

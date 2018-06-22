@@ -36,7 +36,7 @@ public class Statistics extends soupply.java335.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bnyrcrym = _buffer.readVaruint();
         statistics = new soupply.java335.type.Statistic[bnyrcrym];

@@ -20,7 +20,7 @@ public class SimpleEvent extends soupply.bedrock160.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
     }
 

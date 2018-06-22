@@ -32,7 +32,7 @@ public class SetTime extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         time = _buffer.readVarint();
     }

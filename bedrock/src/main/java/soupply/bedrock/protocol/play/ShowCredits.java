@@ -39,7 +39,7 @@ public class ShowCredits extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVarlong();
         status = _buffer.readVarint();

@@ -45,7 +45,7 @@ public class Animate extends soupply.bedrock150.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         action = _buffer.readVarint();
         entityId = _buffer.readVarlong();

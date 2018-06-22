@@ -1,7 +1,7 @@
 package soupply.bedrock141;
 
 import soupply.util.Buffer;
-import soupply.util.BufferOverflowException;
+import soupply.util.DecodeException;
 
 public abstract class Packet extends soupply.util.Packet
 {
@@ -19,7 +19,7 @@ public abstract class Packet extends soupply.util.Packet
     }
 
     @Override
-    public void decode(byte[] data) throws BufferOverflowException
+    public void decode(byte[] data) throws DecodeException
     {
         Buffer _buffer = new Buffer(data);
         final int _id = _buffer.readVaruint();

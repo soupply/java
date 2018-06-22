@@ -21,5 +21,5 @@ public abstract class MetadataValue
         _buffer.writeByte(type);
     }
 
-    public abstract void decodeBody(Buffer _buffer) throws BufferOverflowException;
+    public abstract void decodeBody(Buffer _buffer) throws DecodeException;
 }

@@ -16,6 +16,7 @@ public class MetadataRotation extends MetadataValue
 
     public MetadataRotation(byte id)
     {
+        this(id, new FloatXYZ());
     }
 
     @Override
@@ -28,7 +29,7 @@ public class MetadataRotation extends MetadataValue
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         value.x = _buffer.readBigEndianFloat();
         value.y = _buffer.readBigEndianFloat();

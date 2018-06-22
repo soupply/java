@@ -38,7 +38,7 @@ public class Attribute extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         min = _buffer.readLittleEndianFloat();
         max = _buffer.readLittleEndianFloat();

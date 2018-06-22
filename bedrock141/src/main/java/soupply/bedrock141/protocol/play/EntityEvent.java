@@ -78,7 +78,7 @@ public class EntityEvent extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVarlong();
         eventId = _buffer.readByte();

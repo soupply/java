@@ -60,7 +60,7 @@ public class Map extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         mapId = _buffer.readVaruint();
         scale = _buffer.readByte();

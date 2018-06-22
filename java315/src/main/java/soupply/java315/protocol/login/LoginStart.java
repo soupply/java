@@ -34,7 +34,7 @@ public class LoginStart extends soupply.java315.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvdnc5bu = _buffer.readVaruint();
         username = _buffer.readString(bvdnc5bu);

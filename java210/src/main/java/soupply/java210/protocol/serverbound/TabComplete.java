@@ -46,7 +46,7 @@ public class TabComplete extends soupply.java210.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bvdvd = _buffer.readVaruint();
         text = _buffer.readString(bvdvd);

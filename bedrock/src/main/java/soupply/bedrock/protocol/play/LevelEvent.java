@@ -96,7 +96,7 @@ public class LevelEvent extends soupply.bedrock.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         eventId = _buffer.readVarint();
         position.x = _buffer.readLittleEndianFloat();

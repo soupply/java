@@ -32,7 +32,7 @@ public class Section extends Type
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         storageVersion = _buffer.readByte();
         blockIds = _buffer.readBytes(blockIds.length);

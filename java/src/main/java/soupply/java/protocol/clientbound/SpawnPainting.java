@@ -53,7 +53,7 @@ public class SpawnPainting extends soupply.java.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVaruint();
         uuid = _buffer.readUUID();

@@ -36,7 +36,7 @@ public class GameRulesChanged extends soupply.bedrock141.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         final int bjbv = _buffer.readVaruint();
         rules = new soupply.bedrock141.type.Rule[bjbv];

@@ -38,7 +38,7 @@ public class BlockBreakAnimation extends soupply.java335.Packet
     }
 
     @Override
-    public void decodeBody(Buffer _buffer) throws BufferOverflowException
+    public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVaruint();
         position = _buffer.readBigEndianLong();

@@ -16,7 +16,7 @@ public class MetadataString extends MetadataValue
 
     public MetadataString(byte id)
     {
-        this(id, 0);
+        this(id, "");
     }
 
     @Override

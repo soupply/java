@@ -3,7 +3,7 @@ package soupply.bedrock261.metadata;
 import java.util.HashMap;
 import soupply.util.*;
 
-public class Metadata extends HashMap<Int, MetadataValue>
+public class Metadata extends HashMap<Integer, MetadataValue>
 {
 
     public void add(MetadataValue value)

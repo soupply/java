@@ -16,7 +16,7 @@ public class MetadataInt extends MetadataValue
 
     public MetadataInt(int id)
     {
-        this(id, 0);
+        this(id, (int)0);
     }
 
     @Override

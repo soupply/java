@@ -16,7 +16,7 @@ public class MetadataChat extends MetadataValue
 
     public MetadataChat(byte id)
     {
-        this(id, 0);
+        this(id, "");
     }
 
     @Override

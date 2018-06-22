@@ -16,7 +16,7 @@ public class MetadataDirection extends MetadataValue
 
     public MetadataDirection(byte id)
     {
-        this(id, 0);
+        this(id, (int)0);
     }
 
     @Override

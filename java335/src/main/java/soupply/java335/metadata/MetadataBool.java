@@ -16,7 +16,7 @@ public class MetadataBool extends MetadataValue
 
     public MetadataBool(byte id)
     {
-        this(id, 0);
+        this(id, (boolean)0);
     }
 
     @Override

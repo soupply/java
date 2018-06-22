@@ -16,7 +16,7 @@ public class MetadataBlock extends MetadataValue
 
     public MetadataBlock(byte id)
     {
-        this(id, 0);
+        this(id, (int)0);
     }
 
     @Override

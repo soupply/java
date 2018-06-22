@@ -16,7 +16,7 @@ public class MetadataShort extends MetadataValue
 
     public MetadataShort(int id)
     {
-        this(id, 0);
+        this(id, (short)0);
     }
 
     @Override

@@ -16,7 +16,7 @@ public class MetadataPosition extends MetadataValue
 
     public MetadataPosition(byte id)
     {
-        this(id, 0);
+        this(id, (long)0);
     }
 
     @Override

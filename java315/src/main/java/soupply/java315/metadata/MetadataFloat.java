@@ -16,7 +16,7 @@ public class MetadataFloat extends MetadataValue
 
     public MetadataFloat(byte id)
     {
-        this(id, 0);
+        this(id, (float)0);
     }
 
     @Override

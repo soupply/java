@@ -16,7 +16,7 @@ public class MetadataByte extends MetadataValue
 
     public MetadataByte(int id)
     {
-        this(id, 0);
+        this(id, (byte)0);
     }
 
     @Override

@@ -10,7 +10,7 @@ public class MetadataFloat extends MetadataValue
 
     public MetadataFloat(byte id, float value)
     {
-        super(id, 2);
+        super(id, (byte)2);
         this.value = value;
     }
 

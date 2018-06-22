@@ -10,7 +10,7 @@ public class MetadataNbt extends MetadataValue
 
     public MetadataNbt(byte id, byte[] value)
     {
-        super(id, 13);
+        super(id, (byte)13);
         this.value = value;
     }
 

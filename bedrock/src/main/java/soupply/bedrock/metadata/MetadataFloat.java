@@ -10,7 +10,7 @@ public class MetadataFloat extends MetadataValue
 
     public MetadataFloat(int id, float value)
     {
-        super(id, 3);
+        super(id, (int)3);
         this.value = value;
     }
 

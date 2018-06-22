@@ -10,7 +10,7 @@ public class MetadataSlot extends MetadataValue
 
     public MetadataSlot(int id, soupply.bedrock150.type.Slot value)
     {
-        super(id, 5);
+        super(id, (int)5);
         this.value = value;
     }
 

@@ -10,7 +10,7 @@ public class MetadataPosition extends MetadataValue
 
     public MetadataPosition(byte id, long value)
     {
-        super(id, 8);
+        super(id, (byte)8);
         this.value = value;
     }
 

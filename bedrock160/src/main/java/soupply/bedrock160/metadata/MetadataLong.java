@@ -10,7 +10,7 @@ public class MetadataLong extends MetadataValue
 
     public MetadataLong(int id, long value)
     {
-        super(id, 7);
+        super(id, (int)7);
         this.value = value;
     }
 

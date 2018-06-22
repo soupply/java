@@ -10,7 +10,7 @@ public class MetadataUuid extends MetadataValue
 
     public MetadataUuid(byte id, soupply.java338.type.OptionalUuid value)
     {
-        super(id, 11);
+        super(id, (byte)11);
         this.value = value;
     }
 

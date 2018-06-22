@@ -10,7 +10,7 @@ public class MetadataBlockPosition extends MetadataValue
 
     public MetadataBlockPosition(int id, IntXYZ value)
     {
-        super(id, 6);
+        super(id, (int)6);
         this.value = value;
     }
 

@@ -10,7 +10,7 @@ public class MetadataInt extends MetadataValue
 
     public MetadataInt(byte id, int value)
     {
-        super(id, 1);
+        super(id, (byte)1);
         this.value = value;
     }
 

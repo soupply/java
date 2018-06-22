@@ -10,7 +10,7 @@ public class MetadataString extends MetadataValue
 
     public MetadataString(int id, String value)
     {
-        super(id, 4);
+        super(id, (int)4);
         this.value = value;
     }
 

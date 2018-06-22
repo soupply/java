@@ -10,7 +10,7 @@ public class MetadataShort extends MetadataValue
 
     public MetadataShort(int id, short value)
     {
-        super(id, 1);
+        super(id, (int)1);
         this.value = value;
     }
 

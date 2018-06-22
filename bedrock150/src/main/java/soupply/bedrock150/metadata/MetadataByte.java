@@ -10,7 +10,7 @@ public class MetadataByte extends MetadataValue
 
     public MetadataByte(int id, byte value)
     {
-        super(id, 0);
+        super(id, (int)0);
         this.value = value;
     }
 

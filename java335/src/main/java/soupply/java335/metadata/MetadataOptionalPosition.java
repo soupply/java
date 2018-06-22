@@ -10,7 +10,7 @@ public class MetadataOptionalPosition extends MetadataValue
 
     public MetadataOptionalPosition(byte id, soupply.java335.type.OptionalPosition value)
     {
-        super(id, 9);
+        super(id, (byte)9);
         this.value = value;
     }
 

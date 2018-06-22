@@ -10,7 +10,7 @@ public class MetadataChat extends MetadataValue
 
     public MetadataChat(byte id, String value)
     {
-        super(id, 4);
+        super(id, (byte)4);
         this.value = value;
     }
 

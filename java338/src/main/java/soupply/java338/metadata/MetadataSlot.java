@@ -10,7 +10,7 @@ public class MetadataSlot extends MetadataValue
 
     public MetadataSlot(byte id, soupply.java338.type.Slot value)
     {
-        super(id, 5);
+        super(id, (byte)5);
         this.value = value;
     }
 

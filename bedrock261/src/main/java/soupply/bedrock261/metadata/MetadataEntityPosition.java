@@ -10,7 +10,7 @@ public class MetadataEntityPosition extends MetadataValue
 
     public MetadataEntityPosition(int id, FloatXYZ value)
     {
-        super(id, 8);
+        super(id, (int)8);
         this.value = value;
     }
 

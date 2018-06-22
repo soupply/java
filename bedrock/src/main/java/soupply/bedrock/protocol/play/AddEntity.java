@@ -16,17 +16,17 @@ public class AddEntity extends soupply.bedrock.Packet
     public float pitch;
     public float yaw;
     public soupply.bedrock.type.Attribute[] attributes;
-    public soupply.bedrock.Metadata metadata;
+    public soupply.bedrock.metadata.Metadata metadata;
     public soupply.bedrock.type.Link[] links;
 
     public AddEntity()
     {
         this.position = new FloatXYZ();
         this.motion = new FloatXYZ();
-        this.metadata = new soupply.bedrock.Metadata();
+        this.metadata = new soupply.bedrock.metadata.Metadata();
     }
 
-    public AddEntity(long entityId, long runtimeId, int type, FloatXYZ position, FloatXYZ motion, float pitch, float yaw, soupply.bedrock.type.Attribute[] attributes, soupply.bedrock.Metadata metadata, soupply.bedrock.type.Link[] links)
+    public AddEntity(long entityId, long runtimeId, int type, FloatXYZ position, FloatXYZ motion, float pitch, float yaw, soupply.bedrock.type.Attribute[] attributes, soupply.bedrock.metadata.Metadata metadata, soupply.bedrock.type.Link[] links)
     {
         this.entityId = entityId;
         this.runtimeId = runtimeId;

@@ -9,14 +9,14 @@ public class EntityMetadata extends soupply.java340.Packet
     public static final int ID = 60;
 
     public int entityId;
-    public soupply.java340.Metadata metadata;
+    public soupply.java340.metadata.Metadata metadata;
 
     public EntityMetadata()
     {
-        this.metadata = new soupply.java340.Metadata();
+        this.metadata = new soupply.java340.metadata.Metadata();
     }
 
-    public EntityMetadata(int entityId, soupply.java340.Metadata metadata)
+    public EntityMetadata(int entityId, soupply.java340.metadata.Metadata metadata)
     {
         this.entityId = entityId;
         this.metadata = metadata;

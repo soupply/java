@@ -9,14 +9,14 @@ public class SetEntityData extends soupply.bedrock201.Packet
     public static final int ID = 39;
 
     public long entityId;
-    public soupply.bedrock201.Metadata metadata;
+    public soupply.bedrock201.metadata.Metadata metadata;
 
     public SetEntityData()
     {
-        this.metadata = new soupply.bedrock201.Metadata();
+        this.metadata = new soupply.bedrock201.metadata.Metadata();
     }
 
-    public SetEntityData(long entityId, soupply.bedrock201.Metadata metadata)
+    public SetEntityData(long entityId, soupply.bedrock201.metadata.Metadata metadata)
     {
         this.entityId = entityId;
         this.metadata = metadata;

@@ -18,7 +18,7 @@ public class AddPlayer extends soupply.bedrock.Packet
     public float headYaw;
     public float yaw;
     public soupply.bedrock.type.Slot heldItem;
-    public soupply.bedrock.Metadata metadata;
+    public soupply.bedrock.metadata.Metadata metadata;
     public int unknown11;
     public int unknown12;
     public int unknown13;
@@ -33,10 +33,10 @@ public class AddPlayer extends soupply.bedrock.Packet
         this.position = new FloatXYZ();
         this.motion = new FloatXYZ();
         this.heldItem = new soupply.bedrock.type.Slot();
-        this.metadata = new soupply.bedrock.Metadata();
+        this.metadata = new soupply.bedrock.metadata.Metadata();
     }
 
-    public AddPlayer(soupply.bedrock.type.McpeUuid uuid, String username, long entityId, long runtimeId, FloatXYZ position, FloatXYZ motion, float pitch, float headYaw, float yaw, soupply.bedrock.type.Slot heldItem, soupply.bedrock.Metadata metadata, int unknown11, int unknown12, int unknown13, int unknown14, int unknown15, long unknown16, soupply.bedrock.type.Link[] links)
+    public AddPlayer(soupply.bedrock.type.McpeUuid uuid, String username, long entityId, long runtimeId, FloatXYZ position, FloatXYZ motion, float pitch, float headYaw, float yaw, soupply.bedrock.type.Slot heldItem, soupply.bedrock.metadata.Metadata metadata, int unknown11, int unknown12, int unknown13, int unknown14, int unknown15, long unknown16, soupply.bedrock.type.Link[] links)
     {
         this.uuid = uuid;
         this.username = username;

@@ -13,16 +13,16 @@ public class SpawnPlayer extends soupply.java.Packet
     public DoubleXYZ position;
     public byte yaw;
     public byte pitch;
-    public soupply.java.Metadata metadata;
+    public soupply.java.metadata.Metadata metadata;
 
     public SpawnPlayer()
     {
         this.uuid = new UUID(0, 0);
         this.position = new DoubleXYZ();
-        this.metadata = new soupply.java.Metadata();
+        this.metadata = new soupply.java.metadata.Metadata();
     }
 
-    public SpawnPlayer(int entityId, UUID uuid, DoubleXYZ position, byte yaw, byte pitch, soupply.java.Metadata metadata)
+    public SpawnPlayer(int entityId, UUID uuid, DoubleXYZ position, byte yaw, byte pitch, soupply.java.metadata.Metadata metadata)
     {
         this.entityId = entityId;
         this.uuid = uuid;

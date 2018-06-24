@@ -13,6 +13,33 @@ public class MobEffect extends soupply.bedrock.Packet
     public static final byte MODIFY = (byte)2;
     public static final byte REMOVE = (byte)3;
 
+    // effect
+    public static final int SPEED = (int)1;
+    public static final int SLOWNESS = (int)2;
+    public static final int HASTE = (int)3;
+    public static final int MINING_FATIGUE = (int)4;
+    public static final int STRENGTH = (int)5;
+    public static final int INSTANT_HEALTH = (int)6;
+    public static final int INSTANT_DAMAGE = (int)7;
+    public static final int JUMP_BOOST = (int)8;
+    public static final int NAUSEA = (int)9;
+    public static final int REGENERATION = (int)10;
+    public static final int RESISTANCE = (int)11;
+    public static final int FIRE_RESISTANCE = (int)12;
+    public static final int WATER_BREATHING = (int)13;
+    public static final int INVISIBILITY = (int)14;
+    public static final int BLINDNESS = (int)15;
+    public static final int NIGHT_VISION = (int)16;
+    public static final int HUNGER = (int)17;
+    public static final int WEAKNESS = (int)18;
+    public static final int POISON = (int)19;
+    public static final int WITHER = (int)20;
+    public static final int HEALTH_BOOST = (int)21;
+    public static final int ABSORPTION = (int)22;
+    public static final int SATURATION = (int)23;
+    public static final int LEVITATION = (int)24;
+    public static final int FATAL_POISON = (int)25;
+
     public long entityId;
     public byte eventId;
     public int effect;

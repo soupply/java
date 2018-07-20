@@ -4,7 +4,7 @@
 
   <groupId>soupply</groupId>
   <artifactId>soupply</artifactId>
-  <version>2.48.0</version>
+  <version>2.50.0</version>
   <packaging>pom</packaging>
 
   <name>soupply</name>
@@ -25,6 +25,7 @@
     <module>java335</module>
     <module>java338</module>
     <module>java340</module>
+    <module>java393</module>
     <module>test0</module>
     <module>util</module>
   </modules>

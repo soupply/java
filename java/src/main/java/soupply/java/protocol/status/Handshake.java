@@ -12,7 +12,7 @@ public class Handshake extends soupply.java.Packet
     public static final int STATUS = (int)1;
     public static final int LOGIN = (int)2;
 
-    public int protocol = 340;
+    public int protocol = 393;
     public String serverAddress;
     public short serverPort;
     public int next;

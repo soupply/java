@@ -8,18 +8,16 @@ public class Slot extends Type
 
     public short id;
     public byte count;
-    public short damage;
     public byte[] nbt;
 
     public Slot()
     {
     }
 
-    public Slot(short id, byte count, short damage, byte[] nbt)
+    public Slot(short id, byte count, byte[] nbt)
     {
         this.id = id;
         this.count = count;
-        this.damage = damage;
         this.nbt = nbt;
     }
 
@@ -30,7 +28,6 @@ public class Slot extends Type
         if(id>0)
         {
             _buffer.writeByte(count);
-            _buffer.writeBigEndianShort(damage);
             _buffer.writeBytes(nbt);
         }
     }
@@ -42,7 +39,6 @@ public class Slot extends Type
         if(id>0)
         {
             count = _buffer.readByte();
-            damage = _buffer.readBigEndianShort();
             nbt = _buffer.readBytes(_buffer._buffer.length-_buffer._index);
         }
     }

@@ -9,14 +9,13 @@ public class QueryBlockNbt extends soupply.java393.Packet
     public static final int ID = 1;
 
     public int transationId;
-    public soupply.java393.type.Position location;
+    public long location;
 
     public QueryBlockNbt()
     {
-        this.location = new soupply.java393.type.Position();
     }
 
-    public QueryBlockNbt(int transationId, soupply.java393.type.Position location)
+    public QueryBlockNbt(int transationId, long location)
     {
         this.transationId = transationId;
         this.location = location;
@@ -32,14 +31,14 @@ public class QueryBlockNbt extends soupply.java393.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVaruint(transationId);
-        location.encodeBody(_buffer);
+        _buffer.writeBigEndianLong(location);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws DecodeException
     {
         transationId = _buffer.readVaruint();
-        location.decodeBody(_buffer);
+        location = _buffer.readBigEndianLong();
     }
 
     public static QueryBlockNbt fromBuffer(byte[] buffer)

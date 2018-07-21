@@ -18,17 +18,16 @@ public class UpdateCommandBlock extends soupply.java.Packet
     public static final byte CONDITIONAL = (byte)2;
     public static final byte AUTOMATIC = (byte)4;
 
-    public soupply.java.type.Position location;
+    public long location;
     public String command;
     public int mode;
     public byte flags;
 
     public UpdateCommandBlock()
     {
-        this.location = new soupply.java.type.Position();
     }
 
-    public UpdateCommandBlock(soupply.java.type.Position location, String command, int mode, byte flags)
+    public UpdateCommandBlock(long location, String command, int mode, byte flags)
     {
         this.location = location;
         this.command = command;
@@ -45,7 +44,7 @@ public class UpdateCommandBlock extends soupply.java.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        location.encodeBody(_buffer);
+        _buffer.writeBigEndianLong(location);
         byte[] y9bfz = _buffer.convertString(command);
         _buffer.writeVaruint((int)y9bfz.length);
         _buffer.writeBytes(y9bfz);
@@ -56,7 +55,7 @@ public class UpdateCommandBlock extends soupply.java.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws DecodeException
     {
-        location.decodeBody(_buffer);
+        location = _buffer.readBigEndianLong();
         final int bvy9bfz = _buffer.readVaruint();
         command = _buffer.readString(bvy9bfz);
         mode = _buffer.readVaruint();

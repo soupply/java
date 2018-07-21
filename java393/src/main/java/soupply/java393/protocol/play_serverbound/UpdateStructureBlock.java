@@ -35,7 +35,7 @@ public class UpdateStructureBlock extends soupply.java393.Packet
     public static final byte SHOW_AIR = (byte)2;
     public static final byte SHOW_BOUNDING_BOX = (byte)4;
 
-    public soupply.java393.type.Position location;
+    public long location;
     public int action;
     public int mode;
     public ByteXYZ offset;
@@ -49,12 +49,11 @@ public class UpdateStructureBlock extends soupply.java393.Packet
 
     public UpdateStructureBlock()
     {
-        this.location = new soupply.java393.type.Position();
         this.offset = new ByteXYZ();
         this.size = new ByteXYZ();
     }
 
-    public UpdateStructureBlock(soupply.java393.type.Position location, int action, int mode, ByteXYZ offset, ByteXYZ size, int mirror, int rotation, String metadata, float integrity, long speed, byte flags)
+    public UpdateStructureBlock(long location, int action, int mode, ByteXYZ offset, ByteXYZ size, int mirror, int rotation, String metadata, float integrity, long speed, byte flags)
     {
         this.location = location;
         this.action = action;
@@ -78,7 +77,7 @@ public class UpdateStructureBlock extends soupply.java393.Packet
     @Override
     public void encodeBody(Buffer _buffer)
     {
-        location.encodeBody(_buffer);
+        _buffer.writeBigEndianLong(location);
         _buffer.writeVaruint(action);
         _buffer.writeVaruint(mode);
         _buffer.writeByte(offset.x);
@@ -100,7 +99,7 @@ public class UpdateStructureBlock extends soupply.java393.Packet
     @Override
     public void decodeBody(Buffer _buffer) throws DecodeException
     {
-        location.decodeBody(_buffer);
+        location = _buffer.readBigEndianLong();
         action = _buffer.readVaruint();
         mode = _buffer.readVaruint();
         offset.x = _buffer.readByte();

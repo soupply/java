@@ -6,7 +6,7 @@ import soupply.util.*;
 public class SteerBoat extends soupply.java393.Packet
 {
 
-    public static final int ID = 17;
+    public static final int ID = 20;
 
     public boolean rightPaddleTurning;
     public boolean leftPaddleTurning;

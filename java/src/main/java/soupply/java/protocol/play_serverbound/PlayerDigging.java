@@ -6,7 +6,7 @@ import soupply.util.*;
 public class PlayerDigging extends soupply.java.Packet
 {
 
-    public static final int ID = 20;
+    public static final int ID = 24;
 
     // status
     public static final int START_DIGGING = (int)0;

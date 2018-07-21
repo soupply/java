@@ -6,7 +6,7 @@ import soupply.util.*;
 public class PlayerAbilities extends soupply.java393.Packet
 {
 
-    public static final int ID = 19;
+    public static final int ID = 23;
 
     // flags
     public static final byte CREATIVE_MODE = (byte)1;

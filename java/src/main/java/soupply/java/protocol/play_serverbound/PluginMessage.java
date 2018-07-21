@@ -6,7 +6,7 @@ import soupply.util.*;
 public class PluginMessage extends soupply.java.Packet
 {
 
-    public static final int ID = 9;
+    public static final int ID = 10;
 
     public String channel;
     public byte[] data;

@@ -6,7 +6,7 @@ import soupply.util.*;
 public class EnchantItem extends soupply.java393.Packet
 {
 
-    public static final int ID = 6;
+    public static final int ID = 7;
 
     public byte window;
     public byte enchantment;

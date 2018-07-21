@@ -6,7 +6,7 @@ import soupply.util.*;
 public class UpdateSign extends soupply.java.Packet
 {
 
-    public static final int ID = 28;
+    public static final int ID = 38;
 
     public long position;
     public String[] lines;

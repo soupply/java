@@ -6,7 +6,7 @@ import soupply.util.*;
 public class UseEntity extends soupply.java.Packet
 {
 
-    public static final int ID = 10;
+    public static final int ID = 13;
 
     // type
     public static final int INTERACT = (int)0;

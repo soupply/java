@@ -6,7 +6,7 @@ import soupply.util.*;
 public class UseItem extends soupply.java.Packet
 {
 
-    public static final int ID = 32;
+    public static final int ID = 42;
 
     // hand
     public static final int MAIN_HAND = (int)0;

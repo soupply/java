@@ -6,7 +6,7 @@ import soupply.util.*;
 public class ClickWindow extends soupply.java393.Packet
 {
 
-    public static final int ID = 7;
+    public static final int ID = 8;
 
     public byte window;
     public short slot;

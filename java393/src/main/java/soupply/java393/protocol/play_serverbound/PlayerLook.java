@@ -6,7 +6,7 @@ import soupply.util.*;
 public class PlayerLook extends soupply.java393.Packet
 {
 
-    public static final int ID = 15;
+    public static final int ID = 18;
 
     public float yaw;
     public float pitch;

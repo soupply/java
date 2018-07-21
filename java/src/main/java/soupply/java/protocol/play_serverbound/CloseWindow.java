@@ -6,7 +6,7 @@ import soupply.util.*;
 public class CloseWindow extends soupply.java.Packet
 {
 
-    public static final int ID = 8;
+    public static final int ID = 9;
 
     public byte window;
 

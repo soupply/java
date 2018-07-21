@@ -6,7 +6,7 @@ import soupply.util.*;
 public class Spectate extends soupply.java.Packet
 {
 
-    public static final int ID = 30;
+    public static final int ID = 40;
 
     public UUID player;
 

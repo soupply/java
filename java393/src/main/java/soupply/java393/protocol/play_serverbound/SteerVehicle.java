@@ -6,7 +6,7 @@ import soupply.util.*;
 public class SteerVehicle extends soupply.java393.Packet
 {
 
-    public static final int ID = 22;
+    public static final int ID = 26;
 
     // flags
     public static final byte JUMP = (byte)1;

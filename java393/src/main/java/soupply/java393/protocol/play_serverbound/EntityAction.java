@@ -6,7 +6,7 @@ import soupply.util.*;
 public class EntityAction extends soupply.java393.Packet
 {
 
-    public static final int ID = 21;
+    public static final int ID = 25;
 
     // action
     public static final int START_SNEAKING = (int)0;

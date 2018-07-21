@@ -6,7 +6,7 @@ import soupply.util.*;
 public class ConfirmTransaction extends soupply.java.Packet
 {
 
-    public static final int ID = 5;
+    public static final int ID = 6;
 
     public byte window;
     public short action;

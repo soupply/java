@@ -6,7 +6,7 @@ import soupply.util.*;
 public class PlayerPosition extends soupply.java393.Packet
 {
 
-    public static final int ID = 13;
+    public static final int ID = 16;
 
     public DoubleXYZ position;
     public boolean onGround;

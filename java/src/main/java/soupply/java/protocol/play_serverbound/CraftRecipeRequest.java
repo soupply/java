@@ -6,7 +6,7 @@ import soupply.util.*;
 public class CraftRecipeRequest extends soupply.java.Packet
 {
 
-    public static final int ID = 18;
+    public static final int ID = 22;
 
     public byte window;
     public int recipe;

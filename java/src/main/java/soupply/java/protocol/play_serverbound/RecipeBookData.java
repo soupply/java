@@ -3,18 +3,18 @@ package soupply.java.protocol.play_serverbound;
 import java.util.*;
 import soupply.util.*;
 
-public class CraftingBookData extends soupply.java.Packet
+public class RecipeBookData extends soupply.java.Packet
 {
 
-    public static final int ID = 23;
+    public static final int ID = 27;
 
     public int type;
 
-    public CraftingBookData()
+    public RecipeBookData()
     {
     }
 
-    public CraftingBookData(int type)
+    public RecipeBookData(int type)
     {
         this.type = type;
     }
@@ -37,9 +37,9 @@ public class CraftingBookData extends soupply.java.Packet
         type = _buffer.readVaruint();
     }
 
-    public static CraftingBookData fromBuffer(byte[] buffer)
+    public static RecipeBookData fromBuffer(byte[] buffer)
     {
-        CraftingBookData packet = new CraftingBookData();
+        RecipeBookData packet = new RecipeBookData();
         packet.safeDecode(buffer);
         return packet;
     }
@@ -82,17 +82,21 @@ public class CraftingBookData extends soupply.java.Packet
     public class CraftingBookStatus extends Type
     {
 
-        public boolean bookOpened;
-        public boolean filtering;
+        public boolean craftingRecipeBookOpened;
+        public boolean craftingRecipeFilterActive;
+        public boolean smeltingRecipeBookOpened;
+        public boolean smeltingRecipeFilterActive;
 
         public CraftingBookStatus()
         {
         }
 
-        public CraftingBookStatus(boolean bookOpened, boolean filtering)
+        public CraftingBookStatus(boolean craftingRecipeBookOpened, boolean craftingRecipeFilterActive, boolean smeltingRecipeBookOpened, boolean smeltingRecipeFilterActive)
         {
-            this.bookOpened = bookOpened;
-            this.filtering = filtering;
+            this.craftingRecipeBookOpened = craftingRecipeBookOpened;
+            this.craftingRecipeFilterActive = craftingRecipeFilterActive;
+            this.smeltingRecipeBookOpened = smeltingRecipeBookOpened;
+            this.smeltingRecipeFilterActive = smeltingRecipeFilterActive;
         }
 
         @Override
@@ -100,15 +104,19 @@ public class CraftingBookData extends soupply.java.Packet
         {
             type = 2;
             encodeMainBody(_buffer);
-            _buffer.writeBool(bookOpened);
-            _buffer.writeBool(filtering);
+            _buffer.writeBool(craftingRecipeBookOpened);
+            _buffer.writeBool(craftingRecipeFilterActive);
+            _buffer.writeBool(smeltingRecipeBookOpened);
+            _buffer.writeBool(smeltingRecipeFilterActive);
         }
 
         @Override
         public void decodeBody(Buffer _buffer) throws DecodeException
         {
-            bookOpened = _buffer.readBool();
-            filtering = _buffer.readBool();
+            craftingRecipeBookOpened = _buffer.readBool();
+            craftingRecipeFilterActive = _buffer.readBool();
+            smeltingRecipeBookOpened = _buffer.readBool();
+            smeltingRecipeFilterActive = _buffer.readBool();
         }
 
     }

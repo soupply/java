@@ -6,7 +6,7 @@ import soupply.util.*;
 public class ResourcePackStatus extends soupply.java.Packet
 {
 
-    public static final int ID = 24;
+    public static final int ID = 29;
 
     // result
     public static final int LOADED = (int)0;

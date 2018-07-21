@@ -6,7 +6,7 @@ import soupply.util.*;
 public class Animation extends soupply.java.Packet
 {
 
-    public static final int ID = 29;
+    public static final int ID = 39;
 
     // hand
     public static final int MAIN_HAND = (int)0;

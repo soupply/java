@@ -6,7 +6,7 @@ import soupply.util.*;
 public class HeldItemChange extends soupply.java.Packet
 {
 
-    public static final int ID = 26;
+    public static final int ID = 33;
 
     public short slot;
 

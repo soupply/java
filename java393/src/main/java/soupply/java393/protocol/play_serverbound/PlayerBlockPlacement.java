@@ -6,7 +6,7 @@ import soupply.util.*;
 public class PlayerBlockPlacement extends soupply.java393.Packet
 {
 
-    public static final int ID = 31;
+    public static final int ID = 41;
 
     // hand
     public static final int MAIN_HAND = (int)0;

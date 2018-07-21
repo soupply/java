@@ -6,7 +6,7 @@ import soupply.util.*;
 public class CreativeInventoryAction extends soupply.java393.Packet
 {
 
-    public static final int ID = 27;
+    public static final int ID = 36;
 
     public short slot;
     public soupply.java393.type.Slot clickedItem;

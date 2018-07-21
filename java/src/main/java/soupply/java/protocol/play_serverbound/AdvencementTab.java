@@ -6,7 +6,7 @@ import soupply.util.*;
 public class AdvencementTab extends soupply.java.Packet
 {
 
-    public static final int ID = 25;
+    public static final int ID = 30;
 
     // action
     public static final int OPEN_TAB = (int)0;

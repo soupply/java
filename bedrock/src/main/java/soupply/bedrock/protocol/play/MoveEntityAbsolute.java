@@ -3,33 +3,32 @@ package soupply.bedrock.protocol.play;
 import java.util.*;
 import soupply.util.*;
 
-public class MoveEntity extends soupply.bedrock.Packet
+public class MoveEntityAbsolute extends soupply.bedrock.Packet
 {
 
     public static final int ID = 18;
 
-    public long entityId;
-    public FloatXYZ position;
-    public byte pitch;
-    public byte headYaw;
-    public byte yaw;
-    public boolean onGround;
-    public boolean teleported;
+    // flags
+    public static final byte GROUND = (byte)1;
+    public static final byte TELEPORT = (byte)2;
 
-    public MoveEntity()
+    public long entityId;
+    public byte flags;
+    public FloatXYZ position;
+    public ByteXYZ rotation;
+
+    public MoveEntityAbsolute()
     {
         this.position = new FloatXYZ();
+        this.rotation = new ByteXYZ();
     }
 
-    public MoveEntity(long entityId, FloatXYZ position, byte pitch, byte headYaw, byte yaw, boolean onGround, boolean teleported)
+    public MoveEntityAbsolute(long entityId, byte flags, FloatXYZ position, ByteXYZ rotation)
     {
         this.entityId = entityId;
+        this.flags = flags;
         this.position = position;
-        this.pitch = pitch;
-        this.headYaw = headYaw;
-        this.yaw = yaw;
-        this.onGround = onGround;
-        this.teleported = teleported;
+        this.rotation = rotation;
     }
 
     @Override
@@ -42,33 +41,31 @@ public class MoveEntity extends soupply.bedrock.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeVarlong(entityId);
+        _buffer.writeByte(flags);
         _buffer.writeLittleEndianFloat(position.x);
         _buffer.writeLittleEndianFloat(position.y);
         _buffer.writeLittleEndianFloat(position.z);
-        _buffer.writeByte(pitch);
-        _buffer.writeByte(headYaw);
-        _buffer.writeByte(yaw);
-        _buffer.writeBool(onGround);
-        _buffer.writeBool(teleported);
+        _buffer.writeByte(rotation.x);
+        _buffer.writeByte(rotation.y);
+        _buffer.writeByte(rotation.z);
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws DecodeException
     {
         entityId = _buffer.readVarlong();
+        flags = _buffer.readByte();
         position.x = _buffer.readLittleEndianFloat();
         position.y = _buffer.readLittleEndianFloat();
         position.z = _buffer.readLittleEndianFloat();
-        pitch = _buffer.readByte();
-        headYaw = _buffer.readByte();
-        yaw = _buffer.readByte();
-        onGround = _buffer.readBool();
-        teleported = _buffer.readBool();
+        rotation.x = _buffer.readByte();
+        rotation.y = _buffer.readByte();
+        rotation.z = _buffer.readByte();
     }
 
-    public static MoveEntity fromBuffer(byte[] buffer)
+    public static MoveEntityAbsolute fromBuffer(byte[] buffer)
     {
-        MoveEntity packet = new MoveEntity();
+        MoveEntityAbsolute packet = new MoveEntityAbsolute();
         packet.safeDecode(buffer);
         return packet;
     }

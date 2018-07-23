@@ -45,11 +45,11 @@ public class StopSound extends soupply.java393.Packet
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeByte(flags);
-        if(flags&1)
+        if((flags&1)!=0)
         {
             _buffer.writeVaruint(source);
         }
-        if(flags&2)
+        if((flags&2)!=0)
         {
             byte[] c9bq = _buffer.convertString(sound);
             _buffer.writeVaruint((int)c9bq.length);
@@ -61,11 +61,11 @@ public class StopSound extends soupply.java393.Packet
     public void decodeBody(Buffer _buffer) throws DecodeException
     {
         flags = _buffer.readByte();
-        if(flags&1)
+        if((flags&1)!=0)
         {
             source = _buffer.readVaruint();
         }
-        if(flags&2)
+        if((flags&2)!=0)
         {
             final int bvc9bq = _buffer.readVaruint();
             sound = _buffer.readString(bvc9bq);

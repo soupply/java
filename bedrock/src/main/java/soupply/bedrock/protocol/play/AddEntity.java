@@ -15,6 +15,7 @@ public class AddEntity extends soupply.bedrock.Packet
     public FloatXYZ motion;
     public float pitch;
     public float yaw;
+    public float headYaw;
     public soupply.bedrock.type.Attribute[] attributes;
     public soupply.bedrock.metadata.Metadata metadata;
     public soupply.bedrock.type.Link[] links;
@@ -26,7 +27,7 @@ public class AddEntity extends soupply.bedrock.Packet
         this.metadata = new soupply.bedrock.metadata.Metadata();
     }
 
-    public AddEntity(long entityId, long runtimeId, int type, FloatXYZ position, FloatXYZ motion, float pitch, float yaw, soupply.bedrock.type.Attribute[] attributes, soupply.bedrock.metadata.Metadata metadata, soupply.bedrock.type.Link[] links)
+    public AddEntity(long entityId, long runtimeId, int type, FloatXYZ position, FloatXYZ motion, float pitch, float yaw, float headYaw, soupply.bedrock.type.Attribute[] attributes, soupply.bedrock.metadata.Metadata metadata, soupply.bedrock.type.Link[] links)
     {
         this.entityId = entityId;
         this.runtimeId = runtimeId;
@@ -35,6 +36,7 @@ public class AddEntity extends soupply.bedrock.Packet
         this.motion = motion;
         this.pitch = pitch;
         this.yaw = yaw;
+        this.headYaw = headYaw;
         this.attributes = attributes;
         this.metadata = metadata;
         this.links = links;
@@ -60,6 +62,7 @@ public class AddEntity extends soupply.bedrock.Packet
         _buffer.writeLittleEndianFloat(motion.z);
         _buffer.writeLittleEndianFloat(pitch);
         _buffer.writeLittleEndianFloat(yaw);
+        _buffer.writeLittleEndianFloat(headYaw);
         _buffer.writeVaruint((int)attributes.length);
         for(soupply.bedrock.type.Attribute yrcldrc:attributes)
         {
@@ -87,6 +90,7 @@ public class AddEntity extends soupply.bedrock.Packet
         motion.z = _buffer.readLittleEndianFloat();
         pitch = _buffer.readLittleEndianFloat();
         yaw = _buffer.readLittleEndianFloat();
+        headYaw = _buffer.readLittleEndianFloat();
         final int bfdjyvzm = _buffer.readVaruint();
         attributes = new soupply.bedrock.type.Attribute[bfdjyvzm];
         for(int yrcldrc=0;yrcldrc<attributes.length;yrcldrc++)

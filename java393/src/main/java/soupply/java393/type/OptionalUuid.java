@@ -24,14 +24,20 @@ public class OptionalUuid extends Type
     public void encodeBody(Buffer _buffer)
     {
         _buffer.writeBool(hasUuid);
-        _buffer.writeUUID(uuid);
+        if(hasUuid==true)
+        {
+            _buffer.writeUUID(uuid);
+        }
     }
 
     @Override
     public void decodeBody(Buffer _buffer) throws DecodeException
     {
         hasUuid = _buffer.readBool();
-        uuid = _buffer.readUUID();
+        if(hasUuid==true)
+        {
+            uuid = _buffer.readUUID();
+        }
     }
 
 }

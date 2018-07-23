@@ -10,7 +10,7 @@ public class MetadataBool extends MetadataValue
 
     public MetadataBool(byte id, boolean value)
     {
-        super(id, (byte)6);
+        super(id, (byte)7);
         this.value = value;
     }
 

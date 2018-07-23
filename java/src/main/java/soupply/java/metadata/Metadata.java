@@ -42,15 +42,17 @@ public class Metadata extends HashMap<Byte, MetadataValue>
             case 2: return new MetadataFloat(id);
             case 3: return new MetadataString(id);
             case 4: return new MetadataChat(id);
-            case 5: return new MetadataSlot(id);
-            case 6: return new MetadataBool(id);
-            case 7: return new MetadataRotation(id);
-            case 8: return new MetadataPosition(id);
-            case 9: return new MetadataOptionalPosition(id);
-            case 10: return new MetadataDirection(id);
-            case 11: return new MetadataUuid(id);
-            case 12: return new MetadataBlock(id);
-            case 13: return new MetadataNbt(id);
+            case 5: return new MetadataOptionalChat(id);
+            case 6: return new MetadataSlot(id);
+            case 7: return new MetadataBool(id);
+            case 8: return new MetadataRotation(id);
+            case 9: return new MetadataPosition(id);
+            case 10: return new MetadataOptionalPosition(id);
+            case 11: return new MetadataDirection(id);
+            case 12: return new MetadataOptionalUuid(id);
+            case 13: return new MetadataBlock(id);
+            case 14: return new MetadataNbt(id);
+            case 15: return new MetadataParticle(id);
             default: throw new MetadataException(id, type);
         }
     }

@@ -1,22 +1,22 @@
-package soupply.java.metadata;
+package soupply.java393.metadata;
 
 import java.util.*;
 import soupply.util.*;
 
-public class MetadataSlot extends MetadataValue
+public class MetadataOptionalUuid extends MetadataValue
 {
 
-    public soupply.java.type.Slot value;
+    public soupply.java393.type.OptionalUuid value;
 
-    public MetadataSlot(byte id, soupply.java.type.Slot value)
+    public MetadataOptionalUuid(byte id, soupply.java393.type.OptionalUuid value)
     {
-        super(id, (byte)6);
+        super(id, (byte)12);
         this.value = value;
     }
 
-    public MetadataSlot(byte id)
+    public MetadataOptionalUuid(byte id)
     {
-        this(id, new soupply.java.type.Slot());
+        this(id, new soupply.java393.type.OptionalUuid());
     }
 
     @Override

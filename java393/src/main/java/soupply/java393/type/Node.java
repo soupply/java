@@ -40,7 +40,7 @@ public class Node extends Type
         {
             _buffer.writeVaruint(redirectNode);
         }
-        if(flags&1!=0||flags&2!=0)
+        if((flags&1)!=0||(flags&2)!=0)
         {
             byte[] bfz = _buffer.convertString(name);
             _buffer.writeVaruint((int)bfz.length);
@@ -69,7 +69,7 @@ public class Node extends Type
         {
             redirectNode = _buffer.readVaruint();
         }
-        if(flags&1!=0||flags&2!=0)
+        if((flags&1)!=0||(flags&2)!=0)
         {
             final int bvbfz = _buffer.readVaruint();
             name = _buffer.readString(bvbfz);

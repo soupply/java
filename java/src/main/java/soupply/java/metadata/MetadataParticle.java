@@ -3,20 +3,20 @@ package soupply.java.metadata;
 import java.util.*;
 import soupply.util.*;
 
-public class MetadataUuid extends MetadataValue
+public class MetadataParticle extends MetadataValue
 {
 
-    public soupply.java.type.OptionalUuid value;
+    public soupply.java.type.Particle value;
 
-    public MetadataUuid(byte id, soupply.java.type.OptionalUuid value)
+    public MetadataParticle(byte id, soupply.java.type.Particle value)
     {
-        super(id, (byte)11);
+        super(id, (byte)15);
         this.value = value;
     }
 
-    public MetadataUuid(byte id)
+    public MetadataParticle(byte id)
     {
-        this(id, new soupply.java.type.OptionalUuid());
+        this(id, new soupply.java.type.Particle());
     }
 
     @Override

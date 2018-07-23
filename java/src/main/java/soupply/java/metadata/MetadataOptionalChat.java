@@ -3,20 +3,20 @@ package soupply.java.metadata;
 import java.util.*;
 import soupply.util.*;
 
-public class MetadataSlot extends MetadataValue
+public class MetadataOptionalChat extends MetadataValue
 {
 
-    public soupply.java.type.Slot value;
+    public soupply.java.type.OptionalChat value;
 
-    public MetadataSlot(byte id, soupply.java.type.Slot value)
+    public MetadataOptionalChat(byte id, soupply.java.type.OptionalChat value)
     {
-        super(id, (byte)6);
+        super(id, (byte)5);
         this.value = value;
     }
 
-    public MetadataSlot(byte id)
+    public MetadataOptionalChat(byte id)
     {
-        this(id, new soupply.java.type.Slot());
+        this(id, new soupply.java.type.OptionalChat());
     }
 
     @Override

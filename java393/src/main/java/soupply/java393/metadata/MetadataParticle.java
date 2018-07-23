@@ -1,22 +1,22 @@
-package soupply.java.metadata;
+package soupply.java393.metadata;
 
 import java.util.*;
 import soupply.util.*;
 
-public class MetadataSlot extends MetadataValue
+public class MetadataParticle extends MetadataValue
 {
 
-    public soupply.java.type.Slot value;
+    public soupply.java393.type.Particle value;
 
-    public MetadataSlot(byte id, soupply.java.type.Slot value)
+    public MetadataParticle(byte id, soupply.java393.type.Particle value)
     {
-        super(id, (byte)6);
+        super(id, (byte)15);
         this.value = value;
     }
 
-    public MetadataSlot(byte id)
+    public MetadataParticle(byte id)
     {
-        this(id, new soupply.java.type.Slot());
+        this(id, new soupply.java393.type.Particle());
     }
 
     @Override

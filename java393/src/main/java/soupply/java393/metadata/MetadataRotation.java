@@ -10,7 +10,7 @@ public class MetadataRotation extends MetadataValue
 
     public MetadataRotation(byte id, FloatXYZ value)
     {
-        super(id, (byte)7);
+        super(id, (byte)8);
         this.value = value;
     }
 

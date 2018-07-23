@@ -10,7 +10,7 @@ public class MetadataDirection extends MetadataValue
 
     public MetadataDirection(byte id, int value)
     {
-        super(id, (byte)10);
+        super(id, (byte)11);
         this.value = value;
     }
 

@@ -10,7 +10,7 @@ public class MetadataBlock extends MetadataValue
 
     public MetadataBlock(byte id, int value)
     {
-        super(id, (byte)12);
+        super(id, (byte)13);
         this.value = value;
     }
 

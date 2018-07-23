@@ -36,7 +36,7 @@ public class Node extends Type
         {
             _buffer.writeVaruint(yhbrz4);
         }
-        if(flags&8)
+        if((flags&8)!=0)
         {
             _buffer.writeVaruint(redirectNode);
         }
@@ -46,7 +46,7 @@ public class Node extends Type
             _buffer.writeVaruint((int)bfz.length);
             _buffer.writeBytes(bfz);
         }
-        if(flags&2)
+        if((flags&2)!=0)
         {
             byte[] cfcv = _buffer.convertString(parser);
             _buffer.writeVaruint((int)cfcv.length);
@@ -65,7 +65,7 @@ public class Node extends Type
         {
             children[yhbrz4] = _buffer.readVaruint();
         }
-        if(flags&8)
+        if((flags&8)!=0)
         {
             redirectNode = _buffer.readVaruint();
         }
@@ -74,7 +74,7 @@ public class Node extends Type
             final int bvbfz = _buffer.readVaruint();
             name = _buffer.readString(bvbfz);
         }
-        if(flags&2)
+        if((flags&2)!=0)
         {
             final int bvcfcv = _buffer.readVaruint();
             parser = _buffer.readString(bvcfcv);

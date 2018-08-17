@@ -8,9 +8,9 @@ public class Metadata extends HashMap<Integer, MetadataValue>
 
     public Metadata()
     {
-        this.values.put(0, new MetadataLong(0, (long)0);
-        this.values.put(7, new MetadataShort(7, (short)0);
-        this.values.put(38, new MetadataLong(38, (long)-1);
+        this.values.put(0, new MetadataLong(0, (long)0));
+        this.values.put(7, new MetadataShort(7, (short)0));
+        this.values.put(38, new MetadataLong(38, (long)-1));
     }
 
     public void add(MetadataValue value)

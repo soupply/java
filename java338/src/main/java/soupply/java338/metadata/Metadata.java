@@ -8,7 +8,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
 
     public Metadata()
     {
-        this.values.put(0, new MetadataByte(0, (byte).init);
+        this.values.put(0, new MetadataByte(0, (byte).init));
     }
 
     public void add(MetadataValue value)

@@ -68,7 +68,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(0);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(0, new MetadataLong(0, _value);
+        else this.values.put(0, new MetadataLong(0, _value));
     }
 
     public int getHealth()
@@ -82,7 +82,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(1);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(1, new MetadataInt(1, _value);
+        else this.values.put(1, new MetadataInt(1, _value));
     }
 
     public int getVariant()
@@ -96,7 +96,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(2);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(2, new MetadataInt(2, _value);
+        else this.values.put(2, new MetadataInt(2, _value));
     }
 
     public byte getColor()
@@ -110,7 +110,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(3);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(3, new MetadataByte(3, _value);
+        else this.values.put(3, new MetadataByte(3, _value));
     }
 
     public String getNametag()
@@ -124,7 +124,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(4);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(4, new MetadataString(4, _value);
+        else this.values.put(4, new MetadataString(4, _value));
     }
 
     public long getOwner()
@@ -138,7 +138,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(5);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(5, new MetadataLong(5, _value);
+        else this.values.put(5, new MetadataLong(5, _value));
     }
 
     public long getTarget()
@@ -152,7 +152,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(6);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(6, new MetadataLong(6, _value);
+        else this.values.put(6, new MetadataLong(6, _value));
     }
 
     public short getAir()
@@ -166,7 +166,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(7);
         if(value != null && value instanceof MetadataShort) ((MetadataShort)value).value = _value;
-        else this.values.put(7, new MetadataShort(7, _value);
+        else this.values.put(7, new MetadataShort(7, _value));
     }
 
     public int getPotionColor()
@@ -180,7 +180,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(8);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(8, new MetadataInt(8, _value);
+        else this.values.put(8, new MetadataInt(8, _value));
     }
 
     public byte getPotionAmbient()
@@ -194,7 +194,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(9);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(9, new MetadataByte(9, _value);
+        else this.values.put(9, new MetadataByte(9, _value));
     }
 
     public int getHurtTime()
@@ -208,7 +208,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(11);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(11, new MetadataInt(11, _value);
+        else this.values.put(11, new MetadataInt(11, _value));
     }
 
     public int getHurtDirection()
@@ -222,7 +222,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(12);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(12, new MetadataInt(12, _value);
+        else this.values.put(12, new MetadataInt(12, _value));
     }
 
     public float getPaddleTimeLeft()
@@ -236,7 +236,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(13);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(13, new MetadataFloat(13, _value);
+        else this.values.put(13, new MetadataFloat(13, _value));
     }
 
     public float getPaddleTimeRight()
@@ -250,7 +250,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(14);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(14, new MetadataFloat(14, _value);
+        else this.values.put(14, new MetadataFloat(14, _value));
     }
 
     public int getExperienceCount()
@@ -264,7 +264,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(15);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(15, new MetadataInt(15, _value);
+        else this.values.put(15, new MetadataInt(15, _value));
     }
 
     public int getMinecartBlock()
@@ -278,7 +278,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(16);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(16, new MetadataInt(16, _value);
+        else this.values.put(16, new MetadataInt(16, _value));
     }
 
     public int getMinecartOffset()
@@ -292,7 +292,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(17);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(17, new MetadataInt(17, _value);
+        else this.values.put(17, new MetadataInt(17, _value));
     }
 
     public byte getMinecartHasBlock()
@@ -306,7 +306,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(18);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(18, new MetadataByte(18, _value);
+        else this.values.put(18, new MetadataByte(18, _value));
     }
 
     public short getEndermanItemId()
@@ -320,7 +320,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(23);
         if(value != null && value instanceof MetadataShort) ((MetadataShort)value).value = _value;
-        else this.values.put(23, new MetadataShort(23, _value);
+        else this.values.put(23, new MetadataShort(23, _value));
     }
 
     public short getEndermanItemDamage()
@@ -334,7 +334,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(24);
         if(value != null && value instanceof MetadataShort) ((MetadataShort)value).value = _value;
-        else this.values.put(24, new MetadataShort(24, _value);
+        else this.values.put(24, new MetadataShort(24, _value));
     }
 
     public short getAge()
@@ -348,7 +348,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(25);
         if(value != null && value instanceof MetadataShort) ((MetadataShort)value).value = _value;
-        else this.values.put(25, new MetadataShort(25, _value);
+        else this.values.put(25, new MetadataShort(25, _value));
     }
 
     public byte getPlayerFlags()
@@ -362,7 +362,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(27);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(27, new MetadataByte(27, _value);
+        else this.values.put(27, new MetadataByte(27, _value));
     }
 
     public int getPlayerIndex()
@@ -376,7 +376,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(28);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(28, new MetadataInt(28, _value);
+        else this.values.put(28, new MetadataInt(28, _value));
     }
 
     public IntXYZ getBedPosition()
@@ -390,7 +390,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(29);
         if(value != null && value instanceof MetadataBlockPosition) ((MetadataBlockPosition)value).value = _value;
-        else this.values.put(29, new MetadataBlockPosition(29, _value);
+        else this.values.put(29, new MetadataBlockPosition(29, _value));
     }
 
     public float getFireballPowerX()
@@ -404,7 +404,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(30);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(30, new MetadataFloat(30, _value);
+        else this.values.put(30, new MetadataFloat(30, _value));
     }
 
     public float getFireballPowerY()
@@ -418,7 +418,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(31);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(31, new MetadataFloat(31, _value);
+        else this.values.put(31, new MetadataFloat(31, _value));
     }
 
     public float getFireballPowerZ()
@@ -432,7 +432,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(32);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(32, new MetadataFloat(32, _value);
+        else this.values.put(32, new MetadataFloat(32, _value));
     }
 
     public short getPotionAuxValue()
@@ -446,7 +446,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(37);
         if(value != null && value instanceof MetadataShort) ((MetadataShort)value).value = _value;
-        else this.values.put(37, new MetadataShort(37, _value);
+        else this.values.put(37, new MetadataShort(37, _value));
     }
 
     public long getLeadHolder()
@@ -460,7 +460,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(38);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(38, new MetadataLong(38, _value);
+        else this.values.put(38, new MetadataLong(38, _value));
     }
 
     public float getScale()
@@ -474,7 +474,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(39);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(39, new MetadataFloat(39, _value);
+        else this.values.put(39, new MetadataFloat(39, _value));
     }
 
     public String getInteractiveTag()
@@ -488,7 +488,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(40);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(40, new MetadataString(40, _value);
+        else this.values.put(40, new MetadataString(40, _value));
     }
 
     public String getNpcId()
@@ -502,7 +502,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(41);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(41, new MetadataString(41, _value);
+        else this.values.put(41, new MetadataString(41, _value));
     }
 
     public String getInteractiveTagUrl()
@@ -516,7 +516,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(42);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(42, new MetadataString(42, _value);
+        else this.values.put(42, new MetadataString(42, _value));
     }
 
     public short getMaxAir()
@@ -530,7 +530,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(43);
         if(value != null && value instanceof MetadataShort) ((MetadataShort)value).value = _value;
-        else this.values.put(43, new MetadataShort(43, _value);
+        else this.values.put(43, new MetadataShort(43, _value));
     }
 
     public int getMarkVariant()
@@ -544,7 +544,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(44);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(44, new MetadataInt(44, _value);
+        else this.values.put(44, new MetadataInt(44, _value));
     }
 
     public IntXYZ getBlockTarget()
@@ -558,7 +558,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(48);
         if(value != null && value instanceof MetadataBlockPosition) ((MetadataBlockPosition)value).value = _value;
-        else this.values.put(48, new MetadataBlockPosition(48, _value);
+        else this.values.put(48, new MetadataBlockPosition(48, _value));
     }
 
     public int getInvulnerableTime()
@@ -572,7 +572,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(49);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(49, new MetadataInt(49, _value);
+        else this.values.put(49, new MetadataInt(49, _value));
     }
 
     public long getCenterHeadTarget()
@@ -586,7 +586,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(50);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(50, new MetadataLong(50, _value);
+        else this.values.put(50, new MetadataLong(50, _value));
     }
 
     public long getLeftHeadTarget()
@@ -600,7 +600,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(51);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(51, new MetadataLong(51, _value);
+        else this.values.put(51, new MetadataLong(51, _value));
     }
 
     public long getRightHeadTarget()
@@ -614,7 +614,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(52);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(52, new MetadataLong(52, _value);
+        else this.values.put(52, new MetadataLong(52, _value));
     }
 
     public float getBoundingBoxWidth()
@@ -628,7 +628,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(54);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(54, new MetadataFloat(54, _value);
+        else this.values.put(54, new MetadataFloat(54, _value));
     }
 
     public float getBoundingBoxHeight()
@@ -642,7 +642,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(55);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(55, new MetadataFloat(55, _value);
+        else this.values.put(55, new MetadataFloat(55, _value));
     }
 
     public int getFuseLength()
@@ -656,7 +656,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(56);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(56, new MetadataInt(56, _value);
+        else this.values.put(56, new MetadataInt(56, _value));
     }
 
     public FloatXYZ getRiderSeatPosition()
@@ -670,7 +670,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(57);
         if(value != null && value instanceof MetadataEntityPosition) ((MetadataEntityPosition)value).value = _value;
-        else this.values.put(57, new MetadataEntityPosition(57, _value);
+        else this.values.put(57, new MetadataEntityPosition(57, _value));
     }
 
     public byte getRiderRotationLocked()
@@ -684,7 +684,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(58);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(58, new MetadataByte(58, _value);
+        else this.values.put(58, new MetadataByte(58, _value));
     }
 
     public float getRiderMaxRotation()
@@ -698,7 +698,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(59);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(59, new MetadataFloat(59, _value);
+        else this.values.put(59, new MetadataFloat(59, _value));
     }
 
     public float getRiderMinRotation()
@@ -712,7 +712,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(60);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(60, new MetadataFloat(60, _value);
+        else this.values.put(60, new MetadataFloat(60, _value));
     }
 
     public float getAreaEffectCloudRadius()
@@ -726,7 +726,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(61);
         if(value != null && value instanceof MetadataFloat) ((MetadataFloat)value).value = _value;
-        else this.values.put(61, new MetadataFloat(61, _value);
+        else this.values.put(61, new MetadataFloat(61, _value));
     }
 
     public int getAreaEffectCloudWaiting()
@@ -740,7 +740,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(62);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(62, new MetadataInt(62, _value);
+        else this.values.put(62, new MetadataInt(62, _value));
     }
 
     public int getAreaEffectCloudParticle()
@@ -754,7 +754,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(63);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(63, new MetadataInt(63, _value);
+        else this.values.put(63, new MetadataInt(63, _value));
     }
 
     public int getShulkerPeakHeight()
@@ -768,7 +768,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(64);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(64, new MetadataInt(64, _value);
+        else this.values.put(64, new MetadataInt(64, _value));
     }
 
     public byte getShulkerDirection()
@@ -782,7 +782,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(65);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(65, new MetadataByte(65, _value);
+        else this.values.put(65, new MetadataByte(65, _value));
     }
 
     public IntXYZ getShulkerAttachment()
@@ -796,7 +796,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(67);
         if(value != null && value instanceof MetadataBlockPosition) ((MetadataBlockPosition)value).value = _value;
-        else this.values.put(67, new MetadataBlockPosition(67, _value);
+        else this.values.put(67, new MetadataBlockPosition(67, _value));
     }
 
     public long getTradingPlayer()
@@ -810,7 +810,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(68);
         if(value != null && value instanceof MetadataLong) ((MetadataLong)value).value = _value;
-        else this.values.put(68, new MetadataLong(68, _value);
+        else this.values.put(68, new MetadataLong(68, _value));
     }
 
     public String getCommandBlockCommand()
@@ -824,7 +824,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(71);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(71, new MetadataString(71, _value);
+        else this.values.put(71, new MetadataString(71, _value));
     }
 
     public String getCommandBlockLastOutput()
@@ -838,7 +838,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(72);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(72, new MetadataString(72, _value);
+        else this.values.put(72, new MetadataString(72, _value));
     }
 
     public String getCommandBlockTrackOutput()
@@ -852,7 +852,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(73);
         if(value != null && value instanceof MetadataString) ((MetadataString)value).value = _value;
-        else this.values.put(73, new MetadataString(73, _value);
+        else this.values.put(73, new MetadataString(73, _value));
     }
 
     public byte getControllingRiderSeatNumber()
@@ -866,7 +866,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(74);
         if(value != null && value instanceof MetadataByte) ((MetadataByte)value).value = _value;
-        else this.values.put(74, new MetadataByte(74, _value);
+        else this.values.put(74, new MetadataByte(74, _value));
     }
 
     public int getStrength()
@@ -880,7 +880,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(75);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(75, new MetadataInt(75, _value);
+        else this.values.put(75, new MetadataInt(75, _value));
     }
 
     public int getMaxStrength()
@@ -894,7 +894,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.values.get(76);
         if(value != null && value instanceof MetadataInt) ((MetadataInt)value).value = _value;
-        else this.values.put(76, new MetadataInt(76, _value);
+        else this.values.put(76, new MetadataInt(76, _value));
     }
 
 }

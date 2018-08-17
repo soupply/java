@@ -6,6 +6,10 @@ import soupply.util.*;
 public class Metadata extends HashMap<Integer, MetadataValue>
 {
 
+    public Metadata()
+    {
+    }
+
     public void add(MetadataValue value)
     {
         this.put(value.id, value);
@@ -41,4 +45,5 @@ public class Metadata extends HashMap<Integer, MetadataValue>
             default: throw new MetadataException(id, type);
         }
     }
+
 }

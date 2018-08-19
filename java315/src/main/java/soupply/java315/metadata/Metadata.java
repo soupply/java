@@ -8,7 +8,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
 
     public Metadata()
     {
-        this.add(new MetadataByte(0, 0));
+        this.add(new MetadataByte((byte)0, (byte)0));
     }
 
     public void add(MetadataValue value)
@@ -91,7 +91,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(2);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setNametag(String _value)
@@ -105,7 +105,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(3);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setShowNametag(boolean _value)
@@ -119,7 +119,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(4);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setSilent(boolean _value)
@@ -133,7 +133,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(5);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setNoGravity(boolean _value)
@@ -203,7 +203,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(8);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setIsSinglePoint(boolean _value)
@@ -343,7 +343,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(10);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setRightPaddleTurning(boolean _value)
@@ -357,7 +357,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(11);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setLeftPaddleTurning(boolean _value)
@@ -385,7 +385,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(7);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setShowBottom(boolean _value)
@@ -483,7 +483,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(9);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setPotionAmbient(boolean _value)
@@ -693,7 +693,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(12);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setBaby(boolean _value)
@@ -763,7 +763,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(15);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setChested(boolean _value)
@@ -819,7 +819,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(13);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setPigSaddled(boolean _value)
@@ -847,7 +847,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(13);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setStandingUp(boolean _value)
@@ -917,7 +917,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(16);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setBegging(boolean _value)
@@ -1071,7 +1071,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(13);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setCharged(boolean _value)
@@ -1085,7 +1085,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(14);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setIgnited(boolean _value)
@@ -1099,7 +1099,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(12);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setRectractingSpikes(boolean _value)
@@ -1155,7 +1155,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(12);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setSwingingArms(boolean _value)
@@ -1239,7 +1239,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(14);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setHandsHeldUp(boolean _value)
@@ -1253,7 +1253,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(15);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setConverting(boolean _value)
@@ -1295,7 +1295,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(13);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setScreaming(boolean _value)
@@ -1323,7 +1323,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(12);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setGhastAttacking(boolean _value)
@@ -1421,7 +1421,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(11);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setMinecartCustomBlock(boolean _value)
@@ -1435,7 +1435,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(12);
         if(value != null && value instanceof MetadataBool) return ((MetadataBool)value).value;
-        else return 0;
+        else return false;
     }
 
     public void setFurnacePowered(boolean _value)
@@ -1449,7 +1449,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(12);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setCommand(String _value)
@@ -1463,7 +1463,7 @@ public class Metadata extends HashMap<Byte, MetadataValue>
     {
         MetadataValue value = this.get(13);
         if(value != null && value instanceof MetadataChat) return ((MetadataChat)value).value;
-        else return null;
+        else return "";
     }
 
     public void setLastOutput(String _value)

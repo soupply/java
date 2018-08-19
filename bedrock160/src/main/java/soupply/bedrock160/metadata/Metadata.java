@@ -8,9 +8,9 @@ public class Metadata extends HashMap<Integer, MetadataValue>
 
     public Metadata()
     {
-        this.add(new MetadataLong(0, (long)0));
-        this.add(new MetadataShort(7, (short)0));
-        this.add(new MetadataLong(38, (long)-1));
+        this.add(new MetadataLong((int)0, (long)0));
+        this.add(new MetadataShort((int)7, (short)0));
+        this.add(new MetadataLong((int)38, (long)-1));
     }
 
     public void add(MetadataValue value)
@@ -117,7 +117,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(4);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setNametag(String _value)
@@ -481,7 +481,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(40);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setInteractiveTag(String _value)
@@ -495,7 +495,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(41);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setNpcId(String _value)
@@ -509,7 +509,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(42);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setInteractiveTagUrl(String _value)
@@ -817,7 +817,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(71);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setCommandBlockCommand(String _value)
@@ -831,7 +831,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(72);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setCommandBlockLastOutput(String _value)
@@ -845,7 +845,7 @@ public class Metadata extends HashMap<Integer, MetadataValue>
     {
         MetadataValue value = this.get(73);
         if(value != null && value instanceof MetadataString) return ((MetadataString)value).value;
-        else return null;
+        else return "";
     }
 
     public void setCommandBlockTrackOutput(String _value)

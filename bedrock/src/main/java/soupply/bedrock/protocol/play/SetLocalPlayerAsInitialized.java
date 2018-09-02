@@ -6,7 +6,7 @@ import soupply.util.*;
 public class SetLocalPlayerAsInitialized extends soupply.bedrock.Packet
 {
 
-    public static final int ID = 112;
+    public static final int ID = 113;
 
     public long entityRuntimeId;
 

@@ -26,6 +26,7 @@ public class AddPlayer extends soupply.bedrock.Packet
     public int unknown15;
     public long unknown16;
     public soupply.bedrock.type.Link[] links;
+    public String deviceId;
 
     public AddPlayer()
     {
@@ -36,7 +37,7 @@ public class AddPlayer extends soupply.bedrock.Packet
         this.metadata = new soupply.bedrock.metadata.Metadata();
     }
 
-    public AddPlayer(soupply.bedrock.type.McpeUuid uuid, String username, long entityId, long runtimeId, FloatXYZ position, FloatXYZ motion, float pitch, float headYaw, float yaw, soupply.bedrock.type.Slot heldItem, soupply.bedrock.metadata.Metadata metadata, int unknown11, int unknown12, int unknown13, int unknown14, int unknown15, long unknown16, soupply.bedrock.type.Link[] links)
+    public AddPlayer(soupply.bedrock.type.McpeUuid uuid, String username, long entityId, long runtimeId, FloatXYZ position, FloatXYZ motion, float pitch, float headYaw, float yaw, soupply.bedrock.type.Slot heldItem, soupply.bedrock.metadata.Metadata metadata, int unknown11, int unknown12, int unknown13, int unknown14, int unknown15, long unknown16, soupply.bedrock.type.Link[] links, String deviceId)
     {
         this.uuid = uuid;
         this.username = username;
@@ -56,6 +57,7 @@ public class AddPlayer extends soupply.bedrock.Packet
         this.unknown15 = unknown15;
         this.unknown16 = unknown16;
         this.links = links;
+        this.deviceId = deviceId;
     }
 
     @Override
@@ -95,6 +97,9 @@ public class AddPlayer extends soupply.bedrock.Packet
         {
             blam.encodeBody(_buffer);
         }
+        byte[] zvansq = _buffer.convertString(deviceId);
+        _buffer.writeVaruint((int)zvansq.length);
+        _buffer.writeBytes(zvansq);
     }
 
     @Override
@@ -128,6 +133,8 @@ public class AddPlayer extends soupply.bedrock.Packet
         {
             links[blam].decodeBody(_buffer);
         }
+        final int bvzvansq = _buffer.readVaruint();
+        deviceId = _buffer.readString(bvzvansq);
     }
 
     public static AddPlayer fromBuffer(byte[] buffer)

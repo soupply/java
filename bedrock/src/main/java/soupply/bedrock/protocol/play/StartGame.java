@@ -75,6 +75,8 @@ public class StartGame extends soupply.bedrock.Packet
     public boolean isTrial;
     public long currentTick;
     public int enchantmentSeed;
+    public long[] runtimeIdTable;
+    public String multiplayerCorrelationId;
 
     public StartGame()
     {
@@ -82,7 +84,7 @@ public class StartGame extends soupply.bedrock.Packet
         this.spawnPosition = new IntXYZ();
     }
 
-    public StartGame(long entityId, long runtimeId, int gamemode, FloatXYZ position, float yaw, float pitch, int seed, int dimension, int generator, int worldGamemode, int difficulty, IntXYZ spawnPosition, boolean loadedInCreative, int time, byte version, boolean eduFeaturesEnabled, float rainLevel, float lightningLevel, boolean multiplayerGame, boolean broadcastToLan, boolean broadcastToXbl, boolean commandsEnabled, boolean textureRequired, soupply.bedrock.type.Rule[] gameRules, boolean hasBonusChestEnabled, boolean hasStartWithMapEnabled, boolean hasTrustPlayersEnabled, int defaultPermissionLevel, int xboxLiveBroadcastMode, int serverChunkTickRadius, boolean hasPlatformBroadcast, int platformBroadcastMode, boolean xboxLiveBroadcastIntent, boolean hasLockedBehaviorPack, boolean hasLockedResourcePack, boolean isFromLockedWorldTemplate, String levelId, String worldName, String premiumWorldTemplate, boolean isTrial, long currentTick, int enchantmentSeed)
+    public StartGame(long entityId, long runtimeId, int gamemode, FloatXYZ position, float yaw, float pitch, int seed, int dimension, int generator, int worldGamemode, int difficulty, IntXYZ spawnPosition, boolean loadedInCreative, int time, byte version, boolean eduFeaturesEnabled, float rainLevel, float lightningLevel, boolean multiplayerGame, boolean broadcastToLan, boolean broadcastToXbl, boolean commandsEnabled, boolean textureRequired, soupply.bedrock.type.Rule[] gameRules, boolean hasBonusChestEnabled, boolean hasStartWithMapEnabled, boolean hasTrustPlayersEnabled, int defaultPermissionLevel, int xboxLiveBroadcastMode, int serverChunkTickRadius, boolean hasPlatformBroadcast, int platformBroadcastMode, boolean xboxLiveBroadcastIntent, boolean hasLockedBehaviorPack, boolean hasLockedResourcePack, boolean isFromLockedWorldTemplate, String levelId, String worldName, String premiumWorldTemplate, boolean isTrial, long currentTick, int enchantmentSeed, long[] runtimeIdTable, String multiplayerCorrelationId)
     {
         this.entityId = entityId;
         this.runtimeId = runtimeId;
@@ -126,6 +128,8 @@ public class StartGame extends soupply.bedrock.Packet
         this.isTrial = isTrial;
         this.currentTick = currentTick;
         this.enchantmentSeed = enchantmentSeed;
+        this.runtimeIdTable = runtimeIdTable;
+        this.multiplayerCorrelationId = multiplayerCorrelationId;
     }
 
     @Override
@@ -193,6 +197,14 @@ public class StartGame extends soupply.bedrock.Packet
         _buffer.writeBool(isTrial);
         _buffer.writeLittleEndianLong(currentTick);
         _buffer.writeVarint(enchantmentSeed);
+        _buffer.writeVaruint((int)runtimeIdTable.length);
+        for(long cvdlzlvf:runtimeIdTable)
+        {
+            _buffer.writeVarulong(cvdlzlvf);
+        }
+        byte[] bvdlbfzj = _buffer.convertString(multiplayerCorrelationId);
+        _buffer.writeVaruint((int)bvdlbfzj.length);
+        _buffer.writeBytes(bvdlbfzj);
     }
 
     @Override
@@ -252,6 +264,14 @@ public class StartGame extends soupply.bedrock.Packet
         isTrial = _buffer.readBool();
         currentTick = _buffer.readLittleEndianLong();
         enchantmentSeed = _buffer.readVarint();
+        final int bjbrbvzr = _buffer.readVaruint();
+        runtimeIdTable = new long[bjbrbvzr];
+        for(int cvdlzlvf=0;cvdlzlvf<runtimeIdTable.length;cvdlzlvf++)
+        {
+            runtimeIdTable[cvdlzlvf] = _buffer.readVarulong();
+        }
+        final int bvbvdlbf = _buffer.readVaruint();
+        multiplayerCorrelationId = _buffer.readString(bvbvdlbf);
     }
 
     public static StartGame fromBuffer(byte[] buffer)

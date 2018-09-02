@@ -8,7 +8,7 @@ public class Login extends soupply.bedrock.Packet
 
     public static final int ID = 1;
 
-    public int protocol = 274;
+    public int protocol = 282;
     public soupply.bedrock.type.LoginBody body;
 
     public Login()

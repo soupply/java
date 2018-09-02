@@ -13,7 +13,6 @@ public abstract class Packet extends soupply.util.Packet
     {
         Buffer _buffer = new Buffer();
         _buffer.writeVaruint(this.getId());
-        _buffer.writeBytes(new byte[2]);
         this.encodeBody(_buffer);
         return _buffer.toByteArray();
     }
@@ -23,7 +22,6 @@ public abstract class Packet extends soupply.util.Packet
     {
         Buffer _buffer = new Buffer(data);
         final int _id = _buffer.readVaruint();
-        _buffer.readBytes(2);
         this.decodeBody(_buffer);
     }
 
